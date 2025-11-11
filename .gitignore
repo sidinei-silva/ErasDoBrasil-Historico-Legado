@@ -1,0 +1,14 @@
+# Ignorar arquivos do Mac
+.DS_Store
+.AppleDouble
+
+# Ignorar arquivos do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignorar arquivos do VS Code
+.vscode/
+
+# Ignorar arquivos do Obsidian
+.obsidian/
