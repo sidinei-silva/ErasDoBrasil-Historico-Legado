@@ -1,0 +1,88 @@
+{
+  "title": "Design e Evolução Eras do Brasil RPG",
+  "type": "ARTIFACT_TYPE_AUDIO_OVERVIEW",
+  "sources": [{
+    "sourceId": {
+      "id": "9612d4ac-d68b-4607-801a-7b3996b24b70"
+    }
+  }, {
+    "sourceId": {
+      "id": "d7e1f8e8-b735-4f4c-b149-52bf2817cc48"
+    }
+  }, {
+    "sourceId": {
+      "id": "8c7451e2-e435-49ad-9ed4-a560aeb6d596"
+    }
+  }, {
+    "sourceId": {
+      "id": "6d6d5aed-226b-44f0-ae46-21e5f2952979"
+    }
+  }, {
+    "sourceId": {
+      "id": "b5f7ebaa-c8de-4bf8-a328-fe70fab0cef4"
+    }
+  }, {
+    "sourceId": {
+      "id": "26e17e81-8c78-4137-b711-5ac84e9bf488"
+    }
+  }, {
+    "sourceId": {
+      "id": "5769a69c-578c-4fb2-9659-12fdb54b305a"
+    }
+  }, {
+    "sourceId": {
+      "id": "3d257a55-e165-4437-a881-e1c800902228"
+    }
+  }, {
+    "sourceId": {
+      "id": "dce563ce-3ff6-4adf-bc95-6b87b83e264c"
+    }
+  }, {
+    "sourceId": {
+      "id": "98ef4d5a-7783-4fa9-b692-c82306f7a220"
+    }
+  }, {
+    "sourceId": {
+      "id": "effcf1c8-b4bf-4433-9f66-b6bcec728ca0"
+    }
+  }, {
+    "sourceId": {
+      "id": "81d225f7-d5c1-44b5-87ce-d2e60c9e0940"
+    }
+  }, {
+    "sourceId": {
+      "id": "fde76aa3-5cc1-463e-a0bd-88a5b7a42726"
+    }
+  }, {
+    "sourceId": {
+      "id": "ae1debdc-9bdb-42d2-a530-1baebd232372"
+    }
+  }, {
+    "sourceId": {
+      "id": "ad6b8add-01e4-496c-a4b8-8eb363f75434"
+    }
+  }, {
+    "sourceId": {
+      "id": "95fc9eb3-9ad3-4720-a71b-0bb7a7557aec"
+    }
+  }, {
+    "sourceId": {
+      "id": "97a0b43f-e368-4d99-8899-43213246b380"
+    }
+  }, {
+    "sourceId": {
+      "id": "f4a414dd-b4f2-404c-a6df-88a85417937c"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "audioOverview": {
+    "generationOptions": {
+      "episodeFocus": "",
+      "episodeLength": "EPISODE_LENGTH_UNSPECIFIED",
+      "targetAudience": "TARGET_AUDIENCE_UNSPECIFIED",
+      "languageCode": "pt",
+      "showFormat": "SHOW_FORMAT_UNSPECIFIED"
+    },
+    "isInteractive": false
+  }
+}

@@ -1,0 +1,3063 @@
+<h3 id="1-introdu-o">1 - 📖 Introdução</h3>
+<p>O  <strong>Livro de Classes</strong>  é o compêndio oficial que detalha todas as classes disponíveis no sistema de jogo de  <em>Eras do Brasil</em> , começando pelos caminhos iniciais disponíveis na Primeira Era.
+Este livro complementa o  <strong>Livro de Regras</strong> , que apresenta a lógica do sistema de criação de personagem, escolha de origem, proficiências e funcionamento geral das classes. Aqui, o foco está no  <strong>detalhamento técnico e narrativo individual</strong>  de cada classe, incluindo suas habilidades, estilo de jogo, equipamentos iniciais, atributos recomendados, proficiências associadas e possíveis evoluções.</p>
+<hr>
+<h4 id="objetivo-deste-livro">🎯 Objetivo deste Livro</h4>
+<p>O objetivo deste livro é oferecer:</p>
+<ul>
+<li><strong>Referência completa e clara</strong>  sobre cada classe jogável.</li>
+<li><strong>Ajuda aos jogadores</strong>  na escolha da classe mais alinhada ao seu estilo de jogo e narrativa.</li>
+<li><strong>Base para mestres e desenvolvedores</strong>  criarem evoluções coerentes, NPCs especializados e eventos relacionados às classes.</li>
+</ul>
+<hr>
+<h4 id="estrutura-do-livro">🧱 Estrutura do Livro</h4>
+<p>O Livro de Classes está dividido em seções e pastas conforme as  <strong>Origens</strong>  (Colonizador, Indígena, Ser Folclórico) e as  <strong>Classes Tier 1</strong>  disponíveis em cada uma delas.
+Cada classe é apresentada em um arquivo próprio contendo:</p>
+<ol>
+<li><strong>Descrição Narrativa</strong> : Contextualiza a função e o papel da classe no mundo de  <em>Eras do Brasil</em> .</li>
+<li><strong>Estilo de Jogo</strong> : Explica como ela atua em combate, suporte, exploração ou narrativa.</li>
+<li><strong>Atributos Recomendados</strong> : Sugestão para melhor desempenho mecânico.</li>
+<li><strong>Armas e Armaduras Permitidas</strong> : Tipos que podem ser usados pela classe ativa.</li>
+<li><strong>Equipamento Inicial</strong> : Escolhas disponíveis durante a criação do personagem.</li>
+<li><strong>Habilidades Iniciais</strong> : Uma ativa e uma passiva, com efeitos, recargas e condições.</li>
+<li><strong>Proficiência com XP Bônus</strong> : Ligação temática com uma das Proficiências de Vida.</li>
+<li><strong>Caminho de Evolução por Tier</strong>  (se aplicável).</li>
+<li><strong>Notas do Mestre</strong> : Sugestões opcionais de uso narrativo e interpretações táticas.</li>
+</ol>
+<hr>
+<h4 id="regras-gerais-sobre-classes">🌀 Regras Gerais sobre Classes</h4>
+<p>Antes de explorar cada classe, é importante lembrar:</p>
+<ul>
+<li>O jogador  <strong>só pode usar equipamentos e habilidades da classe ativa atual</strong> .</li>
+<li>Classes desbloqueadas permanecem  <strong>permanentemente disponíveis</strong>  e podem ser alternadas  <strong>fora de combate</strong> .</li>
+<li>Apenas  <strong>habilidades ativas</strong>  podem ser herdadas ao trocar de classe.</li>
+<li><strong>Bônus de XP em proficiências de vida</strong>  só se aplicam quando a classe estiver ativa.</li>
+<li>A progressão de classe ocorre em  <strong>Tiers</strong>  e exige Moeda de Classe + missão com NPC.</li>
+</ul>
+<hr>
+<h4 id="atualiza-es-futuras">🔄 Atualizações Futuras</h4>
+<p>Este livro será expandido com:</p>
+<ul>
+<li><strong>Evoluções por Tier 2 e Tier 3</strong>  para cada classe.</li>
+<li><strong>Novas classes</strong>  introduzidas nas Eras seguintes.</li>
+<li><strong>Subclasses e caminhos alternativos</strong>  conforme o desenvolvimento da campanha digital.</li>
+</ul>
+<hr>
+<h4 id="leitura-recomendada">📚 Leitura Recomendada</h4>
+<p>Para melhor aproveitamento deste livro, é recomendável ter lido:</p>
+<ul>
+<li>Capítulo 3 – Criação de Personagem</li>
+<li>Capítulo 8 – Sistema de Itens e Crafting</li>
+<li>Livro de Proficiências de Vida
+Essas leituras oferecem a base completa para entender as interações entre atributos, equipamentos, progressão e ambientação de cada classe.</li>
+</ul>
+<hr>
+<h3 id="2-sistema-de-classes">2 -⚙️ Sistema de Classes</h3>
+<p>O sistema de classes em  <em>Eras do Brasil</em>  oferece progressão temática, flexibilidade estratégica e personalização tática. Ele permite que o jogador construa personagens únicos, com múltiplos caminhos e estilos de jogo — desde funções tradicionais até arquétipos narrativos únicos inspirados na história e folclore do Brasil.
+Este documento apresenta uma visão geral do funcionamento do sistema. Para detalhes técnicos completos, consulte os arquivos complementares deste livro.</p>
+<hr>
+<h4 id="estrutura-geral">🧱 Estrutura Geral</h4>
+<ul>
+<li>O personagem começa com  <strong>uma classe inicial</strong>  da sua origem, escolhida na criação.</li>
+<li>Cada origem possui  <strong>quatro classes Tier 1</strong>  exclusivas.</li>
+<li>Outras classes podem ser desbloqueadas com:
+<ul>
+<li><strong>Moeda de Classe</strong></li>
+<li><strong>Missão narrativa com NPC ou entidade</strong></li>
+</ul>
+</li>
+<li>As classes podem ser  <strong>evoluídas em Tiers</strong> , representando níveis de especialização e poder.</li>
+<li>O jogador pode alternar entre classes desbloqueadas  <strong>fora de combate</strong> .</li>
+</ul>
+<hr>
+<h4 id="funcionamento-do-sistema">🎮 Funcionamento do Sistema</h4>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Explicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desbloqueio de Classe</strong></td>
+<td>Moeda de Classe + missão específica com NPC mestre</td>
+</tr>
+<tr>
+<td><strong>Progressão de Tier</strong></td>
+<td>Tier 1 → Tier 2 → Tier 3, mantendo o estilo da classe</td>
+</tr>
+<tr>
+<td><strong>Alternância</strong></td>
+<td>Permitida fora de combate; preserva progresso e habilidades ativas</td>
+</tr>
+<tr>
+<td><strong>Herança de Habilidades</strong></td>
+<td>Apenas habilidades ativas são herdadas entre classes</td>
+</tr>
+<tr>
+<td><strong>Bônus em Proficiências de Vida</strong></td>
+<td>Aplicado apenas com a classe ativa correspondente</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="conte-do-complementar">📘 Conteúdo Complementar</h4>
+<p>Para aprofundar cada parte do sistema, acesse os seguintes arquivos:</p>
+<ul>
+<li>🧩 Tiers e Evolução: Como funcionam os Tiers de classe e suas regras de progressão.</li>
+<li>♻️ Alternância de Classes: Como alternar entre classes desbloqueadas e o que se mantém.</li>
+<li>🎁 Herança de Habilidades: Regras para manter habilidades entre trocas de classe.</li>
+<li>Livro de Proficiências de Vida: Como a classe ativa impacta o ganho de XP por categoria.</li>
+</ul>
+<hr>
+<h4 id="visibilidade-das-classes">🔄 Visibilidade das Classes</h4>
+<ul>
+<li>Todas as  <strong>classes iniciais de todas as origens</strong>  ficam visíveis desde o início da campanha, mesmo que ainda não possam ser escolhidas.</li>
+<li>Isso permite que o jogador  <strong>planeje evoluções futuras</strong> , mudanças narrativas e estratégias de classe de forma mais livre.</li>
+</ul>
+<hr>
+<h4 id="recomendado-ler-antes">🧠 Recomendado Ler Antes</h4>
+<p>Para melhor compreensão, recomenda-se ler os seguintes capítulos do Livro de Regras:</p>
+<ul>
+<li>📘 Capítulo 3 – Criação de Personagem</li>
+<li>📘 Capítulo 8 – Sistema de Itens e Crafting</li>
+</ul>
+<hr>
+<h3 id="3-tiers-e-evolu-o">3 - 🧩 Tiers e Evolução</h3>
+<p>As classes em  <em>Eras do Brasil</em>  são estruturadas em  <strong>Tiers</strong> , ou  <strong>níveis de especialização</strong> , que representam o crescimento, aprimoramento e aprofundamento do personagem em seu caminho escolhido. Essa progressão respeita a origem e a identidade do personagem, oferecendo  <strong>novas habilidades, bônus e possibilidades narrativas</strong> .</p>
+<hr>
+<h5 id="estrutura-de-tiers">🧱 Estrutura de Tiers</h5>
+<p>Cada classe pode evoluir em  <strong>três Tiers</strong> , conforme a tabela abaixo:
+| Tier | Nome | Descrição |
+| ------ | ------ | ------ |
+| 1 | Classe Base | Classe escolhida durante a criação de personagem. |
+| 2 | Especialização Avançada | Caminho evolutivo que aprofunda as mecânicas e estilo da classe. |
+| 3 | Forma Plena da Classe | Representa o ápice técnico e narrativo da classe. |</p>
+<hr>
+<h5 id="requisitos-de-evolu-o">🪙 Requisitos de Evolução</h5>
+<p>Para evoluir uma classe para o próximo Tier, o jogador precisa:</p>
+<ol>
+<li><strong>Moeda de Classe</strong> : Item raro obtido por missões, rituais ou eventos especiais.</li>
+<li><strong>NPC Especialista</strong> : Um mentor, entidade ou guardião correspondente à classe.</li>
+<li><strong>Missão de Evolução</strong> : Desafio prático ou espiritual, vinculado à classe e à narrativa.
+Cada evolução é uma oportunidade de expandir o papel do personagem, desbloquear novas habilidades e aprofundar o vínculo com sua origem ou propósito.</li>
+</ol>
+<hr>
+<h5 id="regras-de-evolu-o">🔄 Regras de Evolução</h5>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❗ Tier 1 é fixo</td>
+<td>A classe inicial define o caminho base da evolução.</td>
+</tr>
+<tr>
+<td>✅ Evoluções dentro da mesma origem</td>
+<td>A classe evolui respeitando sua origem inicial (Colonizador, Indígena etc.)</td>
+</tr>
+<tr>
+<td>✅ Classes paralelas permitidas</td>
+<td>O jogador pode desbloquear múltiplas classes Tier 1 da mesma origem.</td>
+</tr>
+<tr>
+<td>🔁 Evoluções independentes</td>
+<td>Cada classe evolui separadamente, permitindo caminhos distintos em paralelo.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="impactos-da-evolu-o">📈 Impactos da Evolução</h5>
+<p>Ao evoluir uma classe, o personagem ganha:</p>
+<ul>
+<li><strong>Nova habilidade ativa</strong></li>
+<li><strong>Nova habilidade passiva</strong></li>
+<li><strong>Bônus de XP em proficiências específicas</strong>  (ver seção de Bônus por Tier)</li>
+<li><strong>Acesso a equipamentos mais avançados</strong></li>
+<li><strong>Reconhecimento e eventos narrativos específicos</strong></li>
+</ul>
+<hr>
+<h5 id="exemplo-pr-tico">🧪 Exemplo Prático</h5>
+<p><strong>Classe Base:</strong>  Guerreiro Tribal (Tier 1)
+<strong>Tier 2:</strong>  Guerreiro Tribal Veterano – ganha a habilidade “Grito de Caça” e bônus de XP em Refinamento (ex: Tratamento de Couro).
+<strong>Tier 3:</strong>  Protetor do Clã – habilidade “Investida Totêmica”, bônus em Crafting e título respeitado nas aldeias.</p>
+<hr>
+<h5 id="observa-es-do-mestre">📘 Observações do Mestre</h5>
+<ul>
+<li>A evolução pode ser usada como ferramenta narrativa. Envolva o cenário, NPCs e decisões morais.</li>
+<li>Crie missões de evolução coerentes com o estilo da classe e do jogador.</li>
+<li>Permita que a evolução represente uma mudança visível no personagem, tanto em aparência quanto em reputação.</li>
+</ul>
+<hr>
+<h3 id="4-altern-ncia-de-classes">4 - ♻️ Alternância de Classes</h3>
+<p>O sistema de classes em  <em>Eras do Brasil</em>  foi criado para permitir  <strong>flexibilidade estratégica e narrativa</strong> , permitindo que o jogador alterne entre estilos diferentes de jogo sem perder o progresso conquistado. A alternância de classes é um dos pilares que torna o mundo do jogo vivo, personalizável e aberto a múltiplas abordagens.</p>
+<hr>
+<h5 id="como-funciona-a-altern-ncia">🔄 Como funciona a Alternância</h5>
+<ul>
+<li><strong>O jogador pode alternar entre quaisquer classes já desbloqueadas.</strong></li>
+<li><strong>A troca só pode ser feita fora de combate</strong> , ou seja, em momentos de descanso, entre cenas ou em ambientes seguros.</li>
+<li><strong>As habilidades ativas de outras classes desbloqueadas podem ser mantidas</strong> , mesmo que a classe não esteja ativa.</li>
+<li><strong>Habilidades passivas e bônus de proficiência só funcionam com a classe ativa.</strong></li>
+</ul>
+<hr>
+<h5 id="regras-da-altern-ncia">📘 Regras da Alternância</h5>
+<table>
+<thead>
+<tr>
+<th>Regra</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅  <strong>Desbloqueios Permanentes</strong></td>
+<td>Uma vez desbloqueada, a classe permanece disponível para o personagem.</td>
+</tr>
+<tr>
+<td>❌  <strong>Sem Troca em Combate</strong></td>
+<td>A troca não pode ocorrer durante combates, desafios ou eventos travados.</td>
+</tr>
+<tr>
+<td>✅  <strong>Progresso Individual</strong></td>
+<td>O XP de cada classe é armazenado separadamente e retomado ao retornar.</td>
+</tr>
+<tr>
+<td>✅  <strong>Alternância Livre</strong></td>
+<td>O jogador pode alternar entre quantas classes quiser, fora de combate.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="o-que-mantido-ou-perdido">🎲 O que é Mantido ou Perdido</h5>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Mantido na troca?</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Habilidade Ativa Inicial</strong></td>
+<td>✅</td>
+<td>Pode ser usada mesmo com outra classe ativa.</td>
+</tr>
+<tr>
+<td><strong>Habilidade Passiva Inicial</strong></td>
+<td>❌</td>
+<td>Só funciona com a classe ativa correspondente.</td>
+</tr>
+<tr>
+<td><strong>Habilidades de Tier Superior</strong></td>
+<td>✅ (apenas ativas)</td>
+<td>Se desbloqueadas, podem ser usadas com outras classes.</td>
+</tr>
+<tr>
+<td><strong>Bônus de XP em Proficiências</strong></td>
+<td>❌</td>
+<td>Só são válidos se a classe correspondente estiver ativa.</td>
+</tr>
+<tr>
+<td><strong>Equipamentos Específicos</strong></td>
+<td>❌</td>
+<td>Só podem ser equipados se a classe atual permitir.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="altern-ncia-como-estrat-gia">🔁 Alternância como Estratégia</h5>
+<p>A alternância entre classes pode ser usada de forma estratégica:</p>
+<ul>
+<li><strong>Aproveitar habilidades herdadas</strong>  (ex: um Mosqueteiro alternar para Explorador e ainda usar o “Tiro Preparado”).</li>
+<li><strong>Trocar de papel conforme o desafio</strong>  (ex: suporte em um combate, DPS em outro).</li>
+<li><strong>Ajustar a classe ao terreno ou missão</strong>  (ex: Caçador de Feras em selvas, Encantador de Espíritos em áreas espirituais).</li>
+<li><strong>Avançar em múltiplas linhas de evolução</strong> , criando um personagem versátil e adaptável.</li>
+</ul>
+<hr>
+<h5 id="dica-narrativa">📘 Dica Narrativa</h5>
+<p>O mestre pode usar a troca de classe como um  <strong>evento narrativo simbólico</strong> , envolvendo:</p>
+<ul>
+<li>Rituais de reencontro com o passado.</li>
+<li>Escolhas morais ou espirituais.</li>
+<li>Reconexão com heranças familiares.</li>
+<li>Influência de NPCs inspiradores.
+Isso valoriza a troca como algo mais profundo que uma simples mecânica.</li>
+</ul>
+<hr>
+<h5 id="exemplo-de-altern-ncia">🧪 Exemplo de Alternância</h5>
+<p><strong>Personagem:</strong>  Domingos
+<strong>Classe Inicial:</strong>  Missionário (Tier 1)
+<strong>Desbloqueios:</strong>  Mosqueteiro (Tier 1)
+<strong>Classe Ativa Atual:</strong>  Mosqueteiro
+<strong>Habilidade Ativa Herdada:</strong>  Bênção da Salvação (Missionário)</p>
+<ul>
+<li>Ele mantém a Bênção como recurso, mesmo com a classe ativa sendo Mosqueteiro.</li>
+<li>Seus testes de Fé não recebem bônus, pois a classe Missionário está inativa.</li>
+<li>Seus equipamentos precisam obedecer às permissões do Mosqueteiro.</li>
+</ul>
+<hr>
+<h3 id="5-heran-a-de-habilidades">5 - 🎁 Herança de Habilidades</h3>
+<p>O sistema de herança de habilidades em  <em>Eras do Brasil</em>  permite que o personagem  <strong>mantenha parte de seus poderes ao trocar de classe</strong> , sem comprometer o equilíbrio ou a identidade única de cada função.
+Este recurso garante  <strong>recompensa por progressão múltipla</strong> ,  <strong>personalização tática</strong>  e  <strong>diversidade narrativa</strong> , sem transformar todas as classes em versões genéricas umas das outras.</p>
+<hr>
+<h5 id="o-que-pode-ser-herdado">🧬 O que pode ser Herdado?</h5>
+<p>Ao alternar de classe, o personagem pode  <strong>herdar algumas habilidades ativas</strong>  desbloqueadas anteriormente, mas  <strong>não mantém bônus passivos nem efeitos contínuos</strong> . Essa regra valoriza o planejamento estratégico sem quebrar o balanceamento.</p>
+<hr>
+<h5 id="tabela-de-heran-a-de-habilidades">📘 Tabela de Herança de Habilidades</h5>
+<table>
+<thead>
+<tr>
+<th>Tipo de Habilidade</th>
+<th>Pode ser herdada?</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Habilidade Ativa Inicial</strong></td>
+<td>✅</td>
+<td>Sempre pode ser usada, mesmo com outra classe ativa.</td>
+</tr>
+<tr>
+<td><strong>Habilidade Passiva Inicial</strong></td>
+<td>❌</td>
+<td>Funciona apenas com a classe ativa correspondente.</td>
+</tr>
+<tr>
+<td><strong>Habilidades de Tier 2 e 3 (ativas)</strong></td>
+<td>✅ (se desbloqueadas)</td>
+<td>Se obtidas em Tiers superiores, podem ser usadas com outras classes.</td>
+</tr>
+<tr>
+<td><strong>Habilidades de Tier 2 e 3 (passivas)</strong></td>
+<td>❌</td>
+<td>Exclusivas da classe ativa no momento.</td>
+</tr>
+<tr>
+<td><strong>Bônus de XP em Proficiências</strong></td>
+<td>❌</td>
+<td>Somente válidos enquanto a classe associada estiver ativa.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="por-que-isso-importa">⚔️ Por que isso importa?</h5>
+<ul>
+<li>Incentiva o jogador a  <strong>explorar múltiplas classes</strong> , mas  <strong>manter uma identidade principal</strong> .</li>
+<li>Impede combinações desequilibradas onde passivas poderosas seriam acumuladas.</li>
+<li>Garante  <strong>versatilidade</strong> , mas dentro de uma  <strong>estrutura coerente e justa</strong> .</li>
+</ul>
+<hr>
+<h5 id="regras-complementares">🧠 Regras Complementares</h5>
+<ul>
+<li>O jogador pode  <strong>usar habilidades herdadas livremente</strong>  durante o combate, desde que respeite as condições normais de uso (alcance, recarga, etc.).</li>
+<li>O mestre pode restringir a  <strong>quantidade de habilidades ativas herdadas</strong>  em campanhas específicas, para criar desafios ou incentivar foco.</li>
+<li>Algumas habilidades de Tier 2 ou 3 só são herdáveis se estiverem marcadas como  <strong>&#34;Herdável&#34;</strong>  na descrição oficial da classe.</li>
+</ul>
+<hr>
+<h5 id="exemplo-de-heran-a">🧪 Exemplo de Herança</h5>
+<p><strong>Personagem:</strong>  Bento
+<strong>Classe Atual:</strong>  Guardião Ancestral
+<strong>Classe Desbloqueada Anteriormente:</strong>  Missionário
+<strong>Habilidades disponíveis:</strong>
+| Habilidade | Fonte da Classe | Tipo | Pode Usar? |
+| ------ | ------ | ------ | ------ |
+| Proteção Ancestral | Guardião | Ativa | ✅ |
+| Raiz Imóvel | Guardião | Passiva | ✅ |
+| Bênção da Salvação | Missionário | Ativa | ✅ |
+| Fé Inabalável | Missionário | Passiva | ❌ |</p>
+<p><strong>Resultado:</strong>
+Bento pode usar tanto a  <strong>Proteção Ancestral</strong>  quanto a  <strong>Bênção da Salvação</strong> , mas  <strong>não recebe o bônus da Fé Inabalável</strong> , pois ela só se aplica quando a classe ativa for Missionário.</p>
+<hr>
+<h5 id="recomenda-es-para-mestres">🧱 Recomendações para Mestres</h5>
+<ul>
+<li>Incentive o uso tático de habilidades herdadas como  <strong>memórias de treinamento anterior</strong> ,  <strong>traços não esquecidos</strong> , ou  <strong>reflexos adquiridos</strong> .</li>
+<li>Pode usar esse sistema para  <strong>representar legados familiares</strong> ,  <strong>influência de mestres</strong> , ou  <strong>destinos ocultos</strong> .</li>
+</ul>
+<hr>
+<h5 id="expans-es-futuras">🔮 Expansões Futuras</h5>
+<p>O sistema de herança pode ser expandido com:</p>
+<ul>
+<li><strong>Slots de habilidades ativas herdáveis</strong>  (limite por nível).</li>
+<li><strong>Condições de herança</strong>  (ex: requerimentos de atributo mínimo).</li>
+<li><strong>Customizações narrativas</strong> , como inscrições rúnicas, bênçãos ou tatuagens espirituais.</li>
+</ul>
+<hr>
+<h5 id="resumo">✅ Resumo</h5>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Herdado?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Habilidade ativa da classe anterior</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Habilidade passiva da classe anterior</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Bônus de proficiência de vida</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Equipamentos específicos da classe</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>XP e progresso acumulado</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="6-classes-tier-1">6 - 🧙 Classes Tier 1</h3>
+<h4 id="classes-colonizadores">Classes Colonizadores</h4>
+<h5 id="mission-rio">✝️ Missionário</h5>
+<h6 id="vis-o-geral">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Colonizador</li>
+<li><strong>Estilo de Jogo:</strong>  Suporte mágico, cura, fé e resistência espiritual</li>
+<li><strong>Atributos Recomendados:</strong>  Conhecimento, Presença</li>
+<li><strong>Armas Permitidas:</strong>  Cruz de Combate, Bastão de Fé</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves, vestes e mantos religiosos</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Alquimia</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa">🧙 Descrição Narrativa</h6>
+<p>O Missionário é a personificação da fé institucional trazida pelos colonizadores. Seu papel vai além do campo de batalha: ele atua como curandeiro, conselheiro e defensor espiritual do grupo. Utilizando bênçãos, orações e dogmas, protege os aliados contra forças malignas e concede cura e proteção aos necessitados.</p>
+<hr>
+<h6 id="estilo-de-jogo">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Cura aliada a distância curta (toque ou proximidade)</li>
+<li>Suporte mágico com resistência a maldições e medo</li>
+<li>Interações sociais fortalecidas por presença espiritual</li>
+<li>Defesa contra efeitos sobrenaturais e necromânticos</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conhecimento</strong></td>
+<td>Conhecimentos religiosos, curas, magia de fé</td>
+<td>Afeta o poder das bênçãos e magias sagradas</td>
+</tr>
+<tr>
+<td><strong>Presença</strong></td>
+<td>Carisma, liderança espiritual, oratória religiosa</td>
+<td>Influencia interações sociais, orações e resistência moral</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Cruz de Combate, Bastão de Fé</li>
+<li><strong>Armaduras:</strong>  Vestes religiosas reforçadas, mantos cerimoniais</li>
+<li><strong>Itens Utilitários:</strong>  Livros sagrados, relíquias, artefatos devocionais</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Bastão de Fé de Madeira Escura</li>
+<li>Cruz de Madeira Rústica</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Veste Clerical Reforçada</li>
+<li>Manto de Pregação de Linho Grosso</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Livro Sagrado de Bolso</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais">Habilidades Iniciais</h6>
+<h6 id="b-n-o-da-salva-o-ativa">Bênção da Salvação (Ativa)</h6>
+<p><strong>Efeito:</strong>  Remove um efeito negativo ou concede +2 de Defesa contra ataques mágicos por 1 turno
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  Toque
+<strong>Condição:</strong>  O alvo deve estar consciente</p>
+<h6 id="f-inabal-vel-passiva">Fé Inabalável (Passiva)</h6>
+<p><strong>Efeito:</strong>  Vantagem contra medo, influência espiritual negativa e corrupção. +1 em testes de Fé/Dogma
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Estar consciente e com símbolo de fé equipado</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alquimia</td>
+<td>Produção</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Missionário ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  10</li>
+<li><strong>Fórmula de PV Inicial:</strong>  10 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  5 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Missionário:</strong>  Suporte básico e resistência espiritual</li>
+<li><strong>Tier 2 – Pregador da Luz:</strong>  Cura em área, bênçãos prolongadas e repelir mortos-vivos</li>
+<li><strong>Tier 3 – Arcanjo da Fé:</strong>  Poder sagrado ofensivo, selos espirituais e cura milagrosa
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Bênção da Salvação</strong>  para proteger aliados em momentos críticos</li>
+<li>Combine  <strong>Presença alta</strong>  com interação social e enfrentamento de cultos/maldições</li>
+<li>Equilibre seu papel de curandeiro e resistência mágica com o suporte narrativo</li>
+<li>Ideal para grupos sem outro suporte ou com foco em temas espirituais</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Suporte e cura</li>
+<li>Defesa contra efeitos mágicos e espirituais</li>
+<li>Interações sociais com vantagem
+<strong>Descrição:</strong>
+O Missionário é a alma do grupo, garantindo segurança espiritual, cura e proteção contra o mal. Sua fé move montanhas, fortalece aliados e desestabiliza forças sombrias. Mesmo com PV mais baixo, sua influência emocional e tática é vital.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais">Armas Iniciais</h6>
+<h6 id="bast-o-de-f-de-madeira-escura">✝️ Bastão de Fé de Madeira Escura</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, contusão</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes para resistir a possessão ou magia negra
+🔗 Veja mais: [[Equipamentos/Armas/Bastão de Fé de Madeira Escura]]</li>
+</ul>
+<h6 id="cruz-de-madeira-r-stica">✝️ Cruz de Madeira Rústica</h6>
+<ul>
+<li><strong>Dano:</strong>  Nenhum</li>
+<li><strong>Tipo:</strong>  Instrumento sagrado, foco de fé</li>
+<li><strong>Alcance:</strong>  —</li>
+<li><strong>Propriedade Extra:</strong>  +1 contra mortos-vivos ou efeitos sombrios
+🔗 Veja mais: [[Equipamentos/Armas/Cruz de Madeira Rústica]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais">Armaduras Iniciais</h6>
+<h6 id="veste-clerical-refor-ada">🛡️ Veste Clerical Reforçada</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de resistência espiritual e contra maldições leves
+🔗 Veja mais: [[Equipamentos/Armaduras/Veste Clerical Reforçada]]</li>
+</ul>
+<h6 id="manto-de-prega-o-de-linho-grosso">🛡️ Manto de Pregação de Linho Grosso</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura média leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Persuasão, Fé ou Oratória
+🔗 Veja mais: [[Equipamentos/Armaduras/Manto de Pregação de Linho Grosso]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio">Item Utilitário</h6>
+<h6 id="livro-sagrado-de-bolso">📖 Livro Sagrado de Bolso</h6>
+<ul>
+<li><strong>Tipo:</strong>  Artefato de fé</li>
+<li><strong>Efeito Narrativo:</strong>  Contém orações, dogmas e ensinamentos para conversão e proteção</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Fé, Dogma ou resistência a corrupção espiritual
+🔗 Veja mais: [[Equipamentos/Utilitários/Livro Sagrado de Bolso]]</li>
+</ul>
+<hr>
+<h5 id="mosqueteiro">🔫 Mosqueteiro</h5>
+<h6 id="vis-o-geral-2">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Colonizador</li>
+<li><strong>Estilo de Jogo:</strong>  Atirador de elite, controle à distância, dano explosivo</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Conhecimento</li>
+<li><strong>Armas Permitidas:</strong>  Mosquete, Pistola de Pólvora, Armas de fogo</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves adaptadas para disparo e mobilidade</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Engenharia</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-2">🧙 Descrição Narrativa</h6>
+<p>O Mosqueteiro representa o avanço da pólvora e da engenharia bélica trazida pelos colonizadores. Treinado em técnicas de disparo, manutenção de armamentos e posicionamento estratégico, o Mosqueteiro é especialista em causar dano à distância e controlar o campo de batalha com precisão mortal.</p>
+<hr>
+<h6 id="estilo-de-jogo-2">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Alto dano concentrado à distância</li>
+<li>Disparo tático com tempo de preparação</li>
+<li>Vantagens ao iniciar o combate com iniciativa</li>
+<li>Requer recarga entre disparos, exigindo planejamento</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-2">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Mira, esquiva e velocidade de reação</td>
+<td>Afeta ataque à distância, iniciativa e movimentação leve</td>
+</tr>
+<tr>
+<td><strong>Conhecimento</strong></td>
+<td>Manutenção de armas, recarga e engenharia</td>
+<td>Necessário para usar armamentos com precisão e confiabilidade</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-2">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Mosquete, Pistola de Pólvora, armas de fogo com recarga</li>
+<li><strong>Armaduras:</strong>  Leves e táticas, adaptadas para movimento e disparo</li>
+<li><strong>Itens Utilitários:</strong>  Estojos de pólvora, acessórios de mira, ferramentas de manutenção</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-2">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Mosquete Enferrujado de Carga Lenta</li>
+<li>Pistola de Pólvora Improvisada</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Colete Almofadado com Alça de Pólvora</li>
+<li>Capa de Tiro Colonial</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Estojinho de Pólvora Decorado</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-2">Habilidades Iniciais</h6>
+<h6 id="tiro-preparado-ativa">Tiro Preparado (Ativa)</h6>
+<p><strong>Efeito:</strong>  No primeiro turno, o personagem prepara o disparo. No segundo, dispara com +3 de dano e +2 na rolagem de ataque
+<strong>Recarga:</strong>  1 turno (após o disparo)
+<strong>Alcance:</strong>  Arma de fogo equipada
+<strong>Condição:</strong>  Precisa de dois turnos consecutivos para ativação total</p>
+<h6 id="mestre-da-p-lvora-passiva">Mestre da Pólvora (Passiva)</h6>
+<p><strong>Efeito:</strong>  Ignora a primeira penalidade de recarga por combate. Prepara armas de fogo 2x mais rápido fora de combate
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Equipado com arma de fogo</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-2">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engenharia</td>
+<td>Refinamento</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Mosqueteiro ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-2">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-2">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Mosqueteiro:</strong>  Especialista em disparo e controle de campo</li>
+<li><strong>Tier 2 – Artilheiro Tático:</strong>  Ganha técnicas de munição especial, disparo em área e recargas otimizadas</li>
+<li><strong>Tier 3 – Mestre da Balística:</strong>  Capaz de modificar armas, criar projéteis mágicos e atingir múltiplos inimigos
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-2">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Comece combates com  <strong>Tiro Preparado</strong>  para causar impacto inicial devastador</li>
+<li>Aproveite  <strong>Mestre da Pólvora</strong>  para manter disparos frequentes no início</li>
+<li>Use cobertura e reposicionamento entre disparos devido à necessidade de recarga</li>
+<li>Ideal para proteger a retaguarda ou eliminar alvos prioritários</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-2">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>DPS à distância (foco em burst inicial)</li>
+<li>Controle de campo</li>
+<li>Suporte em emboscadas e embates estratégicos
+<strong>Descrição:</strong>
+O Mosqueteiro é a “bala de prata” do grupo. Sua força está em abrir combates com força total, eliminar inimigos frágeis ou estratégicos, e manter a pressão com recargas bem planejadas. Quando bem posicionado, é capaz de decidir o rumo de uma batalha com um único disparo certeiro.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-2">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-2">Armas Iniciais</h6>
+<h6 id="mosquete-enferrujado-de-carga-lenta">🔫 Mosquete Enferrujado de Carga Lenta</h6>
+<ul>
+<li><strong>Dano:</strong>  1D10</li>
+<li><strong>Tipo:</strong>  Perfuração, ataque à distância (arma de fogo)</li>
+<li><strong>Alcance:</strong>  15 metros</li>
+<li><strong>Propriedade Extra:</strong>  Requer 1 turno de recarga após cada disparo
+🔗 Veja mais: [[Equipamentos/Armas/Mosquete Enferrujado de Carga Lenta]]</li>
+</ul>
+<h6 id="pistola-de-p-lvora-improvisada">🔫 Pistola de Pólvora Improvisada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D8</li>
+<li><strong>Tipo:</strong>  Perfuração, ataque à distância (arma de fogo)</li>
+<li><strong>Alcance:</strong>  8 metros</li>
+<li><strong>Propriedade Extra:</strong>  Recarga obrigatória após disparo único
+🔗 Veja mais: [[Equipamentos/Armas/Pistola de Pólvora Improvisada]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-2">Armaduras Iniciais</h6>
+<h6 id="colete-almofadado-com-al-a-de-p-lvora">🧥 Colete Almofadado com Alça de Pólvora</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Recarga ou Manutenção de Armas de Fogo
+🔗 Veja mais: [[Equipamentos/Armaduras/Colete Almofadado com Alça de Pólvora]]</li>
+</ul>
+<h6 id="capa-de-tiro-colonial">🧥 Capa de Tiro Colonial</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  Vantagem em testes de Furtividade ao atirar e recuar
+🔗 Veja mais: [[Equipamentos/Armaduras/Capa de Tiro Colonial]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-2">Item Utilitário</h6>
+<h6 id="estojinho-de-p-lvora-decorado">🎯 Estojinho de Pólvora Decorado</h6>
+<ul>
+<li><strong>Tipo:</strong>  Equipamento bélico</li>
+<li><strong>Efeito Narrativo:</strong>  Armazena pólvora e munição de forma organizada</li>
+<li><strong>Uso Mecânico:</strong>  Ignora a primeira penalidade de recarga após troca rápida de arma
+🔗 Veja mais: [[Equipamentos/Utilitários/Estojinho de Pólvora Decorado]]</li>
+</ul>
+<hr>
+<h5 id="explorador-de-terras">🧭 Explorador de Terras</h5>
+<h6 id="vis-o-geral-3">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Colonizador</li>
+<li><strong>Estilo de Jogo:</strong>  Suporte tático, exploração e armadilhas</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Sabedoria Ancestral</li>
+<li><strong>Armas Permitidas:</strong>  Adaga, Espada curta, Lanças leves</li>
+<li><strong>Armaduras Permitidas:</strong>  Armaduras leves e roupas de exploração</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Cartografia</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-3">🧙 Descrição Narrativa</h6>
+<p>O Explorador de Terras é o desbravador do novo mundo. Ele domina a leitura de mapas, terrenos perigosos e segredos ocultos. Especialista em armadilhas e navegação, essa classe é vital em regiões desconhecidas, florestas, montanhas e ruínas esquecidas. É um suporte inteligente, tático, e com habilidade de antecipar perigos.</p>
+<hr>
+<h6 id="estilo-de-jogo-3">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Suporte técnico em ambientes selvagens</li>
+<li>Criação de armadilhas improvisadas</li>
+<li>Liderança na exploração de mapas e caminhos</li>
+<li>Evita emboscadas e melhora a movimentação do grupo</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-3">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Reflexos, criação de armadilhas, furtividade</td>
+<td>Melhora movimentação, furtividade e reação rápida</td>
+</tr>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Percepção e navegação</td>
+<td>Essencial para detectar caminhos, perigos e armadilhas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-3">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Espada curta, Adaga, Lança leve</li>
+<li><strong>Armaduras:</strong>  Leves, com foco em mobilidade e resistência a clima/terreno</li>
+<li><strong>Itens Utilitários:</strong>  Bússolas, pergaminhos de mapas, apetrechos de campo</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-3">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Espada Curta de Latão Colonial</li>
+<li>Adaga de Bota Oculta</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Túnica de Couro Costurado</li>
+<li>Casaco com Mapas Bordados</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Bússola de Madeira Marítima</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-3">Habilidades Iniciais</h6>
+<h6 id="reconhecimento-r-pido-ativa">Reconhecimento Rápido (Ativa)</h6>
+<p><strong>Efeito:</strong>  Todos os aliados ganham +2 em Iniciativa e Percepção até o próximo turno
+<strong>Recarga:</strong>  3 turnos
+<strong>Alcance:</strong>  Ação bônus, efeito em área
+<strong>Condição:</strong>  Usável fora de combate ou no primeiro turno</p>
+<h6 id="cartografia-pr-tica-passiva">Cartografia Prática (Passiva)</h6>
+<p><strong>Efeito:</strong>  Nunca se perde em áreas visitadas; +2 em testes de Navegação e interpretação de mapas
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Aplica-se a ambientes conhecidos ou parcialmente explorados</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-3">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartografia</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Explorador de Terras ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-3">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-3">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Explorador de Terras:</strong>  Suporte, rastreador e especialista em terreno</li>
+<li><strong>Tier 2 – Intendente Colonial:</strong>  Ganha bônus de liderança, táticas de acampamento e reforços de campo</li>
+<li><strong>Tier 3 – Mestre de Cartografia:</strong>  Pode redesenhar mapas mágicos, criar atalhos e prever perigos
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-3">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Antecipe emboscadas com  <strong>Cartografia Prática</strong></li>
+<li>Use  <strong>Reconhecimento Rápido</strong>  antes de combates importantes para garantir vantagem tática</li>
+<li>Priorize ações fora de combate em ambientes naturais</li>
+<li>Ideal para conduzir o grupo em missões de exploração ou infiltração</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-3">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Suporte estratégico</li>
+<li>Exploração e rastreamento</li>
+<li>Controle de terreno
+<strong>Descrição:</strong>
+O Explorador de Terras não é apenas um guia — é a ponte entre o grupo e o desconhecido. Suas habilidades são fundamentais para evitar armadilhas, encontrar rotas seguras, e manter a eficiência da jornada. Ele é o elo tático do time e age como olhos do grupo.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-3">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-3">Armas Iniciais</h6>
+<h6 id="espada-curta-de-lat-o-colonial">🗺️ Espada Curta de Latão Colonial</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corte leve, corpo a corpo</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Extra:</strong>  +1 em testes de reação ao ser emboscado
+🔗 Veja mais: [[Equipamentos/Armas/Espada Curta de Latão Colonial]]</li>
+</ul>
+<h6 id="adaga-de-bota-oculta">🗺️ Adaga de Bota Oculta</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Perfuração, corpo a corpo</li>
+<li><strong>Alcance:</strong>  0,5 metro</li>
+<li><strong>Extra:</strong>  Pode ser escondida em verificações de busca simples
+🔗 Veja mais: [[Equipamentos/Armas/Adaga de Bota Oculta]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-3">Armaduras Iniciais</h6>
+<h6 id="t-nica-de-couro-costurado">🧥 Túnica de Couro Costurado</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Extra:</strong>  +1 em testes de Navegação e Sobrevivência
+🔗 Veja mais: [[Equipamentos/Armaduras/Túnica de Couro Costurado]]</li>
+</ul>
+<h6 id="casaco-com-mapas-bordados">🧥 Casaco com Mapas Bordados</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve funcional</li>
+<li><strong>Extra:</strong>  Permite identificar armadilhas e caminhos escondidos com +1
+🔗 Veja mais: [[Equipamentos/Armaduras/Casaco com Mapas Bordados]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-3">Item Utilitário</h6>
+<h6 id="b-ssola-de-madeira-mar-tima">🧭 Bússola de Madeira Marítima</h6>
+<ul>
+<li><strong>Tipo:</strong>  Equipamento de navegação</li>
+<li><strong>Efeito Narrativo:</strong>  Ajuda a se orientar mesmo sem mapas</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Navegação e Mapeamento
+🔗 Veja mais: [[Equipamentos/Utilitários/Bússola de Madeira Marítima]]</li>
+</ul>
+<hr>
+<h5 id="conquistador">🛡️ Conquistador</h5>
+<h6 id="vis-o-geral-4">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Colonizador</li>
+<li><strong>Estilo de Jogo:</strong>  Tank clássico com foco em provocação, resistência e proteção do grupo</li>
+<li><strong>Atributos Recomendados:</strong>  Vigor, Força Bruta</li>
+<li><strong>Armas Permitidas:</strong>  Espada longa, Maça, Lança (tiers superiores)</li>
+<li><strong>Armaduras Permitidas:</strong>  Armaduras pesadas e escudos metálicos</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Mineração</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-4">🧙 Descrição Narrativa</h6>
+<p>O Conquistador representa a força organizada dos exércitos coloniais. Líder de linhas de frente e mestre da disciplina militar, ele é a  <strong>muralha viva</strong>  que protege seus aliados e impõe ordem no caos do campo de batalha.
+Forjado entre a fé institucional e a necessidade de domar terras desconhecidas, carrega consigo  <strong>fé, honra, autoridade — e uma maça pronta para esmagar resistências</strong> .</p>
+<hr>
+<h6 id="estilo-de-jogo-4">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Atrai a atenção dos inimigos com provocação tática</li>
+<li>Resiste a empurrões e efeitos de controle físico</li>
+<li>Protege aliados ao segurar inimigos e absorver dano</li>
+<li>Ideal para manter o controle do campo de batalha</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-4">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vigor</strong></td>
+<td>PV e resistência física</td>
+<td>Permite maior sobrevivência e durabilidade</td>
+</tr>
+<tr>
+<td><strong>Força Bruta</strong></td>
+<td>Dano corpo a corpo, bloqueios</td>
+<td>Potencializa ataques com maça e espada</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-4">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Espada longa, Maça, Lança (tiers futuros)</li>
+<li><strong>Armaduras:</strong>  Armaduras pesadas (metálicas, couraças coloniais), escudos metálicos</li>
+<li><strong>Itens Utilitários:</strong>  Medalhões religiosos, insígnias militares, artefatos de fé</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-4">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Espada de Ferro Mal Forjada</li>
+<li>Maça de Cabeça Rachada</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Couraça de Couro com Reforço de Ferro</li>
+<li>Elmo de Couro com Cruz Colonial</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Medalhão de São Jorge</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-4">Habilidades Iniciais</h6>
+<h6 id="provoca-o-t-tica-ativa">Provocação Tática (Ativa)</h6>
+<p><strong>Efeito:</strong>  Inimigos em até 2 metros devem focar ataques no Conquistador (CD 13 de Sabedoria)
+<strong>Recarga:</strong>  3 turnos
+<strong>Alcance:</strong>  2 metros
+<strong>Condição:</strong>  O Conquistador deve estar visível e com arma equipada</p>
+<h6 id="postura-inabal-vel-passiva">Postura Inabalável (Passiva)</h6>
+<p><strong>Efeito:</strong>  Com armadura pesada equipada, recebe +1 de Defesa e imunidade a empurrões simples
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Armadura pesada equipada</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-4">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mineração</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Conquistador ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-4">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  14</li>
+<li><strong>Fórmula de PV Inicial:</strong>  14 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  7 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-4">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Conquistador:</strong>  Especialista em contenção e controle de território</li>
+<li><strong>Tier 2 – Capitão de Vanguarda:</strong>  Comando tático, aura de liderança e moral de grupo</li>
+<li><strong>Tier 3 – Emissário da Ordem:</strong>  Inspira aliados, resiste a magias e reforça linhas com fé e disciplina
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-4">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Provocação Tática</strong>  no início do combate para redirecionar o foco dos inimigos</li>
+<li>Mantenha  <strong>Postura Inabalável</strong>  com escudos e armadura pesada para formar uma barreira defensiva</li>
+<li>Ideal para proteger curandeiros e personagens frágeis</li>
+<li>Pode controlar corredores estreitos ou entradas de combate</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-4">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Atrair o foco dos inimigos (tank)</li>
+<li>Proteger aliados frágeis com presença física</li>
+<li>Controlar posicionamento do grupo
+<strong>Descrição:</strong>
+O Conquistador se posiciona na frente do grupo, tomando a linha de impacto e forçando o inimigo a lidar com sua presença. Ele bloqueia o avanço, protege curandeiros e magos, e cria tempo para que os aliados executem suas estratégias.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-4">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-4">Armas Iniciais</h6>
+<h6 id="espada-de-ferro-mal-forjada">⚔️ Espada de Ferro Mal Forjada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corte, corpo a corpo</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser usada para aparar golpes leves (+1 em Defesa em reação)
+🔗 Veja mais: [[Equipamentos/Armas/Espada de Ferro Mal Forjada]]</li>
+</ul>
+<h6 id="ma-a-de-cabe-a-rachada">⚔️ Maça de Cabeça Rachada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Contusão, corpo a corpo</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  Ignora 1 ponto de armadura leve
+🔗 Veja mais: [[Equipamentos/Armas/Maça de Cabeça Rachada]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-4">Armaduras Iniciais</h6>
+<h6 id="coura-a-de-couro-com-refor-o-de-ferro">🛡️ Couraça de Couro com Reforço de Ferro</h6>
+<ul>
+<li><strong>Defesa:</strong>  2</li>
+<li><strong>Tipo:</strong>  Armadura pesada</li>
+<li><strong>Propriedade Extra:</strong>  Reduz em 1 o dano físico de ataques corpo a corpo
+🔗 Veja mais: [[Equipamentos/Armaduras/Couraça de Couro com Reforço de Ferro]]</li>
+</ul>
+<h6 id="elmo-de-couro-com-cruz-colonial">🛡️ Elmo de Couro com Cruz Colonial</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura pesada (acessório de cabeça)</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de resistência contra efeitos de medo ou intimidação
+🔗 Veja mais: [[Equipamentos/Armaduras/Elmo de Couro com Cruz Colonial]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-4">Item Utilitário</h6>
+<h6 id="medalh-o-de-s-o-jorge">✝️ Medalhão de São Jorge</h6>
+<ul>
+<li><strong>Tipo:</strong>  Amuleto religioso</li>
+<li><strong>Efeito Narrativo:</strong>  Símbolo de fé e bravura</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes contra medo e controle mental
+🔗 Veja mais: [[Equipamentos/Utilitários/Medalhão de São Jorge]]</li>
+</ul>
+<hr>
+<h4 id="classes-ind-gena">Classes Indígena</h4>
+<h5 id="xam-curandeiro">🌿 Xamã Curandeiro</h5>
+<h6 id="vis-o-geral-5">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  Suporte mágico e espiritual, com foco em cura, proteção e rituais</li>
+<li><strong>Atributos Recomendados:</strong>  Sabedoria Ancestral, Conhecimento</li>
+<li><strong>Armas Permitidas:</strong>  Cajado, Talismã espiritual</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves, espirituais e rituais</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Herborismo</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-5">🧙 Descrição Narrativa</h6>
+<p>O Xamã Curandeiro canaliza os espíritos ancestrais, as ervas sagradas e a sabedoria dos rituais para proteger sua comunidade. Seu poder não está em causar dano, mas em restaurar, purificar e harmonizar. Suas palavras acalmam a dor, seus símbolos repelem maldições, e suas oferendas curam feridas tanto do corpo quanto da alma.
+Mais do que um curandeiro, é um elo entre o mundo físico e o espiritual — respeitado, temido e buscado em momentos de crise.</p>
+<hr>
+<h6 id="estilo-de-jogo-5">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Cura aliados com magias simples e eficazes</li>
+<li>Purifica maldições e protege contra influências espirituais</li>
+<li>Atua à distância e em apoio, longe da linha de frente</li>
+<li>Potencializa rituais e interações com o sobrenatural</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-5">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Magias espirituais, rituais, percepção mágica</td>
+<td>Principal atributo das habilidades e testes espirituais</td>
+</tr>
+<tr>
+<td><strong>Conhecimento</strong></td>
+<td>Herborismo, alquimia, reconhecimento de efeitos</td>
+<td>Fortalece a prática de cura e criação de poções</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-5">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Cajado, Talismã espiritual</li>
+<li><strong>Armaduras:</strong>  Leves, de fibras naturais e tecidos ritualísticos</li>
+<li><strong>Itens Utilitários:</strong>  Colares de sementes, objetos totêmicos, talhas de cura</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-5">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Cajado Rachado de Cipó</li>
+<li>Talismã de Ossos Espirituais</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Manto Cerimonial de Palha</li>
+<li>Túnica de Ervas Trançadas</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Colar de Sementes Rituais</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-5">Habilidades Iniciais</h6>
+<h6 id="oferenda-curativa-ativa">Oferenda Curativa (Ativa)</h6>
+<p><strong>Efeito:</strong>  Cura 1D6 + Sabedoria Ancestral de um aliado a até 3 metros
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  3 metros
+<strong>Condição:</strong>  Precisa estar consciente e canalizando a cura com um símbolo ritualístico</p>
+<h6 id="chamado-dos-esp-ritos-passiva">Chamado dos Espíritos (Passiva)</h6>
+<p><strong>Efeito:</strong>  Realiza rituais simples em metade do tempo. Vantagem em testes contra maldições e efeitos espirituais
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  —</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-5">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Herborismo</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Xamã Curandeiro ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-5">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  10</li>
+<li><strong>Fórmula de PV Inicial:</strong>  10 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  5 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-5">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Xamã Curandeiro:</strong>  Suporte básico, foco em cura e resistência espiritual</li>
+<li><strong>Tier 2 – Mediador dos Espíritos:</strong>  Consegue realizar invocações leves e reforçar aliados espiritualmente</li>
+<li><strong>Tier 3 – Guardião dos Ritos Sagrados:</strong>  Canaliza grandes espíritos, purifica territórios e abençoa o grupo
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-5">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Oferenda Curativa</strong>  com sabedoria para salvar aliados em momentos críticos</li>
+<li>Posicione-se atrás da linha de frente e mantenha a visão do campo de batalha</li>
+<li>Potencialize rituais com  <strong>Chamado dos Espíritos</strong> , tornando-se um pilar em encontros mágicos</li>
+<li>Ideal para campanhas com forte presença espiritual, maldições ou desequilíbrio mágico</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-5">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Cura e suporte espiritual</li>
+<li>Resistência a maldições e efeitos sobrenaturais</li>
+<li>Potencializador de rituais e conexões com o mundo invisível
+<strong>Descrição:</strong>
+O Xamã Curandeiro atua como o coração espiritual do grupo. Com sabedoria ancestral e vínculos com o invisível, ele protege a equipe de males que não se veem e restaura a esperança quando tudo parece perdido.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-5">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-5">Armas Iniciais</h6>
+<h6 id="cajado-rachado-de-cip">🌿 Cajado Rachado de Cipó</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, contusão</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de rituais xamânicos
+🔗 Veja mais: [[Equipamentos/Armas/Cajado Rachado de Cipó]]</li>
+</ul>
+<h6 id="talism-de-ossos-espirituais">🌿 Talismã de Ossos Espirituais</h6>
+<ul>
+<li><strong>Dano:</strong>  Nenhum</li>
+<li><strong>Tipo:</strong>  Instrumento espiritual</li>
+<li><strong>Alcance:</strong>  —</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de detecção ou interação com presenças espirituais
+🔗 Veja mais: [[Equipamentos/Armas/Talismã de Ossos Espirituais]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-5">Armaduras Iniciais</h6>
+<h6 id="manto-cerimonial-de-palha">🛡️ Manto Cerimonial de Palha</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve, espiritual</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Rituais ou Sabedoria Ancestral
+🔗 Veja mais: [[Equipamentos/Armaduras/Manto Cerimonial de Palha]]</li>
+</ul>
+<h6 id="t-nica-de-ervas-tran-adas">🛡️ Túnica de Ervas Trançadas</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Herborismo e criação de poções simples
+🔗 Veja mais: [[Equipamentos/Armaduras/Túnica de Ervas Trançadas]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-5">Item Utilitário</h6>
+<h6 id="colar-de-sementes-rituais">🌱 Colar de Sementes Rituais</h6>
+<ul>
+<li><strong>Tipo:</strong>  Utilitário espiritual</li>
+<li><strong>Efeito Narrativo:</strong>  Usado em rituais de cura e oferendas</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Herborismo e identificação de plantas medicinais
+🔗 Veja mais: [[Equipamentos/Utilitários/Colar de Sementes Rituais]]
+---### 🏹 Arqueiro Selvagem</li>
+</ul>
+<h6 id="vis-o-geral-6">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  DPS à distância, furtivo, especialista em emboscadas e mobilidade natural</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Vigor</li>
+<li><strong>Armas Permitidas:</strong>  Arco, Zarabatana</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves de couro, peles, trajes adaptáveis</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Arquearia</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-6">🧙 Descrição Narrativa</h6>
+<p>O Arqueiro Selvagem é o mestre do arco silencioso e do movimento entre as árvores. Caçador nato e inimigo letal à distância, domina o uso da paisagem natural como cobertura e o silêncio como arma. Um único disparo pode ser o início e o fim de uma batalha.
+Além de guerreiro, é observador e vigilante. Seu olhar afiado vê além do óbvio, sendo peça-chave para sobrevivência e emboscadas do grupo.</p>
+<hr>
+<h6 id="estilo-de-jogo-6">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Especialista em combate à distância</li>
+<li>Ideal para emboscadas e ataques furtivos</li>
+<li>Ganha vantagem em terrenos naturais e em missões de exploração</li>
+<li>Utiliza movimentação leve e recuo tático</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-6">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Precisão, iniciativa, furtividade</td>
+<td>Essencial para ataques à distância e movimentos rápidos</td>
+</tr>
+<tr>
+<td><strong>Vigor</strong></td>
+<td>Resistência física e mobilidade</td>
+<td>Mantém-se ativo mesmo em terrenos difíceis</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-6">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Arco, Zarabatana, Lanças leves (futuras)</li>
+<li><strong>Armaduras:</strong>  Leves, adaptadas ao ambiente (couro, peles)</li>
+<li><strong>Itens Utilitários:</strong>  Medalhões de caça, pingentes de presas, artefatos de camuflagem</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-6">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Arco de Madeira Rústico</li>
+<li>Zarabatana com Dardos Simples</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Proteção de Ombro em Couro Cru</li>
+<li>Colete de Pele Costurada</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Medalhão de Presas Animais</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-6">Habilidades Iniciais</h6>
+<h6 id="tiro-furtivo-ativa">Tiro Furtivo (Ativa)</h6>
+<p><strong>Efeito:</strong>  Se o alvo ainda não agiu no combate, causa +2 de dano
+<strong>Recarga:</strong>  1 turno
+<strong>Alcance:</strong>  Conforme alcance da arma utilizada
+<strong>Condição:</strong>  O alvo deve estar desprevenido ou ser o primeiro ataque no turno</p>
+<h6 id="passos-silenciosos-passiva">Passos Silenciosos (Passiva)</h6>
+<p><strong>Efeito:</strong>  Ignora penalidades de terreno difícil e recebe +2 em testes de Furtividade em ambientes naturais
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Terreno natural (ex: floresta, selva, mata)</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-6">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arquearia</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Arqueiro Selvagem ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-6">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-6">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Arqueiro Selvagem:</strong>  Disparo furtivo, mobilidade e domínio de florestas</li>
+<li><strong>Tier 2 – Olho da Floresta:</strong>  Ganha visão ampliada, flechas especiais e mira precisa</li>
+<li><strong>Tier 3 – Espírito da Caça:</strong>  Invoca forças naturais, ataques imbuídos e camuflagem sobrenatural
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-6">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Abra combates com  <strong>Tiro Furtivo</strong>  para causar dano elevado logo no início</li>
+<li>Use  <strong>Passos Silenciosos</strong>  para manter mobilidade em florestas e evitar armadilhas</li>
+<li>Reposicione-se constantemente para disparar de locais seguros</li>
+<li>Combine ataques à distância com aliados corpo a corpo para desestabilizar o inimigo</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-6">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Iniciador de combate</li>
+<li>Disparo de cobertura e suporte</li>
+<li>Rastreamento e vigilância
+<strong>Descrição:</strong>
+O Arqueiro Selvagem nunca está onde o inimigo espera. Seu papel é atingir, recuar e observar. É a primeira linha de ataque quando o silêncio precede a guerra e a última sombra que se afasta após a caçada bem-sucedida.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-6">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-6">Armas Iniciais</h6>
+<h6 id="arco-de-madeira-r-stico">🏹 Arco de Madeira Rústico</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Ataque à distância, perfuração</li>
+<li><strong>Alcance:</strong>  10 metros</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser disparado furtivamente sem revelar posição
+🔗 Veja mais: [[Equipamentos/Armas/Arco de Madeira Rústico]]</li>
+</ul>
+<h6 id="zarabatana-com-dardos-simples">🏹 Zarabatana com Dardos Simples</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Ataque à distância, silencioso</li>
+<li><strong>Alcance:</strong>  10 metros</li>
+<li><strong>Propriedade Extra:</strong>  Inimigos desprevenidos têm desvantagem para detectar o atirador
+🔗 Veja mais: [[Equipamentos/Armas/Zarabatana com Dardos Simples]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-6">Armaduras Iniciais</h6>
+<h6 id="prote-o-de-ombro-em-couro-cru">🛡️ Proteção de Ombro em Couro Cru</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  Ignora penalidades de movimento em terreno irregular
+🔗 Veja mais: [[Equipamentos/Armaduras/Proteção de Ombro em Couro Cru]]</li>
+</ul>
+<h6 id="colete-de-pele-costurada">🛡️ Colete de Pele Costurada</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Reflexo contra ataques à distância
+🔗 Veja mais: [[Equipamentos/Armaduras/Colete de Pele Costurada]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-6">Item Utilitário</h6>
+<h6 id="medalh-o-de-presas-animais">🧿 Medalhão de Presas Animais</h6>
+<ul>
+<li><strong>Tipo:</strong>  Amuleto simbólico</li>
+<li><strong>Efeito Narrativo:</strong>  Representa caçadas bem-sucedidas e conexão espiritual com os animais</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Furtividade ao ar livre
+🔗 Veja mais: [[Equipamentos/Utilitários/Medalhão de Presas Animais]]
+---### 🦅 Caçador de Feras</li>
+</ul>
+<h6 id="vis-o-geral-7">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  DPS móvel, rastreador, mestre do ambiente selvagem</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Sabedoria Ancestral</li>
+<li><strong>Armas Permitidas:</strong>  Lança leve, Adaga</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves naturais (couro, peles)</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Rastreamento</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-7">🧙 Descrição Narrativa</h6>
+<p>O Caçador de Feras é moldado pela floresta. Desde jovem, aprendeu a ler pegadas, sentir o vento e ouvir os sons da mata como se fossem palavras. É paciente, mortal, e raramente visto antes de atacar. Suas presas podem ser animais selvagens ou inimigos que ousaram invadir seu território.
+Movendo-se em silêncio e dominando os terrenos mais hostis, ele representa a simbiose entre o humano e a natureza, sendo também um guia e um protetor espiritual de sua tribo.</p>
+<hr>
+<h6 id="estilo-de-jogo-7">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Atua como DPS tático com foco em rastreamento e mobilidade</li>
+<li>Excelente para combates em ambientes naturais</li>
+<li>Usa ataques precisos à distância ou corpo a corpo leve</li>
+<li>Ganha vantagem em florestas, matas e selvas</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-7">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Furtividade, reação, precisão</td>
+<td>Auxilia nos ataques rápidos e em testes de movimentação</td>
+</tr>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Percepção, rastreamento, intuição</td>
+<td>Potencializa leitura do ambiente e caça em terreno selvagem</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-7">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Lança leve, Adaga, Armas de arremesso</li>
+<li><strong>Armaduras:</strong>  Leves de couro e peles naturais</li>
+<li><strong>Itens Utilitários:</strong>  Amuletos de rastreio, colares de presas, símbolos tribais</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-7">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Lança de Osso Lascada</li>
+<li>Adaga de Pedra Serrilhada</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Couro Flexível de Caçador</li>
+<li>Faixa de Peles Amarradas</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Cinto de Presas e Pegadas</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-7">Habilidades Iniciais</h6>
+<h6 id="arremesso-r-pido-ativa">Arremesso Rápido (Ativa)</h6>
+<p><strong>Efeito:</strong>  Realiza um ataque à distância com +2 na rolagem de ataque
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  10 metros
+<strong>Condição:</strong>  Requer arma de arremesso equipada</p>
+<h6 id="rastreio-natural-passiva">Rastreio Natural (Passiva)</h6>
+<p><strong>Efeito:</strong>  +2 em testes de Percepção e Sobrevivência em ambientes selvagens
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Apenas em terrenos naturais (ex: floresta, selva, cerrado)</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-7">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rastreamento</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Caçador de Feras ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-7">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-7">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Caçador de Feras:</strong>  Mestre do rastreio e mobilidade, com ataques de precisão e surpresa</li>
+<li><strong>Tier 2 – Predador das Sombras:</strong>  Especialista em emboscadas, armadilhas e movimentação silenciosa</li>
+<li><strong>Tier 3 – Guardião da Selva:</strong>  Domina a fauna e flora, com habilidades de controle e resistência natural
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-7">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Ataque de longe com  <strong>Arremesso Rápido</strong>  para eliminar alvos frágeis</li>
+<li>Use  <strong>Rastreio Natural</strong>  para guiar o grupo em territórios perigosos</li>
+<li>Ideal como batedor ou caçador em aventuras de exploração</li>
+<li>Perfeito para emboscadas e reconhecimento do ambiente</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-7">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Rastreador e guia do grupo</li>
+<li>Eliminador rápido de alvos frágeis</li>
+<li>Iniciador silencioso de combate
+<strong>Descrição:</strong>
+O Caçador de Feras se move onde ninguém pisa, vê o que ninguém vê e ataca antes que o inimigo reaja. Sua presença é discreta, mas letal. É indispensável para sobrevivência em missões em território hostil.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-7">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-7">Armas Iniciais</h6>
+<h6 id="lan-a-de-osso-lascada">🦅 Lança de Osso Lascada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, perfuração</li>
+<li><strong>Alcance:</strong>  1 metro ou arremesso (até 4 metros, sem bônus)</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser equilibrada no futuro para arremesso com precisão
+🔗 Veja mais: [[Equipamentos/Armas/Lança de Osso Lascada]]</li>
+</ul>
+<h6 id="adaga-de-pedra-serrilhada">🦅 Adaga de Pedra Serrilhada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, corte e perfuração</li>
+<li><strong>Alcance:</strong>  0,5 metro</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Furtividade ao atacar de surpresa
+🔗 Veja mais: [[Equipamentos/Armas/Adaga de Pedra Serrilhada]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-7">Armaduras Iniciais</h6>
+<h6 id="couro-flex-vel-de-ca-ador">🛡️ Couro Flexível de Caçador</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em Furtividade em terreno selvagem
+🔗 Veja mais: [[Equipamentos/Armaduras/Couro Flexível de Caçador]]</li>
+</ul>
+<h6 id="faixa-de-peles-amarradas">🛡️ Faixa de Peles Amarradas</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve parcial</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Sobrevivência ao rastrear presas
+🔗 Veja mais: [[Equipamentos/Armaduras/Faixa de Peles Amarradas]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-7">Item Utilitário</h6>
+<h6 id="cinto-de-presas-e-pegadas">🦴 Cinto de Presas e Pegadas</h6>
+<ul>
+<li><strong>Tipo:</strong>  Cultural utilitário</li>
+<li><strong>Efeito Narrativo:</strong>  Representa histórico de caças bem-sucedidas</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Rastreamento ou Sobrevivência em matas
+🔗 Veja mais: [[Equipamentos/Utilitários/Cinto de Presas e Pegadas]]</li>
+</ul>
+<hr>
+<h5 id="guerreiro-tribal">🪓 Guerreiro Tribal</h5>
+<h6 id="vis-o-geral-8">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  Tank ofensivo, agressivo e protetor da linha de frente</li>
+<li><strong>Atributos Recomendados:</strong>  Vigor, Força Bruta</li>
+<li><strong>Armas Permitidas:</strong>  Lança, Clava</li>
+<li><strong>Armaduras Permitidas:</strong>  Médias artesanais (couro, peles tratadas)</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Caça</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-8">🧙 Descrição Narrativa</h6>
+<p>O Guerreiro Tribal é um defensor da terra, da floresta e do seu povo. Traz a força do clã em cada golpe e o espírito ancestral em cada movimento. Forjado nas lutas contra invasores e na proteção de sua comunidade, ele é símbolo de bravura, honra e respeito à ancestralidade.
+Suas armas são simples, mas mortais. Seu corpo é resistência viva. E sua presença, uma ameaça para qualquer um que desrespeite a floresta.</p>
+<hr>
+<h6 id="estilo-de-jogo-8">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Atua como tank agressivo na linha de frente</li>
+<li>Inicia o combate com investidas que rompem formações inimigas</li>
+<li>Resiste bem a dano físico e pressiona o adversário com força bruta</li>
+<li>Ideal para confrontos diretos e combate físico constante</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-8">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vigor</strong></td>
+<td>PV, resistência física</td>
+<td>Sustentação em combate prolongado</td>
+</tr>
+<tr>
+<td><strong>Força Bruta</strong></td>
+<td>Dano corpo a corpo</td>
+<td>Potencializa o uso de clavas e lanças</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-8">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Lança, Clava</li>
+<li><strong>Armaduras:</strong>  Armaduras médias de couro natural, trançados tribais</li>
+<li><strong>Itens Utilitários:</strong>  Tatuagens de guerra, símbolos espirituais, ornamentos de bravura</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-8">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Lança de Madeira Quebradiça</li>
+<li>Clava de Madeira Crua</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Peitoral de Couro Enrijecido</li>
+<li>Faixa Tribal de Ombro</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Tatuagem de Guerra (tinta espiritual simples)</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-8">Habilidades Iniciais</h6>
+<h6 id="investida-tribal-ativa">Investida Tribal (Ativa)</h6>
+<p><strong>Efeito:</strong>  Avança até 3 metros e realiza um ataque corpo a corpo com vantagem
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  3 metros
+<strong>Condição:</strong>  Requer linha reta livre e arma corpo a corpo equipada</p>
+<h6 id="esp-rito-do-cl-passiva">Espírito do Clã (Passiva)</h6>
+<p><strong>Efeito:</strong>  Se estiver com menos de 50% dos PV, recebe +1 em ataques corpo a corpo
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Ativa quando os PV estão abaixo da metade</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-8">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caça</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Guerreiro Tribal ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-8">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  14</li>
+<li><strong>Fórmula de PV Inicial:</strong>  14 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  7 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-8">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Guerreiro Tribal:</strong>  Agressivo e resiliente, mestre da investida e da linha de frente</li>
+<li><strong>Tier 2 – Veterano da Floresta:</strong>  Ganha habilidades de resistência natural e táticas de bloqueio</li>
+<li><strong>Tier 3 – Protetor do Clã:</strong>  Inspira aliados próximos, absorve dano pelo grupo e canaliza a força espiritual do clã
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-8">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Investida Tribal</strong>  para abrir o combate e desorganizar formações inimigas</li>
+<li>Permaneça na linha de frente para proteger aliados mais frágeis</li>
+<li>Aproveite  <strong>Espírito do Clã</strong>  como um reforço de força em momentos críticos</li>
+<li>Ótimo para confrontos contra inimigos corpo a corpo e em ambientes selvagens</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-8">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Iniciar confrontos</li>
+<li>Agir como tanque agressivo</li>
+<li>Servir de obstáculo entre inimigos e aliados
+<strong>Descrição:</strong>
+O Guerreiro Tribal não espera ser atacado — ele ataca primeiro. Sua investida quebra linhas, sua presença assusta, e sua conexão espiritual o torna um guerreiro de respeito e honra. Está sempre pronto para proteger e lutar.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-8">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-8">Armas Iniciais</h6>
+<h6 id="lan-a-de-madeira-quebradi-a">🪓 Lança de Madeira Quebradiça</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, perfuração</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser usada para empurrar inimigos (teste de Força Bruta)
+🔗 Veja mais: [[Equipamentos/Armas/Lança de Madeira Quebradiça]]</li>
+</ul>
+<h6 id="clava-de-madeira-crua">🪓 Clava de Madeira Crua</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, contusão</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  Eficaz contra inimigos com armaduras leves
+🔗 Veja mais: [[Equipamentos/Armas/Clava de Madeira Crua]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-8">Armaduras Iniciais</h6>
+<h6 id="peitoral-de-couro-enrijecido">🛡️ Peitoral de Couro Enrijecido</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura média</li>
+<li><strong>Propriedade Extra:</strong>  Reduz em 1 o dano de ataques corpo a corpo
+🔗 Veja mais: [[Equipamentos/Armaduras/Peitoral de Couro Enrijecido]]</li>
+</ul>
+<h6 id="faixa-tribal-de-ombro">🛡️ Faixa Tribal de Ombro</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura média leve (parcial)</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Intimidação em combates diretos
+🔗 Veja mais: [[Equipamentos/Armaduras/Faixa Tribal de Ombro]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-8">Item Utilitário</h6>
+<h6 id="tatuagem-de-guerra-tinta-espiritual-simples">🧿 Tatuagem de Guerra (tinta espiritual simples)</h6>
+<ul>
+<li><strong>Tipo:</strong>  Cultural (ritual de bravura)</li>
+<li><strong>Efeito Narrativo:</strong>  Indica pertencimento tribal e intimida inimigos</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Intimidação contra inimigos que reconhecem a tribo
+🔗 Veja mais: [[Equipamentos/Utilitários/Tatuagem de Guerra]]</li>
+</ul>
+<hr>
+<hr>
+<h5 id="ca-ador-de-feras">🦅 Caçador de Feras</h5>
+<h6 id="vis-o-geral-9">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  DPS móvel, rastreador, mestre do ambiente selvagem</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Sabedoria Ancestral</li>
+<li><strong>Armas Permitidas:</strong>  Lança leve, Adaga</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves naturais (couro, peles)</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Rastreamento</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-9">🧙 Descrição Narrativa</h6>
+<p>O Caçador de Feras é moldado pela floresta. Desde jovem, aprendeu a ler pegadas, sentir o vento e ouvir os sons da mata como se fossem palavras. É paciente, mortal, e raramente visto antes de atacar. Suas presas podem ser animais selvagens ou inimigos que ousaram invadir seu território.
+Movendo-se em silêncio e dominando os terrenos mais hostis, ele representa a simbiose entre o humano e a natureza, sendo também um guia e um protetor espiritual de sua tribo.</p>
+<hr>
+<h6 id="estilo-de-jogo-9">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Atua como DPS tático com foco em rastreamento e mobilidade</li>
+<li>Excelente para combates em ambientes naturais</li>
+<li>Usa ataques precisos à distância ou corpo a corpo leve</li>
+<li>Ganha vantagem em florestas, matas e selvas</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-9">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Furtividade, reação, precisão</td>
+<td>Auxilia nos ataques rápidos e em testes de movimentação</td>
+</tr>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Percepção, rastreamento, intuição</td>
+<td>Potencializa leitura do ambiente e caça em terreno selvagem</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-9">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Lança leve, Adaga, Armas de arremesso</li>
+<li><strong>Armaduras:</strong>  Leves de couro e peles naturais</li>
+<li><strong>Itens Utilitários:</strong>  Amuletos de rastreio, colares de presas, símbolos tribais</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-9">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Lança de Osso Lascada</li>
+<li>Adaga de Pedra Serrilhada</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Couro Flexível de Caçador</li>
+<li>Faixa de Peles Amarradas</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Cinto de Presas e Pegadas</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-9">Habilidades Iniciais</h6>
+<h6 id="arremesso-r-pido-ativa-2">Arremesso Rápido (Ativa)</h6>
+<p><strong>Efeito:</strong>  Realiza um ataque à distância com +2 na rolagem de ataque
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  10 metros
+<strong>Condição:</strong>  Requer arma de arremesso equipada</p>
+<h6 id="rastreio-natural-passiva-2">Rastreio Natural (Passiva)</h6>
+<p><strong>Efeito:</strong>  +2 em testes de Percepção e Sobrevivência em ambientes selvagens
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Apenas em terrenos naturais (ex: floresta, selva, cerrado)</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-9">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rastreamento</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Caçador de Feras ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-9">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-9">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Caçador de Feras:</strong>  Mestre do rastreio e mobilidade, com ataques de precisão e surpresa</li>
+<li><strong>Tier 2 – Predador das Sombras:</strong>  Especialista em emboscadas, armadilhas e movimentação silenciosa</li>
+<li><strong>Tier 3 – Guardião da Selva:</strong>  Domina a fauna e flora, com habilidades de controle e resistência natural
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-9">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Ataque de longe com  <strong>Arremesso Rápido</strong>  para eliminar alvos frágeis</li>
+<li>Use  <strong>Rastreio Natural</strong>  para guiar o grupo em territórios perigosos</li>
+<li>Ideal como batedor ou caçador em aventuras de exploração</li>
+<li>Perfeito para emboscadas e reconhecimento do ambiente</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-9">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Rastreador e guia do grupo</li>
+<li>Eliminador rápido de alvos frágeis</li>
+<li>Iniciador silencioso de combate
+<strong>Descrição:</strong>
+O Caçador de Feras se move onde ninguém pisa, vê o que ninguém vê e ataca antes que o inimigo reaja. Sua presença é discreta, mas letal. É indispensável para sobrevivência em missões em território hostil.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-9">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-9">Armas Iniciais</h6>
+<h6 id="lan-a-de-osso-lascada-2">🦅 Lança de Osso Lascada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, perfuração</li>
+<li><strong>Alcance:</strong>  1 metro ou arremesso (até 4 metros, sem bônus)</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser equilibrada no futuro para arremesso com precisão
+🔗 Veja mais: [[Equipamentos/Armas/Lança de Osso Lascada]]</li>
+</ul>
+<h6 id="adaga-de-pedra-serrilhada-2">🦅 Adaga de Pedra Serrilhada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, corte e perfuração</li>
+<li><strong>Alcance:</strong>  0,5 metro</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Furtividade ao atacar de surpresa
+🔗 Veja mais: [[Equipamentos/Armas/Adaga de Pedra Serrilhada]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-9">Armaduras Iniciais</h6>
+<h6 id="couro-flex-vel-de-ca-ador-2">🛡️ Couro Flexível de Caçador</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em Furtividade em terreno selvagem
+🔗 Veja mais: [[Equipamentos/Armaduras/Couro Flexível de Caçador]]</li>
+</ul>
+<h6 id="faixa-de-peles-amarradas-2">🛡️ Faixa de Peles Amarradas</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve parcial</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Sobrevivência ao rastrear presas
+🔗 Veja mais: [[Equipamentos/Armaduras/Faixa de Peles Amarradas]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-9">Item Utilitário</h6>
+<h6 id="cinto-de-presas-e-pegadas-2">🦴 Cinto de Presas e Pegadas</h6>
+<ul>
+<li><strong>Tipo:</strong>  Cultural utilitário</li>
+<li><strong>Efeito Narrativo:</strong>  Representa histórico de caças bem-sucedidas</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Rastreamento ou Sobrevivência em matas
+🔗 Veja mais: [[Equipamentos/Utilitários/Cinto de Presas e Pegadas]]</li>
+</ul>
+<hr>
+<h5 id="arqueiro-selvagem">🏹 Arqueiro Selvagem</h5>
+<h6 id="vis-o-geral-10">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Indígena</li>
+<li><strong>Estilo de Jogo:</strong>  DPS à distância, furtivo, especialista em emboscadas e mobilidade natural</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Vigor</li>
+<li><strong>Armas Permitidas:</strong>  Arco, Zarabatana</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves de couro, peles, trajes adaptáveis</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Arquearia</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-10">🧙 Descrição Narrativa</h6>
+<p>O Arqueiro Selvagem é o mestre do arco silencioso e do movimento entre as árvores. Caçador nato e inimigo letal à distância, domina o uso da paisagem natural como cobertura e o silêncio como arma. Um único disparo pode ser o início e o fim de uma batalha.
+Além de guerreiro, é observador e vigilante. Seu olhar afiado vê além do óbvio, sendo peça-chave para sobrevivência e emboscadas do grupo.</p>
+<hr>
+<h6 id="estilo-de-jogo-10">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Especialista em combate à distância</li>
+<li>Ideal para emboscadas e ataques furtivos</li>
+<li>Ganha vantagem em terrenos naturais e em missões de exploração</li>
+<li>Utiliza movimentação leve e recuo tático</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-10">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Precisão, iniciativa, furtividade</td>
+<td>Essencial para ataques à distância e movimentos rápidos</td>
+</tr>
+<tr>
+<td><strong>Vigor</strong></td>
+<td>Resistência física e mobilidade</td>
+<td>Mantém-se ativo mesmo em terrenos difíceis</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-10">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Arco, Zarabatana, Lanças leves (futuras)</li>
+<li><strong>Armaduras:</strong>  Leves, adaptadas ao ambiente (couro, peles)</li>
+<li><strong>Itens Utilitários:</strong>  Medalhões de caça, pingentes de presas, artefatos de camuflagem</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-10">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Arco de Madeira Rústico</li>
+<li>Zarabatana com Dardos Simples</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Proteção de Ombro em Couro Cru</li>
+<li>Colete de Pele Costurada</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Medalhão de Presas Animais</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-10">Habilidades Iniciais</h6>
+<h6 id="tiro-furtivo-ativa-2">Tiro Furtivo (Ativa)</h6>
+<p><strong>Efeito:</strong>  Se o alvo ainda não agiu no combate, causa +2 de dano
+<strong>Recarga:</strong>  1 turno
+<strong>Alcance:</strong>  Conforme alcance da arma utilizada
+<strong>Condição:</strong>  O alvo deve estar desprevenido ou ser o primeiro ataque no turno</p>
+<h6 id="passos-silenciosos-passiva-2">Passos Silenciosos (Passiva)</h6>
+<p><strong>Efeito:</strong>  Ignora penalidades de terreno difícil e recebe +2 em testes de Furtividade em ambientes naturais
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Terreno natural (ex: floresta, selva, mata)</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-10">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arquearia</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Arqueiro Selvagem ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-10">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-10">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Arqueiro Selvagem:</strong>  Disparo furtivo, mobilidade e domínio de florestas</li>
+<li><strong>Tier 2 – Olho da Floresta:</strong>  Ganha visão ampliada, flechas especiais e mira precisa</li>
+<li><strong>Tier 3 – Espírito da Caça:</strong>  Invoca forças naturais, ataques imbuídos e camuflagem sobrenatural
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-10">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Abra combates com  <strong>Tiro Furtivo</strong>  para causar dano elevado logo no início</li>
+<li>Use  <strong>Passos Silenciosos</strong>  para manter mobilidade em florestas e evitar armadilhas</li>
+<li>Reposicione-se constantemente para disparar de locais seguros</li>
+<li>Combine ataques à distância com aliados corpo a corpo para desestabilizar o inimigo</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-10">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Iniciador de combate</li>
+<li>Disparo de cobertura e suporte</li>
+<li>Rastreamento e vigilância
+<strong>Descrição:</strong>
+O Arqueiro Selvagem nunca está onde o inimigo espera. Seu papel é atingir, recuar e observar. É a primeira linha de ataque quando o silêncio precede a guerra e a última sombra que se afasta após a caçada bem-sucedida.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-10">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-10">Armas Iniciais</h6>
+<h6 id="arco-de-madeira-r-stico-2">🏹 Arco de Madeira Rústico</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Ataque à distância, perfuração</li>
+<li><strong>Alcance:</strong>  10 metros</li>
+<li><strong>Propriedade Extra:</strong>  Pode ser disparado furtivamente sem revelar posição
+🔗 Veja mais: [[Equipamentos/Armas/Arco de Madeira Rústico]]</li>
+</ul>
+<h6 id="zarabatana-com-dardos-simples-2">🏹 Zarabatana com Dardos Simples</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4</li>
+<li><strong>Tipo:</strong>  Ataque à distância, silencioso</li>
+<li><strong>Alcance:</strong>  10 metros</li>
+<li><strong>Propriedade Extra:</strong>  Inimigos desprevenidos têm desvantagem para detectar o atirador
+🔗 Veja mais: [[Equipamentos/Armas/Zarabatana com Dardos Simples]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-10">Armaduras Iniciais</h6>
+<h6 id="prote-o-de-ombro-em-couro-cru-2">🛡️ Proteção de Ombro em Couro Cru</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  Ignora penalidades de movimento em terreno irregular
+🔗 Veja mais: [[Equipamentos/Armaduras/Proteção de Ombro em Couro Cru]]</li>
+</ul>
+<h6 id="colete-de-pele-costurada-2">🛡️ Colete de Pele Costurada</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Reflexo contra ataques à distância
+🔗 Veja mais: [[Equipamentos/Armaduras/Colete de Pele Costurada]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-10">Item Utilitário</h6>
+<h6 id="medalh-o-de-presas-animais-2">🧿 Medalhão de Presas Animais</h6>
+<ul>
+<li><strong>Tipo:</strong>  Amuleto simbólico</li>
+<li><strong>Efeito Narrativo:</strong>  Representa caçadas bem-sucedidas e conexão espiritual com os animais</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de Furtividade ao ar livre
+🔗 Veja mais: [[Equipamentos/Utilitários/Medalhão de Presas Animais]]</li>
+</ul>
+<hr>
+<hr>
+<h4 id="classes-ser-folcl-rico">Classes Ser Folclórico</h4>
+<h5 id="ser-elemental">🌪️ Ser Elemental</h5>
+<h6 id="vis-o-geral-11">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Ser Folclórico</li>
+<li><strong>Estilo de Jogo:</strong>  Mago elemental ofensivo, controle mágico de área</li>
+<li><strong>Atributos Recomendados:</strong>  Conhecimento, Sabedoria Ancestral</li>
+<li><strong>Armas Permitidas:</strong>  Cajado, Orbe encantada</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves, espirituais</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Cristalaria</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-11">🧙 Descrição Narrativa</h6>
+<p>O Ser Elemental é a manifestação viva de um dos quatro grandes elementos — fogo, água, ar ou terra. É um ser de origem mágica pura, nascido de eventos cósmicos, rituais ancestrais ou desequilíbrios naturais. Traz consigo a fúria da natureza canalizada em feitiços destrutivos, além de resistência nata contra o elemento que representa.</p>
+<hr>
+<h6 id="estilo-de-jogo-11">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Especialista em ataques mágicos de médio alcance</li>
+<li>Manipula os elementos naturais com poder destrutivo</li>
+<li>Pode aplicar efeitos secundários (queima, empurrão, desestabilização, etc.)</li>
+<li>Possui resistência elemental natural</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-11">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conhecimento</strong></td>
+<td>Potência mágica, precisão em feitiços</td>
+<td>Melhora dano e eficácia das magias elementais</td>
+</tr>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Afinidade espiritual, resistência</td>
+<td>Aumenta resistência mágica e sensibilidade ao ambiente mágico</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-11">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Cajados místicos, orbes mágicas</li>
+<li><strong>Armaduras:</strong>  Leves, espirituais, trajes encantados</li>
+<li><strong>Itens Utilitários:</strong>  Cristais brutos, artefatos de canalização, símbolos dos elementos</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-11">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Cajado de Madeira Petrificada</li>
+<li>Orbe Encantada de Barro Rúnico</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Veste Trançada com Fio de Fogo Frio</li>
+<li>Túnica de Bruma Enfeitiçada</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Cristal de Canalização Bruta</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-11">Habilidades Iniciais</h6>
+<h6 id="rajada-elemental-ativa">Rajada Elemental (Ativa)</h6>
+<p><strong>Efeito:</strong>  Causa 1D6 de dano mágico e aplica um efeito leve do elemento escolhido (empurra, queima, molha ou desestabiliza o alvo)
+<strong>Recarga:</strong>  1 turno
+<strong>Alcance:</strong>  6 metros
+<strong>Condição:</strong>  Elemento deve ser escolhido na criação do personagem</p>
+<h6 id="v-nculo-elemental-passiva">Vínculo Elemental (Passiva)</h6>
+<p><strong>Efeito:</strong>  Recebe resistência (meio dano) contra o tipo de elemento escolhido (fogo, água, vento ou terra). Pode trocar com ritual
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Escolhido durante a criação ou alterado via ritual</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-11">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cristalaria</td>
+<td>Coleta</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Ser Elemental ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-11">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  10</li>
+<li><strong>Fórmula de PV Inicial:</strong>  10 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  5 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-11">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Ser Elemental:</strong>  Mago iniciante focado em ataques elementais básicos</li>
+<li><strong>Tier 2 – Avatar Primordial:</strong>  Magias aprimoradas, feitiços de área e canalização avançada</li>
+<li><strong>Tier 3 – Guardião do Equilíbrio:</strong>  Controle climático, invocação elemental e resistência mágica total
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-11">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Rajada Elemental</strong>  para infligir dano e aplicar controle de grupo</li>
+<li>Posicione-se estrategicamente no campo de batalha para maximizar alcance</li>
+<li>Adapte-se ao combate trocando o tipo de elemento com rituais entre aventuras</li>
+<li>Combine feitiços com aliados que façam controle físico ou suporte</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-11">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Dano mágico à distância</li>
+<li>Controle de grupo com efeitos colaterais dos elementos</li>
+<li>Resposta adaptativa a inimigos elementais
+<strong>Descrição:</strong>
+O Ser Elemental é o mago versátil que domina a natureza ao seu favor. Seu controle de elementos garante dano consistente e imprevisibilidade tática. É ideal para jogadores que gostam de estratégia mágica, personalização e impacto visual em combate.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-11">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-11">Armas Iniciais</h6>
+<h6 id="cajado-de-madeira-petrificada">🌪️ Cajado de Madeira Petrificada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6 (mágico)</li>
+<li><strong>Tipo:</strong>  Corpo a corpo ou canalizador</li>
+<li><strong>Alcance:</strong>  1,5 metro</li>
+<li><strong>Propriedade Extra:</strong>  Canaliza magias elementais, pode armazenar 1 carga mágica simples
+🔗 Veja mais: [[Equipamentos/Armas/Cajado de Madeira Petrificada]]</li>
+</ul>
+<h6 id="orbe-encantada-de-barro-r-nico">🌪️ Orbe Encantada de Barro Rúnico</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4 (mágico, variável por elemento)</li>
+<li><strong>Tipo:</strong>  Arma de lançamento / foco mágico</li>
+<li><strong>Alcance:</strong>  6 metros</li>
+<li><strong>Propriedade Extra:</strong>  Elemento inicial é escolhido (fogo, água, ar, terra). Pode amplificar efeitos colaterais
+🔗 Veja mais: [[Equipamentos/Armas/Orbe Encantada de Barro Rúnico]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-11">Armaduras Iniciais</h6>
+<h6 id="veste-tran-ada-com-fio-de-fogo-frio">🛡️ Veste Trançada com Fio de Fogo Frio</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve mística</li>
+<li><strong>Propriedade Extra:</strong>  +1 de resistência contra calor ou fogo
+🔗 Veja mais: [[Equipamentos/Armaduras/Veste Trançada com Fio de Fogo Frio]]</li>
+</ul>
+<h6 id="t-nica-de-bruma-enfeiti-ada">🛡️ Túnica de Bruma Enfeitiçada</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve e mágica</li>
+<li><strong>Propriedade Extra:</strong>  Inimigos têm –1 em ataques à distância contra o usuário
+🔗 Veja mais: [[Equipamentos/Armaduras/Túnica de Bruma Enfeitiçada]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-11">Item Utilitário</h6>
+<h6 id="cristal-de-canaliza-o-bruta">🔮 Cristal de Canalização Bruta</h6>
+<ul>
+<li><strong>Tipo:</strong>  Catalisador mágico</li>
+<li><strong>Efeito Narrativo:</strong>  Concentra energia elemental instável</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de manipulação mágica e controle elemental
+🔗 Veja mais: [[Equipamentos/Utilitários/Cristal de Canalização Bruta]]</li>
+</ul>
+<hr>
+<h5 id="guardi-o-ancestral">🐚 Guardião Ancestral</h5>
+<h6 id="vis-o-geral-12">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Ser Folclórico</li>
+<li><strong>Estilo de Jogo:</strong>  Tank espiritual, defensor do grupo, resistente a magias e entidades</li>
+<li><strong>Atributos Recomendados:</strong>  Vigor, Sabedoria Ancestral</li>
+<li><strong>Armas Permitidas:</strong>  Clava sagrada, Lança espiritual</li>
+<li><strong>Armaduras Permitidas:</strong>  Pesadas espirituais, escudos mágicos</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Carpintaria</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-12">🧙 Descrição Narrativa</h6>
+<p>Guardião das forças espirituais da terra, o Guardião Ancestral é um pilar de proteção que canaliza o poder dos ancestrais para defender seu grupo. Fortemente ligado ao mundo invisível, ele não apenas resiste a danos físicos e mágicos como também invoca forças para escudar aliados e repelir o mal.
+Revestido de ossos, raízes e cascas sagradas, o Guardião não luta por glória, mas por equilíbrio e preservação.</p>
+<hr>
+<h6 id="estilo-de-jogo-12">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Atua como protetor principal do grupo, com foco em resistência e escudos espirituais</li>
+<li>Especialista em resistência a efeitos mágicos e espirituais</li>
+<li>Usa magias defensivas para reforçar aliados e repelir ameaças</li>
+<li>Ideal para enfrentar inimigos sobrenaturais e proteger áreas sagradas</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-12">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vigor</strong></td>
+<td>Resistência física e PV</td>
+<td>Permite absorver dano físico e manter-se na linha de frente</td>
+</tr>
+<tr>
+<td><strong>Sabedoria Ancestral</strong></td>
+<td>Resistência a efeitos mágicos e espirituais</td>
+<td>Aumenta defesa mágica e eficácia de habilidades espirituais</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-12">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Clava sagrada, Lança rústica de raiz, Escudo espiritual</li>
+<li><strong>Armaduras:</strong>  Pesadas espirituais, armaduras de casca, fibras encantadas</li>
+<li><strong>Itens Utilitários:</strong>  Totens de proteção, talhas sagradas, relíquias ancestrais</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-12">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Lança Rústica de Raiz Encantada</li>
+<li>Clava de Casca Espiritual</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Couraça de Fibra Espiritual</li>
+<li>Faixa de Cipós Trançados</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Totem de Casca Consagrada</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-12">Habilidades Iniciais</h6>
+<h6 id="escudo-espiritual-ativa">Escudo Espiritual (Ativa)</h6>
+<p><strong>Efeito:</strong>  Concede +2 de Defesa a um aliado até o início do próximo turno
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  5 metros
+<strong>Condição:</strong>  Requer foco espiritual (ex: arma ou item ritual equipado)</p>
+<h6 id="aura-protetora-passiva">Aura Protetora (Passiva)</h6>
+<p><strong>Efeito:</strong>  +1 de Defesa contra ataques corpo a corpo. Imune a empurrões e quedas simples
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Requer armadura espiritual equipada</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-12">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carpintaria</td>
+<td>Refinamento</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Guardião Ancestral ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-12">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  14</li>
+<li><strong>Fórmula de PV Inicial:</strong>  14 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  7 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-12">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Guardião Ancestral:</strong>  Foco em escudos e resistência mágica</li>
+<li><strong>Tier 2 – Guardião dos Véus:</strong>  Invoca escudos espirituais em área e protege contra corrupção</li>
+<li><strong>Tier 3 – Sentinela Totêmica:</strong>  Estabelece áreas de proteção permanente e invoca barreiras mágicas
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-12">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Escudo Espiritual</strong>  para proteger curandeiros e aliados frágeis</li>
+<li>Mantenha-se na frente contra inimigos mágicos ou espirituais</li>
+<li>Combine  <strong>Aura Protetora</strong>  com bons equipamentos para se tornar quase intransponível</li>
+<li>Ideal para confrontos com mortos-vivos, magos ou entidades</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-12">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Tank defensivo espiritual</li>
+<li>Resistência mágica e proteção coletiva</li>
+<li>Especialista em contenção de ameaças invisíveis
+<strong>Descrição:</strong>
+O Guardião Ancestral é o bastião contra o caos sobrenatural. Quando os espíritos se agitam e a sombra ameaça, ele ergue sua lança encantada e mantém o grupo unido sob sua proteção.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-12">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-12">Armas Iniciais</h6>
+<h6 id="lan-a-r-stica-de-raiz-encantada">🐚 Lança Rústica de Raiz Encantada</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, perfuração</li>
+<li><strong>Alcance:</strong>  2 metros</li>
+<li><strong>Propriedade Extra:</strong>  Considerada mágica para resistências
+🔗 Veja mais: [[Equipamentos/Armas/Lança Rústica de Raiz Encantada]]</li>
+</ul>
+<h6 id="clava-de-casca-espiritual">🐚 Clava de Casca Espiritual</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, contusão</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  +1 de dano se usada logo após sofrer dano
+🔗 Veja mais: [[Equipamentos/Armas/Clava de Casca Espiritual]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-12">Armaduras Iniciais</h6>
+<h6 id="coura-a-de-fibra-espiritual">🛡️ Couraça de Fibra Espiritual</h6>
+<ul>
+<li><strong>Defesa:</strong>  2</li>
+<li><strong>Tipo:</strong>  Armadura média espiritual</li>
+<li><strong>Propriedade Extra:</strong>  Reduz 1 de dano mágico por turno
+🔗 Veja mais: [[Equipamentos/Armaduras/Couraça de Fibra Espiritual]]</li>
+</ul>
+<h6 id="faixa-de-cip-s-tran-ados">🛡️ Faixa de Cipós Trançados</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve ritual</li>
+<li><strong>Propriedade Extra:</strong>  +1 em resistência a envenenamento natural
+🔗 Veja mais: [[Equipamentos/Armaduras/Faixa de Cipós Trançados]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-12">Item Utilitário</h6>
+<h6 id="totem-de-casca-consagrada">🌀 Totem de Casca Consagrada</h6>
+<ul>
+<li><strong>Tipo:</strong>  Objeto espiritual</li>
+<li><strong>Efeito Narrativo:</strong>  Representa vínculo com os espíritos e território ancestral</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes contra magias de área ou controle
+🔗 Veja mais: [[Equipamentos/Utilitários/Totem de Casca Consagrada]]</li>
+</ul>
+<hr>
+<h5 id="lobo-lend-rio">🐺 Lobo Lendário</h5>
+<h6 id="vis-o-geral-13">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Ser Folclórico</li>
+<li><strong>Estilo de Jogo:</strong>  DPS ágil híbrido, ataque rápido, físico e espiritual</li>
+<li><strong>Atributos Recomendados:</strong>  Astúcia, Presença</li>
+<li><strong>Armas Permitidas:</strong>  Garras, Lanças curtas</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves, místicas ou de pele</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Coureira</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-13">🧙 Descrição Narrativa</h6>
+<p>O Lobo Lendário representa a fusão entre espírito e fera. Um ser veloz, instintivo e predador, moldado pelas lendas e fábulas populares. Ele ataca com agilidade sobrenatural, fareja o inimigo no escuro e desaparece entre os sussurros da floresta. A conexão com o mundo espiritual o torna sensível ao perigo e imune a surpresas.</p>
+<hr>
+<h6 id="estilo-de-jogo-13">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Alta mobilidade com ataques diretos e esquivas</li>
+<li>Híbrido físico-espiritual: ignora parte de resistências mágicas ou físicas</li>
+<li>Rastreia, flanqueia e interrompe inimigos frágeis</li>
+<li>Especialista em detectar presença e evitar emboscadas</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-13">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Astúcia</strong></td>
+<td>Furtividade, reflexos, esquiva</td>
+<td>Garante mobilidade e precisão nos ataques furtivos</td>
+</tr>
+<tr>
+<td><strong>Presença</strong></td>
+<td>Instinto animal, detecção de ameaças</td>
+<td>Permite percepção de seres mágicos e liderança selvagem</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-13">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Garras rúnicas, lanças leves, presas espirituais</li>
+<li><strong>Armaduras:</strong>  Leves, peles totêmicas, tecidos espirituais</li>
+<li><strong>Itens Utilitários:</strong>  Talismãs de caça, pingentes de alma, fragmentos lunares</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-13">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Garras de Ossos Ancestrais</li>
+<li><em>(Somente uma arma inicial)</em></li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Manto de Peles Totêmicas</li>
+<li>Tecido de Farpas Espirituais</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Pingente de Dente Encantado</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-13">Habilidades Iniciais</h6>
+<h6 id="investida-sombria-ativa">Investida Sombria (Ativa)</h6>
+<p><strong>Efeito:</strong>  Move-se até 4 metros em linha reta ignorando terreno difícil. Se atingir um inimigo, causa +2 de dano
+<strong>Recarga:</strong>  2 turnos
+<strong>Alcance:</strong>  4 metros
+<strong>Condição:</strong>  Necessário ter espaço livre em linha reta</p>
+<h6 id="faro-de-alma-viva-passiva">Faro de Alma Viva (Passiva)</h6>
+<p><strong>Efeito:</strong>  Detecta presença mágica, espiritual ou animal em até 10 metros. Imune a emboscadas
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Nenhuma</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-13">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coureira</td>
+<td>Refinamento</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Lobo Lendário ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-13">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  12</li>
+<li><strong>Fórmula de PV Inicial:</strong>  12 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  6 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-13">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Lobo Lendário:</strong>  DPS ágil com detecção sobrenatural</li>
+<li><strong>Tier 2 – Sombra da Floresta:</strong>  Camuflagem mágica, ataque duplo, rastreamento avançado</li>
+<li><strong>Tier 3 – Avatar Lupino:</strong>  Forma bestial, aura de medo, invocação de matilha espiritual
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-13">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Use  <strong>Investida Sombria</strong>  para iniciar combate com alto dano e posicionamento vantajoso</li>
+<li>Mantenha distância de tanques, usando mobilidade para atacar e recuar</li>
+<li>Detecte ameaças antes que emboscadas aconteçam com  <strong>Faro de Alma Viva</strong></li>
+<li>Ideal para jogadores que gostam de furtividade e reatividade</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-13">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>DPS rápido e oportunista</li>
+<li>Caçador de magos e inimigos frágeis</li>
+<li>Sensor de presenças e defensor de retaguarda
+<strong>Descrição:</strong>
+O Lobo Lendário é o predador veloz e silencioso do grupo. Suas ações podem decidir combates antes mesmo que comecem, e sua conexão com o mundo espiritual garante que nenhum inimigo permaneça oculto por muito tempo.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-13">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-13">Armas Iniciais</h6>
+<h6 id="garras-de-ossos-ancestrais">🐺 Garras de Ossos Ancestrais</h6>
+<ul>
+<li><strong>Dano:</strong>  1D6</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, perfuração</li>
+<li><strong>Alcance:</strong>  0,5 metro</li>
+<li><strong>Propriedade Extra:</strong>  Integradas ao corpo (não podem ser desarmadas). +1 em furtividade quando empunhadas
+🔗 Veja mais: [[Equipamentos/Armas/Garras de Ossos Ancestrais]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-13">Armaduras Iniciais</h6>
+<h6 id="manto-de-peles-tot-micas">🛡️ Manto de Peles Totêmicas</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de Furtividade e Rastreamento
+🔗 Veja mais: [[Equipamentos/Armaduras/Manto de Peles Totêmicas]]</li>
+</ul>
+<h6 id="tecido-de-farpas-espirituais">🛡️ Tecido de Farpas Espirituais</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve mágica</li>
+<li><strong>Propriedade Extra:</strong>  Causa 1 de dano espiritual a atacantes em combate corpo a corpo
+🔗 Veja mais: [[Equipamentos/Armaduras/Tecido de Farpas Espirituais]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-13">Item Utilitário</h6>
+<h6 id="pingente-de-dente-encantado">🐾 Pingente de Dente Encantado</h6>
+<ul>
+<li><strong>Tipo:</strong>  Talismã místico</li>
+<li><strong>Efeito Narrativo:</strong>  Dente de fera ancestral consagrado sob a lua</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de rastreamento e ataques furtivos
+🔗 Veja mais: [[Equipamentos/Utilitários/Pingente de Dente Encantado]]</li>
+</ul>
+<hr>
+<h5 id="encantador-de-esp-ritos">🪄 Encantador de Espíritos</h5>
+<h6 id="vis-o-geral-14">Visão Geral</h6>
+<ul>
+<li><strong>Origem:</strong>  Ser Folclórico</li>
+<li><strong>Estilo de Jogo:</strong>  Suporte mágico, invocador, interação com o mundo espiritual</li>
+<li><strong>Atributos Recomendados:</strong>  Presença, Conhecimento</li>
+<li><strong>Armas Permitidas:</strong>  Instrumentos mágicos, cajados, amuletos</li>
+<li><strong>Armaduras Permitidas:</strong>  Leves, rituais, encantadas</li>
+<li><strong>Proficiência com Bônus de XP:</strong>  Tecelagem</li>
+</ul>
+<hr>
+<h6 id="descri-o-narrativa-14">🧙 Descrição Narrativa</h6>
+<p>O Encantador de Espíritos é um ser mágico cuja essência vibra entre os planos físico e espiritual. Ele atua como intermediário entre o mundo dos vivos e as entidades ancestrais, invocando aliados etéreos, canalizando feitiços de calma ou dominação, e interpretando os sussurros invisíveis que poucos conseguem ouvir. É um misto de místico, artista e médium, respeitado por sua conexão profunda com o plano espiritual.</p>
+<hr>
+<h6 id="estilo-de-jogo-14">⚔️ Estilo de Jogo</h6>
+<ul>
+<li>Invoca espíritos auxiliares com efeitos táticos</li>
+<li>Detecção e manipulação de entidades sobrenaturais</li>
+<li>Suporte ao grupo com distrações, controle ou bônus espirituais</li>
+<li>Ideal para jogadores que gostam de estratégia indireta e versatilidade</li>
+</ul>
+<hr>
+<h6 id="atributos-recomendados-14">📊 Atributos Recomendados</h6>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Função na Classe</th>
+<th>Razão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Presença</strong></td>
+<td>Canalização espiritual, invocação, carisma</td>
+<td>Influencia interações com NPCs e eficácia em rituais</td>
+</tr>
+<tr>
+<td><strong>Conhecimento</strong></td>
+<td>Entendimento de planos mágicos e selos espirituais</td>
+<td>Necessário para controlar, invocar e proteger o grupo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="equipamentos-permitidos-14">🛠️ Equipamentos Permitidos</h6>
+<ul>
+<li><strong>Armas:</strong>  Cajados espirituais, instrumentos mágicos, amuletos encantados</li>
+<li><strong>Armaduras:</strong>  Leves, cerimoniais, tecidos ritualísticos</li>
+<li><strong>Itens Utilitários:</strong>  Máscaras rúnicas, fios de contato espiritual, relíquias de invocação</li>
+</ul>
+<hr>
+<h6 id="equipamento-inicial-14">Equipamento Inicial</h6>
+<ul>
+<li><strong>Escolha 1 Arma entre:</strong>
+<ul>
+<li>Máscara Espiritual do Canto-Ancestral</li>
+<li>Amuleto de Madeira Cantada</li>
+</ul>
+</li>
+<li><strong>Escolha 1 Armadura entre:</strong>
+<ul>
+<li>Veste de Linho Marcado</li>
+<li>Manto de Runas Costuradas</li>
+</ul>
+</li>
+<li><strong>Item Utilitário Temático:</strong>
+<ul>
+<li>Fio de Contato Espiritual</li>
+</ul>
+</li>
+<li><strong>Kit Básico:</strong>
+<ul>
+<li>Cantil, Bolsa de viagem, Rações simples, Pederneira, Mochila rústica
+Todos os equipamentos iniciais têm qualidade muito baixa, raridade comum e nível 1.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="habilidades-iniciais-14">Habilidades Iniciais</h6>
+<h6 id="invoca-o-menor-ativa">Invocação Menor (Ativa)</h6>
+<p><strong>Efeito:</strong>  Invoca um espírito auxiliar simbólico por até 2 turnos. Ele pode atacar, vigiar ou distrair (a critério do mestre)
+<strong>Recarga:</strong>  3 turnos
+<strong>Alcance:</strong>  Até 5 metros
+<strong>Condição:</strong>  Precisa de foco espiritual (instrumento, cajado, amuleto)</p>
+<h6 id="canal-espiritual-passiva">Canal Espiritual (Passiva)</h6>
+<p><strong>Efeito:</strong>  Detecta presenças sobrenaturais a até 10 metros e recebe +2 em testes de interação com planos espirituais
+<strong>Recarga:</strong>  —
+<strong>Alcance:</strong>  Sempre ativa
+<strong>Condição:</strong>  Nenhuma</p>
+<hr>
+<h6 id="profici-ncia-de-vida-associada-14">🎓 Proficiência de Vida Associada</h6>
+<table>
+<thead>
+<tr>
+<th>Proficiência</th>
+<th>Categoria</th>
+<th>Bônus XP</th>
+<th>Requisitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tecelagem</td>
+<td>Produção</td>
+<td>+1 XP por uso bem-sucedido</td>
+<td>Classe Encantador de Espíritos ativa</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h6 id="vida-inicial-pv-14">❤️ Vida Inicial (PV)</h6>
+<ul>
+<li><strong>PV Base:</strong>  10</li>
+<li><strong>Fórmula de PV Inicial:</strong>  10 + (Modificador de Vigor × 2)</li>
+<li><strong>PV por nível:</strong>  5 + Modificador de Vigor</li>
+</ul>
+<hr>
+<h6 id="progress-o-por-tiers-14">📈 Progressão por Tiers</h6>
+<ol>
+<li><strong>Tier 1 – Encantador de Espíritos:</strong>  Mago de suporte focado em controle e detecção espiritual</li>
+<li><strong>Tier 2 – Medium do Véu:</strong>  Invocações avançadas, selos espirituais, efeitos de canalização</li>
+<li><strong>Tier 3 – Tecelão de Almas:</strong>  Controle de múltiplos espíritos, proteção grupal, invocações permanentes
+Cada evolução requer uma Moeda de Classe, encontrar o NPC correspondente e completar uma missão narrativa.</li>
+</ol>
+<hr>
+<h6 id="estrat-gias-de-uso-14">🧠 Estratégias de Uso</h6>
+<ul>
+<li>Utilize  <strong>Invocação Menor</strong>  para distrações estratégicas ou proteção temporária</li>
+<li>Combine  <strong>Canal Espiritual</strong>  com exploração em locais assombrados ou mágicos</li>
+<li>Coordene suas invocações com ações de aliados para controle de campo</li>
+<li>Ideal para campanhas com foco em narrativa, planos espirituais e rituais</li>
+</ul>
+<hr>
+<h6 id="papel-na-equipe-14">🧬 Papel na Equipe</h6>
+<p><strong>Funções principais:</strong></p>
+<ul>
+<li>Suporte indireto com invocações e manipulação espiritual</li>
+<li>Detecção e comunicação com entidades ocultas</li>
+<li>Versatilidade em combate e exploração mágica
+<strong>Descrição:</strong>
+O Encantador de Espíritos atua como elo entre o mundo físico e o espiritual. Seu papel é garantir que nenhuma ameaça invisível passe despercebida e que forças além da compreensão estejam ao lado do grupo. Ele é o enigmático mestre das entidades, respeitado pelos aliados e temido pelos que ignoram o poder do além.</li>
+</ul>
+<hr>
+<h6 id="detalhamento-t-cnico-14">🔍 Detalhamento Técnico</h6>
+<h6 id="armas-iniciais-14">Armas Iniciais</h6>
+<h6 id="m-scara-espiritual-do-canto-ancestral">🪄 Máscara Espiritual do Canto-Ancestral</h6>
+<ul>
+<li><strong>Dano:</strong>  1D4 + efeito de confusão (CD 12)</li>
+<li><strong>Tipo:</strong>  Corpo a corpo, mágica</li>
+<li><strong>Alcance:</strong>  1 metro</li>
+<li><strong>Propriedade Extra:</strong>  Inimigos afetados têm 25% de chance de agir de forma aleatória
+🔗 Veja mais: [[Equipamentos/Armas/Máscara Espiritual do Canto-Ancestral]]</li>
+</ul>
+<h6 id="amuleto-de-madeira-cantada">🪄 Amuleto de Madeira Cantada</h6>
+<ul>
+<li><strong>Dano:</strong>  —</li>
+<li><strong>Tipo:</strong>  Foco mágico, ritualístico</li>
+<li><strong>Alcance:</strong>  —</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de manipulação espiritual e selos mágicos
+🔗 Veja mais: [[Equipamentos/Armas/Amuleto de Madeira Cantada]]</li>
+</ul>
+<hr>
+<h6 id="armaduras-iniciais-14">Armaduras Iniciais</h6>
+<h6 id="veste-de-linho-marcado">🛡️ Veste de Linho Marcado</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve cerimonial</li>
+<li><strong>Propriedade Extra:</strong>  +1 em testes de rituais e invocações
+🔗 Veja mais: [[Equipamentos/Armaduras/Veste de Linho Marcado]]</li>
+</ul>
+<h6 id="manto-de-runas-costuradas">🛡️ Manto de Runas Costuradas</h6>
+<ul>
+<li><strong>Defesa:</strong>  1</li>
+<li><strong>Tipo:</strong>  Armadura leve e mágica</li>
+<li><strong>Propriedade Extra:</strong>  Vantagem contra efeitos mentais
+🔗 Veja mais: [[Equipamentos/Armaduras/Manto de Runas Costuradas]]</li>
+</ul>
+<hr>
+<h6 id="item-utilit-rio-14">Item Utilitário</h6>
+<h6 id="fio-de-contato-espiritual">✨ Fio de Contato Espiritual</h6>
+<ul>
+<li><strong>Tipo:</strong>  Artefato de conexão planar</li>
+<li><strong>Efeito Narrativo:</strong>  Permite evocar ou conversar com entidades espirituais</li>
+<li><strong>Uso Mecânico:</strong>  +1 em testes de invocação e comunicação com o plano espiritual
+🔗 Veja mais: [[Equipamentos/Utilitários/Fio de Contato Espiritual]]</li>
+</ul>
+<hr>
+<h3 id="7-vers-o">7 - Versão</h3>
+<p><strong>Versão:</strong>  1.0
+<strong>Atualizado em:</strong>  21/04/2025
+<strong>Autor:</strong>  Setor de Regras – Eras do Brasil</p>

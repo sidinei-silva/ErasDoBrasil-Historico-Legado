@@ -1,0 +1,371 @@
+{
+  "title": "Relatório de Validação de Sinergia: Mecânica \"Congelar o Relógio\" vs. Sistema de \"Tempo Fluido\" (Co-op)",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "ed841436-2879-444d-841a-371af058a68c"
+    }
+  }, {
+    "sourceId": {
+      "id": "a4932d79-b562-48a7-9ac5-5aa647fe477b"
+    }
+  }, {
+    "sourceId": {
+      "id": "875fc4f5-3dda-4e8e-a180-40c7a2c9355f"
+    }
+  }, {
+    "sourceId": {
+      "id": "1db10832-c994-4c37-94bc-25bcee8e85ef"
+    }
+  }, {
+    "sourceId": {
+      "id": "8ab12471-33ff-4a50-8862-950e27d45cc9"
+    }
+  }, {
+    "sourceId": {
+      "id": "623dd21b-e53a-420f-8301-5e92c1ca9640"
+    }
+  }, {
+    "sourceId": {
+      "id": "b6c79825-ecde-43b8-a2bc-f2f9372b5bcd"
+    }
+  }, {
+    "sourceId": {
+      "id": "0bc74691-3eeb-4186-8aa7-bb0d0d72a5b0"
+    }
+  }, {
+    "sourceId": {
+      "id": "f86cf61b-2914-4526-a917-9aaa11e5f325"
+    }
+  }, {
+    "sourceId": {
+      "id": "facb1657-1969-4e78-812e-8fc411d6358f"
+    }
+  }, {
+    "sourceId": {
+      "id": "8aef6ed7-e415-449d-8bf6-d13a48580779"
+    }
+  }, {
+    "sourceId": {
+      "id": "3dda83b3-496a-4e9c-887b-e62904c30d48"
+    }
+  }, {
+    "sourceId": {
+      "id": "05b08109-32cd-46db-b2bf-1c4d4d271c3b"
+    }
+  }, {
+    "sourceId": {
+      "id": "d57911b3-515b-4e2f-a20f-52c05870f98a"
+    }
+  }, {
+    "sourceId": {
+      "id": "c3608165-ee75-43c4-a1fa-fe87e2a1104e"
+    }
+  }, {
+    "sourceId": {
+      "id": "0d7726ff-5485-437e-9652-f04b163fd8e8"
+    }
+  }, {
+    "sourceId": {
+      "id": "6973f9ae-8441-4c77-9302-0ec32f736d35"
+    }
+  }, {
+    "sourceId": {
+      "id": "2b9b8c30-5a97-456e-bf55-75661c5c7d9e"
+    }
+  }, {
+    "sourceId": {
+      "id": "2e219144-9a24-414b-8e2d-350e6338102c"
+    }
+  }, {
+    "sourceId": {
+      "id": "de05904c-bcce-4cea-ae29-02002a0d1273"
+    }
+  }, {
+    "sourceId": {
+      "id": "d89bd183-c708-4693-a5b9-5e011fe434d9"
+    }
+  }, {
+    "sourceId": {
+      "id": "88848308-9c52-46e7-8c3c-2d0c8e635e2d"
+    }
+  }, {
+    "sourceId": {
+      "id": "884a42eb-5304-47a4-ba7d-7110e7cb9901"
+    }
+  }, {
+    "sourceId": {
+      "id": "1d8e008b-7e61-492c-bd84-dce0335b8c39"
+    }
+  }, {
+    "sourceId": {
+      "id": "e43ad35b-fc88-4cb5-b7fc-26caacc84f2f"
+    }
+  }, {
+    "sourceId": {
+      "id": "ef7ac576-9472-4f0f-ad69-c7c2c5b4091d"
+    }
+  }, {
+    "sourceId": {
+      "id": "239d6021-9c26-4bec-8abd-d7b0549ef43e"
+    }
+  }, {
+    "sourceId": {
+      "id": "dbd50495-7a2a-4d0d-af3f-b6e0b50d96b7"
+    }
+  }, {
+    "sourceId": {
+      "id": "09a3a327-5f47-44c7-a5b7-b536420e8650"
+    }
+  }, {
+    "sourceId": {
+      "id": "3a9af12a-562c-472c-a02f-ea78c49799cf"
+    }
+  }, {
+    "sourceId": {
+      "id": "9399d4b9-0037-4d67-b05a-f03c1d795eeb"
+    }
+  }, {
+    "sourceId": {
+      "id": "6f97e7ac-79d5-4e3c-865a-4b022a55bff9"
+    }
+  }, {
+    "sourceId": {
+      "id": "fbe488cf-7b46-4dcb-8c28-46d7e94aaebd"
+    }
+  }, {
+    "sourceId": {
+      "id": "41ad6954-110c-4a4e-9999-c817154ab97b"
+    }
+  }, {
+    "sourceId": {
+      "id": "4138d5da-f8e7-4da2-90fe-ec8ca122439e"
+    }
+  }, {
+    "sourceId": {
+      "id": "0660b86e-c6ac-41f9-9c40-f7dc8b4cddc9"
+    }
+  }, {
+    "sourceId": {
+      "id": "350d25dd-f8e5-48f5-8cd0-ac380a1f22f7"
+    }
+  }, {
+    "sourceId": {
+      "id": "56158d36-2995-4fe7-95ff-a95d58d8d5d0"
+    }
+  }, {
+    "sourceId": {
+      "id": "03d116d5-5e29-4380-a2c1-c636764c03bd"
+    }
+  }, {
+    "sourceId": {
+      "id": "8531a3f0-de95-4aea-9ed0-3457613f1e6b"
+    }
+  }, {
+    "sourceId": {
+      "id": "88fce8ec-b4c0-4138-8cd3-46c93a19d4ea"
+    }
+  }, {
+    "sourceId": {
+      "id": "cbd27416-8a06-48b0-b4dd-7a4d3e7a43a9"
+    }
+  }, {
+    "sourceId": {
+      "id": "bdf8b32a-b09f-4c64-85e9-e4576b5702d1"
+    }
+  }, {
+    "sourceId": {
+      "id": "03fcfb6a-9c4a-415b-9cc3-3300637ab051"
+    }
+  }, {
+    "sourceId": {
+      "id": "84c5924a-ea28-4969-abe6-12d5e2f068c7"
+    }
+  }, {
+    "sourceId": {
+      "id": "cb94094f-ebe4-41ca-85d8-c5447db6e443"
+    }
+  }, {
+    "sourceId": {
+      "id": "496aa95d-e7ab-432b-879c-43cd8468793f"
+    }
+  }, {
+    "sourceId": {
+      "id": "909a9edb-47b5-4cbd-bdd3-d95772e2f14e"
+    }
+  }, {
+    "sourceId": {
+      "id": "a82c176a-9a5c-4264-bdfe-a4f0bc3579fe"
+    }
+  }, {
+    "sourceId": {
+      "id": "bf0257fc-fa01-4106-9237-a0d68d0f1ff3"
+    }
+  }, {
+    "sourceId": {
+      "id": "255c0bfa-2e4e-4401-9307-d79b0c38b123"
+    }
+  }, {
+    "sourceId": {
+      "id": "c14000cb-544b-4f4a-9c96-f1533adac583"
+    }
+  }, {
+    "sourceId": {
+      "id": "e9ff0842-dcb4-45aa-948b-0099dd34dc60"
+    }
+  }, {
+    "sourceId": {
+      "id": "0ce0197d-ebed-4dab-a444-908696d4531c"
+    }
+  }, {
+    "sourceId": {
+      "id": "93209a21-c164-439f-8bc5-f73b81d3ec6e"
+    }
+  }, {
+    "sourceId": {
+      "id": "1eac7f7b-4822-4132-899d-1dc54deb07ba"
+    }
+  }, {
+    "sourceId": {
+      "id": "537e30ab-af05-49d9-a88b-b35b0dc6d55c"
+    }
+  }, {
+    "sourceId": {
+      "id": "640619cd-a1ab-40bf-82a6-3bd467339d0d"
+    }
+  }, {
+    "sourceId": {
+      "id": "3112f03c-e5a4-4bd3-bc19-e20aacf9cafd"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "ed841436-2879-444d-841a-371af058a68c"
+      }, {
+        "id": "a4932d79-b562-48a7-9ac5-5aa647fe477b"
+      }, {
+        "id": "875fc4f5-3dda-4e8e-a180-40c7a2c9355f"
+      }, {
+        "id": "1db10832-c994-4c37-94bc-25bcee8e85ef"
+      }, {
+        "id": "8ab12471-33ff-4a50-8862-950e27d45cc9"
+      }, {
+        "id": "623dd21b-e53a-420f-8301-5e92c1ca9640"
+      }, {
+        "id": "b6c79825-ecde-43b8-a2bc-f2f9372b5bcd"
+      }, {
+        "id": "0bc74691-3eeb-4186-8aa7-bb0d0d72a5b0"
+      }, {
+        "id": "f86cf61b-2914-4526-a917-9aaa11e5f325"
+      }, {
+        "id": "facb1657-1969-4e78-812e-8fc411d6358f"
+      }, {
+        "id": "8aef6ed7-e415-449d-8bf6-d13a48580779"
+      }, {
+        "id": "3dda83b3-496a-4e9c-887b-e62904c30d48"
+      }, {
+        "id": "05b08109-32cd-46db-b2bf-1c4d4d271c3b"
+      }, {
+        "id": "d57911b3-515b-4e2f-a20f-52c05870f98a"
+      }, {
+        "id": "c3608165-ee75-43c4-a1fa-fe87e2a1104e"
+      }, {
+        "id": "0d7726ff-5485-437e-9652-f04b163fd8e8"
+      }, {
+        "id": "6973f9ae-8441-4c77-9302-0ec32f736d35"
+      }, {
+        "id": "2b9b8c30-5a97-456e-bf55-75661c5c7d9e"
+      }, {
+        "id": "2e219144-9a24-414b-8e2d-350e6338102c"
+      }, {
+        "id": "de05904c-bcce-4cea-ae29-02002a0d1273"
+      }, {
+        "id": "d89bd183-c708-4693-a5b9-5e011fe434d9"
+      }, {
+        "id": "88848308-9c52-46e7-8c3c-2d0c8e635e2d"
+      }, {
+        "id": "884a42eb-5304-47a4-ba7d-7110e7cb9901"
+      }, {
+        "id": "1d8e008b-7e61-492c-bd84-dce0335b8c39"
+      }, {
+        "id": "e43ad35b-fc88-4cb5-b7fc-26caacc84f2f"
+      }, {
+        "id": "ef7ac576-9472-4f0f-ad69-c7c2c5b4091d"
+      }, {
+        "id": "239d6021-9c26-4bec-8abd-d7b0549ef43e"
+      }, {
+        "id": "dbd50495-7a2a-4d0d-af3f-b6e0b50d96b7"
+      }, {
+        "id": "09a3a327-5f47-44c7-a5b7-b536420e8650"
+      }, {
+        "id": "3a9af12a-562c-472c-a02f-ea78c49799cf"
+      }, {
+        "id": "9399d4b9-0037-4d67-b05a-f03c1d795eeb"
+      }, {
+        "id": "6f97e7ac-79d5-4e3c-865a-4b022a55bff9"
+      }, {
+        "id": "fbe488cf-7b46-4dcb-8c28-46d7e94aaebd"
+      }, {
+        "id": "41ad6954-110c-4a4e-9999-c817154ab97b"
+      }, {
+        "id": "4138d5da-f8e7-4da2-90fe-ec8ca122439e"
+      }, {
+        "id": "0660b86e-c6ac-41f9-9c40-f7dc8b4cddc9"
+      }, {
+        "id": "350d25dd-f8e5-48f5-8cd0-ac380a1f22f7"
+      }, {
+        "id": "56158d36-2995-4fe7-95ff-a95d58d8d5d0"
+      }, {
+        "id": "03d116d5-5e29-4380-a2c1-c636764c03bd"
+      }, {
+        "id": "8531a3f0-de95-4aea-9ed0-3457613f1e6b"
+      }, {
+        "id": "88fce8ec-b4c0-4138-8cd3-46c93a19d4ea"
+      }, {
+        "id": "cbd27416-8a06-48b0-b4dd-7a4d3e7a43a9"
+      }, {
+        "id": "bdf8b32a-b09f-4c64-85e9-e4576b5702d1"
+      }, {
+        "id": "03fcfb6a-9c4a-415b-9cc3-3300637ab051"
+      }, {
+        "id": "84c5924a-ea28-4969-abe6-12d5e2f068c7"
+      }, {
+        "id": "cb94094f-ebe4-41ca-85d8-c5447db6e443"
+      }, {
+        "id": "496aa95d-e7ab-432b-879c-43cd8468793f"
+      }, {
+        "id": "909a9edb-47b5-4cbd-bdd3-d95772e2f14e"
+      }, {
+        "id": "a82c176a-9a5c-4264-bdfe-a4f0bc3579fe"
+      }, {
+        "id": "bf0257fc-fa01-4106-9237-a0d68d0f1ff3"
+      }, {
+        "id": "255c0bfa-2e4e-4401-9307-d79b0c38b123"
+      }, {
+        "id": "c14000cb-544b-4f4a-9c96-f1533adac583"
+      }, {
+        "id": "e9ff0842-dcb4-45aa-948b-0099dd34dc60"
+      }, {
+        "id": "0ce0197d-ebed-4dab-a444-908696d4531c"
+      }, {
+        "id": "93209a21-c164-439f-8bc5-f73b81d3ec6e"
+      }, {
+        "id": "1eac7f7b-4822-4132-899d-1dc54deb07ba"
+      }, {
+        "id": "537e30ab-af05-49d9-a88b-b35b0dc6d55c"
+      }, {
+        "id": "640619cd-a1ab-40bf-82a6-3bd467339d0d"
+      }, {
+        "id": "3112f03c-e5a4-4bd3-bc19-e20aacf9cafd"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Prompt 3: Validação de Sinergia (Pós-Mudança)\n\nInstrução: \"Revise o Ato 1 e as tabelas de Sinergia com as Sidequests. Confirme se a mecânica de \u0027Congelar o Relógio\u0027 (item do Tambor) ainda faz sentido no novo sistema de \u0027Tempo Fluido\u0027 do Co-op. O item quebra o jogo se usado por dois jogadores ao mesmo tempo?\"",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Project Plan: Eras do Brasil",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+    }
+  }, {
+    "sourceId": {
+      "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+    }
+  }, {
+    "sourceId": {
+      "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+    }
+  }, {
+    "sourceId": {
+      "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+    }
+  }, {
+    "sourceId": {
+      "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+    }
+  }, {
+    "sourceId": {
+      "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Plano de Projeto",
+      "description": "Um plano de projeto detalhado para o desenvolvimento do RPG \u0027Eras do Brasil\u0027.",
+      "sourceIds": [{
+        "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+      }, {
+        "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+      }, {
+        "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+      }, {
+        "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+      }, {
+        "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+      }, {
+        "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+      }],
+      "languageCode": "en",
+      "documentDirective": "Desenvolva um plano de projeto abrangente para a criação do RPG \u0027Eras do Brasil\u0027. O documento deve delinear a visão geral, escopo, público-alvo, e diferenciais do jogo, detalhando tanto a versão de RPG de mesa quanto a adaptação digital. O tom deve ser profissional e estratégico, com foco em estruturar as fases de desenvolvimento, desde a prototipagem até o lançamento, servindo como um guia para a equipe e potenciais investidores.",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

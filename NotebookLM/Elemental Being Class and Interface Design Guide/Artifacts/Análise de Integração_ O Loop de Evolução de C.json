@@ -1,0 +1,365 @@
+{
+  "title": "Análise de Integração: O Loop de Evolução de Classe em \"Eras do Brasil\"",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "295db852-3c60-4e88-987d-3ee8f2c5dc27"
+    }
+  }, {
+    "sourceId": {
+      "id": "f68b7828-b921-4887-8e45-302c6ef3edce"
+    }
+  }, {
+    "sourceId": {
+      "id": "36f73ce1-7ea4-499f-bef6-87e753859477"
+    }
+  }, {
+    "sourceId": {
+      "id": "9e7cf31c-3a08-4363-ab64-94ec3cc97268"
+    }
+  }, {
+    "sourceId": {
+      "id": "fa027155-3c67-4d25-83d8-dc57c0768ab2"
+    }
+  }, {
+    "sourceId": {
+      "id": "50ea650f-61e4-41b4-b7fe-bb7574359632"
+    }
+  }, {
+    "sourceId": {
+      "id": "597b7b34-cb25-4c76-b30e-fd79456aeb0b"
+    }
+  }, {
+    "sourceId": {
+      "id": "50ccdee1-c7a8-4621-a4b5-23cc629f3774"
+    }
+  }, {
+    "sourceId": {
+      "id": "2e997bb8-ae74-46a1-a20e-6cb966532676"
+    }
+  }, {
+    "sourceId": {
+      "id": "8e21a968-223e-4112-b9c4-1effb58666af"
+    }
+  }, {
+    "sourceId": {
+      "id": "4f55ff75-aa52-4067-b974-944bbf817a6a"
+    }
+  }, {
+    "sourceId": {
+      "id": "33331483-1465-4754-ac24-32c35b5ff1a0"
+    }
+  }, {
+    "sourceId": {
+      "id": "613342ac-104f-4234-96ba-24a537bf7612"
+    }
+  }, {
+    "sourceId": {
+      "id": "2cf4ee24-92de-4d4e-8fe2-823d845d3514"
+    }
+  }, {
+    "sourceId": {
+      "id": "741d60a1-f11a-478c-bac0-7324f2f33f59"
+    }
+  }, {
+    "sourceId": {
+      "id": "c88c24f1-f384-4c02-8235-ae215b5defa3"
+    }
+  }, {
+    "sourceId": {
+      "id": "31663a31-dff8-4ad2-b946-91b90390cb14"
+    }
+  }, {
+    "sourceId": {
+      "id": "3d7886c7-cb40-43ad-8c60-ee8dafa20127"
+    }
+  }, {
+    "sourceId": {
+      "id": "e9f8d780-7f5f-4e4f-9602-6ec1148e3805"
+    }
+  }, {
+    "sourceId": {
+      "id": "bad4f3e5-ffdd-4856-ad80-aabf5db8093e"
+    }
+  }, {
+    "sourceId": {
+      "id": "a9551bcc-77c1-41a0-a134-a85025d1d84c"
+    }
+  }, {
+    "sourceId": {
+      "id": "384fb261-bb5e-41b7-8147-bc0b065b4370"
+    }
+  }, {
+    "sourceId": {
+      "id": "55c8ac3e-94bb-49bd-ba38-1cb7f2ad66a9"
+    }
+  }, {
+    "sourceId": {
+      "id": "1a0a37f1-0e39-45fd-9f88-7b91d39bcf91"
+    }
+  }, {
+    "sourceId": {
+      "id": "81a4a1ec-bf56-4ca4-a1bb-84b7262e3f87"
+    }
+  }, {
+    "sourceId": {
+      "id": "97d395a2-9c54-4209-bb3b-d280f3343281"
+    }
+  }, {
+    "sourceId": {
+      "id": "1f78adac-1a23-4d8b-b6bb-2538db06478e"
+    }
+  }, {
+    "sourceId": {
+      "id": "aa3bcb5e-8a69-4a5e-9afc-68a2aef39c63"
+    }
+  }, {
+    "sourceId": {
+      "id": "a487d8b2-a2c1-45a8-b5ff-533c263a06a8"
+    }
+  }, {
+    "sourceId": {
+      "id": "ee238c26-8b34-4e1a-9549-3cb98d55ac08"
+    }
+  }, {
+    "sourceId": {
+      "id": "8e0fbb3d-e6ba-4d31-873e-ba29d118759e"
+    }
+  }, {
+    "sourceId": {
+      "id": "24ffdf52-39e4-4fa4-ab7b-c09af863dfee"
+    }
+  }, {
+    "sourceId": {
+      "id": "765b1991-a76e-442c-bbed-48d579d2fd37"
+    }
+  }, {
+    "sourceId": {
+      "id": "1f91c89f-4593-4a9c-8ad0-3d00803b0042"
+    }
+  }, {
+    "sourceId": {
+      "id": "7aae1d95-cfae-435b-95e1-02604e3b7612"
+    }
+  }, {
+    "sourceId": {
+      "id": "d2a2a86b-bd0a-412a-add3-56a04ce251df"
+    }
+  }, {
+    "sourceId": {
+      "id": "6d85c8e8-4381-4a8d-a26e-319b220fc1a0"
+    }
+  }, {
+    "sourceId": {
+      "id": "d33bb7f8-0244-44f5-a20d-84b1f65c693b"
+    }
+  }, {
+    "sourceId": {
+      "id": "3790892f-1603-42dc-955a-5278e9efefaf"
+    }
+  }, {
+    "sourceId": {
+      "id": "67977f9e-cd3a-4950-8d7b-b3e85219fdff"
+    }
+  }, {
+    "sourceId": {
+      "id": "c363440a-e32b-4f90-a590-46e99a9e990c"
+    }
+  }, {
+    "sourceId": {
+      "id": "07df13b7-ef0a-4b26-92bf-06a87ffa637c"
+    }
+  }, {
+    "sourceId": {
+      "id": "34813048-8b2e-4bdc-8768-7e74ca48e520"
+    }
+  }, {
+    "sourceId": {
+      "id": "d28e1607-3ee1-4fa7-a929-6735da2152ca"
+    }
+  }, {
+    "sourceId": {
+      "id": "43e1735b-b140-436b-be06-e88403fa15bc"
+    }
+  }, {
+    "sourceId": {
+      "id": "cab07b32-5b14-4f13-a604-cd3d7bcf059c"
+    }
+  }, {
+    "sourceId": {
+      "id": "9df918c9-205e-4f22-be93-3f9d01954b04"
+    }
+  }, {
+    "sourceId": {
+      "id": "1fb29463-95b6-43e6-bfd6-b6040dc1d159"
+    }
+  }, {
+    "sourceId": {
+      "id": "63c6467c-58d8-49a3-bed2-b13f17f9d0e8"
+    }
+  }, {
+    "sourceId": {
+      "id": "544bc003-4dc2-457d-b5e8-fb9b9b7cdce3"
+    }
+  }, {
+    "sourceId": {
+      "id": "36cb386c-7e3a-4d46-964b-7e98a7e8f64c"
+    }
+  }, {
+    "sourceId": {
+      "id": "dc58a9d5-c2c1-4a15-bdcf-3603164f17e7"
+    }
+  }, {
+    "sourceId": {
+      "id": "efcb72fc-70ab-4b26-bd78-024d25bdc091"
+    }
+  }, {
+    "sourceId": {
+      "id": "74214eec-5303-4041-ac6b-eebb7814b1f0"
+    }
+  }, {
+    "sourceId": {
+      "id": "f6829173-59d9-4bd6-94cf-20636c94d96a"
+    }
+  }, {
+    "sourceId": {
+      "id": "a2563f32-bf60-49d5-bc04-749f50f6b4df"
+    }
+  }, {
+    "sourceId": {
+      "id": "94115c36-df85-4745-bf49-427edec2776c"
+    }
+  }, {
+    "sourceId": {
+      "id": "e448c046-13d9-450a-99ec-d53b9406f478"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "295db852-3c60-4e88-987d-3ee8f2c5dc27"
+      }, {
+        "id": "f68b7828-b921-4887-8e45-302c6ef3edce"
+      }, {
+        "id": "36f73ce1-7ea4-499f-bef6-87e753859477"
+      }, {
+        "id": "9e7cf31c-3a08-4363-ab64-94ec3cc97268"
+      }, {
+        "id": "fa027155-3c67-4d25-83d8-dc57c0768ab2"
+      }, {
+        "id": "50ea650f-61e4-41b4-b7fe-bb7574359632"
+      }, {
+        "id": "597b7b34-cb25-4c76-b30e-fd79456aeb0b"
+      }, {
+        "id": "50ccdee1-c7a8-4621-a4b5-23cc629f3774"
+      }, {
+        "id": "2e997bb8-ae74-46a1-a20e-6cb966532676"
+      }, {
+        "id": "8e21a968-223e-4112-b9c4-1effb58666af"
+      }, {
+        "id": "4f55ff75-aa52-4067-b974-944bbf817a6a"
+      }, {
+        "id": "33331483-1465-4754-ac24-32c35b5ff1a0"
+      }, {
+        "id": "613342ac-104f-4234-96ba-24a537bf7612"
+      }, {
+        "id": "2cf4ee24-92de-4d4e-8fe2-823d845d3514"
+      }, {
+        "id": "741d60a1-f11a-478c-bac0-7324f2f33f59"
+      }, {
+        "id": "c88c24f1-f384-4c02-8235-ae215b5defa3"
+      }, {
+        "id": "31663a31-dff8-4ad2-b946-91b90390cb14"
+      }, {
+        "id": "3d7886c7-cb40-43ad-8c60-ee8dafa20127"
+      }, {
+        "id": "e9f8d780-7f5f-4e4f-9602-6ec1148e3805"
+      }, {
+        "id": "bad4f3e5-ffdd-4856-ad80-aabf5db8093e"
+      }, {
+        "id": "a9551bcc-77c1-41a0-a134-a85025d1d84c"
+      }, {
+        "id": "384fb261-bb5e-41b7-8147-bc0b065b4370"
+      }, {
+        "id": "55c8ac3e-94bb-49bd-ba38-1cb7f2ad66a9"
+      }, {
+        "id": "1a0a37f1-0e39-45fd-9f88-7b91d39bcf91"
+      }, {
+        "id": "81a4a1ec-bf56-4ca4-a1bb-84b7262e3f87"
+      }, {
+        "id": "97d395a2-9c54-4209-bb3b-d280f3343281"
+      }, {
+        "id": "1f78adac-1a23-4d8b-b6bb-2538db06478e"
+      }, {
+        "id": "aa3bcb5e-8a69-4a5e-9afc-68a2aef39c63"
+      }, {
+        "id": "a487d8b2-a2c1-45a8-b5ff-533c263a06a8"
+      }, {
+        "id": "ee238c26-8b34-4e1a-9549-3cb98d55ac08"
+      }, {
+        "id": "8e0fbb3d-e6ba-4d31-873e-ba29d118759e"
+      }, {
+        "id": "24ffdf52-39e4-4fa4-ab7b-c09af863dfee"
+      }, {
+        "id": "765b1991-a76e-442c-bbed-48d579d2fd37"
+      }, {
+        "id": "1f91c89f-4593-4a9c-8ad0-3d00803b0042"
+      }, {
+        "id": "7aae1d95-cfae-435b-95e1-02604e3b7612"
+      }, {
+        "id": "d2a2a86b-bd0a-412a-add3-56a04ce251df"
+      }, {
+        "id": "6d85c8e8-4381-4a8d-a26e-319b220fc1a0"
+      }, {
+        "id": "d33bb7f8-0244-44f5-a20d-84b1f65c693b"
+      }, {
+        "id": "3790892f-1603-42dc-955a-5278e9efefaf"
+      }, {
+        "id": "67977f9e-cd3a-4950-8d7b-b3e85219fdff"
+      }, {
+        "id": "c363440a-e32b-4f90-a590-46e99a9e990c"
+      }, {
+        "id": "07df13b7-ef0a-4b26-92bf-06a87ffa637c"
+      }, {
+        "id": "34813048-8b2e-4bdc-8768-7e74ca48e520"
+      }, {
+        "id": "d28e1607-3ee1-4fa7-a929-6735da2152ca"
+      }, {
+        "id": "43e1735b-b140-436b-be06-e88403fa15bc"
+      }, {
+        "id": "cab07b32-5b14-4f13-a604-cd3d7bcf059c"
+      }, {
+        "id": "9df918c9-205e-4f22-be93-3f9d01954b04"
+      }, {
+        "id": "1fb29463-95b6-43e6-bfd6-b6040dc1d159"
+      }, {
+        "id": "63c6467c-58d8-49a3-bed2-b13f17f9d0e8"
+      }, {
+        "id": "544bc003-4dc2-457d-b5e8-fb9b9b7cdce3"
+      }, {
+        "id": "36cb386c-7e3a-4d46-964b-7e98a7e8f64c"
+      }, {
+        "id": "dc58a9d5-c2c1-4a15-bdcf-3603164f17e7"
+      }, {
+        "id": "efcb72fc-70ab-4b26-bd78-024d25bdc091"
+      }, {
+        "id": "74214eec-5303-4041-ac6b-eebb7814b1f0"
+      }, {
+        "id": "f6829173-59d9-4bd6-94cf-20636c94d96a"
+      }, {
+        "id": "a2563f32-bf60-49d5-bc04-749f50f6b4df"
+      }, {
+        "id": "94115c36-df85-4745-bf49-427edec2776c"
+      }, {
+        "id": "e448c046-13d9-450a-99ec-d53b9406f478"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Analise o sistema de evolução em 01_Tiers_e_Evolucao.md (Livro de Classes), que exige \"Moeda de Classe\" e \"Missões com NPC\".\n\nAgora, cruze isso com os arquivos de Mini-Campanhas (Enredo). Pergunta: As recompensas listadas nas missões atuais (ex: \"O Caçador que não Voltou\") fornecem \"Moedas de Classe\" ou acesso a \"Mentores\"? Se não, identifique quais missões precisam ser ajustadas para fechar o loop de evolução do jogador.",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

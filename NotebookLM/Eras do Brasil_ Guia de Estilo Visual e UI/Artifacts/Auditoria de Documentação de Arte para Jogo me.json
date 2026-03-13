@@ -1,0 +1,36 @@
+{
+  "title": "Auditoria de Documentação de Arte para Jogo",
+  "type": "ARTIFACT_TYPE_AUDIO_OVERVIEW",
+  "sources": [{
+    "sourceId": {
+      "id": "b409e952-ac9d-44f3-9c64-063683b04dfa"
+    }
+  }, {
+    "sourceId": {
+      "id": "d6989864-a783-4579-9222-d8e69d7a10e2"
+    }
+  }, {
+    "sourceId": {
+      "id": "c80524bb-c929-48e2-9522-12188c4fdfa2"
+    }
+  }, {
+    "sourceId": {
+      "id": "8c775dfe-fc43-41da-b13a-26607bace373"
+    }
+  }, {
+    "sourceId": {
+      "id": "6d88fcf4-f12c-4cdc-acd9-f59f267dc4ca"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "audioOverview": {
+    "generationOptions": {
+      "episodeFocus": "Você é um Diretor de Arte e Auditor de Documentação Técnica. Sua tarefa é verificar a integridade da migração do Documento de Design Visual.md para 4 novos arquivos modulares.\n\nFontes:\n\nMestre (1 arquivo): Documento de Design Visual.md\n\nFatiados (4 arquivos): 01_Estilo_Visual_Geral.md, 02_UI_HUD_e_Tipografia.md, 03_Assets_Icones_e_Cenarios.md, 04_Diretrizes_Tecnicas_e_Exportacao.md.\n\nExecute as seguintes tarefas:\n\nVerificação de Conteúdo (Estilo e UI):\n\nCompare as seções \"Estilo Visual Geral\" e \"UI e HUD\" do arquivo Mestre com os arquivos 01_Estilo... e 02_UI....\n\nVerifique se detalhes técnicos como \"Grid base: 32x32px\", \"Resolução alvo: 1920x1080\" e a lista de fontes (\"Londrina Solid\", \"TinyUnicode\") foram preservados.\n\nVerificação de Conteúdo (Assets e Técnico):\n\nCompare as seções \"Estilo de Ícones\", \"Arte de Cenário\", \"Combate e Grid\" e \"Exportação\" do arquivo Mestre com os arquivos 03_Assets... e 04_Diretrizes....\n\nConfirme se as diretrizes de \"Combate tático isométrico\" e os formatos de exportação (\".png com fundo transparente\") estão presentes.\n\nRelatório Final de Integridade:\n\nResponda: \"O conteúdo dos 4 arquivos fatiados representa 100% das diretrizes do documento original? Existe alguma regra de arte ou técnica que foi esquecida?\"",
+      "episodeLength": "EPISODE_LENGTH_MEDIUM",
+      "targetAudience": "TARGET_AUDIENCE_UNSPECIFIED",
+      "languageCode": "pt-BR",
+      "showFormat": "SHOW_FORMAT_DEEP_DIVE"
+    },
+    "isInteractive": false
+  }
+}

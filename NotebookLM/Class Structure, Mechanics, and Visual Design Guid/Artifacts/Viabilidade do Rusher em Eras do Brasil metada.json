@@ -1,0 +1,256 @@
+{
+  "title": "Viabilidade do Rusher em Eras do Brasil",
+  "type": "ARTIFACT_TYPE_AUDIO_OVERVIEW",
+  "sources": [{
+    "sourceId": {
+      "id": "bf8fe1a6-9a8a-42d3-b232-0673d1490475"
+    }
+  }, {
+    "sourceId": {
+      "id": "24568b0b-0794-4686-a3f2-c87bcb38fe53"
+    }
+  }, {
+    "sourceId": {
+      "id": "7f3b463a-6c03-4914-98b2-9453a94fffc6"
+    }
+  }, {
+    "sourceId": {
+      "id": "f3246cd9-b6bd-45cb-a5a6-3718d9c9bc3f"
+    }
+  }, {
+    "sourceId": {
+      "id": "170231c0-8f7d-4d96-8383-a7c150def0e5"
+    }
+  }, {
+    "sourceId": {
+      "id": "572d4435-e8f0-419e-a02d-3c2bcd05e707"
+    }
+  }, {
+    "sourceId": {
+      "id": "115c55ef-2b8d-444a-aaab-5aa688bf0f49"
+    }
+  }, {
+    "sourceId": {
+      "id": "2587bd91-7cb0-4fb8-a7a7-b01d0a8553c0"
+    }
+  }, {
+    "sourceId": {
+      "id": "f835ef04-c285-445a-acb7-d9e51cf3cb3e"
+    }
+  }, {
+    "sourceId": {
+      "id": "8db960cd-cff5-45f8-ad9e-6ff8ce04f4a8"
+    }
+  }, {
+    "sourceId": {
+      "id": "ee85f126-d5f5-406c-9ebe-8dfcb6749b84"
+    }
+  }, {
+    "sourceId": {
+      "id": "45d09db5-2cf4-46c6-9142-fd985d9fa717"
+    }
+  }, {
+    "sourceId": {
+      "id": "f6e66ed8-ce39-4a08-8681-91a8cec04210"
+    }
+  }, {
+    "sourceId": {
+      "id": "f9dbd5d8-0ff5-4964-ba90-5f8a6d83d80e"
+    }
+  }, {
+    "sourceId": {
+      "id": "c29eb4a0-2451-4c83-9d26-7e983dc7c6aa"
+    }
+  }, {
+    "sourceId": {
+      "id": "d8dfc1c0-5325-40c6-9cda-036098b9d217"
+    }
+  }, {
+    "sourceId": {
+      "id": "a7117190-5b47-4f4f-8c7c-e20b85b2805d"
+    }
+  }, {
+    "sourceId": {
+      "id": "bf35c149-077a-44cc-96aa-fc1b98652291"
+    }
+  }, {
+    "sourceId": {
+      "id": "5d151c3d-739e-44ee-8cf6-7d9d2550b542"
+    }
+  }, {
+    "sourceId": {
+      "id": "6cc4e600-e82d-4eba-bb2a-8dc54c461ed6"
+    }
+  }, {
+    "sourceId": {
+      "id": "136eff73-269b-47e4-90cc-5d0104eabede"
+    }
+  }, {
+    "sourceId": {
+      "id": "fe3da4d9-a086-423a-a59d-e3a1622af4df"
+    }
+  }, {
+    "sourceId": {
+      "id": "3b163bea-314c-4f00-8fce-8407a96a6241"
+    }
+  }, {
+    "sourceId": {
+      "id": "f796f5d7-5fdc-4a38-ac2e-647de85e16e8"
+    }
+  }, {
+    "sourceId": {
+      "id": "efeaa3a3-bfb4-4ad8-b822-622a0e4b9010"
+    }
+  }, {
+    "sourceId": {
+      "id": "e9658b2a-7146-43fe-95d6-edbcdc4376ef"
+    }
+  }, {
+    "sourceId": {
+      "id": "55610319-79bf-452d-850e-13e3702ddec5"
+    }
+  }, {
+    "sourceId": {
+      "id": "92748a57-b872-4061-9241-2e22878fd3f1"
+    }
+  }, {
+    "sourceId": {
+      "id": "4174e93e-6f55-4ec0-bfed-1a17a5aa6433"
+    }
+  }, {
+    "sourceId": {
+      "id": "5c726198-e424-46ba-863b-7142d4a263e2"
+    }
+  }, {
+    "sourceId": {
+      "id": "83a0fb83-379f-4faf-9119-27d0dd380f97"
+    }
+  }, {
+    "sourceId": {
+      "id": "095a85d3-a0e8-499d-9c85-254dd7c06601"
+    }
+  }, {
+    "sourceId": {
+      "id": "ba4d35ee-0e33-4c3e-a9cd-7f0de674b506"
+    }
+  }, {
+    "sourceId": {
+      "id": "d6ad5b42-6406-448e-be8a-04eb55e55f6e"
+    }
+  }, {
+    "sourceId": {
+      "id": "3403c339-6bb7-4f78-88f8-dc82e023326e"
+    }
+  }, {
+    "sourceId": {
+      "id": "bcf4415a-cd14-46ac-b4de-be3c55dd1eeb"
+    }
+  }, {
+    "sourceId": {
+      "id": "38bf9a5e-8962-4f62-bf34-4fdc453b71bc"
+    }
+  }, {
+    "sourceId": {
+      "id": "d8a4bd2f-ce6d-4501-9eba-98f66687f3b3"
+    }
+  }, {
+    "sourceId": {
+      "id": "9e4a58c6-2a17-4c5a-b8ea-c4c8836cf7d7"
+    }
+  }, {
+    "sourceId": {
+      "id": "8562369c-1d7c-48c7-9987-c155384c4172"
+    }
+  }, {
+    "sourceId": {
+      "id": "61ff17f8-14f3-4156-adfd-196411b743cf"
+    }
+  }, {
+    "sourceId": {
+      "id": "43fb6254-423a-4461-b95a-e09ddccf4d60"
+    }
+  }, {
+    "sourceId": {
+      "id": "6d46c3b3-1d0f-479f-89fd-04240996060d"
+    }
+  }, {
+    "sourceId": {
+      "id": "ed2bb711-52fb-4d3a-b2da-fdfd904965d6"
+    }
+  }, {
+    "sourceId": {
+      "id": "a09f27a9-3a1b-4665-90c2-23204789b552"
+    }
+  }, {
+    "sourceId": {
+      "id": "e28fcacc-7141-4efc-a03e-a5fb5a79340b"
+    }
+  }, {
+    "sourceId": {
+      "id": "ba421cc7-153b-4f01-b3c3-806b2b7405a8"
+    }
+  }, {
+    "sourceId": {
+      "id": "b1201392-2579-42a1-8320-73ac62bc870f"
+    }
+  }, {
+    "sourceId": {
+      "id": "c51e26de-32a0-48b6-8bbb-a402eef06c1a"
+    }
+  }, {
+    "sourceId": {
+      "id": "4784a6e0-d5fb-4dba-97d6-f96df558d367"
+    }
+  }, {
+    "sourceId": {
+      "id": "9dfc7ad0-b776-4978-968a-2edcb6e9be08"
+    }
+  }, {
+    "sourceId": {
+      "id": "d1887e03-4b52-49f9-b975-ee427f674dd3"
+    }
+  }, {
+    "sourceId": {
+      "id": "a16b874c-31d3-4000-9c9a-5e6ca4d67fef"
+    }
+  }, {
+    "sourceId": {
+      "id": "4f1990e1-4585-4882-b60e-c5bb2df9e08d"
+    }
+  }, {
+    "sourceId": {
+      "id": "9637d524-0e98-4011-bba9-15a402cc13f3"
+    }
+  }, {
+    "sourceId": {
+      "id": "bc5f501b-9c86-4cc4-890a-0dba43aad904"
+    }
+  }, {
+    "sourceId": {
+      "id": "7e781b55-d692-4639-befc-8e0ecdd0f3f6"
+    }
+  }, {
+    "sourceId": {
+      "id": "e956793b-b678-4657-a837-980409666bd4"
+    }
+  }, {
+    "sourceId": {
+      "id": "07ec07ce-d4ce-4dfd-b539-4f46a323363b"
+    }
+  }, {
+    "sourceId": {
+      "id": "57a78cf9-4bf3-4737-b92a-e59fbbdca5a9"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "audioOverview": {
+    "generationOptions": {
+      "episodeFocus": "Prompt 2: O Rusher (Focado na História)\nObjetivo: Testar se \"correr\" é viável ou se o jogador chega fraco demais para vencer.\n\nAtue como um Jogador \"Speedrunner/Rusher\" que ignora todo o conteúdo opcional.\nSeu objetivo é fechar a Ruptura o mais rápido possível.\n\nSimule esta rota direta baseada no Atlas:\n1.  Vila (Hub) -\u003e Floresta do Norte -\u003e Toca da Fera (Resgate rápido) -\u003e Ruptura.\n2.  Ignora todas as outras zonas (Leste, Oeste, Sul).\n3.  Foge de combates aleatórios sempre que possível.\n\nAnálise de Consequência:\n- Quantos Ticks ele gastou no total? (Provavelmente será muito baixo).\n- Chegando tão cedo (Fase 1 do Relógio), o Boss está mais fraco. Mas o jogador está apenas no Tier 1 e sem itens mágicos das sidequests.\n- A matemática do combate final (Boss Fase 1 vs Jogador Tier 1 sem itens extras) é vencível ou é suicídio?",
+      "episodeLength": "EPISODE_LENGTH_MEDIUM",
+      "targetAudience": "TARGET_AUDIENCE_UNSPECIFIED",
+      "languageCode": "pt-BR",
+      "showFormat": "SHOW_FORMAT_DEEP_DIVE"
+    },
+    "isInteractive": false
+  }
+}

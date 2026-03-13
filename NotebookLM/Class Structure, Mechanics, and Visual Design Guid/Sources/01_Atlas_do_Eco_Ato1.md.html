@@ -1,0 +1,135 @@
+<h3 id="atlas-do-eco-a-mata-costeira-ato-1">🗺️ Atlas do Eco: A Mata Costeira (Ato 1)</h3>
+<p><em>&#34;A terra aqui não é muda. O chão lembra de quem pisou nele. O rio sabe quem se afogou. Navegar pela Mata Costeira não é apenas ler um mapa, é ler os humores de um organismo vivo.&#34;</em>  — Diário de um Cartógrafo Desaparecido
+Este livro detalha a geografia, as distâncias, os perigos ambientais e a estrutura de conexões da região do Ato 1. Ele serve como referência absoluta para o Mestre (Narrativa) e para o Motor do Jogo (Cálculo de Ticks e Pathfinding).</p>
+<hr>
+<h4 id="1-o-mapa-de-conex-es-topologia">1. O Mapa de Conexões (Topologia)</h4>
+<p>A região opera em um sistema de  <strong>Nós e Caminhos</strong> . Embora a movimentação futura seja livre (Grid), a lógica de conexão segue este diagrama de fluxo.</p>
+<pre><code class="language-mermaid lang-mermaid no-auto-prettify">graph TD
+    %% Definição de Estilos
+    classDef hub fill:#f9f,stroke:#333,stroke-width:4px;
+    classDef danger fill:#f96,stroke:#333,stroke-width:2px;
+    classDef water fill:#9cf,stroke:#333,stroke-width:2px;
+    classDef forest fill:#9f9,stroke:#333,stroke-width:2px;
+    classDef ruin fill:#ccc,stroke:#333,stroke-width:2px;
+
+    %% Nós Principais
+    Vila[🏠 Vila de São Tomé HUB]:::hub
+    Rio[🌊 Rio das Marés]:::water
+    Mina[⛏️ A Mina de Ouro]:::danger
+    Floresta[🌲 Floresta do Norte]:::forest
+    Toca[🐺 Toca da Fera]:::forest
+    Acampamento[⚔️ Acampamento Rival]:::danger
+    Pico[🏔️ Pico da Neblina]:::ruin
+    Ruinas[🔥 Ruínas Queimadas]:::ruin
+    Ruptura[🌀 A RUPTURA Final]:::danger
+
+    %% Conexões e Custos (Ida)
+    Vila -- &#34;Estrada Velha (4 Ticks)&#34; --&gt; Rio
+    Rio -- &#34;Maré Baixa (5 Ticks)&#34; --&gt; Mina
+    
+    Vila -- &#34;Mata Fechada (10 Ticks)&#34; --&gt; Floresta
+    Floresta -- &#34;Rastro (5 Ticks)&#34; --&gt; Toca
+    Floresta -- &#34;Trilha Oculta (8 Ticks)&#34; --&gt; Acampamento
+    
+    Floresta -- &#34;Zona de Distorção (20 Ticks)&#34; --&gt; Ruptura
+    
+    Vila -- &#34;Subida Íngreme (18 Ticks)&#34; --&gt; Pico
+    
+    Vila -- &#34;Pântano (16 Ticks)&#34; --&gt; Ruinas
+    
+    %% Conexões Secretas (Atalhos)
+    Rio -. &#34;Túnel Submerso (Requer Item)&#34; .-&gt; Ruptura
+
+</code></pre>
+<hr>
+<h4 id="2-regras-de-terreno-e-biomas">2. Regras de Terreno e Biomas</h4>
+<p>Cada zona possui modificadores globais que afetam tanto a  <strong>Exploração</strong>  (Custo de Ticks) quanto o  <strong>Combate</strong>  (Buffs/Debuffs).</p>
+<h5 id="zona-central-vila-de-s-o-tom">🏠 Zona Central: Vila de São Tomé</h5>
+<p>O último bastião de &#34;normalidade&#34;.</p>
+<ul>
+<li><strong>Tipo de Terreno:</strong>  Urbano / Seguro.</li>
+<li><strong>Custo de Movimento:</strong>  1 Tick (Normal).</li>
+<li><strong>Regra de Descanso:</strong>  Descanso Longo aqui custa apenas 2 Ticks (bônus de conforto) e recupera 100% de Vida/Recursos.</li>
+<li><strong>Serviços:</strong>
+<ul>
+<li><em>Ferreiro:</em>  Repara itens e vende armas básicas.</li>
+<li><em>Taverna:</em>  Hub de &#34;Fofoca&#34; (Info sobre NPCs).</li>
+<li><em>Capela:</em>  Remove maldições leves (Custo em Ouro).</li>
+</ul>
+</li>
+</ul>
+<h5 id="zona-norte-floresta-do-norte">🌲 Zona Norte: Floresta do Norte</h5>
+<p>Uma mata densa, antiga e vibrante, onde a luz do sol mal toca o chão.</p>
+<ul>
+<li><strong>Tipo de Terreno:</strong>  Mata Densa.</li>
+<li><strong>Custo de Movimento:</strong>  2 Ticks (Difícil).</li>
+<li><strong>Regra de Combate (Cobertura Natural):</strong>  Todos os personagens (aliados e inimigos) ganham +1 de Defesa contra ataques à distância se estiverem a mais de 5 metros do atacante.</li>
+<li><strong>Variável de Save (Procedural):</strong>
+<ul>
+<li>A localização exata da  <em>Toca da Fera</em>  varia (Norte, Nordeste ou Noroeste da zona).</li>
+</ul>
+</li>
+</ul>
+<h5 id="zona-leste-rio-das-mar-s">🌊 Zona Leste: Rio das Marés</h5>
+<p>Um rio largo que sofre influência de marés sobrenaturais, subindo e descendo erraticamente.</p>
+<ul>
+<li><strong>Tipo de Terreno:</strong>  Água / Lama.</li>
+<li><strong>Custo de Movimento:</strong>  1 Tick (Margem) / Impossível (Água Alta).</li>
+<li><strong>Mecânica da Maré:</strong>
+<ul>
+<li><strong>Ticks 0-40 (Manhã):</strong>  Maré Alta. Acesso à Mina bloqueado.</li>
+<li><strong>Ticks 41-80 (Tarde):</strong>  Maré Baixa. Acesso liberado.</li>
+<li><strong>Ticks 81+ (Noite):</strong>  Maré Alta e Corrompida (Dano de 1 PV por tick se entrar na água).</li>
+</ul>
+</li>
+</ul>
+<h5 id="zona-oeste-pico-da-neblina">🏔️ Zona Oeste: Pico da Neblina</h5>
+<p>Uma montanha sagrada envolta em nuvens que sussurram.</p>
+<ul>
+<li><strong>Tipo de Terreno:</strong>  Montanha / Vertical.</li>
+<li><strong>Custo de Movimento:</strong>  3 Ticks (Subida) / 1 Tick (Descida).</li>
+<li><strong>Regra de Exaustão:</strong>  A cada 20 Ticks passados aqui, o jogador deve fazer um teste de Vigor (CD 12) ou ganha 1 nível de Fadiga (–1 em todas as rolagens).</li>
+<li><strong>Regra de Combate (Ventos):</strong>  Ataques à distância têm Desvantagem. Empurrões jogam o alvo 2 metros a mais.</li>
+</ul>
+<h5 id="zona-sul-ru-nas-queimadas">🔥 Zona Sul: Ruínas Queimadas</h5>
+<p>O local de um massacre antigo. O chão é cinza e o ar cheira a fumaça eterna.</p>
+<ul>
+<li><strong>Tipo de Terreno:</strong>  Terra Arrasada / Pântano.</li>
+<li><strong>Custo de Movimento:</strong>  2 Ticks.</li>
+<li><strong>Regra de Terror:</strong>  Inimigos aqui são do tipo  <em>Espiritual</em> . Personagens com Sanidade/Moral baixa sofrem alucinações (Textos falsos na interface ou sons de passos inexistentes).</li>
+</ul>
+<hr>
+<h4 id="3-a-rota-dos-rivais-os-bandeirantes">3. A Rota dos Rivais (Os Bandeirantes)</h4>
+<p>A facção &#34;Bandeirantes de Sangue&#34; não espera pelo jogador. Eles têm uma rota fixa programada no Atlas.</p>
+<ul>
+<li><strong>Ponto de Partida:</strong>  Acampamento Secreto (Zona Norte).</li>
+<li><strong>Objetivo:</strong>  Chegar à Ruptura (Epicentro).</li>
+<li><strong>Velocidade:</strong>  Eles movem 1 Bloco a cada  <strong>15 Ticks Globais</strong> .</li>
+<li><strong>Checkpoints (Momentos de Tensão):</strong>
+<ol>
+<li><strong>Tick 100:</strong>  Eles dominam a entrada da Floresta Norte. (Jogadores agora encontram patrulhas hostis lá).</li>
+<li><strong>Tick 250:</strong>  Eles estabelecem um posto avançado na &#34;Fronteira da Distorção&#34;.</li>
+<li><strong>Tick 400:</strong>  Eles iniciam o ritual de abertura forçada na Ruptura. (O Boss começa a ficar &#34;Ascendido&#34;).
+<strong>Sabotagem:</strong>  Se o jogador usar a ação de &#34;Sabotagem Física&#34; no Atlas (ex: derrubar árvore na trilha), o contador de velocidade deles sobe para  <strong>1 Bloco a cada 25 Ticks</strong> .</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="4-distribui-o-de-recursos-loot-table-regional">4. Distribuição de Recursos (Loot Table Regional)</h4>
+<p>Para garantir que o &#34;Completionista&#34; tenha motivos para visitar tudo, os recursos são segregados por zona.
+| Recurso | Onde Encontrar (Principal) | Uso Principal |
+| ------ | ------ | ------ |
+| <strong>Madeira de Ferro</strong> | Floresta do Norte | Crafting de Armas e Escudos Leves |
+| <strong>Erva-Lua</strong> | Rio das Marés (Noite) | Poções de Mana e Rituais |
+| <strong>Minério de Sangue</strong> | Pico da Neblina (Cavernas) | Melhoria de Armas (Dano +1) |
+| <strong>Cinzas Espirituais</strong> | Ruínas Queimadas | Itens Mágicos e Proteção contra Maldição |
+| <strong>Comida/Suprimentos</strong> | Vila (Compra) ou Rio (Pesca) | Recuperação de PV em descanso |</p>
+<hr>
+<h4 id="5-vari-veis-procedurais-o-tempero-do-save">5. Variáveis Procedurais (O &#34;Tempero&#34; do Save)</h4>
+<p>Embora o mapa seja fixo (A Vila é sempre no centro), o conteúdo dos nós varia a cada Save Game (Seed).
+| Elemento | Variação Possível |
+| ------ | ------ |
+| <strong>Baús de Tesouro</strong> | Existem 10 locais possíveis para baús no mapa. Apenas 5 spawnarão no Save atual. |
+| <strong>Inimigos Especiais</strong> | O &#34;Lobo Alfa&#34; pode estar na Floresta ou rondando o sopé do Pico. O jogador precisa rastrear. |
+| <strong>Rotina do Pajé</strong> | <em>Save A:</em>  Medita na Cachoeira (Manhã).  <em>Save B:</em>  Medita na Caverna (Manhã). |
+| <strong>Clima Inicial</strong> | Pode começar com &#34;Chuva&#34; (Dificulta fogo, facilita furtividade) ou &#34;Seca&#34; (Risco de incêndio, movimento melhor). |</p>

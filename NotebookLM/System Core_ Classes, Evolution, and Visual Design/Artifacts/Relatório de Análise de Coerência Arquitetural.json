@@ -1,0 +1,371 @@
+{
+  "title": "Relatório de Análise de Coerência Arquitetural: Projeto \"Eras do Brasil\"",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "ef590f53-4c6c-4fa8-a884-42f0d5551a32"
+    }
+  }, {
+    "sourceId": {
+      "id": "1f076b08-1843-452e-996a-e5a6e95285b8"
+    }
+  }, {
+    "sourceId": {
+      "id": "7c770237-cb1c-4731-80e4-ff5bcfa54264"
+    }
+  }, {
+    "sourceId": {
+      "id": "a0f15ec3-10df-43d4-98b2-612e2c7cb759"
+    }
+  }, {
+    "sourceId": {
+      "id": "120ff0c0-d142-43cb-b483-d80dfdbf19fa"
+    }
+  }, {
+    "sourceId": {
+      "id": "46a6e7f8-6254-4cd0-9fec-548111adc73d"
+    }
+  }, {
+    "sourceId": {
+      "id": "dc62098d-ca00-40e2-9453-8e7b5c887820"
+    }
+  }, {
+    "sourceId": {
+      "id": "4b65fd39-0c13-496c-b752-2ac3a29a5b2f"
+    }
+  }, {
+    "sourceId": {
+      "id": "a6c9940f-e4a2-460a-9d5b-675a88e79608"
+    }
+  }, {
+    "sourceId": {
+      "id": "29e2acf6-3d7d-4066-8f4b-4e0b7fa131d5"
+    }
+  }, {
+    "sourceId": {
+      "id": "d15b3bb0-32ee-496c-86d2-14ffc7804300"
+    }
+  }, {
+    "sourceId": {
+      "id": "170475f7-a524-449c-896b-4cbaeb198c80"
+    }
+  }, {
+    "sourceId": {
+      "id": "3b44190c-3a49-4adf-b1a4-21dae5e85d71"
+    }
+  }, {
+    "sourceId": {
+      "id": "64bc346a-ad39-4986-bdb4-f081b7e0fb5b"
+    }
+  }, {
+    "sourceId": {
+      "id": "4fb10bd0-015b-4dca-8b2d-c8e69c59d4bf"
+    }
+  }, {
+    "sourceId": {
+      "id": "e14a2261-5a66-4125-8ffa-428a01f6dcd9"
+    }
+  }, {
+    "sourceId": {
+      "id": "8af75547-644d-4a9f-bdfb-377a86bcd305"
+    }
+  }, {
+    "sourceId": {
+      "id": "2b4bc2ca-8d73-4626-9ad1-2c4f5a73334f"
+    }
+  }, {
+    "sourceId": {
+      "id": "622a19ad-8c30-49de-b94c-173671cbc68d"
+    }
+  }, {
+    "sourceId": {
+      "id": "807530a8-2ed8-447b-bbe0-04a2c290e954"
+    }
+  }, {
+    "sourceId": {
+      "id": "5deb8d2f-aec8-4c7b-8bbd-4d69eff8e0bb"
+    }
+  }, {
+    "sourceId": {
+      "id": "240e8b47-693d-4a40-bfd6-31a3bc5a10ec"
+    }
+  }, {
+    "sourceId": {
+      "id": "d99370b4-ae3a-4745-8533-027b1e820881"
+    }
+  }, {
+    "sourceId": {
+      "id": "1ce58703-58a0-461b-8748-c57dfe7fc8bc"
+    }
+  }, {
+    "sourceId": {
+      "id": "3e7e320d-4f78-440c-8a2d-b47afae34ab7"
+    }
+  }, {
+    "sourceId": {
+      "id": "66c29c2a-2aa4-446a-8211-a33609f2b986"
+    }
+  }, {
+    "sourceId": {
+      "id": "63a46fbf-67d0-4646-8f9b-1fa596c2e419"
+    }
+  }, {
+    "sourceId": {
+      "id": "2f8756ca-0345-440c-804f-0614961176c1"
+    }
+  }, {
+    "sourceId": {
+      "id": "40923e5f-3e64-480c-997e-d97f7ce92453"
+    }
+  }, {
+    "sourceId": {
+      "id": "933f7f9e-30e5-43e8-a001-d94259b5a082"
+    }
+  }, {
+    "sourceId": {
+      "id": "0e9166e4-5376-4a33-baa3-1bdeef3608ea"
+    }
+  }, {
+    "sourceId": {
+      "id": "280b683f-e5d4-4387-a8ba-7ecf6c9d470c"
+    }
+  }, {
+    "sourceId": {
+      "id": "b481ba88-2365-422b-ad36-2971b72aa4b0"
+    }
+  }, {
+    "sourceId": {
+      "id": "b71db4e5-ab0e-41a1-bbba-3d4a14cbd7be"
+    }
+  }, {
+    "sourceId": {
+      "id": "7dbc2e54-98a2-474d-86e5-bac53fa133f8"
+    }
+  }, {
+    "sourceId": {
+      "id": "820a622c-6198-4cac-a0f1-820cbaacd694"
+    }
+  }, {
+    "sourceId": {
+      "id": "b8437c62-0776-4176-a3da-86b71dd982ff"
+    }
+  }, {
+    "sourceId": {
+      "id": "7bcf1089-4f75-4b83-8064-2ace4942de34"
+    }
+  }, {
+    "sourceId": {
+      "id": "0e6ef51e-652f-4aca-85bc-4a9cdd44735d"
+    }
+  }, {
+    "sourceId": {
+      "id": "066030f7-0bcc-4534-90cd-0b75903f2623"
+    }
+  }, {
+    "sourceId": {
+      "id": "0dd03ca5-87ff-47a5-a4b3-5955b36682b5"
+    }
+  }, {
+    "sourceId": {
+      "id": "38785c39-272e-45a3-95e5-4f02ef1c8c02"
+    }
+  }, {
+    "sourceId": {
+      "id": "ab8156f0-4369-4e9a-a5c4-c060a75aa8c7"
+    }
+  }, {
+    "sourceId": {
+      "id": "b0f0feb9-3c6f-476d-a57a-825f56b9af65"
+    }
+  }, {
+    "sourceId": {
+      "id": "8bf70789-13ad-43ae-8bb9-4dfea0c6bbb7"
+    }
+  }, {
+    "sourceId": {
+      "id": "cd5277c8-466f-4e0a-9baa-8bc7fa6a5929"
+    }
+  }, {
+    "sourceId": {
+      "id": "434de211-7b07-40d2-ad82-53860ba6b750"
+    }
+  }, {
+    "sourceId": {
+      "id": "33e7aacc-d479-4566-9f4a-7604ad3ab5c1"
+    }
+  }, {
+    "sourceId": {
+      "id": "1a8011d0-4411-4a6f-a296-f3be7ca49789"
+    }
+  }, {
+    "sourceId": {
+      "id": "81765465-0d36-431d-a0ea-284b573b5562"
+    }
+  }, {
+    "sourceId": {
+      "id": "57b301e2-e416-4817-b738-9a53b39d2b00"
+    }
+  }, {
+    "sourceId": {
+      "id": "9241d4fc-8a92-4418-9afc-90226f44d30f"
+    }
+  }, {
+    "sourceId": {
+      "id": "0c5ec135-c226-4bf4-b2ab-9b57a837a953"
+    }
+  }, {
+    "sourceId": {
+      "id": "fe248df0-6f05-4d63-bbb0-4bce87c3f2a0"
+    }
+  }, {
+    "sourceId": {
+      "id": "fc32acfc-4cb5-4eb0-afc8-73c1ac2c92e7"
+    }
+  }, {
+    "sourceId": {
+      "id": "25d1e5b0-0af2-44d0-ba02-ce8e2d73e436"
+    }
+  }, {
+    "sourceId": {
+      "id": "56d9065c-8477-4bb0-b0a5-2e7c3c278c5a"
+    }
+  }, {
+    "sourceId": {
+      "id": "291a0db0-04c7-4eec-a538-f248adfdb9bf"
+    }
+  }, {
+    "sourceId": {
+      "id": "6da8c8ca-fcb1-4fa0-a4c8-c5e6d8e063eb"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "ef590f53-4c6c-4fa8-a884-42f0d5551a32"
+      }, {
+        "id": "1f076b08-1843-452e-996a-e5a6e95285b8"
+      }, {
+        "id": "7c770237-cb1c-4731-80e4-ff5bcfa54264"
+      }, {
+        "id": "a0f15ec3-10df-43d4-98b2-612e2c7cb759"
+      }, {
+        "id": "120ff0c0-d142-43cb-b483-d80dfdbf19fa"
+      }, {
+        "id": "46a6e7f8-6254-4cd0-9fec-548111adc73d"
+      }, {
+        "id": "dc62098d-ca00-40e2-9453-8e7b5c887820"
+      }, {
+        "id": "4b65fd39-0c13-496c-b752-2ac3a29a5b2f"
+      }, {
+        "id": "a6c9940f-e4a2-460a-9d5b-675a88e79608"
+      }, {
+        "id": "29e2acf6-3d7d-4066-8f4b-4e0b7fa131d5"
+      }, {
+        "id": "d15b3bb0-32ee-496c-86d2-14ffc7804300"
+      }, {
+        "id": "170475f7-a524-449c-896b-4cbaeb198c80"
+      }, {
+        "id": "3b44190c-3a49-4adf-b1a4-21dae5e85d71"
+      }, {
+        "id": "64bc346a-ad39-4986-bdb4-f081b7e0fb5b"
+      }, {
+        "id": "4fb10bd0-015b-4dca-8b2d-c8e69c59d4bf"
+      }, {
+        "id": "e14a2261-5a66-4125-8ffa-428a01f6dcd9"
+      }, {
+        "id": "8af75547-644d-4a9f-bdfb-377a86bcd305"
+      }, {
+        "id": "2b4bc2ca-8d73-4626-9ad1-2c4f5a73334f"
+      }, {
+        "id": "622a19ad-8c30-49de-b94c-173671cbc68d"
+      }, {
+        "id": "807530a8-2ed8-447b-bbe0-04a2c290e954"
+      }, {
+        "id": "5deb8d2f-aec8-4c7b-8bbd-4d69eff8e0bb"
+      }, {
+        "id": "240e8b47-693d-4a40-bfd6-31a3bc5a10ec"
+      }, {
+        "id": "d99370b4-ae3a-4745-8533-027b1e820881"
+      }, {
+        "id": "1ce58703-58a0-461b-8748-c57dfe7fc8bc"
+      }, {
+        "id": "3e7e320d-4f78-440c-8a2d-b47afae34ab7"
+      }, {
+        "id": "66c29c2a-2aa4-446a-8211-a33609f2b986"
+      }, {
+        "id": "63a46fbf-67d0-4646-8f9b-1fa596c2e419"
+      }, {
+        "id": "2f8756ca-0345-440c-804f-0614961176c1"
+      }, {
+        "id": "40923e5f-3e64-480c-997e-d97f7ce92453"
+      }, {
+        "id": "933f7f9e-30e5-43e8-a001-d94259b5a082"
+      }, {
+        "id": "0e9166e4-5376-4a33-baa3-1bdeef3608ea"
+      }, {
+        "id": "280b683f-e5d4-4387-a8ba-7ecf6c9d470c"
+      }, {
+        "id": "b481ba88-2365-422b-ad36-2971b72aa4b0"
+      }, {
+        "id": "b71db4e5-ab0e-41a1-bbba-3d4a14cbd7be"
+      }, {
+        "id": "7dbc2e54-98a2-474d-86e5-bac53fa133f8"
+      }, {
+        "id": "820a622c-6198-4cac-a0f1-820cbaacd694"
+      }, {
+        "id": "b8437c62-0776-4176-a3da-86b71dd982ff"
+      }, {
+        "id": "7bcf1089-4f75-4b83-8064-2ace4942de34"
+      }, {
+        "id": "0e6ef51e-652f-4aca-85bc-4a9cdd44735d"
+      }, {
+        "id": "066030f7-0bcc-4534-90cd-0b75903f2623"
+      }, {
+        "id": "0dd03ca5-87ff-47a5-a4b3-5955b36682b5"
+      }, {
+        "id": "38785c39-272e-45a3-95e5-4f02ef1c8c02"
+      }, {
+        "id": "ab8156f0-4369-4e9a-a5c4-c060a75aa8c7"
+      }, {
+        "id": "b0f0feb9-3c6f-476d-a57a-825f56b9af65"
+      }, {
+        "id": "8bf70789-13ad-43ae-8bb9-4dfea0c6bbb7"
+      }, {
+        "id": "cd5277c8-466f-4e0a-9baa-8bc7fa6a5929"
+      }, {
+        "id": "434de211-7b07-40d2-ad82-53860ba6b750"
+      }, {
+        "id": "33e7aacc-d479-4566-9f4a-7604ad3ab5c1"
+      }, {
+        "id": "1a8011d0-4411-4a6f-a296-f3be7ca49789"
+      }, {
+        "id": "81765465-0d36-431d-a0ea-284b573b5562"
+      }, {
+        "id": "57b301e2-e416-4817-b738-9a53b39d2b00"
+      }, {
+        "id": "9241d4fc-8a92-4418-9afc-90226f44d30f"
+      }, {
+        "id": "0c5ec135-c226-4bf4-b2ab-9b57a837a953"
+      }, {
+        "id": "fe248df0-6f05-4d63-bbb0-4bce87c3f2a0"
+      }, {
+        "id": "fc32acfc-4cb5-4eb0-afc8-73c1ac2c92e7"
+      }, {
+        "id": "25d1e5b0-0af2-44d0-ba02-ce8e2d73e436"
+      }, {
+        "id": "56d9065c-8477-4bb0-b0a5-2e7c3c278c5a"
+      }, {
+        "id": "291a0db0-04c7-4eec-a538-f248adfdb9bf"
+      }, {
+        "id": "6da8c8ca-fcb1-4fa0-a4c8-c5e6d8e063eb"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Prompt 1: O Teste de Coerência Arquitetural\nObjetivo: Garantir que não sobrou nenhum \"fantasma\" de MMO. Instrução: \"Atue como um Engenheiro de Software Sênior. Analise os arquivos Project Plan, Conceitos Centrais, Mundo Vivo e Ato 1. Eu quero que você procure por contradições. O projeto se define como \u0027Co-op P2P (Host/Client)\u0027. Existe alguma linha nesses documentos que ainda mencione \u0027Servidor Dedicado\u0027, \u0027Mundo Persistente Massivo\u0027, \u0027Lobby de 100 jogadores\u0027 ou \u0027Ranking Global\u0027? Se o projeto estiver limpo, confirme que a arquitetura é 100% Local/P2P.\"",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

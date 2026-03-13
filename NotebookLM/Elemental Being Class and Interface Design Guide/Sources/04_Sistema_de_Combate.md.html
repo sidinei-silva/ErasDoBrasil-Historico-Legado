@@ -1,0 +1,1073 @@
+<h3 id="cap-tulo-4-sistema-de-combate">⚔️ Capítulo 4 – Sistema de Combate</h3>
+<p>O sistema de combate em  <em>Eras do Brasil</em>  é baseado em  <strong>turnos táticos estruturados</strong> , onde personagens e inimigos alternam suas ações de forma ordenada.
+Na primeira etapa de desenvolvimento (versão de mesa e primeira versão digital), o combate ocorre em  <strong>modo de turno estático</strong> :</p>
+<ul>
+<li>Não há movimentação física em grid ou tabuleiro durante a luta.</li>
+<li>Cada personagem permanece em posição abstrata e escolhe suas ações a cada rodada.
+Essa abordagem torna o sistema mais ágil para a mesa e mais acessível para o primeiro protótipo digital, sem sacrificar a profundidade tática de escolhas, atributos e habilidades.
+Já está planejada uma futura  <strong>expansão de regras</strong>  (&#34;Combate Avançado – Movimentação Tática&#34;) que introduzirá:</li>
+<li>Deslocamento por grids e alcances físicos.</li>
+<li>Ataques de oportunidade.</li>
+<li>Controle de terreno e posicionamento em combate.
+Essa expansão será ativada naturalmente no sistema conforme o jogo evoluir para a segunda fase de digitalização (movimentação livre com ticks, estilo  <em>Stoneshard</em> ).</li>
+</ul>
+<hr>
+<h4 id="resumo-da-fase-atual-do-sistema-de-combate">🎯 Resumo da Fase Atual do Sistema de Combate</h4>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Fase Atual (mesa e 1ª etapa digital)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turnos</td>
+<td>Sim, alternância ordenada</td>
+</tr>
+<tr>
+<td>Movimento durante combate</td>
+<td>Não (posição abstrata)</td>
+</tr>
+<tr>
+<td>Tipos de Ação</td>
+<td>Ataque, habilidade, magia, defesa, item</td>
+</tr>
+<tr>
+<td>Trindade Tank-Healer-DPS</td>
+<td>Sim, funcional</td>
+</tr>
+<tr>
+<td>Alcance de magias ou ataques</td>
+<td>Abstraído por descrição da habilidade</td>
+</tr>
+<tr>
+<td>Controle de área</td>
+<td>Por efeitos de habilidades, não posição</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nota:</strong>  Habilidades futuras que envolvam movimento, empurrão, alcance ou área serão adaptadas naturalmente quando o módulo tático for ativado.</p>
+<hr>
+<h4 id="organiza-o-do-cap-tulo-4">📚 Organização do Capítulo 4</h4>
+<p>Este capítulo está dividido nos seguintes blocos:</p>
+<ul>
+<li>Introdução ao Combate e Visão de Fases</li>
+<li>Estrutura de Turno</li>
+<li>Ações em Combate</li>
+<li>Tipos de Testes em Combate</li>
+<li>Iniciativa e Ordem de Ação</li>
+<li>Rolagens Críticas e Falhas Críticas</li>
+<li>Defesa, Esquiva e Resistência</li>
+<li>Condições de Status</li>
+<li>Magia e Uso de Habilidades</li>
+<li>Exemplo Completo de Turno</li>
+<li>Regras Especiais Futuras (Expansão Modular)
+Cada seção explicará em detalhes como jogar e mestrar combates, utilizando o sistema de atributos, modificadores e habilidades que já foram apresentados na criação de personagens.</li>
+</ul>
+<hr>
+<h4 id="estrutura-de-turno">⚡ Estrutura de Turno</h4>
+<p>Em  <em>Eras do Brasil</em> , o combate é dividido em  <strong>turnos organizados</strong> . Cada turno representa um momento de ação, onde cada personagem, aliado ou inimigo, age seguindo uma ordem de iniciativa.
+O fluxo básico de um combate é:</p>
+<ol>
+<li><strong>Determinar Iniciativa</strong>  (quem age primeiro)</li>
+<li><strong>Executar Turnos</strong>  de cada participante</li>
+<li><strong>Resolver Ações e Efeitos</strong></li>
+<li><strong>Atualizar o Estado do Combate</strong>  (condições, vida, efeitos contínuos)</li>
+<li><strong>Novo Ciclo de Turnos</strong>  (até o fim do combate)</li>
+</ol>
+<hr>
+<h5 id="etapas-de-um-turno-individual">🎯 Etapas de um Turno Individual</h5>
+<p>Durante o turno de um personagem, ele pode:</p>
+<ul>
+<li><strong>Mover-se</strong>  (se aplicável futuramente)</li>
+<li><strong>Realizar uma Ação Principal</strong> :
+<ul>
+<li>Atacar</li>
+<li>Usar uma habilidade</li>
+<li>Lançar uma magia</li>
+<li>Utilizar um item</li>
+<li>Realizar uma ação especial (ajudar, proteger, preparar)</li>
+</ul>
+</li>
+<li><strong>Usar uma Reação</strong>  (em resposta a eventos específicos, se disponível)
+<strong>Observação:</strong>  Na fase atual,  <strong>não há movimentação tática</strong>  durante o combate. O jogador apenas escolhe sua ação principal no turno.</li>
+</ul>
+<hr>
+<h5 id="ordem-de-resolu-o-dos-turnos">🧭 Ordem de Resolução dos Turnos</h5>
+<ol>
+<li>O personagem com  <strong>maior valor de Iniciativa</strong>  age primeiro.</li>
+<li>Em caso de empate, age o personagem com  <strong>maior Astúcia</strong> .</li>
+<li>Persistindo o empate, resolve-se no  <strong>dado (1D20)</strong> .
+Após o último personagem agir,  <strong>inicia-se uma nova rodada</strong> .</li>
+</ol>
+<hr>
+<h5 id="a-es-em-combate">🛡️ Ações em Combate</h5>
+<p>As ações possíveis em cada turno serão detalhadas no próximo bloco, mas resumidamente incluem:
+| Tipo de Ação | Exemplos |
+| ------ | ------ |
+| Ataque | Golpear um inimigo com arma física ou habilidade |
+| Magia | Lançar uma magia ofensiva, defensiva ou suporte |
+| Item | Usar poções, artefatos, kits de primeiros socorros |
+| Defesa | Preparar uma postura defensiva para reduzir dano |
+| Ação Especial | Ajudar um aliado, provocar inimigo, preparar uma reação |</p>
+<hr>
+<h5 id="exemplo-de-turno">📜 Exemplo de Turno</h5>
+<p><strong>Jogador A – Arqueiro Selvagem:</strong></p>
+<ul>
+<li>Realiza ataque à distância contra inimigo (ação principal).
+<strong>Jogador B – Xamã Curandeiro:</strong></li>
+<li>Lança magia de cura em aliado ferido (ação principal).
+<strong>Inimigo – Espírito Corrompido:</strong></li>
+<li>Usa habilidade de maldição contra o Jogador A (ação principal).</li>
+</ul>
+<hr>
+<p>⚡ Lembre-se: Cada jogador sempre pode consultar suas opções de ação, habilidades ativas e itens disponíveis no início do seu turno.</p>
+<hr>
+<h4 id="a-es-em-combate-2">🛡️ Ações em Combate</h4>
+<p>Durante o seu turno em combate em  <em>Eras do Brasil</em> , cada personagem pode realizar  <strong>uma ação principal</strong> . As ações representam o que o personagem pode fazer para atacar, se defender, usar habilidades, itens ou executar táticas especiais.
+Na versão atual do sistema (combate estático), o foco está em  <strong>escolher a ação</strong> . Na futura expansão (combate tático), será adicionado o  <strong>movimento estratégico</strong> .</p>
+<hr>
+<h5 id="tipos-de-a-es">🎯 Tipos de Ações</h5>
+<table>
+<thead>
+<tr>
+<th>Tipo de Ação</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ataque</strong></td>
+<td>Realizar um ataque físico ou mágico contra um inimigo.</td>
+</tr>
+<tr>
+<td><strong>Uso de Habilidade</strong></td>
+<td>Utilizar uma habilidade ativa da classe (ex: Provocação, Tiro Furtivo).</td>
+</tr>
+<tr>
+<td><strong>Magia</strong></td>
+<td>Lançar uma magia, caso o personagem possua magias disponíveis.</td>
+</tr>
+<tr>
+<td><strong>Item</strong></td>
+<td>Usar um item do inventário (poção, ferramenta, artefato).</td>
+</tr>
+<tr>
+<td><strong>Defesa</strong></td>
+<td>Adotar postura defensiva para reduzir dano recebido até o próximo turno.</td>
+</tr>
+<tr>
+<td><strong>Ação Especial</strong></td>
+<td>Realizar ações táticas como Ajudar, Provocar, Preparar Reação.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="a-o-ataque">⚔️ Ação: Ataque</h5>
+<p><strong>Descrição:</strong>  Tenta atingir um inimigo utilizando uma arma física, natural ou mágica.
+<strong>Regras Gerais:</strong></p>
+<ul>
+<li>Role 1D20 + Modificador de Atributo relevante (Força Bruta para ataques físicos, Conhecimento ou Sabedoria Ancestral para mágicos).</li>
+<li>Compare com a Defesa do alvo.</li>
+<li>Se a rolagem for  <strong>igual ou superior</strong>  à Defesa, o ataque acerta.</li>
+<li>Então, role o dano da arma ou habilidade.
+💬 Observação: Em futuras versões com grid, ataques poderão exigir verificações de alcance.</li>
+</ul>
+<hr>
+<h5 id="a-o-uso-de-habilidade">✨ Ação: Uso de Habilidade</h5>
+<p><strong>Descrição:</strong>  Ativa uma habilidade da classe atual (ex: habilidades ativas iniciais).
+<strong>Regras Gerais:</strong></p>
+<ul>
+<li>Cada habilidade define se exige teste, ataque ou apenas efeito automático.</li>
+<li>Algumas habilidades possuem  <strong>recarga</strong>  de turnos antes de serem reutilizadas.</li>
+<li>As habilidades herdadas de outras classes podem ser usadas se forem do tipo &#34;ativa&#34;.</li>
+</ul>
+<hr>
+<h5 id="a-o-magia">🔮 Ação: Magia</h5>
+<p><strong>Descrição:</strong>  Conjura uma magia disponível para o personagem.
+<strong>Regras Gerais:</strong></p>
+<ul>
+<li>Segue as regras específicas de Magia descritas no Capítulo 9 (Magias e Espiritualidade).</li>
+<li>Pode exigir:
+<ul>
+<li>Teste de ataque mágico (1D20 + Conhecimento/Sabedoria)</li>
+<li>Resistência do alvo</li>
+</ul>
+</li>
+<li>Algumas magias afetam área, múltiplos alvos ou possuem efeitos contínuos.</li>
+</ul>
+<hr>
+<h5 id="a-o-uso-de-item">🧪 Ação: Uso de Item</h5>
+<p><strong>Descrição:</strong>  Utiliza um item do inventário, como:</p>
+<ul>
+<li>Poções de cura</li>
+<li>Artefatos mágicos</li>
+<li>Bombas ou armadilhas</li>
+<li>Kits de primeiros socorros
+<strong>Regras Gerais:</strong></li>
+<li>Gastar um item normalmente consome a ação principal.</li>
+<li>Algumas classes ou habilidades podem permitir usar itens como ação bônus futuramente.</li>
+</ul>
+<hr>
+<h5 id="a-o-defesa">🛡️ Ação: Defesa</h5>
+<p><strong>Descrição:</strong>  Adota uma postura defensiva para reduzir dano até o próximo turno.
+<strong>Efeitos:</strong></p>
+<ul>
+<li>Recebe  <strong>+2 de Defesa</strong>  até o início do seu próximo turno.</li>
+<li>Pode anular efeitos de derrubada ou empurrão simples durante esse período (a critério do mestre).
+<strong>Regras Gerais:</strong></li>
+<li>Não pode atacar ou lançar magias no mesmo turno em que adota Defesa.</li>
+</ul>
+<hr>
+<h5 id="a-o-especial">🎯 Ação Especial</h5>
+<p><strong>Descrição:</strong>  Permite ao personagem realizar táticas não convencionais.
+Exemplos:</p>
+<ul>
+<li><strong>Ajudar:</strong>  Dar vantagem no próximo teste de aliado adjacente.</li>
+<li><strong>Provocar:</strong>  Tentar forçar um inimigo a focar seus ataques.</li>
+<li><strong>Preparar Reação:</strong>  Definir uma resposta a um gatilho (&#34;Se o inimigo chegar perto, atacar com espada&#34;).
+<strong>Regras Gerais:</strong></li>
+<li>A descrição do efeito deve ser aprovada pelo mestre.</li>
+<li>Algumas Ações Especiais podem exigir testes sociais (Presença) ou de resistência (Vigor, Astúcia).</li>
+</ul>
+<hr>
+<h4 id="resumo-visual-a-es-por-turno">📜 Resumo Visual – Ações por Turno</h4>
+<table>
+<thead>
+<tr>
+<th>Etapa do Turno</th>
+<th>Opções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ação Principal</strong></td>
+<td>Ataque, Habilidade, Magia, Uso de Item, Defesa, Ação Especial</td>
+</tr>
+<tr>
+<td><strong>Reação (se disponível)</strong></td>
+<td>Reagir a gatilhos específicos no turno do inimigo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>⚡  <strong>Importante:</strong>  Em futuras atualizações (Combate Avançado com Grid), ações de  <strong>movimentação</strong>  serão adicionadas, mas não alteram as ações principais descritas acima.</p>
+<hr>
+<h4 id="tipos-de-testes-em-combate">🎯 Tipos de Testes em Combate</h4>
+<p>Em  <em>Eras do Brasil</em> , quase todas as ações em combate exigem algum tipo de  <strong>teste</strong>  para determinar sucesso ou fracasso. Os testes garantem que o combate seja dinâmico, baseado em atributos e no elemento de risco.</p>
+<hr>
+<h5 id="testes-de-ataque">⚔️ Testes de Ataque</h5>
+<p><strong>Descrição:</strong>  São realizados para determinar se um ataque (físico ou mágico) acerta o alvo.
+<strong>Procedimento:</strong></p>
+<ol>
+<li>Role  <strong>1D20</strong> .</li>
+<li>Adicione o  <strong>Modificador de Atributo</strong>  apropriado:
+<ul>
+<li>Ataque físico:  <strong>Força Bruta</strong>  ou  <strong>Astúcia</strong>  (caso de armas à distância).</li>
+<li>Ataque mágico:  <strong>Conhecimento</strong>  ou  <strong>Sabedoria Ancestral</strong> .</li>
+</ul>
+</li>
+<li>Compare o resultado com a  <strong>Defesa do alvo</strong> .</li>
+</ol>
+<ul>
+<li><strong>Se for igual ou superior</strong> , o ataque acerta e o dano é aplicado.</li>
+<li><strong>Se for inferior</strong> , o ataque erra.
+💬 Observação: Algumas habilidades ou magias podem conceder bônus ou penalidades nas rolagens de ataque.</li>
+</ul>
+<hr>
+<h5 id="testes-de-resist-ncia">🛡️ Testes de Resistência</h5>
+<p><strong>Descrição:</strong>  Usados para resistir a efeitos como veneno, medo, magia, quedas, entre outros.
+<strong>Procedimento:</strong></p>
+<ol>
+<li>Role  <strong>1D20</strong> .</li>
+<li>Adicione o  <strong>Modificador de Atributo</strong>  indicado pelo efeito:
+<ul>
+<li>Resistir venenos:  <strong>Vigor</strong></li>
+<li>Resistir manipulação mental:  <strong>Presença</strong></li>
+<li>Resistir maldições ou magias:  <strong>Sabedoria Ancestral</strong>  ou  <strong>Conhecimento</strong></li>
+</ul>
+</li>
+<li>Compare com a  <strong>Classe de Dificuldade (CD)</strong>  definida pela fonte do efeito.</li>
+</ol>
+<ul>
+<li><strong>Se o resultado for igual ou superior à CD</strong> , o personagem resiste total ou parcialmente (depende da descrição da habilidade).</li>
+<li><strong>Se for inferior</strong> , sofre o efeito normalmente.</li>
+</ul>
+<hr>
+<h5 id="testes-de-atributo-diretos">📊 Testes de Atributo Diretos</h5>
+<p><strong>Descrição:</strong>  Em alguns casos, o mestre pode exigir testes diretos no meio do combate.
+Exemplos:</p>
+<ul>
+<li>Saltar sobre um obstáculo:  <strong>Astúcia</strong></li>
+<li>Empurrar ou derrubar um oponente:  <strong>Força Bruta</strong></li>
+<li>Manter concentração ao conjurar magia:  <strong>Conhecimento</strong>
+<strong>Procedimento:</strong></li>
+<li>Role  <strong>1D20 + Modificador de Atributo</strong> .</li>
+<li>Compare com a  <strong>CD estabelecida</strong>  pelo mestre.</li>
+</ul>
+<hr>
+<h5 id="classe-de-dificuldade-cd">🧠 Classe de Dificuldade (CD)</h5>
+<p><strong>Definição:</strong>  É o número-alvo que deve ser igualado ou superado para que um teste seja bem-sucedido.
+<strong>Padrões de CD sugeridos:</strong>
+| Grau de Dificuldade | Valor de CD | Exemplo |
+| ------ | ------ | ------ |
+| Muito fácil | 5 | Pisar sobre um tronco sem cair |
+| Fácil | 10 | Saltar uma pequena fenda |
+| Médio | 15 | Resistir a um feitiço comum |
+| Difícil | 20 | Quebrar grilhões de ferro pesado |
+| Muito difícil | 25 | Resistir a uma magia de grande poder |
+| Épico | 30+ | Evitar a ruptura de um ritual ancestral |</p>
+<p>⚡ O mestre pode ajustar a CD conforme o contexto, condições do ambiente e situação narrativa.</p>
+<hr>
+<h5 id="ataques-m-ltiplos-e-testes-em-rea">🎯 Ataques Múltiplos e Testes em Área</h5>
+<p>Algumas magias ou habilidades podem afetar vários alvos ao mesmo tempo.</p>
+<ul>
+<li>Cada alvo realiza  <strong>testes individuais</strong>  para resistir (ou o atacante realiza rolagens separadas de ataque).</li>
+<li>Em magias de área, às vezes o dano é reduzido à metade caso o alvo passe no teste de resistência.</li>
+</ul>
+<hr>
+<h5 id="resumo-visual-tipos-de-testes">📜 Resumo Visual – Tipos de Testes</h5>
+<table>
+<thead>
+<tr>
+<th>Situação</th>
+<th>Teste</th>
+<th>Atributo Envolvido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ataque com arma física</td>
+<td>Ataque</td>
+<td>Força Bruta ou Astúcia</td>
+</tr>
+<tr>
+<td>Ataque com magia</td>
+<td>Ataque</td>
+<td>Conhecimento ou Sabedoria Ancestral</td>
+</tr>
+<tr>
+<td>Resistir a veneno, doenças</td>
+<td>Resistência</td>
+<td>Vigor</td>
+</tr>
+<tr>
+<td>Resistir a magia mental</td>
+<td>Resistência</td>
+<td>Presença ou Conhecimento</td>
+</tr>
+<tr>
+<td>Manter concentração</td>
+<td>Teste de Atributo</td>
+<td>Conhecimento</td>
+</tr>
+<tr>
+<td>Saltar, esquivar, fugir</td>
+<td>Teste de Atributo</td>
+<td>Astúcia</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>✍️  <em>Importante:</em>  Mesmo em combates mais abstratos (1ª fase digital e mesa), manter a rolagem de testes torna o combate imprevisível, estratégico e emocionante.</p>
+<hr>
+<h4 id="iniciativa-e-ordem-de-a-o">⚡ Iniciativa e Ordem de Ação</h4>
+<p>A Iniciativa determina a ordem em que personagens e inimigos agem durante o combate. Essa ordem se mantém fixa para toda a duração do combate, salvo efeitos que alterem a posição (como habilidades específicas).</p>
+<hr>
+<h5 id="como-determinar-a-iniciativa">🎲 Como Determinar a Iniciativa</h5>
+<p><strong>Procedimento:</strong></p>
+<ol>
+<li>Cada participante (jogador ou inimigo) rola  <strong>1D20</strong> .</li>
+<li>Adiciona o  <strong>Modificador de Astúcia</strong> .
+Fórmula:  <strong>Iniciativa = 1D20 + Modificador de Astúcia</strong></li>
+</ol>
+<hr>
+<h5 id="ordem-de-a-o">🥇 Ordem de Ação</h5>
+<ul>
+<li>Quem obtiver o  <strong>maior valor total</strong>  na rolagem de Iniciativa age primeiro.</li>
+<li>A sequência segue em  <strong>ordem decrescente</strong>  dos valores.</li>
+</ul>
+<hr>
+<h5 id="empates-de-iniciativa">🔄 Empates de Iniciativa</h5>
+<p>Se dois ou mais personagens obtiverem o mesmo resultado final:
+<strong>Desempate 1:</strong></p>
+<ul>
+<li>Aquele com  <strong>maior Astúcia bruta</strong>  (valor do atributo, não o modificador) age primeiro.
+<strong>Desempate 2:</strong></li>
+<li>Se persistir o empate, cada envolvido realiza uma nova rolagem de  <strong>1D20</strong> . Quem tirar o maior valor ganha prioridade.
+🔥 Observação: O desempate pode ser usado narrativamente para cenas simultâneas dramáticas, se o mestre desejar.</li>
+</ul>
+<hr>
+<h5 id="mudan-as-de-iniciativa-durante-o-combate">🎯 Mudanças de Iniciativa Durante o Combate</h5>
+<p>Em regra, a Iniciativa  <strong>não muda</strong>  após ser definida no início do combate.
+<strong>Exceções possíveis (quando regras futuras forem ativadas):</strong></p>
+<ul>
+<li>Habilidades ou magias específicas que alterem a ordem.</li>
+<li>Efeitos de emboscadas ou ações especiais preparadas.
+🧪 Para a primeira fase de mesa e protótipo digital,  <strong>não haverá efeitos que mudam a iniciativa no meio do combate</strong> .</li>
+</ul>
+<hr>
+<h5 id="exemplo-de-iniciativa">📜 Exemplo de Iniciativa</h5>
+<h6 id="situa-o">Situação:</h6>
+<ul>
+<li>Jogador A (Astúcia 3)</li>
+<li>Jogador B (Astúcia 5)</li>
+<li>Inimigo X (Astúcia 4)</li>
+</ul>
+<h6 id="rolagens">Rolagens:</h6>
+<ul>
+<li>Jogador A rola 1D20 = 12 → Total = 12 + 0 (modificador Astúcia 3) = 12</li>
+<li>Jogador B rola 1D20 = 8 → Total = 8 + 2 (modificador Astúcia 5) = 10</li>
+<li>Inimigo X rola 1D20 = 14 → Total = 14 + 1 (modificador Astúcia 4) = 15</li>
+</ul>
+<h6 id="ordem-final">Ordem Final:</h6>
+<ol>
+<li>Inimigo X</li>
+<li>Jogador A</li>
+<li>Jogador B</li>
+</ol>
+<hr>
+<p>✍️  <em>Importante:</em>  Iniciativa é apenas ordem de ação — não determina automaticamente sucesso ou falha nas ações realizadas durante o turno!</p>
+<hr>
+<h4 id="rolagens-cr-ticas-e-falhas-cr-ticas">🎲 Rolagens Críticas e Falhas Críticas</h4>
+<p>Durante o combate, alguns resultados naturais no dado (sem considerar modificadores) têm efeitos especiais automáticos. Esses são chamados de  <strong>Rolagens Críticas</strong>  (20 natural) e  <strong>Falhas Críticas</strong>  (1 natural).</p>
+<hr>
+<h5 id="rolagem-cr-tica-20-natural">🎯 Rolagem Crítica (20 Natural)</h5>
+<p>Quando um jogador ou inimigo  <strong>rola 20 natural em 1D20</strong> :</p>
+<ul>
+<li>A ação ofensiva  <strong>acerta automaticamente</strong> , mesmo que o valor final fosse inferior à Defesa ou CD do alvo.</li>
+<li>O  <strong>dano é maximizado</strong> : ao invés de rolar o dado de dano, considera-se o valor máximo possível.</li>
+<li>Efeitos secundários da habilidade ou ataque (como status ou efeitos adicionais) têm  <strong>sucesso automático</strong> .</li>
+</ul>
+<h6 id="exemplo">Exemplo:</h6>
+<ul>
+<li>Arco com dano 1D6 → Dano crítico:  <strong>6</strong></li>
+<li>Maça com dano 1D6 → Dano crítico:  <strong>6</strong>
+🎯  <em>Nota:</em>  Em versões futuras com múltiplos dados (ex: 2D6), todos os dados seriam considerados no máximo.</li>
+</ul>
+<hr>
+<h5 id="efeitos-adicionais-de-cr-ticos">⚡ Efeitos Adicionais de Críticos</h5>
+<ul>
+<li>Algumas habilidades ou magias poderão ter  <strong>efeitos especiais adicionais</strong>  ao acertar com 20 natural (ex: derrubar, empurrar, cegar).</li>
+<li>Esses efeitos serão descritos individualmente em cada habilidade.
+🔥  <em>Importante:</em>  No sistema base de mesa e 1ª etapa digital,  <strong>não há multiplicação de dano</strong>  — apenas maximização do dano dos dados.</li>
+</ul>
+<hr>
+<h5 id="falha-cr-tica-1-natural">🚫 Falha Crítica (1 Natural)</h5>
+<p>Quando um jogador ou inimigo  <strong>rola 1 natural em 1D20</strong> :</p>
+<ul>
+<li>A ação automaticamente  <strong>falha</strong> , mesmo que o valor total após modificadores fosse suficiente para atingir η Defesa ou CD.</li>
+<li>O jogador fica  <strong>vulnerável</strong>  até o início do seu próximo turno:
+<ul>
+<li>O próximo ataque contra ele tem  <strong>+2</strong>  no teste de acerto.</li>
+</ul>
+</li>
+</ul>
+<h6 id="exemplo-2">Exemplo:</h6>
+<ul>
+<li>Jogador tenta atacar, tira 1 no dado → Falha automática → Sofre vulnerabilidade.</li>
+</ul>
+<hr>
+<h5 id="op-es-narrativas-para-falhas-cr-ticas">📚 Opções Narrativas para Falhas Críticas</h5>
+<p>O mestre (ou o sistema digital futuramente) pode, a critério da narrativa, aplicar efeitos adicionais leves à falha crítica, como:</p>
+<ul>
+<li>Derrubar a arma no chão (ação de gastar movimento para recuperar).</li>
+<li>Perder equilíbrio (impor desvantagem no próximo teste).</li>
+<li>Expor fraquezas para o inimigo (fornecer bônus narrativo para adversário).
+✍️  <em>Essas consequências extras devem ser aplicadas com parcimônia</em>  para não punir excessivamente a aleatoriedade natural dos dados.</li>
+</ul>
+<hr>
+<h5 id="resumo-r-pido">🧪 Resumo Rápido</h5>
+<table>
+<thead>
+<tr>
+<th>Resultado</th>
+<th>Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20 natural</td>
+<td>Acerto automático + Dano máximo + Sucesso em efeitos especiais</td>
+</tr>
+<tr>
+<td>1 natural</td>
+<td>Falha automática + Vulnerável (+2 para quem atacar até próximo turno)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="defesa-esquiva-e-resist-ncia">🛡️ Defesa, Esquiva e Resistência</h4>
+<p>Além de atacar, os personagens em  <em>Eras do Brasil</em>  precisam se proteger de ataques físicos, mágicos ou efeitos adversos. O sistema de defesa, esquiva e resistência define como calcular as defesas básicas e como resolver testes contra ataques ou magias.</p>
+<hr>
+<h5 id="defesa-base">🛡️ Defesa Base</h5>
+<p>A  <strong>Defesa Base</strong>  de cada personagem determina o número que os inimigos precisam superar para acertar um ataque físico.</p>
+<h6 id="c-lculo-da-defesa-base">Cálculo da Defesa Base</h6>
+<p><strong>Defesa Base = 10 + Modificador de Astúcia</strong>
+| Situação | Ajuste |
+| ------ | ------ |
+| Sem armadura | Defesa Base normal |
+| Com armadura | Defesa Base normal + bônus de armadura (se houver) |</p>
+<p>🔔  <em>A Defesa representa a capacidade de esquiva, bloqueio parcial e proteção passiva</em> .</p>
+<h6 id="exemplo-3">Exemplo:</h6>
+<ul>
+<li>Personagem com Astúcia 4 (+1) e sem armadura:
+<ul>
+<li>Defesa Base = 10 + 1 =  <strong>11</strong></li>
+</ul>
+</li>
+<li>Personagem com Astúcia 4 (+1) e armadura leve (+1):
+<ul>
+<li>Defesa Base = 10 + 1 + 1 =  <strong>12</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="esquiva-teste-de-ast-cia">🏃 Esquiva (Teste de Astúcia)</h5>
+<p>Em algumas situações, esquivar-se é ativo e requer um teste.
+<strong>Esquiva Ativa = 1D20 + Modificador de Astúcia</strong>
+Usada em casos como:</p>
+<ul>
+<li>Evitar armadilhas</li>
+<li>Desviar de magias de área</li>
+<li>Fugir de um ataque de oportunidade
+O Mestre define a  <strong>CD (Classe de Dificuldade)</strong>  necessária para a esquiva.
+🎯  <em>Em combate corpo a corpo normal, a esquiva está abstraída na Defesa Base. Só em efeitos específicos é necessário teste ativo</em> .</li>
+</ul>
+<hr>
+<h5 id="testes-de-resist-ncia-2">🧪 Testes de Resistência</h5>
+<p>Quando um personagem é alvo de magias, efeitos espirituais ou condições debilitantes, ele pode precisar realizar um  <strong>Teste de Resistência</strong> .</p>
+<h6 id="tipos-de-teste-de-resist-ncia">Tipos de Teste de Resistência</h6>
+<table>
+<thead>
+<tr>
+<th>Tipo de Resistência</th>
+<th>Atributo Utilizado</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Física</td>
+<td>Vigor</td>
+<td>Resistir a venenos, doenças, fadiga</td>
+</tr>
+<tr>
+<td>Mental</td>
+<td>Presença</td>
+<td>Resistir a medo, manipulação, controle mental</td>
+</tr>
+<tr>
+<td>Espiritual</td>
+<td>Sabedoria Ancestral</td>
+<td>Resistir a maldições, visões, efeitos sobrenaturais</td>
+</tr>
+<tr>
+<td>Reflexos</td>
+<td>Astúcia</td>
+<td>Esquivar de explosões, feitiços de área</td>
+</tr>
+</tbody>
+</table>
+<h6 id="estrutura-do-teste">Estrutura do Teste</h6>
+<p><strong>Teste de Resistência = 1D20 + Modificador do Atributo</strong>
+Deve superar a  <strong>CD</strong>  definida pela habilidade ou ataque.</p>
+<hr>
+<h6 id="exemplo-de-resist-ncia">📜 Exemplo de Resistência</h6>
+<ul>
+<li>Um xamã inimigo lança uma maldição com CD 14.</li>
+<li>O jogador precisa fazer um  <strong>Teste de Resistência Espiritual</strong> :
+<ul>
+<li>1D20 + Modificador de Sabedoria Ancestral.</li>
+</ul>
+</li>
+<li>Se superar 14, resiste.</li>
+<li>Se falhar, sofre o efeito da maldição.</li>
+</ul>
+<hr>
+<h5 id="efeitos-de-equipamentos-e-b-nus">⚡ Efeitos de Equipamentos e Bônus</h5>
+<p>Alguns equipamentos, habilidades ou magias concedem:</p>
+<ul>
+<li><strong>Bônus fixos</strong>  à Defesa Base.</li>
+<li><strong>Vantagem</strong>  em Testes de Resistência (rolar dois dados e escolher o maior).</li>
+<li><strong>Resistência Parcial</strong>  (reduz dano de uma fonte específica).
+Esses bônus serão descritos individualmente nos equipamentos ou nas habilidades correspondentes.</li>
+</ul>
+<hr>
+<h5 id="resumo-r-pido-2">📚 Resumo Rápido</h5>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Resumo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defesa Base</td>
+<td>10 + Mod. Astúcia + bônus de armadura (se houver)</td>
+</tr>
+<tr>
+<td>Esquiva</td>
+<td>1D20 + Mod. Astúcia contra CD em efeitos especiais</td>
+</tr>
+<tr>
+<td>Teste de Resistência</td>
+<td>1D20 + Modificador apropriado (Vigor, Presença, etc.)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="condi-es-de-status">⚠️ Condições de Status</h4>
+<p>Durante o combate e a exploração, personagens e inimigos podem sofrer  <strong>condições de status</strong>  — estados temporários que alteram suas capacidades físicas, mentais ou espirituais.
+As condições são aplicadas por habilidades, magias, armadilhas ou efeitos ambientais, e podem impactar rolagens de dados, movimento, ações disponíveis e defesas.</p>
+<hr>
+<h5 id="lista-de-condi-es-comuns">🩸 Lista de Condições Comuns</h5>
+<h6 id="envenenado">🐍 Envenenado</h6>
+<ul>
+<li><strong>Efeito:</strong>  Sofre dano contínuo no final de cada turno.</li>
+<li><strong>Rolagem:</strong>  Teste de Resistência Física (Vigor) para se recuperar ao final do turno.</li>
+<li><strong>Notas:</strong>  Veneno pode variar em potência conforme a fonte.</li>
+</ul>
+<hr>
+<h6 id="derrubado">🌪️ Derrubado</h6>
+<ul>
+<li><strong>Efeito:</strong>  O personagem fica no chão.</li>
+<li><strong>Consequências:</strong>
+<ul>
+<li>Ataques contra o personagem têm vantagem corpo a corpo.</li>
+<li>Ataques à distância têm desvantagem.</li>
+<li>Para se levantar: Gasta a Ação Principal no turno.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="atordoado">😵 Atordoado</h6>
+<ul>
+<li><strong>Efeito:</strong>  Perde η Ação Principal no turno.</li>
+<li><strong>Rolagem:</strong>  Teste de Resistência Física ou Mental (varia pela origem do efeito).</li>
+<li><strong>Notas:</strong>  Durante o atordoamento, o personagem é considerado incapaz de se defender ativamente.</li>
+</ul>
+<hr>
+<h6 id="assustado">😱 Assustado</h6>
+<ul>
+<li><strong>Efeito:</strong>  Não pode se aproximar da fonte do medo.</li>
+<li><strong>Consequências:</strong>
+<ul>
+<li>Desvantagem em testes de ataque e resistência enquanto puder ver a fonte.</li>
+<li>Se já estiver a uma distância segura, pode agir normalmente.</li>
+</ul>
+</li>
+<li><strong>Rolagem:</strong>  Teste de Resistência Mental (Presença) no final do turno.</li>
+</ul>
+<hr>
+<h6 id="queimando">🔥 Queimando</h6>
+<ul>
+<li><strong>Efeito:</strong>  Sofre dano de fogo ao início de cada turno.</li>
+<li><strong>Notas:</strong>
+<ul>
+<li>Pode tentar apagar as chamas gastando a Ação Principal em um teste de Vigor CD 10.</li>
+<li>Água, rolar no chão ou magia de água podem ajudar.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="congelado">❄️ Congelado</h6>
+<ul>
+<li><strong>Efeito:</strong>  Imobilizado e sofre penalidades de ação.</li>
+<li><strong>Consequências:</strong>
+<ul>
+<li>Perde o movimento.</li>
+<li>Ações físicas têm desvantagem.</li>
+</ul>
+</li>
+<li><strong>Notas:</strong>  A resistência à condição pode depender de armadura ou bônus elementais.</li>
+</ul>
+<hr>
+<h6 id="cego">🌫️ Cego</h6>
+<ul>
+<li><strong>Efeito:</strong>  Não enxerga seu entorno.</li>
+<li><strong>Consequências:</strong>
+<ul>
+<li>Desvantagem em ataques.</li>
+<li>Ataques contra o personagem têm vantagem.</li>
+<li>Testes de Percepção baseados em visão falham automaticamente.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h6 id="confuso">🧠 Confuso</h6>
+<ul>
+<li><strong>Efeito:</strong>  Ações imprevisíveis.</li>
+<li><strong>Consequências:</strong>
+<ul>
+<li>No início do turno, role 1D4:
+<ul>
+<li>1-2: Faz ataque aleatório contra o alvo mais próximo.</li>
+<li>3: Fica paralisado (não age).</li>
+<li>4: Age normalmente.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Notas:</strong>  Teste de Resistência Mental (Presença) para tentar se recuperar ao final do turno.</li>
+</ul>
+<hr>
+<h5 id="dura-o-das-condi-es">🔄 Duração das Condições</h5>
+<ul>
+<li>A maioria das condições dura até:
+<ul>
+<li><strong>Fim do turno</strong>  do personagem (teste de recuperação automático).</li>
+<li><strong>X turnos</strong>  definidos pelo efeito/magia.</li>
+<li><strong>Fim do combate</strong> , se não for recuperada.</li>
+</ul>
+</li>
+<li>Algumas condições podem ser removidas por:
+<ul>
+<li>Magias de cura ou bênçãos.</li>
+<li>Sucesso em testes de resistência.</li>
+<li>Uso de itens ou ações específicas.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="resist-ncias-e-imunidades">🛡️ Resistências e Imunidades</h5>
+<p>Algumas classes, habilidades e equipamentos podem:</p>
+<ul>
+<li>Reduzir a duração das condições.</li>
+<li>Conceder  <strong>vantagem</strong>  em testes de resistência contra condições específicas.</li>
+<li>Tornar o personagem  <strong>imune</strong>  a certos efeitos (ex.: imune a medo ou veneno).
+Esses bônus serão indicados nas descrições das habilidades, classes ou itens correspondentes.</li>
+</ul>
+<hr>
+<h5 id="resumo-r-pido-3">📚 Resumo Rápido</h5>
+<table>
+<thead>
+<tr>
+<th>Condição</th>
+<th>Efeito Principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Envenenado</td>
+<td>Dano contínuo</td>
+</tr>
+<tr>
+<td>Derrubado</td>
+<td>Penalidade defensiva e dificuldade para agir</td>
+</tr>
+<tr>
+<td>Atordoado</td>
+<td>Perda da Ação Principal</td>
+</tr>
+<tr>
+<td>Assustado</td>
+<td>Fuga ou desvantagem contra fonte do medo</td>
+</tr>
+<tr>
+<td>Queimando</td>
+<td>Dano de fogo por turno</td>
+</tr>
+<tr>
+<td>Congelado</td>
+<td>Imobilização e penalidades físicas</td>
+</tr>
+<tr>
+<td>Cego</td>
+<td>Ataques e percepção prejudicados</td>
+</tr>
+<tr>
+<td>Confuso</td>
+<td>Ações aleatórias e instabilidade</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="magia-e-uso-de-habilidades">🎭 Magia e Uso de Habilidades</h4>
+<p>Em  <em>Eras do Brasil</em> , o uso de  <strong>magias</strong>  e  <strong>habilidades</strong>  é fundamental para personalizar o estilo de combate, reforçar estratégias e interagir de formas únicas com o ambiente.
+Tanto magias quanto habilidades seguem  <strong>regras gerais</strong>  para sua utilização durante o combate.</p>
+<hr>
+<h5 id="diferen-a-entre-magias-e-habilidades">✨ Diferença entre Magias e Habilidades</h5>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Origem</th>
+<th>Exemplos</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Habilidades</strong></td>
+<td>Definidas pela classe ativa</td>
+<td>Provocação Tática, Investida Tribal</td>
+<td>Usadas em combate ou exploração. Ativas ou passivas.</td>
+</tr>
+<tr>
+<td><strong>Magias</strong></td>
+<td>Definidas por classe mágica, habilidades espirituais ou equipamentos</td>
+<td>Bênção Curativa, Maldição Ancestral, Encantamento de Arma</td>
+<td>Requerem conjuração. Podem ser ofensivas, defensivas ou utilitárias.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="como-usar-habilidades-e-magias">🧙‍♂️ Como Usar Habilidades e Magias</h5>
+<p>Durante o turno, ao invés de um ataque básico ou ação comum, o personagem pode optar por usar:</p>
+<ul>
+<li>Uma  <strong>Habilidade Ativa</strong>  (ex.: Investida Tribal, Proteção Ancestral)</li>
+<li>Uma  <strong>Magia</strong>  (ex.: Rajada de Chamas, Bênção de Vitalidade)</li>
+</ul>
+<h6 id="regras-gerais">Regras Gerais</h6>
+<ul>
+<li>Utilizar uma habilidade ou magia  <strong>consome a Ação Principal</strong>  do turno.</li>
+<li>Algumas habilidades podem ser usadas como  <strong>Reação</strong>  se indicado na descrição.</li>
+<li>Magias e habilidades  <strong>não consomem movimento</strong>  (caso haja movimentação no futuro).</li>
+</ul>
+<hr>
+<h5 id="testes-e-resist-ncias">📜 Testes e Resistências</h5>
+<p>Algumas habilidades e magias exigem que o alvo realize  <strong>Testes de Resistência</strong>  para evitar ou reduzir seus efeitos.
+<strong>Formato padrão:</strong>
+<strong>CD (Classe de Dificuldade) = 10 + Modificador de Atributo Base da Magia/Habilidade</strong>
+<strong>Exemplo:</strong>  Um Xamã Curandeiro usando uma magia espiritual terá a CD baseada em  <strong>Sabedoria Ancestral</strong> .</p>
+<hr>
+<h6 id="atributo-base-de-magias">Atributo Base de Magias</h6>
+<table>
+<thead>
+<tr>
+<th>Tipo de Magia</th>
+<th>Atributo Base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Espiritual, Ritualística</td>
+<td>Sabedoria Ancestral</td>
+</tr>
+<tr>
+<td>Elemental, Técnica</td>
+<td>Conhecimento</td>
+</tr>
+<tr>
+<td>Ilusória, Mental</td>
+<td>Presença</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h5 id="limita-es-e-recarga">🔋 Limitações e Recarga</h5>
+<ul>
+<li>Habilidades possuem  <strong>tempo de recarga</strong>  após o uso (indicado na descrição: 1 turno, 2 turnos, etc.).</li>
+<li>Algumas magias poderão futuramente consumir  <strong>&#34;Cargas Espirituais&#34;</strong>  ou aplicar  <strong>&#34;Fadiga&#34;</strong>  (em desenvolvimento no Livro de Magias).</li>
+<li>Entre combates, todas as recargas são  <strong>reiniciadas</strong> .</li>
+</ul>
+<hr>
+<h5 id="alcance-de-magias-e-habilidades">🔥 Alcance de Magias e Habilidades</h5>
+<p>Na fase atual (combate sem grid):</p>
+<ul>
+<li>Alcances são  <strong>descritivos</strong>  (ex.: &#34;até 3 metros&#34;, &#34;todos em alcance médio&#34;).</li>
+<li>Não é necessário medir grids ou quadrados — apenas seguir a descrição narrativa.
+No futuro (com sistema tático ativado):</li>
+<li>Distâncias serão medidas em  <strong>blocos</strong>  ou  <strong>grids</strong>  (ex.: &#34;alcance de 6 quadrados&#34;).</li>
+</ul>
+<hr>
+<h5 id="regras-de-concentra-o-planejado-para-futuro">🛡️ Regras de Concentração (Planejado para Futuro)</h5>
+<ul>
+<li>Algumas magias de longa duração exigirão  <strong>Concentração</strong> .</li>
+<li>Enquanto concentrado:
+<ul>
+<li>O personagem  <strong>não pode</strong>  lançar novas magias que exijam concentração.</li>
+<li>Se for  <strong>atordoado, derrubado ou sofrer dano</strong> , poderá ser exigido um  <strong>teste de resistência</strong>  para manter a concentração.
+Essas regras serão implementadas junto com o  <strong>Livro de Magias</strong> .</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="resumo-r-pido-4">📚 Resumo Rápido</h5>
+<table>
+<thead>
+<tr>
+<th>Ação</th>
+<th>Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Usar Habilidade Ativa</td>
+<td>Consome Ação Principal</td>
+</tr>
+<tr>
+<td>Usar Magia</td>
+<td>Consome Ação Principal</td>
+</tr>
+<tr>
+<td>Recarga</td>
+<td>Respeitar tempo indicado antes de reutilizar</td>
+</tr>
+<tr>
+<td>Teste de Resistência</td>
+<td>Necessário para muitas magias e habilidades de controle</td>
+</tr>
+<tr>
+<td>Alcance</td>
+<td>Narrativo atualmente; por grid no futuro</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="exemplo-completo-de-turno">🎲 Exemplo Completo de Turno</h4>
+<p>Para ilustrar todo o funcionamento do sistema de combate em  <em>Eras do Brasil</em> , vamos acompanhar um exemplo prático, simulando uma rodada de combate completa entre personagens e um inimigo.</p>
+<hr>
+<h5 id="cen-rio">📜 Cenário</h5>
+<ul>
+<li><strong>Local:</strong>  Clareira em uma floresta densa.</li>
+<li><strong>Participantes:</strong>
+<ul>
+<li>Jogador 1:  <strong>Conquistador</strong>  (Tank)</li>
+<li>Jogador 2:  <strong>Xamã Curandeiro</strong>  (Healer)</li>
+<li>Jogador 3:  <strong>Arqueiro Selvagem</strong>  (DPS à distância)</li>
+<li>Inimigo:  <strong>Espírito Corrompido</strong>  (Criatura Mágica Hostil)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="fase-1-determinar-iniciativa">🎯 Fase 1: Determinar Iniciativa</h5>
+<p>Cada participante rola  <strong>1D20 + Modificador de Astúcia</strong> .
+| Personagem | Rolagem | Modificador de Astúcia | Iniciativa Final |
+| ------ | ------ | ------ | ------ |
+| Conquistador | 12 | +0 | 12 |
+| Xamã Curandeiro | 16 | +1 | 17 |
+| Arqueiro Selvagem | 15 | +2 | 17 |
+| Espírito Corrompido | 14 | +1 | 15 |</p>
+<p><strong>Ordem de Turnos:</strong></p>
+<ol>
+<li>Xamã Curandeiro (Desempate: maior Astúcia)</li>
+<li>Arqueiro Selvagem</li>
+<li>Espírito Corrompido</li>
+<li>Conquistador</li>
+</ol>
+<hr>
+<h5 id="fase-2-execu-o-dos-turnos">🛡️ Fase 2: Execução dos Turnos</h5>
+<h6 id="turno-1-xam-curandeiro">🧙‍♂️ Turno 1 – Xamã Curandeiro</h6>
+<ul>
+<li><strong>Ação:</strong>  Usa  <strong>Bênção Curativa</strong>  no Conquistador, preparando-o para o combate.</li>
+<li><strong>Descrição:</strong>  O Xamã invoca uma energia espiritual, curando levemente feridas antigas do aliado.</li>
+<li><strong>Recarga:</strong>  2 turnos (não poderá usar novamente imediatamente).</li>
+</ul>
+<hr>
+<h6 id="turno-2-arqueiro-selvagem">🏹 Turno 2 – Arqueiro Selvagem</h6>
+<ul>
+<li><strong>Ação:</strong>  Atira uma flecha usando a habilidade ativa  <strong>Tiro Furtivo</strong> .</li>
+<li><strong>Alvo:</strong>  Espírito Corrompido.</li>
+<li><strong>Teste:</strong>  Rola 1D20 + Modificador de Astúcia + Bônus de Ataque.</li>
+<li><strong>Resultado:</strong>  Acerta!</li>
+<li><strong>Dano:</strong>  1D6 (arma) + 2 (bônus do Tiro Furtivo).</li>
+</ul>
+<hr>
+<h6 id="turno-3-esp-rito-corrompido">👻 Turno 3 – Espírito Corrompido</h6>
+<ul>
+<li><strong>Ação:</strong>  Usa  <strong>Maldição de Fraqueza</strong>  contra o Conquistador.</li>
+<li><strong>Teste:</strong>  O Conquistador faz um  <strong>Teste de Resistência</strong>  baseado em Vigor.</li>
+<li><strong>Resultado:</strong>  Falha! O Conquistador sofre -1 de dano em seus próximos ataques físicos por 2 turnos.</li>
+</ul>
+<hr>
+<h6 id="turno-4-conquistador">🛡️ Turno 4 – Conquistador</h6>
+<ul>
+<li><strong>Ação:</strong>  Usa  <strong>Provocação Tática</strong> .</li>
+<li><strong>Efeito:</strong>  Força o Espírito Corrompido a focar ataques apenas nele no próximo turno (teste de Sabedoria do inimigo).</li>
+<li><strong>Resultado:</strong>  O Espírito falha no teste — ele será obrigado a atacar o Conquistador.</li>
+</ul>
+<hr>
+<h5 id="fase-3-atualizar-estado-do-combate">🔄 Fase 3: Atualizar Estado do Combate</h5>
+<ul>
+<li>O Xamã está com  <strong>Bênção Curativa</strong>  em recarga (1 turno restante).</li>
+<li>O Conquistador está  <strong>enfraquecido</strong>  (devido à maldição).</li>
+<li>O Espírito Corrompido está  <strong>provocado</strong>  (obrigado a focar ataques no tank).</li>
+</ul>
+<hr>
+<h5 id="fase-4-nova-rodada">🛡️ Fase 4: Nova Rodada</h5>
+<p>A ordem de turnos permanece a mesma, e uma nova rodada se inicia.</p>
+<hr>
+<h5 id="aprendizados-do-exemplo">📚 Aprendizados do Exemplo</h5>
+<ul>
+<li>O  <strong>turno</strong>  é baseado em ações táticas claras e organizadas.</li>
+<li>As  <strong>habilidades</strong>  possuem tempos de recarga que precisam ser gerenciados.</li>
+<li><strong>Efeitos e condições</strong>  alteram a estratégia de combate e obrigam adaptações.</li>
+<li>Mesmo sem movimentação em grid, o  <strong>controle tático</strong>  permanece forte graças às habilidades, testes e efeitos.</li>
+</ul>
+<hr>
+<p>🎯 Este exemplo é ideal para tutoriais iniciais em campanhas de mesa ou digital, ajudando jogadores e mestres a compreenderem rapidamente o fluxo de combate!</p>
+<hr>
+<h4 id="regras-especiais-futuras-expans-o-modular">🛠️ Regras Especiais Futuras (Expansão Modular)</h4>
+<p><em>Eras do Brasil</em>  foi projetado para crescer em complexidade conforme o jogo evolui — tanto nas campanhas de mesa quanto nas versões digitais futuras.
+Por isso, o sistema reserva este espaço para a inclusão de  <strong>módulos avançados</strong> , que poderão ser ativados conforme a campanha, o mestre ou o sistema digital desejar.</p>
+<hr>
+<h5 id="m-dulo-t-tico-com-grid-segunda-etapa-digital">🔮 Módulo Tático com Grid (Segunda Etapa Digital)</h5>
+<p>Este módulo substituirá o posicionamento abstrato por movimentação física em  <strong>blocos ou grids</strong> , no estilo de jogos como  <em>Solasta</em> ,  <em>Wartales</em>  ou  <em>Pathfinder</em> .
+Inclui:</p>
+<ul>
+<li><strong>Movimentação por Distância (em blocos ou metros)</strong></li>
+<li><strong>Alcance real de magias e ataques</strong></li>
+<li><strong>Ataques de Oportunidade</strong></li>
+<li><strong>Controle de terreno, zonas de perigo e bloqueios</strong></li>
+<li><strong>Cobertura parcial ou total</strong>
+💡 Este módulo será opcional no RPG de mesa e ativado por padrão na segunda fase digital.</li>
+</ul>
+<hr>
+<h5 id="magias-com-rea-e-dire-o">🌪️ Magias com Área e Direção</h5>
+<p>Algumas magias ou habilidades futuras afetarão  <strong>áreas em cone, linha, círculo ou raio</strong> . Essas regras serão descritas no  <strong>Livro de Magias</strong>  com indicações visuais, medidas e efeitos adicionais.</p>
+<hr>
+<h5 id="duelos-e-combate-1x1">💥 Duelos e Combate 1x1</h5>
+<p>Regra opcional para situações de duelo individual:</p>
+<ul>
+<li>Ações simultâneas ou semi-simultâneas.</li>
+<li>Resolução por prioridade de iniciativa + astúcia.</li>
+<li>Eventos narrativos de tensão e honra.</li>
+</ul>
+<hr>
+<h5 id="modo-narrativo-com-rolagens-condensadas">🧩 Modo Narrativo com Rolagens Condensadas</h5>
+<p>Para grupos que desejam combates mais rápidos e narrativos:</p>
+<ul>
+<li>Um único teste para definir o sucesso ou fracasso de uma cena de combate inteira.</li>
+<li>Utiliza o modificador de atributo relevante + uma descrição criativa.</li>
+<li>Ideal para campanhas com foco em história, exploração e desenvolvimento de personagens.</li>
+</ul>
+<hr>
+<h5 id="expans-es-planejadas">📌 Expansões Planejadas</h5>
+<table>
+<thead>
+<tr>
+<th>Nome do Módulo</th>
+<th>Aplicação</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Combate com Grid</td>
+<td>Segunda Etapa Digital</td>
+<td>Planejado</td>
+</tr>
+<tr>
+<td>Reação por Alcance</td>
+<td>RPG de Mesa e Digital</td>
+<td>Em discussão</td>
+</tr>
+<tr>
+<td>Inimigos com IA Estratégica</td>
+<td>Versão Digital Persistente</td>
+<td>Em design</td>
+</tr>
+<tr>
+<td>Combate por Zona de Impacto</td>
+<td>Ambientes mágicos ou espirituais</td>
+<td>Em concepção</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>✅ Estas regras não impactam o núcleo do jogo atual, mas serão incorporadas de forma modular e transparente sempre que forem ativadas.</p>
+<hr>

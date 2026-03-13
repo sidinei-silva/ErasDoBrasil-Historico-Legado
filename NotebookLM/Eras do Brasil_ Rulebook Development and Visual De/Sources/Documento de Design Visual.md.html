@@ -1,0 +1,104 @@
+<h3 id="documento-de-design-visual-eras-do-brasil">🎨 Documento de Design Visual — Eras do Brasil</h3>
+<p>Este documento define o  <strong>design system visual</strong>  do jogo  <em>Eras do Brasil</em> , incluindo estilo gráfico, arte de UI, fontes, proporções e direções gerais para sprites, HUD, narrativa e apresentação. Ele serve como base para manutenção de consistência visual e como guia para futuras gerações de assets e componentes.</p>
+<hr>
+<h4 id="estilo-visual-geral">🧭 Estilo Visual Geral</h4>
+<ul>
+<li><strong>Estilo gráfico:</strong>  Pixel Art moderna</li>
+<li><strong>Paleta principal:</strong>  Tons terrosos, madeira, palha, dourado envelhecido, verdes profundos, azuis místicos e roxos espirituais</li>
+<li><strong>Atmosfera:</strong>  Rústica, espiritual, mística, conectada à natureza e aos ciclos</li>
+<li><strong>Referências:</strong>   <em>Sea of Stars</em> ,  <em>Wartales</em> ,  <em>Solasta</em> ,  <em>Pathfinder</em>  (em pixel art), arte brasileira artesanal</li>
+</ul>
+<h5 id="propor-o-e-resolu-o">📐 Proporção e Resolução</h5>
+<ul>
+<li><strong>Grid base:</strong>  32x32px para elementos interativos e icônicos</li>
+<li><strong>Resolução alvo:</strong>  1920x1080 (redimensionável com 9-slice e escalonamento)</li>
+</ul>
+<hr>
+<h4 id="ui-e-hud">🖼️ UI e HUD</h4>
+<h5 id="componentes">🎮 Componentes</h5>
+<ul>
+<li>Molduras com textura de madeira, detalhes em cordas, entalhes e penas</li>
+<li>Botões com estados idle, hover e pressed, seguindo o mesmo estilo tribal</li>
+<li>Painéis de informações com ornamentos discretos inspirados em pergaminhos ou artefatos</li>
+<li>Barras de vida e durabilidade com molduras entalhadas e preenchimento temático</li>
+</ul>
+<h5 id="elementos-visuais">🌟 Elementos visuais</h5>
+<ul>
+<li>HUD contextual (aparece por bloco)</li>
+<li>Mini log de eventos e tempo (tick)</li>
+<li>Setas para movimentação com arte integrada ao ambiente</li>
+<li>Componentes diegéticos sempre que possível (ex: painel de atributos como pergaminho)</li>
+</ul>
+<hr>
+<h4 id="estilo-de-cones">🧩 Estilo de Ícones</h4>
+<h5 id="atributos">📊 Atributos</h5>
+<ul>
+<li>Pixel art em 32x32 px</li>
+<li>Simbologia tribal e clara</li>
+<li>Ex: Coração para Vigor, Braço para Força Bruta, Máscara para Astúcia</li>
+</ul>
+<h5 id="profici-ncias-de-vida">🧪 Proficiências de Vida</h5>
+<ul>
+<li>32x32 px, fundo transparente</li>
+<li>Design temático por tipo:
+<ul>
+<li>🌿  <strong>Coleta:</strong>  natureza, rastros, minerais, visões</li>
+<li>⚙️  <strong>Refinamento:</strong>  couro, fornalhas, ferramentas, trocas</li>
+<li>🔨  <strong>Produção:</strong>  caldeirões, bigornas, talismãs, tecidos</li>
+</ul>
+</li>
+</ul>
+<h5 id="efeitos-e-status">🧿 Efeitos e Status</h5>
+<ul>
+<li>Icônes simples, animados quando aplicável (ex: envenenado, buff, maldição)</li>
+</ul>
+<hr>
+<h4 id="tipografia">📖 Tipografia</h4>
+<h5 id="fontes-avaliadas">Fontes avaliadas:</h5>
+<ul>
+<li><strong>Londrina Solid:</strong>  para títulos e menus principais</li>
+<li><strong>TinyUnicode:</strong>  para textos menores com suporte PT-BR</li>
+<li><strong>Press Start 2P:</strong>  como opção estilizada e nostálgica, se apropriado</li>
+</ul>
+<h5 id="caracter-sticas-desejadas">Características desejadas</h5>
+<ul>
+<li>Total suporte a PT-BR (acentos, cedilha, pontuação)</li>
+<li>Boa legibilidade em 14px e 18px (escalonável)</li>
+<li>Versão de título com maior destaque visual</li>
+</ul>
+<hr>
+<h4 id="arte-de-cen-rio-e-blocos">🧱 Arte de Cenário e Blocos</h4>
+<ul>
+<li>Estilo de &#34;cenas conectadas&#34; com caminhos e cenários modulares</li>
+<li>Cada bloco é uma tela com fundo ilustrado em pixel art detalhado</li>
+<li>Elementos clicáveis (NPCs, coleta, evento) ficam sobrepostos com sprites de 32-64px</li>
+<li>Blocos &#34;vazios&#34; (trilhas, estradas) têm ambientação suave mas com possibilidade de eventos e recursos</li>
+</ul>
+<hr>
+<h4 id="combate-e-grid">⚔️ Combate e Grid</h4>
+<ul>
+<li>Combate em modo tático isométrico, estilo  <em>Solasta</em></li>
+<li>Grid em perspectiva 5x5 ou superior</li>
+<li>HUD de combate com ações: Atacar, Habilidade, Fugir, Item</li>
+<li>Preenchimentos coloridos nos tiles para alcance (azul = movimento, vermelho = ataque)</li>
+</ul>
+<hr>
+<h4 id="exporta-o-e-formatos">📦 Exportação e Formatos</h4>
+<ul>
+<li>Todos os assets devem ser exportados em:
+<ul>
+<li>.png com fundo transparente</li>
+<li>Escalonamento múltiplo de 16 ou 32 px</li>
+<li>Quando aplicável, considerar uso de  <strong>9-slice</strong>  para componentes de UI</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="recomenda-es-finais">📚 Recomendações finais</h4>
+<ul>
+<li>Todos os elementos devem priorizar  <strong>clareza visual + identidade cultural brasileira</strong></li>
+<li>A pixel art deve ser responsiva, adaptando-se tanto a exploração quanto ao combate</li>
+<li>O estilo deve permitir transição para versões futuras (2.5D ou HD art) sem perder a essência</li>
+</ul>
+<hr>
+<p>Este documento pode ser estendido com diretrizes de animação, feedback sonoro e comportamento visual (interações).</p>

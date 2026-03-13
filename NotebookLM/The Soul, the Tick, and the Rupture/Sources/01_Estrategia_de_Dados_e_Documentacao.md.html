@@ -1,0 +1,48 @@
+<h3 id="estrat-gia-de-dados-e-documenta-o">🧠 Estratégia de Dados e Documentação</h3>
+<p>Este documento define a filosofia de arquitetura de informação do projeto  <em>Eras do Brasil</em> , estabelecendo como transformaremos conceitos (GDD) em código (Game).</p>
+<h4 id="1-filosofia-alma-vs-l-gica">1. Filosofia: &#34;Alma vs. Lógica&#34;</h4>
+<p>Para evitar o excesso de documentação morta ou a falta de contexto nos dados, adotamos o modelo híbrido:
+<strong>&#34;O Livro explica o PORQUÊ e o O QUÊ (Alma). O JSON define o QUANTO e o COMO (Lógica).&#34;</strong></p>
+<h4 id="2-classifica-o-dos-documentos">2. Classificação dos Documentos</h4>
+<h5 id="grupo-a-a-alma-100-livro-0-json">Grupo A: A Alma (100% Livro / 0% JSON)</h5>
+<p><em>Documentos de leitura humana, inspiração e direção de arte.</em></p>
+<ul>
+<li><strong>Enredo Principal &amp; Lore:</strong>  História, tom, diálogos.</li>
+<li><strong>Design Visual:</strong>  Style guides, UI specs.</li>
+<li><strong>Regras Core (Conceitos):</strong>  Explicação teórica de Ticks, Mundo Vivo.</li>
+</ul>
+<h5 id="grupo-b-o-h-brido-livro-descritivo-json-de-defini-o">Grupo B: O Híbrido (Livro Descritivo + JSON de Definição)</h5>
+<p><em>Entidades que precisam de contexto narrativo E dados rígidos.</em></p>
+<ul>
+<li><strong>Classes:</strong>
+<ul>
+<li><em>Livro (.md):</em>  Descrição narrativa, papel na equipe, dicas de interpretação.</li>
+<li><em>Dados (.json):</em>  id, hp_base, atributos_bonus, lista_skills.</li>
+</ul>
+</li>
+<li><strong>Missões:</strong>
+<ul>
+<li><em>Livro (.md):</em>  O drama, os diálogos, o fluxo narrativo.</li>
+<li><em>Dados (.json):</em>  id, gatilho_tick, recompensa_id, condicao_vitoria.</li>
+</ul>
+</li>
+<li><strong>Monstros/NPCs:</strong>
+<ul>
+<li><em>Livro (.md):</em>  Ecologia, comportamento, lore.</li>
+<li><em>Dados (.json):</em>  id, tabela_loot, behavior_tree, stats.</li>
+</ul>
+</li>
+</ul>
+<h5 id="grupo-c-o-motor-100-dados-refer-ncia-em-tabela">Grupo C: O Motor (100% Dados / Referência em Tabela)</h5>
+<p><em>Listas matemáticas e funcionais.</em></p>
+<ul>
+<li><strong>Tabelas de Loot:</strong>  Probabilidades matemáticas.</li>
+<li><strong>Banco de Itens:</strong>  Lista de todos os itens com seus stats (Matriz 5x5).</li>
+<li><strong>Banco de Skills:</strong>  Fórmulas de dano, custos e cooldowns.</li>
+</ul>
+<h4 id="3-fluxo-de-trabalho-pipeline">3. Fluxo de Trabalho (Pipeline)</h4>
+<ol>
+<li><strong>Conceito:</strong>  Escrever no Markdown (Pasta 01, 02, 03).</li>
+<li><strong>Estrutura:</strong>  Definir o Schema (formato do JSON) na pasta 05_Livros_Auxiliares.</li>
+<li><strong>Implementação:</strong>  Popular os JSONs reais no projeto de código (ErasDoBrasil-Game).</li>
+</ol>

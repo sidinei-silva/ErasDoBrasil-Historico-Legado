@@ -1,0 +1,90 @@
+<h3 id="ui-fase-1-explora-o-e-combate-est-tico">🖼️ UI – Fase 1: Exploração e Combate Estático</h3>
+<p>Este documento define a interface de usuário (UI) e a experiência de usuário (UX) para a  <strong>Fase 1 (Protótipo / RPG de Mesa Digital)</strong>  de  <em>Eras do Brasil</em> .
+Nesta fase, o jogo não possui movimentação livre de personagens nem grids táticos. A experiência é focada em  <strong>tomada de decisão, gestão de recursos e narrativa visual</strong> , assemelhando-se a um jogo de tabuleiro digital avançado ou um &#34;RPG de Texto Visual&#34;.</p>
+<hr>
+<h4 id="1-layout-geral-e-hud-heads-up-display">1. Layout Geral e HUD (Heads-Up Display)</h4>
+<p>A interface principal deve passar a sensação de estar olhando para uma mesa de jogo organizada ou um diário de aventura interativo.</p>
+<h5 id="o-painel-de-gest-o-topo-da-tela">🧱 O Painel de Gestão (Topo da Tela)</h5>
+<p>Inspirado em jogos de gestão ( <em>Idle RPGs</em>  e  <em>Azure Dragon&#39;s Treasure</em> ), o topo da tela exibe constantemente os recursos vitais do jogador.</p>
+<ul>
+<li><strong>Estilo:</strong>  Barra de madeira escura com ícones em pixel art 32x32.</li>
+<li><strong>Elementos (Esquerda para Direita):</strong>
+<ol>
+<li><strong>Retrato do Personagem:</strong>  Rosto do personagem + Barra de PV (Vermelha) e Barra de XP (Azul/Amarela).</li>
+<li><strong>Recursos de Coleta (Resumo):</strong>  Ícones pequenos de Madeira, Pedra, Ervas e Couro com seus contadores numéricos.</li>
+<li><strong>Moeda:</strong>  Ícone de Ouro/UC e valor total.</li>
+<li><strong>Relógio de Ticks:</strong>  Um ícone de sol/lua que gira ou muda conforme os Ticks passam, indicando a hora do dia (Manhã, Tarde, Noite).</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="2-interface-de-explora-o-mapa-de-n-s">2. Interface de Exploração (Mapa de Nós)</h4>
+<p>Na Fase 1, não há um &#34;mundo aberto&#34; contínuo. O mundo é representado por um  <strong>Mapa de Nós</strong>  (Node Map), similar a  <em>Slay the Spire</em>  ou  <em>Sorcery!</em> .</p>
+<h5 id="o-mapa-de-trilhas">🗺️ O Mapa de Trilhas</h5>
+<ul>
+<li><strong>Visual:</strong>  Um pergaminho ou mapa desenhado à mão (pixel art) ocupa o centro da tela.</li>
+<li><strong>Os &#34;Blocos&#34;:</strong>  Locais são representados por  <strong>Ícones/Nós</strong>  conectados por linhas pontilhadas.
+<ul>
+<li><strong>Ícone de Interrogação (?)</strong> : Local inexplorado.</li>
+<li><strong>Ícone de Fogueira:</strong>  Local de descanso/acampamento.</li>
+<li><strong>Ícone de Caveira:</strong>  Combate obrigatório.</li>
+<li><strong>Ícone de Cidade/Casa:</strong>  Vila ou NPC importante.</li>
+</ul>
+</li>
+<li><strong>Interação:</strong>  O jogador clica no próximo Nó disponível.</li>
+<li><strong>Feedback de Tick:</strong>  Ao clicar, uma animação rápida do personagem (token ou miniatura) se move pela linha pontilhada, e o &#34;Relógio de Ticks&#34; no topo avança 1 unidade.</li>
+</ul>
+<hr>
+<h4 id="3-interface-de-evento-e-intera-o-cena">3. Interface de Evento e Interação (Cena)</h4>
+<p>Quando o jogador chega em um Nó (Bloco), a tela muda para o  <strong>Modo de Cena</strong> .  <em>Referência principal: Roadwarden.</em></p>
+<h5 id="layout-de-tela-dividida-split-screen">📐 Layout de Tela Dividida (Split Screen)</h5>
+<ul>
+<li><strong>Lado Esquerdo (A Imersão):</strong>  Uma ilustração grande em Pixel Art (alta qualidade) representando o local (ex: &#34;A Clareira Sagrada&#34;). Esta imagem é estática, mas pode ter efeitos climáticos leves (chuva, folhas caindo).</li>
+<li><strong>Lado Direito (A Narrativa):</strong>
+<ul>
+<li><strong>Título:</strong>  Nome do Local (ex: &#34;Clareira do Pajé&#34;).</li>
+<li><strong>Texto Descritivo:</strong>  &#34;Você encontra o velho Pajé sentado sob a árvore...&#34; (Texto rolável).</li>
+<li><strong>Menu de Ações (Botões Grandes):</strong>  Uma lista vertical de escolhas estilo  <em>Button Choice</em> .
+<ul>
+<li>[1] Conversar com o Pajé</li>
+<li>[2] (Sabedoria) Pedir Benção</li>
+<li>[3] Coletar Ervas (Gasta 1 Tick)</li>
+<li>[4] Seguir Viagem</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-interface-de-combate-est-tico-turnos">4. Interface de Combate Estático (Turnos)</h4>
+<p>O combate na Fase 1 não usa grid. Ele foca na escolha tática de habilidades.  <em>Referência principal: Path of Adventure / JRPGs Clássicos.</em></p>
+<h5 id="a-tela-de-batalha">⚔️ A Tela de Batalha</h5>
+<ul>
+<li><strong>Centro Superior:</strong>  Sprites dos Inimigos (estáticos ou com animação de &#34;respiro&#34;). Se houver 3 lobos, mostram-se 3 sprites lado a lado.</li>
+<li><strong>Centro Inferior:</strong>  O Personagem do Jogador (visto de costas ou lateral).</li>
+<li><strong>Barra de Ações (Hotbar):</strong>  No rodapé da tela, substituindo o texto narrativo.
+<ul>
+<li>Botões grandes e claros:  <strong>ATACAR</strong> ,  <strong>HABILIDADE</strong> ,  <strong>ITEM</strong> ,  <strong>DEFENDER/FUGIR</strong> .</li>
+</ul>
+</li>
+<li><strong>Log de Combate (Lateral ou Sobreposto):</strong>  Uma caixa de texto translúcida que narra o resultado matemático:
+<ul>
+<li><em>&#34;Você rolou 15 (Astúcia) + 2 = 17. Acerto! Lobo sofre 6 de dano.&#34;</em></li>
+<li><em>&#34;Lobo ataca! Sua defesa absorveu 2 de dano.&#34;</em></li>
+</ul>
+</li>
+</ul>
+<h5 id="feedback-visual">Feedback Visual</h5>
+<ul>
+<li><strong>Dano:</strong>  Números &#34;pulam&#34; (pop-up) sobre a cabeça dos sprites quando atingidos.</li>
+<li><strong>Status:</strong>  Ícones pequenos (veneno, atordoado) aparecem flutuando ou ao lado da barra de vida do alvo.</li>
+</ul>
+<hr>
+<h4 id="5-est-tica-e-materiais">5. Estética e Materiais</h4>
+<p>Seguindo a identidade visual do projeto:</p>
+<ul>
+<li><strong>Molduras:</strong>  Madeira rústica e entalhada para as janelas de texto.</li>
+<li><strong>Fundos de Texto:</strong>  Textura de papel envelhecido ou pergaminho amarelado (leitura escura sobre fundo claro) ou pedra escura (leitura clara sobre fundo escuro) para menus.</li>
+<li><strong>Botões:</strong>  Devem parecer peças de madeira ou pedra com relevo (efeito de &#34;clique&#34; físico).</li>
+<li><strong>Detalhes Culturais:</strong>  O uso de penas, cordas e grafismos marajoaras/indígenas para decorar as bordas da UI é encorajado.</li>
+</ul>

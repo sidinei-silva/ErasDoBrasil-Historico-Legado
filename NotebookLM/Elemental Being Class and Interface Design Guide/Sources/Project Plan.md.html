@@ -1,0 +1,83 @@
+<h3 id="plano-de-projeto-eras-do-brasil">Plano de Projeto: Eras do Brasil</h3>
+<h4 id="1-0-vis-o-e-estrat-gia-geral">1.0 Visão e Estratégia Geral</h4>
+<p>Este documento delineia a visão fundamental para &#39;Eras do Brasil&#39;, detalhando o conceito de alto nível, a missão central e a estratégia de entrada no mercado. Ele serve como uma estrela-guia para o desenvolvimento, articulando a estrutura estratégica projetada para entregar uma experiência de RPG única. &#39;Eras do Brasil&#39; é um RPG de fantasia histórica ambientado em uma versão mística do Brasil.
+Nossa missão principal é criar uma experiência imersiva que entrelace magistralmente a história e o folclore brasileiros com uma jogabilidade inovadora e estrategicamente gratificante.
+Para alcançar isso, o projeto seguirá uma abordagem de desenvolvimento em duas frentes estratégicas. Começa com um MVP de RPG de Mesa para mitigar riscos, permitindo testar e validar o loop central de jogabilidade antes de comprometer capital significativo no desenvolvimento digital. Após essa validação, executaremos uma adaptação digital em fases.</p>
+<h4 id="2-0-defini-o-do-produto-e-escopo">2.0 Definição do Produto e Escopo</h4>
+<h5 id="2-1-o-rpg-de-mesa-valida-o-do-sistema-mvp">2.1. O RPG de Mesa: Validação do Sistema (MVP)</h5>
+<p>O RPG de Mesa servirá como o Produto Mínimo Viável (MVP). Sua função principal é fornecer uma plataforma robusta para testes e balanceamento.
+Mecânicas fundamentais do sistema para o MVP de mesa:</p>
+<ul>
+<li><strong>Núcleo do Sistema:</strong>  Resolução de ações baseada em D20 contra uma Classe de Dificuldade (CD).</li>
+<li><strong>Pilares de Personagem:</strong>  Três Origens distintas:  <strong>Colonizador</strong> ,  <strong>Indígena</strong>  e  <strong>Ser Folclórico</strong> .</li>
+<li><strong>Sistema de Classes:</strong>  Estrutura flexível com 12 classes iniciais (quatro por Origem), evoluindo através de três Tiers.</li>
+<li><strong>Progressão:</strong>  Modelo único onde habilidades ativas são herdadas permanentemente ao trocar de classe, enquanto passivas não são, permitindo &#34;Builds Híbridas&#34; profundas.</li>
+</ul>
+<h5 id="2-2-a-adapta-o-digital-vis-o-de-longo-prazo">2.2. A Adaptação Digital: Visão de Longo Prazo</h5>
+<p>A visão final é um RPG de mundo persistente onde as ações dos jogadores têm consequências duradouras. O desenvolvimento será abordado em fases estratégicas.</p>
+<h4 id="3-0-p-blico-alvo-e-posicionamento">3.0 Público-Alvo e Posicionamento</h4>
+<ul>
+<li><strong>Público Primário:</strong>  Jogadores experientes de RPG (mesa e digital) que buscam profundidade mecânica e combate estratégico. Fãs de  <em>Orna</em> ,  <em>Albion</em> ,  <em>Solasta</em>  e  <em>Ravendawn</em> .</li>
+<li><strong>Posicionamento:</strong>  &#39;Eras do Brasil&#39; preenche uma lacuna ao oferecer um RPG mecanicamente profundo enraizado em um cenário culturalmente rico e pouco explorado (folclore sul-americano), diferindo da fantasia europeia tradicional.</li>
+</ul>
+<h4 id="4-0-mec-nicas-centrais-de-gameplay">4.0 Mecânicas Centrais de Gameplay</h4>
+<h5 id="4-1-progress-o-de-personagem">4.1. Progressão de Personagem</h5>
+<ul>
+<li><strong>Tiers de Classe:</strong>  Evolução vertical (Tier 1-3) dentro de uma era para garantir profundidade sem depender de novos conteúdos.</li>
+<li><strong>A &#34;Moeda de Classe&#34;:</strong>  Item raro necessário para desbloquear classes, obtido através de missões de mentores.</li>
+<li><strong>Troca Estratégica:</strong>  Habilidades ativas desbloqueadas entram para um &#34;pool&#34; global do personagem, incentivando a experimentação.</li>
+</ul>
+<h5 id="4-2-economia-e-crafting">4.2. Economia e Crafting</h5>
+<ul>
+<li><strong>Proficiências:</strong>  Divisão entre  <strong>Coleta</strong>  e  <strong>Produção</strong> .</li>
+<li><strong>Matriz de Itemização:</strong>  Poder definido por uma matriz 5x5 de  <strong>Qualidade e Raridade</strong> , criando um loop de busca por loot a longo prazo.</li>
+</ul>
+<h5 id="4-3-narrativa-e-mundo">4.3. Narrativa e Mundo</h5>
+<ul>
+<li><strong>Raiz do Mundo:</strong>  A força mística que conecta as eras.</li>
+<li><strong>Dom da Revivência:</strong>  A justificativa  <em>in-game</em>  para a troca de classes e acesso a diferentes períodos históricos.</li>
+</ul>
+<h4 id="5-0-roadmap-de-desenvolvimento-plano-estrat-gico-de-6-fases">5.0 Roadmap de Desenvolvimento (Plano Estratégico de 6 Fases)</h4>
+<p>Este roteiro delineia uma estratégia incremental, projetada especificamente para um desenvolvedor solo, alternando entre implementações &#34;Offline&#34; e &#34;Online&#34; para validação contínua.</p>
+<h5 id="fase-1-rpg-de-mesa-digital-mvp-offline">Fase 1: RPG de Mesa Digital (MVP Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar Regras Centrais e Loop de Jogo sem custos de servidor ou arte complexa.</li>
+<li><strong>Funcionalidades:</strong>  Interface de texto com escolhas clicáveis (UI Fase 1). Combate estático. Sem servidor.</li>
+<li><strong>Tech:</strong>  Gerenciador de Jogo Local, Dados em JSON.</li>
+</ul>
+<h5 id="fase-2-rpg-de-mesa-digital-online-mmo-lite">Fase 2: RPG de Mesa Digital (Online / MMO Lite)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar Arquitetura de Servidor e Persistência de Banco de Dados usando o cliente de texto.</li>
+<li><strong>Funcionalidades:</strong>  Mesma interface da Fase 1, mas dados salvos no servidor. Sistema de chat. Teste do sistema de missões &#34;Corrida pela Recompensa&#34;.</li>
+<li><strong>Tech:</strong>  Servidor Node.js/Go, PostgreSQL, WebSockets.</li>
+</ul>
+<h5 id="fase-3-jogo-digital-v1-prot-tipo-visual-offline">Fase 3: Jogo Digital v1 - Protótipo Visual (Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar Estilo de Arte, Fluxo de Exploração e Economia visualmente.</li>
+<li><strong>Funcionalidades:</strong>  Movimentação via &#34;Navegação por Blocos&#34; (Nós). UI em Pixel Art. Combate Estático (estilo JRPG). Single Player.</li>
+<li><strong>Tech:</strong>  Godot Engine (Cliente), Save Local.</li>
+</ul>
+<h5 id="fase-4-jogo-digital-v1-mundo-conectado-online">Fase 4: Jogo Digital v1 - Mundo Conectado (Online)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a economia de &#34;Mundo Vivo&#34; e eventos globais visualmente.</li>
+<li><strong>Funcionalidades:</strong>  Mesmo visual da Fase 3. Ticks Globais afetam regeneração de recursos e posição de NPCs para todos.</li>
+<li><strong>Tech:</strong>  Integração do Cliente Godot com o Servidor da Fase 2.</li>
+</ul>
+<h5 id="fase-5-jogo-digital-v2-n-cleo-t-tico-offline">Fase 5: Jogo Digital v2 - Núcleo Tático (Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Implementar o Combate Tático em Grid e Movimentação Livre.</li>
+<li><strong>Funcionalidades:</strong>  Grid Isométrico (5x5+), Ataques de Oportunidade, Alcance, Cobertura. Movimentação livre com ticks de tempo (estilo  <em>Stoneshard</em> ). Single Player.</li>
+<li><strong>Tech:</strong>  Pathfinding Avançado, Módulo de Lógica de Grid.</li>
+</ul>
+<h5 id="fase-6-eras-do-brasil-grande-lan-amento-mmorpg-online">Fase 6: Eras do Brasil - Grande Lançamento (MMORPG Online)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  A visão completa. Um mundo persistente, tático e vivo.</li>
+<li><strong>Funcionalidades:</strong>  Combate Tático Multiplayer, Guildas, Controle de Território, Ticks Globais totalmente sincronizados.</li>
+<li><strong>Tech:</strong>  Autoridade total do servidor sobre movimentação e combate.</li>
+</ul>
+<h4 id="6-0-sistemas-avan-ados-e-vis-o-p-s-lan-amento">6.0 Sistemas Avançados e Visão Pós-Lançamento</h4>
+<ul>
+<li><strong>Durabilidade e Reparo:</strong>  Equipamentos degradam com o uso, exigindo manutenção via crafting.</li>
+<li><strong>Full Loot na Morte (Opcional):</strong>  Modo hardcore onde itens equipados caem ao morrer, gerando alta tensão.</li>
+<li><strong>Inimigos Evolutivos:</strong>  Inimigos que derrotam o jogador ganham XP e se tornam nêmesis recorrentes.</li>
+</ul>

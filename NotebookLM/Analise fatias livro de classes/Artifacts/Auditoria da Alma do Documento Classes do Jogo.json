@@ -1,0 +1,88 @@
+{
+  "title": "Auditoria da Alma do Documento Classes do Jogo",
+  "type": "ARTIFACT_TYPE_AUDIO_OVERVIEW",
+  "sources": [{
+    "sourceId": {
+      "id": "52707444-ff9f-4bb5-b0a3-77d0e06a369f"
+    }
+  }, {
+    "sourceId": {
+      "id": "19108c68-74b8-49ad-a6f9-78e01f7c08d5"
+    }
+  }, {
+    "sourceId": {
+      "id": "da6c7d51-819e-4b26-8e07-32a68a535589"
+    }
+  }, {
+    "sourceId": {
+      "id": "d2e4a902-ab54-4779-91eb-d0d227611ad3"
+    }
+  }, {
+    "sourceId": {
+      "id": "7df034f9-c836-40d4-b679-4b98ebc0547c"
+    }
+  }, {
+    "sourceId": {
+      "id": "23481158-80e9-4302-939c-1f3b0ff5d587"
+    }
+  }, {
+    "sourceId": {
+      "id": "3d3c9768-26a8-4831-86f9-3703a05021fe"
+    }
+  }, {
+    "sourceId": {
+      "id": "2d5214ab-a822-4856-a144-8baf46eabf3a"
+    }
+  }, {
+    "sourceId": {
+      "id": "87433391-1b83-45e5-9224-b789f9d76ec8"
+    }
+  }, {
+    "sourceId": {
+      "id": "dd507cc2-e398-47d2-b95c-fe630374c841"
+    }
+  }, {
+    "sourceId": {
+      "id": "35977a8e-76db-400f-9514-5027df057d7b"
+    }
+  }, {
+    "sourceId": {
+      "id": "f8cbc8b2-4e93-4e48-8fa5-87907fed812f"
+    }
+  }, {
+    "sourceId": {
+      "id": "793138ef-0fdf-4db2-be64-583f8d3283fb"
+    }
+  }, {
+    "sourceId": {
+      "id": "22c366f0-fb58-4917-a931-1b538bbab0c5"
+    }
+  }, {
+    "sourceId": {
+      "id": "465e3101-6894-4814-9a97-a1c744de0ba4"
+    }
+  }, {
+    "sourceId": {
+      "id": "e9173261-5050-4abe-ad73-59d4bab1ee1b"
+    }
+  }, {
+    "sourceId": {
+      "id": "31c01ea0-8ba3-422b-8e33-59e73281902b"
+    }
+  }, {
+    "sourceId": {
+      "id": "9612d4ac-d68b-4607-801a-7b3996b24b70"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "audioOverview": {
+    "generationOptions": {
+      "episodeFocus": "Assunto: Relatório de Auditoria de Conteúdo (Fatiamento do Livro de Classes)\n\nPrompt:\n\nVocê é um auditor de integridade de conteúdo. Sua tarefa é realizar uma verificação \"de-para\" comparando um documento \"Mestre\" (Livro de Classes.md) com 16 arquivos \"Fatiados\" (os arquivos de sistema de classes e as 12 classes individuais) para garantir que 100% do conteúdo foi migrado corretamente.\n\nFontes:\n\nMestre (1 arquivo): Livro de Classes.md\n\nFatiados (16 arquivos): 00_Sistema_de_Classes_Intro.md, 01_Tiers_e_Evolucao.md, 02_Alternancia_de_Classes.md, 03_Heranca_de_Habilidades.md, Missionario.md, Mosqueteiro.md, Explorador_de_Terras.md, Conquistador.md, Xama_Curandeiro.md, Arqueiro_Selvagem.md, Caçador_de_Feras.md, Guerreiro_Tribal.md, Ser_Elemental.md, Guardiao_Ancestral.md, Lobo_Lendario.md, Encantador_de_Espiritos.md.\n\nExecute as seguintes tarefas:\n\nVerificação de Conteúdo Faltando (Seções 1-5):\n\nCompare as seções \"1 - Introdução\", \"2 - Sistema de Classes\", \"3 - Tiers e Evolução\", \"4 - Alternância de Classes\" e \"5 - Herança de Habilidades\" do arquivo Mestre (Livro de Classes.md) com os quatro arquivos de sistema fatiados (00_Sistema..., 01_Tiers..., 02_Alternancia..., 03_Heranca...).\n\nListe qualquer parágrafo ou tabela dessas seções que NÃO tenha sido migrado.\n\nVerificação de Conteúdo Faltando (Seção 6 - Classes):\n\nCompare a \"Seção 6 - Classes Tier 1\" do arquivo Mestre (Livro de Classes.md) com os 12 arquivos de classes individuais (ex: Missionario.md, Mosqueteiro.md, etc.).\n\nVerifique se todas as 12 classes foram fatiadas e se o conteúdo de cada uma (Descrição, Estilo de Jogo, Habilidades, Equipamentos, etc.) foi transferido integralmente.\n\nListe qualquer classe ou seção de uma classe que esteja faltando.\n\nRelatório Final de Integridade:\n\nForneça um relatório final respondendo a esta pergunta-chave: \"O conteúdo dos 16 arquivos fatiados representa 100% do conteúdo do Livro de Classes.md original? Se não, o que exatamente está faltando?\"",
+      "episodeLength": "EPISODE_LENGTH_MEDIUM",
+      "targetAudience": "TARGET_AUDIENCE_UNSPECIFIED",
+      "languageCode": "pt-BR",
+      "showFormat": "SHOW_FORMAT_DEEP_DIVE"
+    },
+    "isInteractive": false
+  }
+}

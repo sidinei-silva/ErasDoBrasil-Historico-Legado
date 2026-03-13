@@ -1,0 +1,97 @@
+<h3 id="plano-de-projeto-eras-do-brasil-estrat-gia-co-op-p2p">Plano de Projeto: Eras do Brasil (Estratégia Co-op P2P)</h3>
+<h4 id="1-0-vis-o-e-estrat-gia-geral">1.0 Visão e Estratégia Geral</h4>
+<p>Este documento delineia a visão fundamental para &#39;Eras do Brasil&#39;, detalhando o conceito de alto nível, a missão central e a estratégia de entrada no mercado.
+&#39;Eras do Brasil&#39; é um RPG de fantasia histórica ambientado em uma versão mística do Brasil. Nossa missão principal é criar uma experiência imersiva que entrelace magistralmente a história e o folclore brasileiros com uma jogabilidade inovadora e estrategicamente gratificante.
+A estratégia de desenvolvimento é  <strong>Iterativa &#34;Tick-Tock&#34;</strong> : construímos a complexidade em camadas (Texto &gt; Visual &gt; Tático). Em cada camada, primeiro validamos a mecânica  <strong>Solo (Offline)</strong>  e imediatamente implementamos o suporte  <strong>Cooperativo (P2P)</strong>  antes de avançar para a próxima fase.</p>
+<h4 id="2-0-defini-o-do-produto-e-escopo">2.0 Definição do Produto e Escopo</h4>
+<h5 id="2-1-o-n-cleo-do-sistema-mvp">2.1. O Núcleo do Sistema (MVP)</h5>
+<p>Mecânicas fundamentais que guiam todas as fases:</p>
+<ul>
+<li><strong>Núcleo do Sistema:</strong>  Resolução de ações baseada em D20 contra uma Classe de Dificuldade (CD).</li>
+<li><strong>Pilares de Personagem:</strong>  Três Origens distintas:  <strong>Colonizador</strong> ,  <strong>Indígena</strong>  e  <strong>Ser Folclórico</strong> .</li>
+<li><strong>Sistema de Classes:</strong>  Estrutura flexível com 12 classes iniciais, evoluindo através de três Tiers.</li>
+</ul>
+<h5 id="2-2-a-adapta-o-digital-modelo-co-op">2.2. A Adaptação Digital (Modelo Co-op)</h5>
+<p>A visão final não é um MMO massivo, mas uma experiência de RPG profunda que pode ser compartilhada.</p>
+<ul>
+<li><strong>Arquitetura Técnica:</strong>
+<ul>
+<li><strong>Host (O Dono do Eco):</strong>  O jogador que hospeda o jogo. O save e o estado do mundo ficam no PC dele.</li>
+<li><strong>Client (O Viajante da Raiz):</strong>  O amigo que se conecta via P2P. Ele traz seu personagem, mas interage com a história do Host.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-0-p-blico-alvo-e-posicionamento">3.0 Público-Alvo e Posicionamento</h4>
+<ul>
+<li><strong>Público Primário:</strong>  Jogadores experientes de RPG (mesa e digital) que buscam profundidade mecânica e narrativa. Fãs de  <em>Baldur&#39;s Gate 3</em>  (Co-op),  <em>Divinity</em> ,  <em>Solasta</em>  e  <em>Stardew Valley</em>  (Multiplayer).</li>
+<li><strong>Posicionamento:</strong>  Preenche a lacuna de RPGs táticos profundos com temática sul-americana (Eco-Fantasia), oferecendo uma campanha que pode ser jogada 100% solo ou com amigos, sem a pressão de servidores competitivos.</li>
+</ul>
+<h4 id="4-0-mec-nicas-centrais-de-gameplay">4.0 Mecânicas Centrais de Gameplay</h4>
+<h5 id="4-1-progress-o-de-personagem">4.1. Progressão de Personagem</h5>
+<ul>
+<li><strong>Tiers de Classe:</strong>  Evolução vertical (Tier 1-3).</li>
+<li><strong>A &#34;Moeda de Classe&#34;:</strong>  Item raro necessário para desbloquear classes. No modelo Co-op, a obtenção é balanceada para ser justa tanto jogando sozinho quanto em grupo.</li>
+<li><strong>Troca Estratégica:</strong>  Habilidades ativas desbloqueadas entram para um &#34;pool&#34; global do personagem.</li>
+</ul>
+<h5 id="4-2-economia-e-crafting">4.2. Economia e Crafting</h5>
+<ul>
+<li><strong>Proficiências:</strong>  Divisão entre  <strong>Coleta</strong>  e  <strong>Produção</strong> .</li>
+<li><strong>Comércio P2P:</strong>  Jogadores podem trocar itens livremente quando conectados na mesma sessão (dropando no chão ou via interface de troca).</li>
+<li><strong>Matriz de Itemização:</strong>  Poder definido por uma matriz 5x5 de Qualidade e Raridade.</li>
+</ul>
+<h5 id="4-3-narrativa-e-mundo">4.3. Narrativa e Mundo</h5>
+<ul>
+<li><strong>Raiz do Mundo:</strong>  A força mística que conecta as eras e permite a &#34;Sincronia Espiritual&#34; (explicação in-lore para o Multiplayer).</li>
+<li><strong>Dom da Revivência:</strong>  A justificativa  <em>in-game</em>  para a troca de classes e acesso a diferentes períodos históricos.</li>
+</ul>
+<hr>
+<h4 id="5-0-roadmap-de-desenvolvimento-6-fases">5.0 Roadmap de Desenvolvimento (6 Fases)</h4>
+<h5 id="fase-1-rpg-de-mesa-digital-mvp-offline">Fase 1: RPG de Mesa Digital (MVP Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar Regras, Enredo (Ato 1) e Loop de Loot sem custos de arte.</li>
+<li><strong>O Jogo:</strong>  Interface de Texto (Console/UI na Engine). Combate estático por turnos.</li>
+<li><strong>Tech:</strong>  Godot/Unity (UI de Texto). Lógica desacoplada da visualização.</li>
+<li><strong>Entregável:</strong>  Motor de RPG rodando localmente onde se pode jogar a história completa do Ato 1.</li>
+</ul>
+<h5 id="fase-2-rpg-de-mesa-digital-mvp-co-op">Fase 2: RPG de Mesa Digital (MVP Co-op)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a Arquitetura de Rede P2P e Sincronia de Dados.</li>
+<li><strong>O Jogo:</strong>  A mesma interface de texto da Fase 1, mas um segundo jogador se conecta.</li>
+<li><strong>Funcionalidades:</strong>  Chat, troca de itens, combate em grupo (Turno A -&gt; Turno B -&gt; Inimigo).</li>
+<li><strong>Tech:</strong>  Netcode básico (RPCs/Sinais). O &#34;Serviço de Jogo&#34; aceita comandos remotos.</li>
+</ul>
+<h5 id="fase-3-jogo-digital-v1-prot-tipo-visual-offline">Fase 3: Jogo Digital v1 - Protótipo Visual (Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar Estilo de Arte (Pixel Art), Fluxo de Exploração e Ambientação.</li>
+<li><strong>O Jogo:</strong>  O &#34;Eco&#34; ganha vida visual. Movimentação via &#34;Navegação por Blocos&#34; (clique para andar). Ciclo Dia/Noite visual.</li>
+<li><strong>Funcionalidades:</strong>  Combate Estático (JRPG) com visual. Interação com NPCs.</li>
+<li><strong>Tech:</strong>  Sistema de Grid Visual, Máquina de Estados de Animação.</li>
+</ul>
+<h5 id="fase-4-jogo-digital-v1-mundo-conectado-co-op">Fase 4: Jogo Digital v1 - Mundo Conectado (Co-op)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a exploração conjunta em tempo real.</li>
+<li><strong>O Jogo:</strong>  Dois personagens andando no mapa visualmente.</li>
+<li><strong>Funcionalidades:</strong>  Implementação do  <strong>&#34;Tempo Fluido&#34; (Heartbeat)</strong>  para movimento simultâneo fora de combate. Sincronia de posição e estado dos NPCs.</li>
+<li><strong>Tech:</strong>  Interpolação de movimento, Correção de latência básica.</li>
+</ul>
+<h5 id="fase-5-jogo-digital-v2-n-cleo-t-tico-offline">Fase 5: Jogo Digital v2 - Núcleo Tático (Offline)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Implementar a profundidade final (Grid Tático).</li>
+<li><strong>O Jogo:</strong>  Substituição do combate estático pelo combate em  <strong>Grid Isométrico</strong> .</li>
+<li><strong>Funcionalidades:</strong>  Ataques de Oportunidade, Cobertura, Flanco, Alcance real.</li>
+<li><strong>Tech:</strong>  Pathfinding Avançado (A*), Lógica de Grid Tático.</li>
+</ul>
+<h5 id="fase-6-jogo-digital-v2-t-tica-compartilhada-co-op">Fase 6: Jogo Digital v2 - Tática Compartilhada (Co-op)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  A experiência completa para lançamento.</li>
+<li><strong>O Jogo:</strong>  Combate tático onde os jogadores combinam estratégias no grid.</li>
+<li><strong>Funcionalidades:</strong>  Sincronia de turnos táticos, combos de habilidades entre jogadores.</li>
+<li><strong>Entregável:</strong>  Build Final para Acesso Antecipado.</li>
+</ul>
+<hr>
+<h4 id="6-0-sistemas-avan-ados-e-vis-o-p-s-lan-amento">6.0 Sistemas Avançados e Visão Pós-Lançamento</h4>
+<ul>
+<li><strong>Durabilidade e Reparo:</strong>  Equipamentos degradam com o uso.</li>
+<li><strong>Modo Hardcore (Opcional):</strong>  Opção de morte permanente para o save.</li>
+<li><strong>Inimigos Evolutivos:</strong>  Sistema onde inimigos que derrotam jogadores ganham XP.</li>
+</ul>

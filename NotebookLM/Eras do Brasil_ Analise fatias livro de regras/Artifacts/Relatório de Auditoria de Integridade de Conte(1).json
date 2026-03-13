@@ -1,0 +1,77 @@
+{
+  "title": "Relatório de Auditoria de Integridade de Conteúdo: Migração do `Livro de Regras.md`",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "fb0aa691-5234-4f30-8330-70cd3cb4ddae"
+    }
+  }, {
+    "sourceId": {
+      "id": "b6eb0252-863a-41f0-8b19-0aa92bb14033"
+    }
+  }, {
+    "sourceId": {
+      "id": "023e7a3a-0160-4946-9fe2-bf408730578e"
+    }
+  }, {
+    "sourceId": {
+      "id": "d83e2272-f193-4c9f-9901-9528c8858407"
+    }
+  }, {
+    "sourceId": {
+      "id": "5c9ac22d-4d42-434c-a295-6d0d34d703aa"
+    }
+  }, {
+    "sourceId": {
+      "id": "609be669-ea88-428b-aa42-eed879d0fc03"
+    }
+  }, {
+    "sourceId": {
+      "id": "b4bbe422-bfca-496a-b7c9-c41c1300ebbf"
+    }
+  }, {
+    "sourceId": {
+      "id": "46788c57-0567-4e99-baf1-2b08d61f1da1"
+    }
+  }, {
+    "sourceId": {
+      "id": "6dc2c893-bbc2-4247-a529-33751a11d300"
+    }
+  }, {
+    "sourceId": {
+      "id": "73dcc477-8f88-49da-86de-0204b019838b"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "fb0aa691-5234-4f30-8330-70cd3cb4ddae"
+      }, {
+        "id": "b6eb0252-863a-41f0-8b19-0aa92bb14033"
+      }, {
+        "id": "023e7a3a-0160-4946-9fe2-bf408730578e"
+      }, {
+        "id": "d83e2272-f193-4c9f-9901-9528c8858407"
+      }, {
+        "id": "5c9ac22d-4d42-434c-a295-6d0d34d703aa"
+      }, {
+        "id": "609be669-ea88-428b-aa42-eed879d0fc03"
+      }, {
+        "id": "b4bbe422-bfca-496a-b7c9-c41c1300ebbf"
+      }, {
+        "id": "46788c57-0567-4e99-baf1-2b08d61f1da1"
+      }, {
+        "id": "6dc2c893-bbc2-4247-a529-33751a11d300"
+      }, {
+        "id": "73dcc477-8f88-49da-86de-0204b019838b"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Você é um auditor de integridade de conteúdo. Sua tarefa é comparar um documento \"Mestre\" (Livro de Regras.md) com 9 arquivos \"Fatiados\" (01_Introducao..., 02_Mecanicas..., etc.) para garantir que nenhum conteúdo foi perdido na migração.\n\nFontes:\n\nMestre: Livro de Regras.md\n\nFatiados (9 arquivos): 01_Introducao_e_Ambientacao.md, 02_Mecanicas_Basicas.md, 03_Criacao_de_Personagem.md, 04_Sistema_de_Combate.md, 05_Exploracao_e_Mundo.md, 06_Economia_Itens_e_Crafting.md, 07_Magia_e_Espiritualidade.md, 08_Mundo_Vivo_e_NPCs.md, 09_Apendices_e_Referencias.md\n\nExecute as seguintes tarefas:\n\nVerificação de Conteúdo Faltando:\n\nLeia o arquivo Livro de Regras.md (Mestre) capítulo por capítulo (Cap 1, Cap 2, etc.).\n\nCompare o conteúdo de cada capítulo original com o arquivo fatiado correspondente (ex: \"Capítulo 1\" vs. 01_Introducao..., \"Capítulo 2\" vs. 02_Mecanicas...).\n\nIdentifique e liste qualquer parágrafo, seção ou tabela do arquivo Mestre (Livro de Regras.md) que NÃO esteja presente nos 9 arquivos Fatiados.\n\nVerificação de Conteúdo Adicionado (Consolidação):\n\nVerifique os arquivos 08_Mundo_Vivo_e_NPCs.md e 09_Apendices_e_Referencias.md.\n\nConfirme se eles contêm seções novas (como \"Sistema de IA de NPCs (Fusão de Modelos)\", \"Arquitetura do \u0027Tick Comutável\u0027\", e \"Filosofia de Arquitetura (Motor vs. Conteúdo)\") que NÃO existiam no Livro de Regras.md original.\n\nRelatório Final de Integridade:\n\nForneça um relatório final respondendo a esta pergunta-chave: \"O conteúdo dos 9 arquivos fatiados representa 100% do conteúdo do Livro de Regras.md original, mais as novas adições da auditoria? Se não, o que está faltando?\"",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<h3 id="ui-fase-2-combate-t-tico-e-grid">🖼️ UI – Fase 2: Combate Tático e Grid</h3>
+<p>Este documento define a interface para a  <strong>Fase 2 (Jogo Completo)</strong>  de  <em>Eras do Brasil</em> , onde o sistema de &#34;Combate Tático&#34; (Capítulo 4 do Livro de Regras) é ativado.
+A visualização muda de &#34;Cenas Estáticas&#34; para uma  <strong>visão isométrica ou top-down com grid</strong> , focada em posicionamento, alcance e estratégia espacial.</p>
+<hr>
+<h4 id="1-o-grid-t-tico-visualiza-o-no-mundo">1. O Grid Tático (Visualização no Mundo)</h4>
+<p>O grid não deve ser invasivo. Ele deve parecer integrado ao terreno (como em  <em>Stoneshard</em>  ou  <em>Wartales</em> ).</p>
+<h5 id="feedback-de-movimento-e-alcance">🟦 Feedback de Movimento e Alcance</h5>
+<p>Quando o jogador seleciona seu personagem ou uma habilidade, o grid se ilumina para mostrar as possibilidades:</p>
+<ul>
+<li><strong>Tiles Azuis (Borda ou Preenchimento Leve):</strong>  Área de movimentação disponível com os Ticks/Movimento atuais.</li>
+<li><strong>Tiles Vermelhos:</strong>  Alcance de ataque ou área de efeito de uma magia ofensiva.</li>
+<li><strong>Tiles Amarelos/Laranjas:</strong>  Área de perigo (ex: terreno difícil, fogo, zona de ataque de oportunidade).</li>
+<li><strong>Linha de Visão (LoS):</strong>  Inimigos ou áreas bloqueadas por obstáculos (árvores, muros) devem ficar escurecidos ou com silhueta (Fog of War tático).</li>
+</ul>
+<h5 id="indicadores-de-cobertura">🛡️ Indicadores de Cobertura</h5>
+<ul>
+<li><strong>Ícone de Escudo:</strong>  Aparece sobre a cabeça do personagem ou inimigo quando ele está adjacente a uma cobertura (muro, tronco), indicando bônus de Defesa.
+<ul>
+<li><strong>Escudo Meio Cheio:</strong>  Cobertura Parcial (+2 Defesa).</li>
+<li><strong>Escudo Cheio:</strong>  Cobertura Total (Não pode ser alvo).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="2-hud-de-combate-t-tico">2. HUD de Combate Tático</h4>
+<p>A interface de combate evolui para dar controle total sobre as ações complexas.</p>
+<h5 id="a-barra-de-a-es-hotbar">⚔️ A Barra de Ações (Hotbar)</h5>
+<p>Localizada na parte inferior central.</p>
+<ul>
+<li><strong>Slots 1-5:</strong>  Habilidades Ativas da Classe e da Arma.</li>
+<li><strong>Botões Fixos:</strong>
+<ul>
+<li><strong>Mover:</strong>  (Ativa o grid azul).</li>
+<li><strong>Ação Bônus:</strong>  (Se disponível).</li>
+<li><strong>Fim de Turno:</strong>  (Botão de destaque para passar a vez).</li>
+<li><strong>Inventário Rápido:</strong>  Acesso a poções/itens sem abrir o menu completo.</li>
+</ul>
+</li>
+</ul>
+<h5 id="trilha-de-iniciativa-turn-order">⏱️ Trilha de Iniciativa (Turn Order)</h5>
+<p>Localizada no topo ou lateral da tela.</p>
+<ul>
+<li>Uma lista horizontal/vertical de retratos mostrando a ordem de quem age.</li>
+<li><strong>Destaque:</strong>  O retrato do personagem atual brilha ou pulsa.</li>
+<li><strong>Previsão:</strong>  Ao passar o mouse sobre um inimigo na trilha, o grid mostra o alcance de movimento  <em>dele</em> , permitindo ao jogador planejar.</li>
+</ul>
+<hr>
+<h4 id="3-feedback-de-a-o-pr-visualiza-o">3. Feedback de Ação (Pré-visualização)</h4>
+<p>Antes de confirmar uma ação, o jogador deve ver as consequências matemáticas (Math-transparent UI).</p>
+<ul>
+<li><strong>Ao mirar um ataque:</strong>
+<ul>
+<li>Uma janela flutuante (tooltip) aparece ao lado do alvo.</li>
+<li><strong>Chance de Acerto:</strong>  &#34;85% de chance&#34; (Baseado em 1D20 + Mod vs Defesa).</li>
+<li><strong>Dano Estimado:</strong>  &#34;4-9 de Dano&#34; (Baseado na Arma).</li>
+<li><strong>Vantagem/Desvantagem:</strong>  Ícones claros (seta verde para cima / vermelha para baixo) indicando se há modificadores ativos.</li>
+</ul>
+</li>
+<li><strong>Ataque de Oportunidade:</strong>
+<ul>
+<li>Se o jogador traçar uma rota de movimento que passa pela área de ameaça de um inimigo, o tile correspondente pisca em vermelho com um ícone de &#34;Espada Cruzada&#34;, alertando que ele levará um ataque se passar por ali.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-est-tica-da-fase-2">4. Estética da Fase 2</h4>
+<p>Mantém a identidade &#34;Rústica/Colonial&#34; da Fase 1, mas adaptada para não obstruir a visão tática.</p>
+<ul>
+<li><strong>Grid:</strong>  Linhas finas e translúcidas, não grades grossas.</li>
+<li><strong>Retratos e Menus:</strong>  Mantêm a moldura de madeira e corda, mas em escala menor para maximizar a área de visão do mapa.</li>
+<li><strong>Dano e Texto Flutuante:</strong>  Pixel art nítida com contorno forte para leitura rápida sobre o cenário colorido.</li>
+</ul>

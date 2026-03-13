@@ -1,0 +1,371 @@
+{
+  "title": "Relatório de Auditoria de Sinergia: Ato 1 vs. Mini-Campanhas",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "dabed730-7069-41fe-9d57-f249ef0d6823"
+    }
+  }, {
+    "sourceId": {
+      "id": "7ff7705c-0ada-4fc7-802f-03c49ada334d"
+    }
+  }, {
+    "sourceId": {
+      "id": "0d84244d-2c51-4799-8379-de84fedd8e69"
+    }
+  }, {
+    "sourceId": {
+      "id": "6ae8414c-8e6e-4cc2-abf1-7062de610292"
+    }
+  }, {
+    "sourceId": {
+      "id": "53249ed4-ab2b-4351-a640-2a63b06be55b"
+    }
+  }, {
+    "sourceId": {
+      "id": "03a887e8-7df4-4c99-b66f-07a7772cfd84"
+    }
+  }, {
+    "sourceId": {
+      "id": "45ca07a0-a7be-4045-94f5-7de561e0b753"
+    }
+  }, {
+    "sourceId": {
+      "id": "69a46531-ab42-4dc8-ba93-a15c1a8b2fe9"
+    }
+  }, {
+    "sourceId": {
+      "id": "5cffe86e-5955-489f-9efa-c442f1745a98"
+    }
+  }, {
+    "sourceId": {
+      "id": "982a41ec-564f-4b15-bff7-b22a05045d13"
+    }
+  }, {
+    "sourceId": {
+      "id": "c704cfd1-11e3-4bc3-b068-4f4248d963ea"
+    }
+  }, {
+    "sourceId": {
+      "id": "2f686bbc-a207-4c4e-84f5-954cacba68a6"
+    }
+  }, {
+    "sourceId": {
+      "id": "b4853ede-b3e3-427f-91aa-28caccad7d9f"
+    }
+  }, {
+    "sourceId": {
+      "id": "515f34a9-ad7c-49b6-b9ad-c9c289dd5e3d"
+    }
+  }, {
+    "sourceId": {
+      "id": "0d1921e3-f96b-407e-80ba-78b7c7e773b8"
+    }
+  }, {
+    "sourceId": {
+      "id": "fbe7538c-1447-4d68-b071-fd1e0494cc5c"
+    }
+  }, {
+    "sourceId": {
+      "id": "94e37515-0c8a-4977-a5c7-ef231771c4c8"
+    }
+  }, {
+    "sourceId": {
+      "id": "48c83cd3-f73d-4fb6-97c3-d738fc5acc76"
+    }
+  }, {
+    "sourceId": {
+      "id": "59351fb1-2168-4ccc-86e9-1db4e712e743"
+    }
+  }, {
+    "sourceId": {
+      "id": "78128483-3a8d-4e0a-b682-a4df18a90d0e"
+    }
+  }, {
+    "sourceId": {
+      "id": "4744cde6-189b-4bd7-b223-44ead5118149"
+    }
+  }, {
+    "sourceId": {
+      "id": "cd527dda-a213-4283-8bb4-a2c993e809ea"
+    }
+  }, {
+    "sourceId": {
+      "id": "a1a2c109-75e6-4a3d-b3be-2d8bae454254"
+    }
+  }, {
+    "sourceId": {
+      "id": "710b3d9e-6ea2-4300-bcdc-e664fc3565e4"
+    }
+  }, {
+    "sourceId": {
+      "id": "b0564dbf-cd92-4da1-8a81-e09dfdb59e0f"
+    }
+  }, {
+    "sourceId": {
+      "id": "5afc6aa3-6c96-4068-b54f-3db7776426f2"
+    }
+  }, {
+    "sourceId": {
+      "id": "d3350143-e96c-4b9f-b72e-c67489b04ca9"
+    }
+  }, {
+    "sourceId": {
+      "id": "2fc57b90-7a4e-434f-be4a-5c5189106a42"
+    }
+  }, {
+    "sourceId": {
+      "id": "d0fb0080-e148-4921-9812-f1734019011c"
+    }
+  }, {
+    "sourceId": {
+      "id": "59103ec6-0194-4e52-8b02-d121f3cee2d5"
+    }
+  }, {
+    "sourceId": {
+      "id": "47eb1e58-e4b9-4874-ac7b-86b8159fe44b"
+    }
+  }, {
+    "sourceId": {
+      "id": "db8ea99e-00d7-45fe-a33f-5f75dba6c866"
+    }
+  }, {
+    "sourceId": {
+      "id": "79a7b861-3915-4532-8567-be9709527e21"
+    }
+  }, {
+    "sourceId": {
+      "id": "ac66fa4d-4656-4b67-8f19-f3f3186d64ea"
+    }
+  }, {
+    "sourceId": {
+      "id": "5852668d-87e9-4d67-8117-4c24e71906de"
+    }
+  }, {
+    "sourceId": {
+      "id": "d07ee970-9298-415b-8272-9fbea84145c9"
+    }
+  }, {
+    "sourceId": {
+      "id": "7405bc85-1a33-497f-b14b-ae0ffb4d7cac"
+    }
+  }, {
+    "sourceId": {
+      "id": "6f83faf3-76a7-44d9-97d3-6b88fe05b626"
+    }
+  }, {
+    "sourceId": {
+      "id": "e1c425d5-46a0-4eca-bdf3-67c4c048e43e"
+    }
+  }, {
+    "sourceId": {
+      "id": "4273740a-26d7-4661-9d46-bea9f9bd9e21"
+    }
+  }, {
+    "sourceId": {
+      "id": "52ff3274-57fa-4c83-826d-6a642a95f61c"
+    }
+  }, {
+    "sourceId": {
+      "id": "08dbed90-9ce1-4a0c-89cd-525d059bef3c"
+    }
+  }, {
+    "sourceId": {
+      "id": "31fb5176-9176-4363-86a9-e43d39cc69e3"
+    }
+  }, {
+    "sourceId": {
+      "id": "11cbd845-307e-486d-b447-223e280b6a1a"
+    }
+  }, {
+    "sourceId": {
+      "id": "f80c55b0-10ba-4cd5-8933-ff26cfed95c9"
+    }
+  }, {
+    "sourceId": {
+      "id": "7bd8417f-9a16-446d-b79c-2422b4ef696f"
+    }
+  }, {
+    "sourceId": {
+      "id": "010c694e-bc63-414e-8cf3-36faeeef624b"
+    }
+  }, {
+    "sourceId": {
+      "id": "6e1a977b-70d4-4b63-8b53-3ed9dd00669d"
+    }
+  }, {
+    "sourceId": {
+      "id": "41402a04-27fd-4c11-85d1-dbda3d0cd5f5"
+    }
+  }, {
+    "sourceId": {
+      "id": "54bb0819-73c8-49b2-a372-7116ee8e3b29"
+    }
+  }, {
+    "sourceId": {
+      "id": "b7a51c2e-7d16-4847-a0d2-489db3cbbc3a"
+    }
+  }, {
+    "sourceId": {
+      "id": "610b2538-b74c-4a11-9307-395d91cc72f1"
+    }
+  }, {
+    "sourceId": {
+      "id": "71493c29-cdca-4dd2-a67e-3d49f168afa4"
+    }
+  }, {
+    "sourceId": {
+      "id": "ded024e0-7a2b-4830-98be-a846a1fd8f3c"
+    }
+  }, {
+    "sourceId": {
+      "id": "af2d1a17-4654-4c4f-9d90-e85d8140f79c"
+    }
+  }, {
+    "sourceId": {
+      "id": "cb43e37c-150a-4765-877c-603c89fb7816"
+    }
+  }, {
+    "sourceId": {
+      "id": "f3eb1ddf-9ff4-4e20-b35e-8e007a632348"
+    }
+  }, {
+    "sourceId": {
+      "id": "0011fbff-4c8d-48be-b8cb-4fa4bc87aa46"
+    }
+  }, {
+    "sourceId": {
+      "id": "d25a98e9-a762-4049-aa4e-5203422aad90"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "dabed730-7069-41fe-9d57-f249ef0d6823"
+      }, {
+        "id": "7ff7705c-0ada-4fc7-802f-03c49ada334d"
+      }, {
+        "id": "0d84244d-2c51-4799-8379-de84fedd8e69"
+      }, {
+        "id": "6ae8414c-8e6e-4cc2-abf1-7062de610292"
+      }, {
+        "id": "53249ed4-ab2b-4351-a640-2a63b06be55b"
+      }, {
+        "id": "03a887e8-7df4-4c99-b66f-07a7772cfd84"
+      }, {
+        "id": "45ca07a0-a7be-4045-94f5-7de561e0b753"
+      }, {
+        "id": "69a46531-ab42-4dc8-ba93-a15c1a8b2fe9"
+      }, {
+        "id": "5cffe86e-5955-489f-9efa-c442f1745a98"
+      }, {
+        "id": "982a41ec-564f-4b15-bff7-b22a05045d13"
+      }, {
+        "id": "c704cfd1-11e3-4bc3-b068-4f4248d963ea"
+      }, {
+        "id": "2f686bbc-a207-4c4e-84f5-954cacba68a6"
+      }, {
+        "id": "b4853ede-b3e3-427f-91aa-28caccad7d9f"
+      }, {
+        "id": "515f34a9-ad7c-49b6-b9ad-c9c289dd5e3d"
+      }, {
+        "id": "0d1921e3-f96b-407e-80ba-78b7c7e773b8"
+      }, {
+        "id": "fbe7538c-1447-4d68-b071-fd1e0494cc5c"
+      }, {
+        "id": "94e37515-0c8a-4977-a5c7-ef231771c4c8"
+      }, {
+        "id": "48c83cd3-f73d-4fb6-97c3-d738fc5acc76"
+      }, {
+        "id": "59351fb1-2168-4ccc-86e9-1db4e712e743"
+      }, {
+        "id": "78128483-3a8d-4e0a-b682-a4df18a90d0e"
+      }, {
+        "id": "4744cde6-189b-4bd7-b223-44ead5118149"
+      }, {
+        "id": "cd527dda-a213-4283-8bb4-a2c993e809ea"
+      }, {
+        "id": "a1a2c109-75e6-4a3d-b3be-2d8bae454254"
+      }, {
+        "id": "710b3d9e-6ea2-4300-bcdc-e664fc3565e4"
+      }, {
+        "id": "b0564dbf-cd92-4da1-8a81-e09dfdb59e0f"
+      }, {
+        "id": "5afc6aa3-6c96-4068-b54f-3db7776426f2"
+      }, {
+        "id": "d3350143-e96c-4b9f-b72e-c67489b04ca9"
+      }, {
+        "id": "2fc57b90-7a4e-434f-be4a-5c5189106a42"
+      }, {
+        "id": "d0fb0080-e148-4921-9812-f1734019011c"
+      }, {
+        "id": "59103ec6-0194-4e52-8b02-d121f3cee2d5"
+      }, {
+        "id": "47eb1e58-e4b9-4874-ac7b-86b8159fe44b"
+      }, {
+        "id": "db8ea99e-00d7-45fe-a33f-5f75dba6c866"
+      }, {
+        "id": "79a7b861-3915-4532-8567-be9709527e21"
+      }, {
+        "id": "ac66fa4d-4656-4b67-8f19-f3f3186d64ea"
+      }, {
+        "id": "5852668d-87e9-4d67-8117-4c24e71906de"
+      }, {
+        "id": "d07ee970-9298-415b-8272-9fbea84145c9"
+      }, {
+        "id": "7405bc85-1a33-497f-b14b-ae0ffb4d7cac"
+      }, {
+        "id": "6f83faf3-76a7-44d9-97d3-6b88fe05b626"
+      }, {
+        "id": "e1c425d5-46a0-4eca-bdf3-67c4c048e43e"
+      }, {
+        "id": "4273740a-26d7-4661-9d46-bea9f9bd9e21"
+      }, {
+        "id": "52ff3274-57fa-4c83-826d-6a642a95f61c"
+      }, {
+        "id": "08dbed90-9ce1-4a0c-89cd-525d059bef3c"
+      }, {
+        "id": "31fb5176-9176-4363-86a9-e43d39cc69e3"
+      }, {
+        "id": "11cbd845-307e-486d-b447-223e280b6a1a"
+      }, {
+        "id": "f80c55b0-10ba-4cd5-8933-ff26cfed95c9"
+      }, {
+        "id": "7bd8417f-9a16-446d-b79c-2422b4ef696f"
+      }, {
+        "id": "010c694e-bc63-414e-8cf3-36faeeef624b"
+      }, {
+        "id": "6e1a977b-70d4-4b63-8b53-3ed9dd00669d"
+      }, {
+        "id": "41402a04-27fd-4c11-85d1-dbda3d0cd5f5"
+      }, {
+        "id": "54bb0819-73c8-49b2-a372-7116ee8e3b29"
+      }, {
+        "id": "b7a51c2e-7d16-4847-a0d2-489db3cbbc3a"
+      }, {
+        "id": "610b2538-b74c-4a11-9307-395d91cc72f1"
+      }, {
+        "id": "71493c29-cdca-4dd2-a67e-3d49f168afa4"
+      }, {
+        "id": "ded024e0-7a2b-4830-98be-a846a1fd8f3c"
+      }, {
+        "id": "af2d1a17-4654-4c4f-9d90-e85d8140f79c"
+      }, {
+        "id": "cb43e37c-150a-4765-877c-603c89fb7816"
+      }, {
+        "id": "f3eb1ddf-9ff4-4e20-b35e-8e007a632348"
+      }, {
+        "id": "0011fbff-4c8d-48be-b8cb-4fa4bc87aa46"
+      }, {
+        "id": "d25a98e9-a762-4049-aa4e-5203422aad90"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Prompt 2: Auditoria de Sinergia (Ato 1 vs Sidequests)\n\nAssunto: Verificação de Integridade da Tabela de Sinergia Prompt: Analise o arquivo 01_Ato_1_A_Primeira_Ruptura.md (seção Sinergia) e compare com os arquivos das Mini-Campanhas citadas (ex: Indigena_03, Colonizador_01, etc.).\n\nPergunta: A vantagem prometida no Ato 1 faz sentido com a narrativa da Sidequest? Exemplo: O Ato 1 diz que completar \"Justiça das Mãos Sujas\" dá apoio militar. A missão \"Justiça das Mãos Sujas\" termina com o jogador ganhando influência militar? Confirme se todas as 6 referências estão coerentes.",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

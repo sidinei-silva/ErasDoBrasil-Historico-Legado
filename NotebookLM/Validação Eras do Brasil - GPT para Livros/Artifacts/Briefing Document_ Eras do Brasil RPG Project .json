@@ -1,0 +1,52 @@
+{
+  "title": "Briefing Document: Eras do Brasil RPG Project",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+    }
+  }, {
+    "sourceId": {
+      "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+    }
+  }, {
+    "sourceId": {
+      "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+    }
+  }, {
+    "sourceId": {
+      "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+    }
+  }, {
+    "sourceId": {
+      "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+    }
+  }, {
+    "sourceId": {
+      "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Briefing Doc",
+      "description": "Key insights and important quotes",
+      "sourceIds": [{
+        "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+      }, {
+        "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+      }, {
+        "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+      }, {
+        "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+      }, {
+        "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+      }, {
+        "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+      }],
+      "languageCode": "en",
+      "documentDirective": "Create a comprehensive briefing document that synthesizes the main themes and ideas from the sources. Start with a concise Executive Summary that presents the most critical takeaways upfront. The body of the document must provide a detailed and thorough examination of the main themes, evidence, and conclusions found in the sources. This analysis should be structured logically with headings and bullet points to ensure clarity. The tone must be objective and incisive.",
+      "enableU18Classifier": true
+    }
+  }
+}

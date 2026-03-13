@@ -1,0 +1,68 @@
+<h3 id="roadmap-t-cnico-e-pocs">🛠️ Roadmap Técnico e POCs</h3>
+<p>Este documento detalha a execução técnica das fases planejadas no Project Plan.md.</p>
+<h4 id="stack-tecnol-gica-definida">🖥️ Stack Tecnológica Definida</h4>
+<table>
+<thead>
+<tr>
+<th>Fase do Projeto</th>
+<th>Tecnologia Principal</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fase 1 &amp; 2 (Texto/Gestão)</strong></td>
+<td><strong>React (Next.js) + Tailwind CSS</strong></td>
+<td>Interface rica em menus, responsiva, rápida de iterar. Ótima para &#34;jogos de navegador&#34;.</td>
+</tr>
+<tr>
+<td><strong>Backend (Fase 2)</strong></td>
+<td><strong>Node.js (NestJS) + PostgreSQL</strong></td>
+<td>Robustez, tipagem forte (TS), fácil de escalar.</td>
+</tr>
+<tr>
+<td><strong>Fase 3 a 6 (Visual/Tático)</strong></td>
+<td><strong>Godot Engine (C# ou GDScript)</strong></td>
+<td>Melhor engine 2D/Pixel Art atual. Leve, nós flexíveis, ótima para grids.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="plano-de-pocs-provas-de-conceito">🧪 Plano de POCs (Provas de Conceito)</h4>
+<p>Antes de fazer o jogo completo, faremos pequenos protótipos descartáveis para validar a lógica.</p>
+<h5 id="poc-01-o-motor-de-combate-texto">POC 01: O Motor de Combate (Texto)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a matemática do D20, Iniciativa e Habilidades (ex: Tiro Preparado).</li>
+<li><strong>Formato:</strong>  Console Application (Node.js).</li>
+<li><strong>Entrada:</strong>  &gt; atacar esqueleto</li>
+<li><strong>Saída:</strong>  Rolagem: 15 + 2 = 17. Acerto! Dano: 6.</li>
+<li><strong>Meta:</strong>  Garantir que a lógica do &#34;Livro de Regras&#34; funciona em código.</li>
+</ul>
+<h5 id="poc-02-o-navegador-de-mundo-visual-web">POC 02: O Navegador de Mundo (Visual Web)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a sensação de explorar por &#34;Blocos&#34; e &#34;Ticks&#34;.</li>
+<li><strong>Formato:</strong>  Web App (React).</li>
+<li><strong>Interface:</strong>
+<ul>
+<li>Esquerda: Imagem do Lugar.</li>
+<li>Direita: Texto e Botões (&#34;Ir Norte&#34;, &#34;Coletar&#34;).</li>
+<li>Topo: Contador de Ticks e Recursos.</li>
+</ul>
+</li>
+<li><strong>Meta:</strong>  Ver se o loop de &#34;Gastar Tick -&gt; Ganhar Recurso -&gt; Mover&#34; é divertido.</li>
+</ul>
+<h5 id="poc-03-a-matriz-de-itens-l-gica">POC 03: A Matriz de Itens (Lógica)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Criar o gerador de itens 5x5.</li>
+<li><strong>Formato:</strong>  Script.</li>
+<li><strong>Teste:</strong>  Gerar 100 espadas aleatórias e ver se a distribuição de &#34;Qualidade&#34; e &#34;Raridade&#34; está balanceada.</li>
+</ul>
+<hr>
+<h4 id="ordem-de-execu-o">📅 Ordem de Execução</h4>
+<ol>
+<li>Finalizar documentação de Missões (Enredo Dinâmico).</li>
+<li>Criar Schemas JSON (Livros Auxiliares).</li>
+<li>Executar  <strong>POC 01</strong>  (Combate).</li>
+<li>Executar  <strong>POC 02</strong>  (Exploração).</li>
+<li>Iniciar desenvolvimento da  <strong>Fase 1 (Jogo Completo Offline)</strong> .</li>
+</ol>

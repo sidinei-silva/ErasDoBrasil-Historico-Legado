@@ -1,0 +1,202 @@
+<h3 id="cap-tulo-8-mestres-campanhas-e-mundo-vivo">🌍 Capítulo 8 – Mestres, Campanhas e Mundo Vivo</h3>
+<p>Este capítulo é dedicado aos mestres e ao sistema de &#34;Mundo Vivo&#34;, que é um dos pilares centrais do jogo. Ele detalha como o mundo reage, como os NPCs pensam e como o tempo (Ticks) afeta a simulação.</p>
+<hr>
+<h4 id="8-1-o-papel-do-mestre-no-mundo-vivo">8.1 – O Papel do Mestre no Mundo Vivo</h4>
+<p>O mestre, em  <em>Eras do Brasil</em> , não é apenas o narrador dos eventos — é o  <strong>guardião da Raiz do Mundo</strong> , responsável por gerenciar o equilíbrio entre narrativa, desafios, evolução do mundo e escolhas dos jogadores.
+Diferente de muitos sistemas clássicos, aqui o mestre não controla um universo estático, mas sim um  <strong>mundo vivo, dinâmico e em constante transformação</strong> , onde:</p>
+<ul>
+<li><strong>NPCs possuem rotinas, desejos, vínculos e conhecimento próprio.</strong></li>
+<li><strong>O mundo se move mesmo sem a presença dos jogadores.</strong></li>
+<li><strong>Eventos acontecem em ciclos temporais (ticks), afetando regiões, recursos, mercados, facções e relações.</strong>
+O mestre deve equilibrar três pilares:</li>
+</ul>
+<ol>
+<li><strong>Simulação:</strong>  garantir que o mundo viva e evolua.</li>
+<li><strong>Narrativa:</strong>  tecer histórias envolventes.</li>
+<li><strong>Jogabilidade:</strong>  assegurar que desafios e recompensas estejam calibrados.</li>
+</ol>
+<hr>
+<h4 id="8-2-arquitetura-de-ticks-blocos-e-ciclos">8.2 – Arquitetura de Ticks, Blocos e Ciclos</h4>
+<p>(Conteúdo fundido do original 8.2 e das novas regras de Ticks)
+O mundo é construído sobre uma lógica de  <strong>Blocos de Cenário</strong>  (cap. 5.2) e regido por  <strong>Ticks</strong> .</p>
+<h5 id="arquitetura-do-tick-comut-vel-offline-vs-online">Arquitetura do &#34;Tick Comutável&#34; (Offline vs. Online)</h5>
+<p>O motor do mundo de  <em>Eras do Brasil</em>  é o &#34;Tick&#34;. Um Tick é a unidade fundamental de avanço do tempo. Toda a arquitetura de simulação é construída sobre um &#34;Motor&#34; de lógica (Mundo.ProcessarTick()) que é separado de seu &#34;Gatilho&#34;.</p>
+<ul>
+<li><strong>Gatilho Offline (Reativo):</strong>  Para as Fases 1 e 3 (Offline / RPG de Mesa), o mundo é reativo. O &#34;Motor&#34; do Tick só é disparado quando o jogador realiza uma ação significativa, como OnPlayerAction_Move (mover-se entre blocos de cenário). O mundo espera pelo jogador.</li>
+<li><strong>Gatilho Online (Proativo):</strong>  Para as Fases de Mundo Persistente (Online), o mundo é proativo. O &#34;Motor&#34; do Tick é disparado por um relógio global no servidor (ex: setInterval a cada 1 ou 5 minutos), independentemente das ações do jogador. O mundo avança sozinho.</li>
+</ul>
+<h5 id="ciclos-temporais">Ciclos Temporais</h5>
+<p>Ticks fazem parte de ciclos maiores, que podem ser:</p>
+<ul>
+<li><strong>Ciclos Diurnos:</strong>  manhã, tarde, noite, madrugada.</li>
+<li><strong>Ciclos Semanais:</strong>  dias de feira, rituais.</li>
+<li><strong>Ciclos Sazonais:</strong>  estações que alteram recursos e clima.</li>
+<li><strong>Ciclos Espirituais:</strong>  fases da lua, rupturas da Raiz.
+A cada Tick, o mundo atualiza:</li>
+<li>Movimentação de NPCs.</li>
+<li>Regeneração ou esgotamento de recursos.</li>
+<li>Ativação de eventos.</li>
+<li>Progresso de facções.</li>
+</ul>
+<hr>
+<h4 id="8-3-o-sistema-de-ia-de-npcs-fus-o-de-modelos">8.3 – O Sistema de IA de NPCs (Fusão de Modelos)</h4>
+<p>(Conteúdo fundido do original 8.3 e das novas regras de IA)
+Os NPCs em  <em>Eras do Brasil</em>  são entidades vivas. O sistema é uma fusão de dois modelos: &#34;Agendas&#34; (rotinas fixas, como  <em>Stardew Valley</em>  ou  <em>KCD</em> ) e &#34;Necessidades&#34; (IA baseada em prioridades, como  <em>Dwarf Fortress</em>  ou  <em>RimWorld</em> ).
+Cada NPC possui um NPC_Data com os seguintes componentes:</p>
+<ul>
+<li><strong>Needs</strong>  <strong>(Necessidades):</strong>  Um conjunto de estatísticas que decaem a cada Tick (ex: Fome, Sede, Energia/Sono, Social, Segurança).</li>
+<li><strong>Traits</strong>  <strong>(Traços):</strong>  Modificadores passivos que afetam o decaimento das necessidades ou a tomada de decisão (ex: Gula, Preguiçoso, Ranzinza, Valente).</li>
+<li><strong>Mood &amp; Thoughts</strong>  <strong>(Humor e Memórias):</strong>  O Humor do NPC é o resultado direto de suas Necessidades não atendidas e de &#34;Memórias&#34; recentes (ex: &#34;Comeu bem&#34;, &#34;Foi insultado&#34;, &#34;Amigo morreu&#34;).</li>
+<li><strong>Agenda</strong>  <strong>:</strong>  A rotina de trabalho padrão do NPC (ex: &#34;08:00 - Ir para a Forja&#34;).</li>
+</ul>
+<h5 id="o-fluxo-de-decis-o-do-npc-ontick-utility-ai">O Fluxo de Decisão do NPC (OnTick - Utility AI)</h5>
+<p>A cada Tick Global, o cérebro de cada NPC (Utility AI) roda o seguinte processo:</p>
+<ol>
+<li><strong>Fase 1 (Passivo):</strong>  Atualiza todas as Needs (Fome +1, Energia -1) e recalcula o Humor total.</li>
+<li><strong>Fase 2 (Decisão):</strong>  O NPC avalia todas as suas &#34;Metas&#34; (Trabalhar, Comer, Dormir, Socializar) e atribui uma prioridade a cada uma.
+<ul>
+<li>Prioridade_Fome = npc.fome (ex: 70)</li>
+<li>Prioridade_Trabalho = npc.agenda.GetPriority() (ex: 50)</li>
+</ul>
+</li>
+<li><strong>Fase 3 (Ação):</strong>  O NPC escolhe e executa a Ação que satisfaz a Meta de  <strong>maior prioridade</strong> .
+<ul>
+<li><em>Exemplo:</em>  Se a Prioridade_Fome (70) for maior que a Prioridade_Trabalho (50), o Ferreiro &#34;quebra&#34; sua rotina de Agenda e decide ir à taverna para comer.</li>
+</ul>
+</li>
+</ol>
+<h5 id="percep-o-cognitiva-knowledgebase">Percepção Cognitiva (knowledgeBase)</h5>
+<p>(Conteúdo original 8.3 e novo 8.4 fundidos)
+Cada NPC possui uma &#34;Base de Conhecimento&#34; (knowledgeBase) onde armazena informações que  <em>vê</em>  durante suas rotinas:</p>
+<ul>
+<li><strong>Recursos:</strong>  {&#34;tipo&#34;: &#34;RECURSO&#34;, &#34;id&#34;: &#34;minerio_ferro_01&#34;, &#34;local&#34;: &#34;bloco_mina&#34;, &#34;ultimo_visto&#34;: 12340}</li>
+<li><strong>Monstros:</strong>  {&#34;tipo&#34;: &#34;ENTIDADE&#34;, &#34;id&#34;: &#34;lobo_alfa&#34;, &#34;local&#34;: &#34;floresta_norte&#34;, &#34;ultimo_visto&#34;: 12300}</li>
+<li><strong>Rotinas de NPCs:</strong>  {&#34;tipo&#34;: &#34;ROTINA_NPC&#34;, &#34;id&#34;: &#34;npc_guarda&#34;, &#34;info&#34;: &#34;Vai para a taverna ao meio-dia&#34;}</li>
+<li>As informações possuem um &#34;prazo de validade&#34; (baseado no ultimo_visto) e são &#34;esquecidas&#34; após um tempo.</li>
+</ul>
+<h5 id="relacionamentos-npc-npc-e-fofoca">Relacionamentos (NPC &lt;=&gt; NPC) e &#34;Fofoca&#34;</h5>
+<p>NPCs rastreiam seu nível de amizade/inimizade com  <em>outros NPCs</em>  e com os jogadores.
+Quando as rotinas de dois NPCs (baseadas no Tick) fazem com que eles se encontrem no mesmo bloco (ex: Ferreiro e Guarda na Taverna), o sistema de &#34;Fofoca&#34; é ativado:</p>
+<ol>
+<li>Os NPCs trocam 1-2 itens de suas knowledgeBase.</li>
+<li>Eles atualizam seus Relacionamentos (ex: &#34;Falar com o Ferreiro aumentou minha amizade com ele&#34;).</li>
+</ol>
+<h5 id="acesso-do-jogador-intera-o">Acesso do Jogador (Interação)</h5>
+<p>O jogador acessa essa rede de informação dinâmica ao conversar com o NPC. O que o NPC sabe (e se ele decide contar) depende de:</p>
+<ol>
+<li><strong>Afinidade:</strong>  O NPC gosta de você?</li>
+<li><strong>knowledgeBase</strong>  <strong>:</strong>  O NPC  <em>realmente viu</em>  o que você está perguntando? (Ex: &#34;Sim, eu vi minério de ferro na mina esta manhã.&#34;)</li>
+<li><strong>&#34;Fofoca&#34;:</strong>  O NPC  <em>ouviu falar</em>  de outro NPC? (Ex: &#34;Eu não vi, mas o Guarda me contou que viu lobos na floresta norte.&#34;).</li>
+</ol>
+<hr>
+<h4 id="8-4-fac-es-influ-ncia-e-progresso-global">8.4 – Facções, Influência e Progresso Global</h4>
+<p>(Conteúdo original do Cap 8.4 do Livro de Regras.md)
+As  <strong>facções</strong>  representam grupos organizados que moldam a política, a espiritualidade, o comércio e os conflitos em  <em>Eras do Brasil</em> . Cada facção possui  <strong>interesses, ideologias, territórios, NPCs afiliados e objetivos próprios</strong> .</p>
+<h5 id="o-que-uma-fac-o">🏛️ O Que é uma Facção?</h5>
+<p>Uma facção é uma entidade social, cultural, espiritual, militar ou econômica composta por:</p>
+<ul>
+<li>NPCs organizados com funções, hierarquias e rotinas</li>
+<li>Crenças, objetivos e rivalidades</li>
+<li>Territórios ou áreas de influência</li>
+<li>Relações diplomáticas (amizade, rivalidade ou neutralidade)</li>
+</ul>
+<h5 id="influ-ncia-e-reputa-o-com-fac-es">🎯 Influência e Reputação com Facções</h5>
+<p>Cada jogador ou grupo possui uma  <strong>Reputação</strong>  com cada facção, que varia de:
+| Nível de Reputação | Descrição | Efeito Prático |
+| ------ | ------ | ------ |
+| 🟥 Inimigo | Odiado, caçado, alvo | NPCs atacam, bloqueiam acesso, emboscadas |
+| 🟧 Desfavorável | Desconfiado, mal visto | Preços mais altos, missões fechadas |
+| 🟨 Neutro | Desconhecido ou irrelevante | Acesso básico, sem benefícios ou punições |
+| 🟦 Respeitado | Conhecido, prestigiado | Descontos, acesso a missões ou rituais |
+| 🟩 Aliado | Integrado, protegido, líder | Acesso total a recursos, proteção e segredos |</p>
+<p>As ações de um jogador podem  <strong>aumentar ou diminuir reputação</strong>  com uma ou mais facções ao mesmo tempo.</p>
+<hr>
+<h4 id="8-5-eventos-globais-rumores-e-ciclo-do-mundo">8.5 – Eventos Globais, Rumores e Ciclo do Mundo</h4>
+<p>(Conteúdo original do Cap 8.5 do Livro de Regras.md)
+O mundo de  <em>Eras do Brasil</em>  não é estático. Ele pulsa, respira e reage a tudo que acontece.</p>
+<h5 id="eventos-globais">🌪️ Eventos Globais</h5>
+<p>São acontecimentos que possuem  <strong>impacto coletivo e permanente (ou semi-permanente)</strong>  no mundo.
+| Tipo de Evento | Exemplos |
+| ------ | ------ |
+| Espirituais | Ruptura de Véus, Enfraquecimento da Raiz, Eclipse Ancestral |
+| Políticos/Sociais | Queda de uma facção, fundação de uma vila, guerra civil |
+| Ambientais | Chegada de estação seca severa, praga mágica, floresta corrompida |</p>
+<h5 id="ciclo-do-mundo">🌓 Ciclo do Mundo</h5>
+<p>O mundo de  <em>Eras do Brasil</em>  é regido por ciclos que afetam:</p>
+<ul>
+<li>Eventos espirituais</li>
+<li>Fauna e flora</li>
+<li>Presença de monstros</li>
+<li>Poder de magias, rituais e itens</li>
+</ul>
+<hr>
+<h4 id="8-6-companheiros-e-personagens-secund-rios">8.6 – Companheiros e Personagens Secundários</h4>
+<p>(Conteúdo original do Cap 8.6 do Livro de Regras.md)
+Os jogadores podem interagir com  <strong>companheiros, mercenários, aliados e personagens secundários</strong> .</p>
+<h5 id="companheiros-e-seguidores">🤝 Companheiros e Seguidores</h5>
+<p>Jogadores podem recrutar  <strong>companheiros temporários ou permanentes</strong> :
+| Tipo | Função |
+| ------ | ------ |
+| 🛡️ Mercenários | Auxílio em combate, pagos por diária |
+| 🔥 Aliados de Facção | Suporte específico, bônus narrativos |
+| 🧙 NPCs Rituais | Ajudam em magias, rituais e cura |
+| 🐺 Criaturas | Companheiros mágicos, animais ou espirituais |</p>
+<h6 id="regras-gerais-para-companheiros">🎯 Regras Gerais para Companheiros</h6>
+<ul>
+<li><strong>Ação em Combate:</strong>  Podem agir no combate, com ficha simplificada.</li>
+<li><strong>Requisitos:</strong>  Exigem pagamento, manutenção de afinidade ou cumprimento de missões.</li>
+<li><strong>Risco de Perda:</strong>  Podem ir embora se a afinidade cair muito ou se seus objetivos entrarem em conflito.</li>
+</ul>
+<h5 id="sistema-de-afinidade-detalhado">❤️ Sistema de Afinidade (Detalhado)</h5>
+<p>A &#34;Afinidade&#34; (relacionamento) que um NPC sente pelo jogador é uma mecânica central. Ela é modificada por ações diretas:
+| Ação | Efeito na Afinidade |
+| ------ | ------ |
+| Presentear com item valioso | +2 |
+| Ajudar em missão | +1 a +3 |
+| Faltar com compromisso | –2 |
+| Ofender, mentir ou trair | –3 ou mais |
+| Salvar em combate crítico | +3 |
+| Pertencer à mesma facção | +1 (Bônus passivo) |</p>
+<p>A afinidade gera:</p>
+<ul>
+<li><strong>Descontos</strong>  no comércio.</li>
+<li><strong>Acesso a informações exclusivas</strong>  (da knowledgeBase do NPC).</li>
+<li><strong>Ofertas de missões especiais</strong> .</li>
+<li><strong>Apoio em combates ou rituais</strong> .</li>
+</ul>
+<h5 id="ciclo-de-vida-dos-npcs">🌳 Ciclo de Vida dos NPCs</h5>
+<p>NPCs não são eternos. Eles podem nascer, envelhecer e morrer (seja por eventos da história, ações do jogador ou causas naturais). A morte de um NPC importante é um  <strong>Evento Global</strong>  que pode gerar novas missões ou lacunas de poder.</p>
+<hr>
+<h4 id="8-7-din-mica-de-tempo-solo-vs-cooperativo">8.7 – Dinâmica de Tempo: Solo vs. Cooperativo</h4>
+<p>O sistema de Ticks se adapta para garantir fluidez quando mais de um jogador está no mundo.</p>
+<h5 id="1-modo-solo-turno-reativo">1. Modo Solo (Turno Reativo)</h5>
+<p>Quando joga sozinho, o mundo espera por você.</p>
+<ul>
+<li>O tempo só avança quando você realiza uma ação (mover, craftar, esperar).</li>
+<li>Permite estratégia profunda e pausas para leitura.</li>
+</ul>
+<h5 id="2-modo-cooperativo-tempo-fluido-heartbeat">2. Modo Cooperativo (Tempo Fluido / Heartbeat)</h5>
+<p>Quando um aliado se conecta, o mundo entra em  <strong>Sincronia Contínua</strong> .</p>
+<ul>
+<li><strong>Exploração (Tempo Real):</strong>  O servidor (Host) gera um &#34;Heartbeat&#34; (batida de coração) a cada X segundos (ex: 1 segundo = 1 Tick de exploração).
+<ul>
+<li>Jogadores se movem livremente e simultaneamente.</li>
+<li>Se um jogador parar para ler, o outro pode continuar andando ou coletando.</li>
+<li>NPCs seguem suas rotinas baseadas nesse relógio contínuo.</li>
+</ul>
+</li>
+<li><strong>Combate (Turno Rígido):</strong>  Assim que qualquer jogador entra em combate, cria-se uma  <strong>&#34;Bolha de Turno&#34;</strong> .
+<ul>
+<li>Dentro da bolha, a regra volta a ser estrita: Iniciativa define quem age.</li>
+<li>Jogadores fora da bolha podem continuar se movendo em tempo real até entrarem na área de combate (juntando-se à Iniciativa).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="8-8-o-papel-dos-jogadores-no-co-op">8.8 – O Papel dos Jogadores no Co-op</h4>
+<p>Para evitar conflitos de narrativa, definimos papéis claros:</p>
+<ul>
+<li><strong>O Host (Anfitrião):</strong>  É o dono do Save. Ele tem a palavra final em diálogos de missão e escolhas morais que alteram o mundo permanentemente.</li>
+<li><strong>O Client (Aliado):</strong>  É um suporte de luxo. Ele pode interagir com lojas, coletar recursos e lutar livremente, mas em diálogos de história, ele atua como conselheiro (pode sugerir opções, mas não clicar na decisão final).</li>
+</ul>
+<hr>

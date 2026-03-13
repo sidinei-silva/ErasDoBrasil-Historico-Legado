@@ -1,0 +1,83 @@
+<h3 id="plano-de-projeto-eras-do-brasil">Plano de Projeto: Eras do Brasil</h3>
+<h4 id="1-0-vis-o-e-estrat-gia-geral">1.0 Visão e Estratégia Geral</h4>
+<p>Este documento delineia a visão fundamental para &#39;Eras do Brasil&#39;, detalhando o conceito de alto nível, a missão central e a estratégia de entrada no mercado. Ele serve como uma estrela-guia para o desenvolvimento.
+&#39;Eras do Brasil&#39; é um RPG de fantasia histórica ambientado em uma versão mística do Brasil. Nossa missão principal é criar uma experiência imersiva que entrelace magistralmente a história e o folclore brasileiros com uma jogabilidade inovadora e estrategicamente gratificante.
+A estratégia de desenvolvimento é  <strong>Iterativa e Híbrida</strong> : construiremos o jogo em camadas de complexidade (Texto &gt; Visual &gt; Tático), sempre validando primeiro o modo Offline (Eco) e depois o Online (Raiz).</p>
+<h4 id="2-0-defini-o-do-produto-e-escopo">2.0 Definição do Produto e Escopo</h4>
+<h5 id="2-1-o-n-cleo-do-sistema-mvp">2.1. O Núcleo do Sistema (MVP)</h5>
+<p>Mecânicas fundamentais que guiam todas as fases:</p>
+<ul>
+<li><strong>Núcleo do Sistema:</strong>  Resolução de ações baseada em D20 contra uma Classe de Dificuldade (CD).</li>
+<li><strong>Pilares de Personagem:</strong>  Três Origens distintas:  <strong>Colonizador</strong> ,  <strong>Indígena</strong>  e  <strong>Ser Folclórico</strong> .</li>
+<li><strong>Sistema de Classes:</strong>  Estrutura flexível com 12 classes iniciais, evoluindo através de três Tiers.</li>
+<li><strong>Arquitetura Híbrida:</strong>  Divisão clara entre  <strong>O Eco</strong>  (Campanha Pessoal/Offline) e  <strong>A Raiz</strong>  (Mundo Persistente/Online).</li>
+</ul>
+<h5 id="2-2-a-adapta-o-digital">2.2. A Adaptação Digital</h5>
+<p>A visão final é um RPG onde as ações dos jogadores têm consequências duradouras, seja na sua narrativa pessoal ou no destino do servidor.</p>
+<h4 id="3-0-p-blico-alvo-e-posicionamento">3.0 Público-Alvo e Posicionamento</h4>
+<ul>
+<li><strong>Público Primário:</strong>  Jogadores experientes de RPG (mesa e digital) que buscam profundidade mecânica e combate estratégico. Fãs de  <em>Orna</em> ,  <em>Albion</em> ,  <em>Solasta</em>  e  <em>Ravendawn</em> .</li>
+<li><strong>Posicionamento:</strong>  Preenche a lacuna de RPGs mecanicamente profundos enraizados em um cenário cultural sul-americano (Eco-Fantasia).</li>
+</ul>
+<h4 id="4-0-mec-nicas-centrais-de-gameplay">4.0 Mecânicas Centrais de Gameplay</h4>
+<h5 id="4-1-progress-o-de-personagem">4.1. Progressão de Personagem</h5>
+<ul>
+<li><strong>Tiers de Classe:</strong>  Evolução vertical (Tier 1-3).</li>
+<li><strong>A &#34;Moeda de Classe&#34;:</strong>  Item raro necessário para desbloquear classes. O Online oferece mais moedas (risco/recompensa), mas o Offline garante a obtenção segura.</li>
+<li><strong>Troca Estratégica:</strong>  Habilidades ativas desbloqueadas entram para um &#34;pool&#34; global do personagem.</li>
+</ul>
+<h5 id="4-2-economia-e-crafting">4.2. Economia e Crafting</h5>
+<ul>
+<li><strong>Proficiências:</strong>  Divisão entre  <strong>Coleta</strong>  e  <strong>Produção</strong> .</li>
+<li><strong>Dualidade de Recursos:</strong>  Recursos Físicos (Offline) para base, Recursos Espirituais (Online) para encantamento.</li>
+<li><strong>Matriz de Itemização:</strong>  Poder definido por uma matriz 5x5 de Qualidade e Raridade.</li>
+</ul>
+<h5 id="4-3-narrativa-e-mundo">4.3. Narrativa e Mundo</h5>
+<ul>
+<li><strong>Raiz do Mundo:</strong>  A força mística que conecta as eras e os jogadores online.</li>
+<li><strong>Dom da Revivência:</strong>  A justificativa  <em>in-game</em>  para a troca de classes e acesso a diferentes períodos históricos.</li>
+</ul>
+<h4 id="5-0-roadmap-de-desenvolvimento-estrat-gia-iterativa-h-brida">5.0 Roadmap de Desenvolvimento (Estratégia Iterativa Híbrida)</h4>
+<p>Este roteiro segue uma evolução técnica em 3 estágios. Em cada estágio, primeiro validamos o  <strong>Offline (Eco)</strong>  e depois integramos o  <strong>Online (Raiz)</strong> .</p>
+<h5 id="fase-1-rpg-de-mesa-digital-mvp-offline-eco-conclu-do-design">Fase 1: RPG de Mesa Digital (MVP Offline / Eco) - CONCLUÍDO (Design)</h5>
+<ul>
+<li><strong>Foco:</strong>  Validar Regras, Enredo (Ato 1) e Sistema de Ticks Reativos.</li>
+<li><strong>O Jogo:</strong>  Interface de Texto (Console/UI Simples). O jogador vive a história sozinho.</li>
+<li><strong>Entregável:</strong>  Motor de RPG rodando localmente com JSONs de dados.</li>
+</ul>
+<h5 id="fase-2-rpg-de-mesa-digital-mvp-h-brido-raiz-pr-ximo">Fase 2: RPG de Mesa Digital (MVP Híbrido / Raiz) - PRÓXIMO</h5>
+<ul>
+<li><strong>Foco:</strong>  Validar Arquitetura de Dados e Conexão Híbrida.</li>
+<li><strong>O Jogo:</strong>  Adição de Login e Banco de Dados. O jogador pode enviar seu personagem do Offline para um &#34;Lobby de Texto&#34; (Raiz) e participar de uma missão cooperativa simples.</li>
+<li><strong>Entregável:</strong>  Backend básico e validação da economia (Loot Online vs Offline).</li>
+</ul>
+<h5 id="fase-3-jogo-digital-v1-prot-tipo-visual-offline-eco">Fase 3: Jogo Digital v1 - Protótipo Visual (Offline / Eco)</h5>
+<ul>
+<li><strong>Foco:</strong>  Validar Estilo de Arte (Pixel Art) e Navegação por Blocos.</li>
+<li><strong>O Jogo:</strong>  O &#34;Eco&#34; ganha vida visual. O jogador anda pelo mapa, vê os NPCs e o ciclo de Ticks afeta o visual (Dia/Noite). Combate estático (JRPG).</li>
+<li><strong>Entregável:</strong>  Cliente Godot/Unity Single Player funcional.</li>
+</ul>
+<h5 id="fase-4-jogo-digital-v1-mundo-conectado-online-raiz">Fase 4: Jogo Digital v1 - Mundo Conectado (Online / Raiz)</h5>
+<ul>
+<li><strong>Foco:</strong>  Validar o Hub Social Visual e Ciclos Sazonais.</li>
+<li><strong>O Jogo:</strong>  Jogadores se veem no Hub (Cidade). Implementação dos &#34;Turnos de NPC&#34; globais. Missões de grupo visuais.</li>
+<li><strong>Entregável:</strong>  Cliente Multiplayer com Chat e Instâncias Cooperativas.</li>
+</ul>
+<h5 id="fase-5-jogo-digital-v2-n-cleo-t-tico-offline-eco">Fase 5: Jogo Digital v2 - Núcleo Tático (Offline / Eco)</h5>
+<ul>
+<li><strong>Foco:</strong>  Implementar a profundidade final (Grid Tático).</li>
+<li><strong>O Jogo:</strong>  Substituição do combate estático pelo combate em Grid (Movimento, Alcance, Flanco).</li>
+<li><strong>Entregável:</strong>  A experiência &#34;Premium&#34; de gameplay solo.</li>
+</ul>
+<h5 id="fase-6-lan-amento-acesso-antecipado-h-brido-completo">Fase 6: Lançamento (Acesso Antecipado - Híbrido Completo)</h5>
+<ul>
+<li><strong>Foco:</strong>  Conteúdo e Polimento.</li>
+<li><strong>O Jogo:</strong>  A união completa. Campanha Offline (Eco) alimenta o personagem para as Guerras Sazonais Táticas (Raiz).</li>
+<li><strong>Entregável:</strong>  Publicação na Steam/Lojas.</li>
+</ul>
+<h4 id="6-0-sistemas-avan-ados-e-vis-o-p-s-lan-amento">6.0 Sistemas Avançados e Visão Pós-Lançamento</h4>
+<ul>
+<li><strong>Durabilidade e Reparo:</strong>  Equipamentos degradam com o uso.</li>
+<li><strong>Full Loot na Morte (Opcional):</strong>  Modos hardcore específicos em áreas da Raiz.</li>
+<li><strong>Inimigos Evolutivos:</strong>  Sistema onde inimigos que derrotam jogadores ganham XP.</li>
+</ul>

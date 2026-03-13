@@ -1,0 +1,134 @@
+<h3 id="roadmap-t-cnico-e-pocs">🛠️ Roadmap Técnico e POCs</h3>
+<p>Este documento detalha a execução técnica das 6 Fases planejadas no Project Plan.md, alinhando a tecnologia com a estratégia de desenvolvimento &#34;Tick-Tock&#34; (Solo -&gt; Co-op) e a stack Unity.</p>
+<h4 id="stack-tecnol-gica-definida">🖥️ Stack Tecnológica Definida</h4>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Tecnologia</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Engine</strong></td>
+<td><strong>Unity (Versão LTS)</strong></td>
+<td>Robustez, suporte nativo a 2D/Pixel Art, vasta documentação e Assets.</td>
+</tr>
+<tr>
+<td><strong>Linguagem</strong></td>
+<td><strong>C# (.NET)</strong></td>
+<td>Tipagem forte, excelente para sistemas de regras complexos (RPG), integração perfeita com VS Code + Copilot.</td>
+</tr>
+<tr>
+<td><strong>Netcode (Co-op)</strong></td>
+<td><strong>Unity Netcode for GameObjects (NGO)</strong></td>
+<td>Solução oficial da Unity para arquitetura Host-Client (P2P), ideal para o nosso modelo &#34;Eco Compartilhado&#34; sem servidor dedicado.</td>
+</tr>
+<tr>
+<td><strong>Transporte</strong></td>
+<td><strong>Unity Transport / Steamworks (Futuro)</strong></td>
+<td>Começamos com conexão direta via IP (Dev) e migramos para Lobby Steamworks no lançamento.</td>
+</tr>
+<tr>
+<td><strong>Dados (Database)</strong></td>
+<td><strong>ScriptableObjects (Unity) + JSON</strong></td>
+<td>Armazenamento local de regras, itens e classes (ScriptableObjects) e Saves (JSON). Sem banco de dados externo.</td>
+</tr>
+<tr>
+<td><strong>UI</strong></td>
+<td><strong>Unity UI Toolkit ou Canvas</strong></td>
+<td>Flexível para as interfaces ricas de texto e menus das Fases 1 e 2.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="plano-de-pocs-provas-de-conceito">🧪 Plano de POCs (Provas de Conceito)</h4>
+<p>As POCs servem para validar riscos técnicos isolados antes de iniciar a produção de cada grande fase.</p>
+<h5 id="poc-01-o-motor-de-regras-pr-fase-1">POC 01: O Motor de Regras (Pré-Fase 1)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a matemática do sistema (Livro de Regras) em C# puro, sem gráficos.</li>
+<li><strong>Escopo:</strong>
+<ul>
+<li>Implementar a classe Personagem (Atributos, Inventário, Classes).</li>
+<li>Implementar o SistemaDeCombate (Turnos, Iniciativa, D20 vs CD).</li>
+<li>Interface mínima (Botões de Debug) para simular: &#34;Atacar&#34;, &#34;Usar Habilidade&#34;.</li>
+</ul>
+</li>
+<li><strong>Resultado Esperado:</strong>  Um log de console mostrando um combate completo respeitando atributos e rolagens.</li>
+</ul>
+<h5 id="poc-02-sincronia-host-client-pr-fase-2">POC 02: Sincronia Host-Client (Pré-Fase 2)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a arquitetura P2P do Netcode for GameObjects.</li>
+<li><strong>Escopo:</strong>
+<ul>
+<li>Criar um Lobby simples (Host inicia, Client conecta via IP Local).</li>
+<li>Sincronizar uma variável de estado global (ex: GlobalTicks).</li>
+<li>Implementar o &#34;Salvamento Atômico&#34; para troca de itens (Item sai do inventário A e entra no B com confirmação).</li>
+</ul>
+</li>
+<li><strong>Resultado Esperado:</strong>  Dois executáveis rodando onde o Player A joga um item e o Player B pega, atualizando ambos os inventários sem erros.</li>
+</ul>
+<h5 id="poc-03-explora-o-visual-e-ticks-pr-fase-3">POC 03: Exploração Visual e Ticks (Pré-Fase 3)</h5>
+<ul>
+<li><strong>Objetivo:</strong>  Validar a sensação de &#34;Mundo Vivo&#34; e movimentação por blocos.</li>
+<li><strong>Escopo:</strong>
+<ul>
+<li>Criar o sistema de Bloco (Cena com Sprite de fundo + Pontos de Interesse).</li>
+<li>Implementar o gasto de Ticks ao mover e a reação do ambiente (ex: mudar iluminação Dia/Noite).</li>
+</ul>
+</li>
+<li><strong>Resultado Esperado:</strong>  Navegar por 3 telas (Vila -&gt; Floresta -&gt; Ruína) com feedback visual de tempo passando.</li>
+</ul>
+<hr>
+<h4 id="execu-o-t-cnica-das-fases-alinhamento-com-project-plan">📅 Execução Técnica das Fases (Alinhamento com Project Plan)</h4>
+<h5 id="fase-1-rpg-de-mesa-digital-mvp-offline">Fase 1: RPG de Mesa Digital (MVP Offline)</h5>
+<ul>
+<li><strong>Foco Técnico:</strong>  Arquitetura de Dados e UI.</li>
+<li><strong>Implementação:</strong>  O jogo será essencialmente Telas de UI (Menus, Textos, Fichas) alimentadas pelos ScriptableObjects. O combate é resolvido matematicamente e exibido em log.</li>
+<li><strong>Entrega:</strong>  Build jogável do Ato 1 (focada em leitura e decisão) para balancear as regras.</li>
+</ul>
+<h5 id="fase-2-rpg-de-mesa-digital-mvp-co-op">Fase 2: RPG de Mesa Digital (MVP Co-op)</h5>
+<ul>
+<li><strong>Foco Técnico:</strong>  Implementação do NGO (Netcode).</li>
+<li><strong>Implementação:</strong>  Refatorar o GameManager para suportar autoridade Server (Host). O Client envia RPCs (&#34;ServerRpc: QueroAtacar&#34;) e o Host valida e responde (&#34;ClientRpc: ResultadoDoAtaque&#34;).</li>
+<li><strong>Entrega:</strong>  A mesma build da Fase 1, agora jogável por duas pessoas via LAN/Direct IP.</li>
+</ul>
+<h5 id="fase-3-jogo-digital-v1-prot-tipo-visual-offline">Fase 3: Jogo Digital v1 - Protótipo Visual (Offline)</h5>
+<ul>
+<li><strong>Foco Técnico:</strong>  Gráficos 2D e Integração de Assets.</li>
+<li><strong>Implementação:</strong>  Substituir os menus de texto por Cenas 2D com Pixel Art. Implementar o controlador de personagem para &#34;Point and Click&#34; nos blocos.</li>
+</ul>
+<h5 id="fase-4-jogo-digital-v1-mundo-conectado-co-op">Fase 4: Jogo Digital v1 - Mundo Conectado (Co-op)</h5>
+<ul>
+<li><strong>Foco Técnico:</strong>  Sincronia de Estado de Mundo.</li>
+<li><strong>Implementação:</strong>  Garantir que quando o Host muda de bloco, o Client vê a transição. Sincronizar posição de NPCs e estado de objetos interativos (baús abertos/fechados).</li>
+</ul>
+<h5 id="fase-5-e-6-jogo-digital-v2-n-cleo-t-tico-co-op">Fase 5 e 6: Jogo Digital v2 (Núcleo Tático + Co-op)</h5>
+<ul>
+<li><strong>Foco Técnico:</strong>  Grid System e Pathfinding.</li>
+<li><strong>Implementação:</strong>  Implementar Grid Isométrico (Tilemap). Criar lógica de movimentação tática (custo de movimento, alcance, bloqueio).</li>
+<li><strong>Entrega:</strong>  O combate deixa de ser abstrato (Menu) e passa a ser posicional (Grid).</li>
+</ul>
+<hr>
+<h4 id="estrutura-de-dados-data-driven">📂 Estrutura de Dados (Data-Driven)</h4>
+<p>Para facilitar o trabalho com IA (Copilot) e edição no Unity:</p>
+<ol>
+<li><strong>ScriptableObjects (Templates):</strong>  Definem o que existe no jogo.
+<ul>
+<li>Ex: EspadaFerro.asset (Dados imutáveis: Dano 1d6, Sprite, Nome).</li>
+<li>Ex: ClasseGuerreiro.asset (Lista de Habilidades, Atributos Base).</li>
+</ul>
+</li>
+<li><strong>Classes C# (Runtime):</strong>  Definem o que está acontecendo agora.
+<ul>
+<li>Ex: ItemInstance.cs (Referência ao Template + Durabilidade Atual).</li>
+<li>Ex: PersonagemRuntime.cs (PV Atual, Lista de ItemInstances).</li>
+</ul>
+</li>
+<li><strong>JSON (Persistência):</strong>
+<ul>
+<li>O Save Game serializa apenas as classes Runtime para JSON.</li>
+</ul>
+</li>
+</ol>

@@ -1,0 +1,55 @@
+{
+  "title": "Eras do Brasil A Raiz do Tempo",
+  "type": "ARTIFACT_TYPE_SLIDES",
+  "sources": [{
+    "sourceId": {
+      "id": "41c076b2-03f8-4a05-a933-3a7cb39910c2"
+    }
+  }, {
+    "sourceId": {
+      "id": "1a2e7f44-2748-4df5-9b17-a2f2cdfb5ec5"
+    }
+  }, {
+    "sourceId": {
+      "id": "b3453940-5faa-40b8-a0ff-f73a87ef80a6"
+    }
+  }, {
+    "sourceId": {
+      "id": "593e2fac-3cf7-4b5c-95da-6bc6392a1a99"
+    }
+  }, {
+    "sourceId": {
+      "id": "c635e5b4-3d1f-477e-95a3-844f55d26936"
+    }
+  }, {
+    "sourceId": {
+      "id": "01191bb4-e34c-475f-90b6-f5b33a96f7b9"
+    }
+  }, {
+    "sourceId": {
+      "id": "291022cb-c588-44cc-81c6-fe2765ed7040"
+    }
+  }, {
+    "sourceId": {
+      "id": "8389019b-24fb-4d86-9698-873a21c60b77"
+    }
+  }, {
+    "sourceId": {
+      "id": "8da9c5cb-0fe8-4f01-b17e-09b062216deb"
+    }
+  }, {
+    "sourceId": {
+      "id": "75c865a1-5c5b-4a4a-896e-c31dee781966"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "slides": {
+    "generationOptions": {
+      "userSteeringPrompt": "Preciso criar uma apresentação de slides para apresentar, em 5 minutos sobre o o jogo, enviado como fonte esta as partes mais importantes do jogo, preciso fazer uma apresentação para explicar todos os aspectos do jogo.\n\nFale sobre as fases de desenvolvimento, historia do jogo e premissas dele.\n\nSobre a fase fale sobre essas fases: descrita no Project Plan.md\n\n",
+      "languageCode": "pt_br",
+      "deckType": "DECK_TYPE_READING",
+      "length": "SLIDE_DECK_LENGTH_MEDIUM"
+    },
+    "title": "Eras do Brasil A Raiz do Tempo"
+  }
+}

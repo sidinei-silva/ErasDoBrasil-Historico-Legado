@@ -1,0 +1,89 @@
+{
+  "title": "Relatório de Auditoria de Design: Integração das Decisões Gemini",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "b3ba6f48-5ad4-46e5-bbc9-a77ab3198530"
+    }
+  }, {
+    "sourceId": {
+      "id": "e6ee5050-6fac-4396-a9f4-7c65ce36b89d"
+    }
+  }, {
+    "sourceId": {
+      "id": "a7c355ab-6f7b-456f-a3cc-31478d85602b"
+    }
+  }, {
+    "sourceId": {
+      "id": "fff31047-1f97-40f3-a599-643e3d09bcbb"
+    }
+  }, {
+    "sourceId": {
+      "id": "0ec64cbb-db18-492c-be0d-2c95002415ef"
+    }
+  }, {
+    "sourceId": {
+      "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+    }
+  }, {
+    "sourceId": {
+      "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+    }
+  }, {
+    "sourceId": {
+      "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+    }
+  }, {
+    "sourceId": {
+      "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+    }
+  }, {
+    "sourceId": {
+      "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+    }
+  }, {
+    "sourceId": {
+      "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+    }
+  }, {
+    "sourceId": {
+      "id": "b27ded7b-a89c-42b1-9d46-219893608301"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "b3ba6f48-5ad4-46e5-bbc9-a77ab3198530"
+      }, {
+        "id": "e6ee5050-6fac-4396-a9f4-7c65ce36b89d"
+      }, {
+        "id": "a7c355ab-6f7b-456f-a3cc-31478d85602b"
+      }, {
+        "id": "fff31047-1f97-40f3-a599-643e3d09bcbb"
+      }, {
+        "id": "0ec64cbb-db18-492c-be0d-2c95002415ef"
+      }, {
+        "id": "0c9c6a48-bf9a-4349-90a8-48ee50baba8d"
+      }, {
+        "id": "0498acea-f73b-49ce-b47d-50b07569bc26"
+      }, {
+        "id": "f14cc115-f599-4301-9137-96915e59cc1e"
+      }, {
+        "id": "37044147-05bd-4dcf-aec9-9bf3c3835a85"
+      }, {
+        "id": "a0157148-984d-4ec7-a6c5-1cef12740768"
+      }, {
+        "id": "8ccfaafd-c7db-470d-bb99-feb0c16d325f"
+      }, {
+        "id": "b27ded7b-a89c-42b1-9d46-219893608301"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Você é meu auditor de design principal. Sua tarefa é realizar uma auditoria final cruzando um novo conjunto de decisões de design (o \"Resumo Gemini\" abaixo) contra os 12 documentos de projeto que você já possui (6 chats GPT, 5 Livros GDD, 1 Checklist).\n\nPrimeiro, considere o texto a seguir como sua Fonte 13 (Resumo Gemini):\n\n\u003d\u003d\u003d INÍCIO DO RESUMO DAS DECISÕES (GEMINI) \u003d\u003d\u003d\n\n1.  **Arquitetura do \"Tick Comutável\" (Offline/Online):**\n    * A lógica do mundo (`Mundo.ProcessarTick()`) deve ser um \"Motor\" separado.\n    * **Gatilho Offline (Reativo):** O Tick é disparado pela ação do jogador (ex: `OnPlayerAction_Move`).\n    * **Gatilho Online (Proativo):** O Tick é disparado por um relógio do servidor (ex: `setInterval` a cada 1 minuto).\n\n2.  **Arquitetura do Mundo Online Persistente:**\n    * O Tick Global (servidor) impulsiona um `StoryManager` (Calendário de Eventos do Mundo), onde a história avança independentemente dos jogadores.\n    * **Sistema de Missões \"Corrida pela Recompensa\":** NPCs anunciam problemas. Múltiplos jogadores podem aceitar. A recompensa vai para o primeiro que completar. Missões têm prazo de validade (expiram com o Tick Global).\n\n3.  **Arquitetura de Reutilização (Motor vs. Conteúdo):**\n    * O design deve ser \"Orientado a Dados\" (Data-Driven).\n    * O \"Motor\" (código, ex: `NPCManager`) é genérico e lida com conceitos (`NPC_Data`, `Agenda`).\n    * O \"Conteúdo\" (arquivos .json ou Resources) define o tema (ex: `ferreiro.json` vs. `cientista.json`).\n\n4.  **Sistema de IA de NPCs (Fusão de Modelos):**\n    * Deve ser uma *fusão* dos modelos de \"Agenda\" (KCD/Stardew) e \"Necessidades\" (Dwarf Fortress/RimWorld).\n    * **Componentes do NPC_Data:**\n        * `Needs` (Necessidades): Fome, Sede, Energia, Social, Segurança, que decaem com o Tick.\n        * `Traits` (Traços): Modificadores passivos (Gula, Preguiçoso, Ranzinza).\n        * `Mood \u0026 Thoughts` (Humor e Memórias): O humor é o resultado das Necessidades não atendidas e das Memórias recentes.\n    * **Novo Fluxo do `OnTick` do NPC (Utility AI):**\n        1.  *Fase 1 (Passivo):* Atualiza Necessidades e recalcula Humor.\n        2.  *Fase 2 (Decisão):* O NPC avalia qual \"Necessidade\" ou \"Agenda\" tem a maior prioridade.\n        3.  *Fase 3 (Ação):* O NPC executa a Ação para satisfazer a Meta de maior prioridade (ex: \"Fome\" \u003e \"Trabalho\", então ele vai comer).\n\n5.  **Sistema Social de NPCs (Conhecimento e Fofoca):**\n    * **Relacionamentos (NPC \u003c\u003d\u003e NPC):** NPCs rastreiam amizade/inimizade entre si.\n    * **Percepção Cognitiva (`knowledgeBase`):** NPCs têm uma \"base de conhecimento\" (`knowledgeBase`) onde registram coisas que *veem* (Recursos, Monstros, Rotinas de outros NPCs) e marcam com o \"último_visto\" (Tick).\n    * **Sistema de \"Fofoca\":** Quando NPCs se encontram (baseado na rotina do Tick), eles trocam itens de suas `knowledgeBase` e atualizam seus `Relacionamentos`.\n    * **Diálogo com Player:** O jogador acessa essa `knowledgeBase` e `Relacionamentos` ao conversar (ex: \"Onde está o Ferreiro?\" ou \"Viu algum minério?\").\n\n\u003d\u003d\u003d FIM DO RESUMO DAS DECISÕES (GEMINI) \u003d\u003d\u003d\nAgora, execute as seguintes tarefas:\n\nAuditoria de Lacunas (Nível 2): O Relatório de Auditoria de Projeto.md identificou lacunas nos \"Livros Oficiais\", especialmente sobre \"IA de NPCs\" e \"Mundo Vivo\". O \"Resumo Gemini\" (Fonte 13) fornece as especificações que faltavam para preencher essas lacunas?\n\nVerificação de Implementação: Analise os 5 \"Livros Oficiais\" (Livro de Regras.md, Livro de Classes.md, Enredo Principal.md, Documento de Design Visual.md, ideias soltas.md). Algum dos 5 pontos do \"Resumo Gemini\" (Fonte 13) já está totalmente documentado nesses livros?\n\nGeração da Lista de Tarefas: Com base nas suas descobertas, gere uma \"Lista de Tarefas de Escrita\" (To-Do List) para mim (Sidinei). Esta lista deve detalhar exatamente quais seções do \"Resumo Gemini\" (Fonte 13) precisam ser copiadas/integradas e em qual \"Livro Oficial\" elas devem entrar.\n\nExemplo de item da lista de tarefas:\n\nTarefa: Adicionar Sistema de IA de NPCs (Fusão de Modelos).\n\nAção: Integrar o Ponto 4 do \"Resumo Gemini\" no Livro de Regras.md, provavelmente no Capítulo 8 (Mestres, Campanhas e Mundo Vivo), como uma nova sub-seção.",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

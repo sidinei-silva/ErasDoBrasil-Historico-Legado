@@ -1,0 +1,125 @@
+{
+  "title": "Documento de Design de Jogo (GDD): Eras do Brasil",
+  "type": "ARTIFACT_TYPE_TAILORED_REPORT",
+  "sources": [{
+    "sourceId": {
+      "id": "13d1516f-bf00-4566-9b0f-a8fd6baa4630"
+    }
+  }, {
+    "sourceId": {
+      "id": "05c48165-155e-4884-be91-89930aafc590"
+    }
+  }, {
+    "sourceId": {
+      "id": "d132810b-9a7d-4f9c-83af-e530ca39f23e"
+    }
+  }, {
+    "sourceId": {
+      "id": "1669a5f0-e785-4d19-9dc5-46f38548288a"
+    }
+  }, {
+    "sourceId": {
+      "id": "745a2a2a-d2d5-4c8a-a44e-7cf4bd3a3e39"
+    }
+  }, {
+    "sourceId": {
+      "id": "2683784a-6d53-4395-99b5-2c4669e6999b"
+    }
+  }, {
+    "sourceId": {
+      "id": "c6adc7f3-d118-4106-a1ba-e2f0536a8e9b"
+    }
+  }, {
+    "sourceId": {
+      "id": "40630341-d1b6-4bfe-8c8c-75404295b38d"
+    }
+  }, {
+    "sourceId": {
+      "id": "2e3f8320-3256-4569-8c13-59ae213a8157"
+    }
+  }, {
+    "sourceId": {
+      "id": "4e59e684-6e5c-499a-89ac-364a02428a91"
+    }
+  }, {
+    "sourceId": {
+      "id": "966a40be-f74b-4020-a019-7edb8b9bc0b4"
+    }
+  }, {
+    "sourceId": {
+      "id": "91066e09-232f-420d-84db-17036d11a7f8"
+    }
+  }, {
+    "sourceId": {
+      "id": "3ca5217f-a01c-4e02-b40b-85c150522ec3"
+    }
+  }, {
+    "sourceId": {
+      "id": "f78050af-cb36-4f5d-bed9-da4e8a5f5bbf"
+    }
+  }, {
+    "sourceId": {
+      "id": "dc696218-24a0-4c20-b88d-beded8a6d152"
+    }
+  }, {
+    "sourceId": {
+      "id": "7b584b2f-1a43-4208-b6f9-bfe4d6d646cb"
+    }
+  }, {
+    "sourceId": {
+      "id": "a00a37f9-1cda-4608-973b-7dd7cbec9f73"
+    }
+  }, {
+    "sourceId": {
+      "id": "65810a08-5641-49aa-98ae-903e1d13bbf5"
+    }
+  }],
+  "status": "ARTIFACT_STATUS_READY",
+  "tailoredReport": {
+    "generationOptions": {
+      "type": "Crie do zero",
+      "description": "Crie relatórios personalizados especificando a estrutura, o estilo, o tom e muito mais",
+      "sourceIds": [{
+        "id": "13d1516f-bf00-4566-9b0f-a8fd6baa4630"
+      }, {
+        "id": "05c48165-155e-4884-be91-89930aafc590"
+      }, {
+        "id": "d132810b-9a7d-4f9c-83af-e530ca39f23e"
+      }, {
+        "id": "1669a5f0-e785-4d19-9dc5-46f38548288a"
+      }, {
+        "id": "745a2a2a-d2d5-4c8a-a44e-7cf4bd3a3e39"
+      }, {
+        "id": "2683784a-6d53-4395-99b5-2c4669e6999b"
+      }, {
+        "id": "c6adc7f3-d118-4106-a1ba-e2f0536a8e9b"
+      }, {
+        "id": "40630341-d1b6-4bfe-8c8c-75404295b38d"
+      }, {
+        "id": "2e3f8320-3256-4569-8c13-59ae213a8157"
+      }, {
+        "id": "4e59e684-6e5c-499a-89ac-364a02428a91"
+      }, {
+        "id": "966a40be-f74b-4020-a019-7edb8b9bc0b4"
+      }, {
+        "id": "91066e09-232f-420d-84db-17036d11a7f8"
+      }, {
+        "id": "3ca5217f-a01c-4e02-b40b-85c150522ec3"
+      }, {
+        "id": "f78050af-cb36-4f5d-bed9-da4e8a5f5bbf"
+      }, {
+        "id": "dc696218-24a0-4c20-b88d-beded8a6d152"
+      }, {
+        "id": "7b584b2f-1a43-4208-b6f9-bfe4d6d646cb"
+      }, {
+        "id": "a00a37f9-1cda-4608-973b-7dd7cbec9f73"
+      }, {
+        "id": "65810a08-5641-49aa-98ae-903e1d13bbf5"
+      }],
+      "languageCode": "pt_br",
+      "documentDirective": "Liste pra mim as principais caracteristicas do game, os principais sistemas, a fonte da verdade para as regras e sistemas é o livro de regras alguns outros soltos são ideias soltas para pensar em incluir, mande categorizado e separado por fase, você pode ver que existe a fase de RPG de mesa(não esta descrito ai mas mesmo sendo de mesa não será jogado com livro e sim um rpg de mesa digital), fase de jogo digital que tambem esta dividido em 2 fases, fase 1 com movimentação em blocos e luta estatica sem movimentação, fase 2 movimentação livre com lutas tendo movimentação em grid e distancia. \n\nEsse arquivos é de uma ideia de um jogo que estou desenvolvendo jogo RPG, com um nivel de complexidade grandee algumas particularidades e especificidades bem diferentes, porém seu desenvolvimento será faseados, o game irá ter \"caras\" diferentes em cada fase, vou falar um pouco delas e depois falo de coisas que penso em colocar no jogo. ",
+      "targetAudience": "TAILORED_REPORT_TARGET_AUDIENCE_PROFESSIONAL",
+      "enableU18Classifier": true
+    }
+  }
+}

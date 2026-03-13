@@ -1,0 +1,260 @@
+<h3 id="estrutura-de-dados-json-schemas-para-o-jogo-eras-do-brasil">Estrutura de Dados (JSON Schemas) para o Jogo &#39;Eras do Brasil&#39;</h3>
+<h4 id="1-0-introdu-o-a-arquitetura-data-driven">1.0 Introdução: A Arquitetura Data-Driven</h4>
+<p>Este documento técnico estabelece a estrutura de dados fundamental para o jogo  <em>Eras do Brasil</em> . De acordo com a filosofia de desenvolvimento &#34;Alma vs. Lógica&#34; do projeto, este material foca exclusivamente na &#34;Lógica&#34;, definindo os schemas JSON que servirão como a espinha dorsal para as entidades centrais do jogo na engine Unity. A adoção de uma arquitetura data-driven é crucial para garantir a modularidade, a escalabilidade e a facilidade de manutenção do projeto, permitindo que a equipe de design e narrativa popule o mundo do jogo de forma eficiente e consistente. A seguir, detalharemos a estrutura da primeira entidade central: a classe de personagem.</p>
+<hr>
+<h4 id="2-0-schema-classedepersonagem">2.0 Schema: ClasseDePersonagem</h4>
+<p>A definição de um schema robusto para a ClasseDePersonagem é um passo estratégico fundamental. Esta estrutura de dados não apenas dita as capacidades mecânicas e o estilo de jogo do personagem, mas também serve como base para o balanceamento sistêmico, a criação de conteúdo futuro (como as evoluções de Tier 2 e 3) e a implementação de mecânicas complexas como a progressão de atributos e a herança de habilidades. Uma estrutura bem definida aqui garante que cada classe tenha uma identidade clara, tanto narrativa quanto funcional.</p>
+<h5 id="2-1-estrutura-json-para-classedepersonagem">2.1 Estrutura JSON para ClasseDePersonagem</h5>
+<p><em>Nota: As seguintes estruturas de dados usam literais de string como</em>  <em>&#34;integer&#34;</em>  <em>e</em>  <em>&#34;float&#34;</em>  <em>para denotar o tipo de dado esperado para cada campo. Isso é para clareza descritiva; os arquivos JSON reais conterão valores numéricos ou de string brutos.</em></p>
+<pre><code class="language-json lang-json no-auto-prettify">{
+  &#34;idClasse&#34;: &#34;string&#34;, // Identificador único e programático, ex: &#34;conquistador_t1&#34;
+  &#34;nome&#34;: &#34;string&#34;, // Nome exibido na interface do jogo, ex: &#34;Conquistador&#34;
+  &#34;origem&#34;: &#34;string&#34;, // Referência à origem cultural: &#34;Colonizador&#34;, &#34;Indígena&#34;, &#34;Ser Folclórico&#34;
+  &#34;tier&#34;: &#34;integer&#34;, // Nível de especialização da classe (1, 2, ou 3)
+  &#34;descricaoNarrativa&#34;: &#34;string&#34;, // Texto de lore que contextualiza a classe no mundo
+  &#34;estiloDeJogo&#34;: &#34;string&#34;, // Resumo do papel tático para a UI: &#34;Tank&#34;, &#34;DPS&#34;, &#34;Suporte&#34;
+  &#34;atributosRecomendados&#34;: [&#34;string&#34;], // Lista dos atributos principais, ex: [&#34;Vigor&#34;, &#34;ForcaBruta&#34;]
+  &#34;pvBase&#34;: &#34;integer&#34;, // Pontos de Vida base antes de modificadores de atributo
+  &#34;pvPorNivel&#34;: &#34;integer&#34;, // Pontos de Vida ganhos a cada nível de personagem
+  &#34;proficienciaBonus&#34;: { // Define a &#34;Proficiência de Vida&#34; que recebe XP bônus
+    &#34;idProficiencia&#34;: &#34;string&#34;, // ID da proficiência, ex: &#34;mineracao&#34;
+    &#34;categoria&#34;: &#34;string&#34; // Categoria da proficiência, ex: &#34;Coleta&#34;, &#34;Refinamento&#34;, &#34;Produção&#34;
+  },
+  &#34;equipamentosPermitidos&#34;: { // Restrições de equipamento que definem a identidade da classe
+    &#34;armas&#34;: [&#34;string&#34;], // Tipos de armas permitidas, ex: [&#34;Espada longa&#34;, &#34;Maça&#34;]
+    &#34;armaduras&#34;: [&#34;string&#34;] // Tipos de armaduras permitidas, ex: [&#34;Pesadas&#34;, &#34;Escudos&#34;]
+  },
+  &#34;habilidadesIniciais&#34;: [ // Lista de habilidades desbloqueadas no Tier 1
+    {
+      &#34;idHabilidade&#34;: &#34;string&#34;,
+      &#34;nome&#34;: &#34;string&#34;,
+      &#34;tipo&#34;: &#34;string&#34;, // &#34;Ativa&#34; ou &#34;Passiva&#34;, crucial para a herança de habilidades
+      &#34;descricao&#34;: &#34;string&#34;
+    }
+  ]
+}
+
+</code></pre>
+<h5 id="2-2-an-lise-dos-campos-da-estrutura">2.2 Análise dos Campos da Estrutura</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chave</td>
+<td>Análise de Propósito e Estrutura</td>
+</tr>
+<tr>
+<td>idClasse</td>
+<td><strong>Propósito:</strong>  Define um identificador único e programático para a classe, essencial para referências em outras estruturas de dados (habilidades, itens, missões).  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>nome</td>
+<td><strong>Propósito:</strong>  Armazena o nome da classe exibido na UI. Este campo é utilizado no HUD do jogador, em logs de combate e na geração de diálogos de NPCs, exigindo considerações de localização.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>origem</td>
+<td><strong>Propósito:</strong>  Vincula a classe a uma das três origens fundamentais (Colonizador, Indígena, Ser Folclórico), determinando o acesso inicial e temas narrativos.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>tier</td>
+<td><strong>Propósito:</strong>  Representa o nível de especialização (Tier 1, 2 ou 3), controlando a progressão e o desbloqueio de habilidades avançadas.  <strong>Estrutura:</strong>  integer.</td>
+</tr>
+<tr>
+<td>descricaoNarrativa</td>
+<td><strong>Propósito:</strong>  Contém o texto de lore que contextualiza o papel da classe no mundo, conforme detalhado no &#34;Livro de Classes&#34;.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>estiloDeJogo</td>
+<td><strong>Propósito:</strong>  Fornece um resumo tático para a UI, ajudando o jogador a entender o papel da classe (ex: &#34;Tank&#34;, &#34;DPS à distância&#34;).  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>atributosRecomendados</td>
+<td><strong>Propósito:</strong>  Lista os atributos principais que otimizam o desempenho da classe, guiando a distribuição de pontos do jogador.  <strong>Estrutura:</strong>  array de string.</td>
+</tr>
+<tr>
+<td>pvBase e pvPorNivel</td>
+<td><strong>Propósito:</strong>  Define os Pontos de Vida iniciais e a progressão, sendo um fator chave para o balanceamento de classes tank vs. classes frágeis.  <strong>Estrutura:</strong>  integer.</td>
+</tr>
+<tr>
+<td>proficienciaBonus</td>
+<td><strong>Propósito:</strong>  Identifica a &#34;Proficiência de Vida&#34; que recebe XP bônus. Este campo implementa diretamente a regra de &#34;Bônus em Proficiências de Vida&#34;, criando um incentivo tangível para os jogadores alternarem de classe para otimizar suas sessões de crafting e coleta, fortalecendo assim o ciclo de jogabilidade principal entre combate e exploração.  <strong>Estrutura:</strong>  object.</td>
+</tr>
+<tr>
+<td>equipamentosPermitidos</td>
+<td><strong>Propósito:</strong>  Define as restrições de equipamento, um pilar central para a identidade e balanceamento de cada classe.  <strong>Estrutura:</strong>  object contendo arrays de string.</td>
+</tr>
+<tr>
+<td>habilidadesIniciais</td>
+<td><strong>Propósito:</strong>  Uma lista de objetos que define as habilidades iniciais. A distinção entre Ativa e Passiva é crucial para o sistema de &#34;Herança de Habilidades&#34;, que permite que habilidades ativas sejam mantidas ao trocar de classe.  <strong>Estrutura:</strong>  array de objects.</td>
+</tr>
+</tbody>
+</table>
+<p>As classes definem quem o jogador é, mas sua eficácia é diretamente influenciada pelos equipamentos que utilizam. A estrutura a seguir detalha como esses itens são definidos.</p>
+<hr>
+<h4 id="3-0-schema-item">3.0 Schema: Item</h4>
+<p>Uma estrutura de Item robusta é essencial para um RPG com foco em economia e crafting. O sistema 5x5 de Qualidade e Raridade precisa ser refletido diretamente no schema, pois impacta a mecânica de jogo de forma profunda. A qualidade de um item afeta diretamente a eficácia das habilidades de classe, enquanto a raridade pode desbloquear diálogos e eventos narrativos. Este schema garante que os itens sejam mais do que simples estatísticas, tornando-se elementos centrais no crafting, na economia dinâmica e no balanceamento geral.</p>
+<h5 id="3-1-estrutura-json-para-item">3.1 Estrutura JSON para Item</h5>
+<pre><code class="language-json lang-json no-auto-prettify">{
+  &#34;idItem&#34;: &#34;string&#34;, // Identificador único e programático, ex: &#34;espada_ferro_mal_forjada&#34;
+  &#34;nome&#34;: &#34;string&#34;, // Nome do item exibido no jogo
+  &#34;tipo&#34;: &#34;string&#34;, // Categoria geral para regras de sistema, ex: &#34;Arma&#34;, &#34;Armadura&#34;, &#34;Consumível&#34;, &#34;Ritual&#34;
+  &#34;subtipo&#34;: &#34;string&#34;, // Categoria específica para filtros e organização, ex: &#34;Espada Longa&#34;, &#34;Armadura Leve&#34;, &#34;Poção&#34;
+  &#34;matriz&#34;: { // Objeto que implementa o sistema 5x5 de classificação
+    &#34;qualidade&#34;: &#34;string&#34;, // &#34;Muito Baixa&#34;, &#34;Baixa&#34;, &#34;Média&#34;, &#34;Alta&#34;, &#34;Excelente&#34;
+    &#34;raridade&#34;: &#34;string&#34; // &#34;Comum&#34;, &#34;Incomum&#34;, &#34;Raro&#34;, &#34;Épico&#34;, &#34;Lendário&#34;
+  },
+  &#34;valorBaseUC&#34;: &#34;integer&#34;, // Valor em Unidades Comerciais, antes de modificadores de economia regional
+  &#34;propriedades&#34;: [ // Array de efeitos mecânicos do item
+    {
+      &#34;tipo&#34;: &#34;string&#34;, // &#34;Dano&#34;, &#34;Defesa&#34;, &#34;BonusAtributo&#34;, &#34;EfeitoEspecial&#34;
+      &#34;valor&#34;: &#34;string&#34;, // Valor do efeito, ex: &#34;1d6&#34;, &#34;+2&#34;, &#34;Vigor&#34;
+      &#34;descricao&#34;: &#34;string&#34; // Descrição do efeito para a UI
+    }
+  ],
+  &#34;durabilidade&#34;: { // Rastreia o desgaste do item, conectando-se ao sistema de reparos
+    &#34;atual&#34;: &#34;integer&#34;,
+    &#34;maxima&#34;: &#34;integer&#34;
+  },
+  &#34;idReceitaCrafting&#34;: &#34;string&#34; // ID da receita necessária para criar este item, integrando-o ao sistema de Proficiências
+}
+
+</code></pre>
+<h5 id="3-2-an-lise-dos-campos-da-estrutura">3.2 Análise dos Campos da Estrutura</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chave</td>
+<td>Análise de Propósito e Estrutura</td>
+</tr>
+<tr>
+<td>idItem</td>
+<td><strong>Propósito:</strong>  Define um identificador único e programático para o item, usado em inventários, tabelas de loot e receitas.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>nome</td>
+<td><strong>Propósito:</strong>  Armazena o nome do item exibido na UI, logs de crafting e diálogos de NPCs, exigindo considerações de localização.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>tipo / subtipo</td>
+<td><strong>Propósito:</strong>  Classifica o item para regras de sistema (ex: o que pode ser equipado, o que pode ser consumido). tipo é geral, subtipo é específico.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>matriz</td>
+<td><strong>Propósito:</strong>  Objeto central que implementa o sistema 5x5. A qualidade afeta bônus em habilidades e durabilidade, enquanto a raridade impacta valor e desbloqueios narrativos.  <strong>Estrutura:</strong>  object.</td>
+</tr>
+<tr>
+<td>valorBaseUC</td>
+<td><strong>Propósito:</strong>  Define o valor em Unidades Comerciais, servindo como input para o sistema de economia regional, que pode aplicar modificadores baseados em escassez ou eventos, conforme descrito em 06_Economia_Itens_e_Crafting.md.  <strong>Estrutura:</strong>  integer.</td>
+</tr>
+<tr>
+<td>propriedades</td>
+<td><strong>Propósito:</strong>  Um array flexível de objetos que descreve todos os efeitos mecânicos do item (dano, defesa, bônus, etc.), permitindo a criação de itens complexos e únicos.  <strong>Estrutura:</strong>  array de objects.</td>
+</tr>
+<tr>
+<td>durabilidade</td>
+<td><strong>Propósito:</strong>  Objeto que rastreia o desgaste do item, conectando-se diretamente aos sistemas de reparo e manutenção.  <strong>Estrutura:</strong>  object.</td>
+</tr>
+<tr>
+<td>idReceitaCrafting</td>
+<td><strong>Propósito:</strong>  Vincula o item a uma receita de crafting, integrando-o ao sistema de Proficiências de Vida.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+</tbody>
+</table>
+<p>Com as estruturas de classes e itens definidas, o foco se volta para as entidades que o jogador enfrentará, cujos desafios e recompensas são moldados por esses mesmos sistemas.</p>
+<hr>
+<h4 id="4-0-schema-inimigo">4.0 Schema: Inimigo</h4>
+<p>A criação de um schema de Inimigo bem estruturado é vital não apenas para definir desafios de combate, mas também para alimentar o sistema de &#34;Mundo Vivo&#34;. Esta estrutura permite que entidades hostis interajam com o ambiente, sigam rotinas programadas — como a facção rival &#34;Bandeirantes de Sangue&#34; — e forneçam recompensas coerentes através de tabelas de loot, integrando-as de forma orgânica à economia e ao ciclo de progressão do jogo.</p>
+<h5 id="4-1-estrutura-json-para-inimigo">4.1 Estrutura JSON para Inimigo</h5>
+<pre><code class="language-json lang-json no-auto-prettify">{
+  &#34;idInimigo&#34;: &#34;string&#34;, // Identificador único, ex: &#34;espirito_corrompido_floresta&#34;
+  &#34;nome&#34;: &#34;string&#34;, // Nome exibido no jogo
+  &#34;tipo&#34;: &#34;string&#34;, // Categoria para sistemas de resistências/fraquezas, ex: &#34;Espiritual&#34;, &#34;Humanoide&#34;, &#34;Fera&#34;
+  &#34;estatisticasBase&#34;: {
+    &#34;pv&#34;: &#34;integer&#34;,
+    &#34;defesa&#34;: &#34;integer&#34;,
+    &#34;iniciativaMod&#34;: &#34;integer&#34;, // Bônus ou penalidade na rolagem de iniciativa
+    &#34;atributos&#34;: { // Atributos que governam suas ações e resistências
+      &#34;vigor&#34;: &#34;integer&#34;,
+      &#34;forcaBruta&#34;: &#34;integer&#34;,
+      &#34;astucia&#34;: &#34;integer&#34;,
+      &#34;sabedoriaAncestral&#34;: &#34;integer&#34;,
+      &#34;conhecimento&#34;: &#34;integer&#34;,
+      &#34;presenca&#34;: &#34;integer&#34;
+    }
+  },
+  &#34;acoesDeCombate&#34;: [ // Lista de ações disponíveis para a IA
+    {
+      &#34;idAcao&#34;: &#34;string&#34;,
+      &#34;nome&#34;: &#34;string&#34;,
+      &#34;tipo&#34;: &#34;string&#34;, // &#34;Ataque&#34;, &#34;Habilidade&#34;, &#34;Debuff&#34;, &#34;Defesa&#34;
+      &#34;chanceDeUso&#34;: &#34;float&#34; // Probabilidade de escolher esta ação (0.0 a 1.0)
+    }
+  ],
+  &#34;tabelaDeLoot&#34;: [ // Define as recompensas em itens
+    {
+      &#34;idItem&#34;: &#34;string&#34;,
+      &#34;quantidade&#34;: &#34;string&#34;, // Quantidade fixa ou em dado, ex: &#34;1&#34;, &#34;1d4&#34;
+      &#34;chanceDeDrop&#34;: &#34;float&#34; // Probabilidade de dropar o item (0.0 a 1.0)
+    }
+  ],
+  &#34;xpRecompensa&#34;: &#34;integer&#34; // Quantidade de XP concedida ao derrotar
+}
+
+</code></pre>
+<h5 id="4-2-an-lise-dos-campos-da-estrutura">4.2 Análise dos Campos da Estrutura</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chave</td>
+<td>Análise de Propósito e Estrutura</td>
+</tr>
+<tr>
+<td>idInimigo</td>
+<td><strong>Propósito:</strong>  Identificador único para uso em eventos de combate, missões e tabelas de spawn de região.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>nome</td>
+<td><strong>Propósito:</strong>  Nome do inimigo exibido na UI de combate e em logs, exigindo considerações de localização.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>tipo</td>
+<td><strong>Propósito:</strong>  Define a categoria do inimigo, crucial para sistemas de dano elemental, resistências e fraquezas.  <strong>Estrutura:</strong>  string.</td>
+</tr>
+<tr>
+<td>estatisticasBase</td>
+<td><strong>Propósito:</strong>  Agrupa todos os valores numéricos de combate (PV, Defesa, Atributos, etc.), centralizando os dados de balanceamento.  <strong>Estrutura:</strong>  object.</td>
+</tr>
+<tr>
+<td>acoesDeCombate</td>
+<td><strong>Propósito:</strong>  Um array de ações possíveis, permitindo a criação de comportamentos de IA variados. O campo chanceDeUso permite ponderar a frequência de cada ação.  <strong>Estrutura:</strong>  array de objects.</td>
+</tr>
+<tr>
+<td>tabelaDeLoot</td>
+<td><strong>Propósito:</strong>  Define as recompensas em itens. A estrutura suporta múltiplos drops com probabilidades individuais, alimentando o ciclo de exploração e crafting.  <strong>Estrutura:</strong>  array de objects.</td>
+</tr>
+<tr>
+<td>xpRecompensa</td>
+<td><strong>Propósito:</strong>  Quantidade de experiência concedida, servindo como um pilar para a progressão do jogador.  <strong>Estrutura:</strong>  integer.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="5-0-conclus-o-e-pr-ximos-passos">5.0 Conclusão e Próximos Passos</h4>
+<p>Os schemas JSON apresentados neste documento — ClasseDePersonagem, Item e Inimigo — formam a base lógica e estrutural para as principais entidades de  <em>Eras do Brasil</em> . Ao definir rigorosamente esses contratos de dados, garantimos a consistência, a integração entre sistemas e a facilidade de implementação na engine Unity. Conforme delineado na &#34;Estratégia de Dados e Documentação&#34; do projeto, o próximo passo no pipeline de desenvolvimento é popular esses schemas com os dados específicos de cada classe, item e inimigo planejados para o Ato 1 da campanha, transformando a arquitetura lógica em conteúdo jogável.</p>

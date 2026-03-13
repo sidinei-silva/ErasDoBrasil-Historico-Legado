@@ -1,0 +1,117 @@
+<h3 id="roadmap-detalhado-e-backlog-de-desenvolvimento">🗺️ Roadmap Detalhado e Backlog de Desenvolvimento</h3>
+<p>Este documento &#34;pulveriza&#34; as fases macro do projeto em tarefas de engenharia e design testáveis. Cada item (POC ou Feature) deve ser tratado como uma entrega funcional.
+<strong>Legenda de Prioridade:</strong></p>
+<ul>
+<li>🟢  <strong>Core/Crítico:</strong>  O jogo não funciona sem isso.</li>
+<li>🟡  <strong>Importante:</strong>  Necessário para a experiência completa.</li>
+<li>🔵  <strong>Polimento/Visual:</strong>  Melhoria de qualidade de vida ou estética.</li>
+</ul>
+<hr>
+<h4 id="fase-1-o-motor-de-regras-rpg-de-mesa-digital-offline">🏗️ FASE 1: O Motor de Regras (RPG de Mesa Digital Offline)</h4>
+<p><strong>Objetivo:</strong>  Criar o &#34;Cérebro&#34; do jogo. Uma versão jogável apenas com UI (Menus e Textos), validando a matemática, economia e fluxo de dados. Sem bonecos andando, apenas números e decisões.</p>
+<h5 id="poc-1-1-a-funda-o-de-dados-data-driven">🟢 POC 1.1: A Fundação de Dados (Data-Driven)</h5>
+<p><em>Esta etapa garante que a Unity saiba ler os JSONs criados.</em></p>
+<ul>
+<li><strong>Tarefa 1.1.A:</strong>  Criar Scripts de Modelo (ItemData.cs, EnemyData.cs, ClassData.cs) sem herança de MonoBehaviour.</li>
+<li><strong>Tarefa 1.1.B:</strong>  Implementar DatabaseManager (Singleton) que lê os arquivos da pasta Resources/Data.</li>
+<li><strong>Critério de Aceite:</strong>  Console da Unity exibe &#34;Sucesso: Carregados X Itens, Y Inimigos, Z Classes&#34; ao dar Play.</li>
+</ul>
+<h5 id="poc-1-2-o-motor-de-ticks-o-cora-o-do-mundo">🟢 POC 1.2: O Motor de Ticks (O Coração do Mundo)</h5>
+<p><em>Esta etapa cria a passagem de tempo.</em></p>
+<ul>
+<li><strong>Tarefa 1.2.A:</strong>  Implementar o TimeManager. Criar a variável CurrentTick.</li>
+<li><strong>Tarefa 1.2.B:</strong>  Criar UI simples (Texto) mostrando &#34;Dia 1, Hora 08:00&#34;. Botão &#34;Esperar&#34; que avança Ticks.</li>
+<li><strong>Tarefa 1.2.C:</strong>  Implementar sistema de regeneração passiva (ex: PV regenera 1 ponto a cada 10 Ticks).</li>
+<li><strong>Critério de Aceite:</strong>  Clicar em &#34;Esperar&#34; atualiza o relógio e regenera PV do personagem de teste.</li>
+</ul>
+<h5 id="poc-1-3-sistema-de-navega-o-abstrata-o-atlas">🟢 POC 1.3: Sistema de Navegação Abstrata (O Atlas)</h5>
+<p><em>Esta etapa cria a movimentação por &#34;Nós&#34; (Estilo Azure Dragon/Sorcery).</em></p>
+<ul>
+<li><strong>Tarefa 1.3.A:</strong>  Criar classe LocationNode (Nome, Descrição, Lista de Conexões).</li>
+<li><strong>Tarefa 1.3.B:</strong>  Criar UI de Navegação (Botões dinâmicos: &#34;Ir para Floresta&#34;, &#34;Ir para Vila&#34;).</li>
+<li><strong>Tarefa 1.3.C:</strong>  Conectar Navegação aos Ticks (Viajar custa X Ticks).</li>
+<li><strong>Critério de Aceite:</strong>  Jogador começa na &#34;Vila&#34;, clica em &#34;Ir para Floresta&#34;, gasta 2 Ticks, e a tela muda a descrição para &#34;Floresta Escura&#34;.</li>
+</ul>
+<h5 id="poc-1-4-invent-rio-e-profici-ncias-loop-de-economia">🟢 POC 1.4: Inventário e Proficiências (Loop de Economia)</h5>
+<ul>
+<li><strong>Tarefa 1.4.A:</strong>  Criar UI de Inventário (Lista de Itens com Ícones e Quantidade).</li>
+<li><strong>Tarefa 1.4.B:</strong>  Implementar lógica de Gathering (Botão &#34;Coletar Madeira&#34; no nó de Floresta).</li>
+<li><strong>Tarefa 1.4.C:</strong>  Implementar ganho de XP em Proficiência ao coletar.</li>
+<li><strong>Critério de Aceite:</strong>  Coletar madeira adiciona item ao inventário, consome Tick e sobe XP de &#34;Coleta&#34;.</li>
+</ul>
+<h5 id="poc-1-5-combate-matem-tico-loop-de-batalha">🟢 POC 1.5: Combate Matemático (Loop de Batalha)</h5>
+<ul>
+<li><strong>Tarefa 1.5.A:</strong>  Criar UI de Combate (Log de Texto + Botões: Atacar, Habilidade, Fugir).</li>
+<li><strong>Tarefa 1.5.B:</strong>  Implementar Lógica de Turnos (Iniciativa D20 + Astúcia).</li>
+<li><strong>Tarefa 1.5.C:</strong>  Implementar Resolução de Ação (Ataque D20 vs Defesa Inimigo).</li>
+<li><strong>Critério de Aceite:</strong>  Jogador mata um &#34;Dummy&#34; (Inimigo teste), Log mostra rolagens corretas, Jogador ganha Loot no final.</li>
+</ul>
+<hr>
+<h4 id="fase-2-o-elo-perdido-multiplayer-p2p-texto">🔗 FASE 2: O Elo Perdido (Multiplayer P2P - Texto)</h4>
+<p><strong>Objetivo:</strong>  Pegar o jogo de texto da Fase 1 e permitir que dois jogadores interajam na mesma sessão.</p>
+<h5 id="poc-2-1-conex-o-b-sica-netcode">🟡 POC 2.1: Conexão Básica (Netcode)</h5>
+<ul>
+<li><strong>Tarefa 2.1.A:</strong>  Integrar  <em>Unity Netcode for GameObjects</em> .</li>
+<li><strong>Tarefa 2.1.B:</strong>  Criar UI de Lobby (Host / Join IP).</li>
+<li><strong>Critério de Aceite:</strong>  Duas instâncias do jogo abertas. Uma cria, a outra entra. Console mostra &#34;Client Connected&#34;.</li>
+</ul>
+<h5 id="poc-2-2-sincronia-de-ticks-o-rel-gio-compartilhado">🟡 POC 2.2: Sincronia de Ticks (O Relógio Compartilhado)</h5>
+<ul>
+<li><strong>Tarefa 2.2.A:</strong>  Refatorar TimeManager para ser NetworkBehaviour. Host controla o tempo.</li>
+<li><strong>Tarefa 2.2.B:</strong>  Implementar a &#34;Fila de Ações&#34;. Se Client viaja (gasta tempo), Host valida e atualiza o relógio global.</li>
+<li><strong>Critério de Aceite:</strong>  Player A clica em &#34;Esperar&#34;. O relógio do Player B atualiza sozinho.</li>
+</ul>
+<h5 id="poc-2-3-intera-o-p2p-trocas">🟡 POC 2.3: Interação P2P (Trocas)</h5>
+<ul>
+<li><strong>Tarefa 2.3.A:</strong>  Criar sistema de &#34;Drop&#34; (Item sai do inventário e vira um objeto na sala atual).</li>
+<li><strong>Tarefa 2.3.B:</strong>  Implementar &#34;Pickup&#34; sincronizado (Quem pegar primeiro, leva).</li>
+<li><strong>Critério de Aceite:</strong>  Player A joga uma espada no chão. Player B pega. Inventários atualizados corretamente em ambos.</li>
+</ul>
+<hr>
+<h4 id="fase-3-prot-tipo-visual-o-jogo-ganha-vida">🎨 FASE 3: Protótipo Visual (O Jogo Ganha Vida)</h4>
+<p><strong>Objetivo:</strong>  Substituir as telas de texto por Pixel Art e cenários, mantendo a mecânica de cliques.</p>
+<h5 id="poc-3-1-visualiza-o-do-atlas">🔵 POC 3.1: Visualização do Atlas</h5>
+<ul>
+<li><strong>Tarefa 3.1.A:</strong>  Substituir a lista de botões de viagem por um Mapa 2D com pontos clicáveis.</li>
+<li><strong>Tarefa 3.1.B:</strong>  Adicionar Sprite de Fundo dinâmico (muda conforme o Nó atual).</li>
+<li><strong>Critério de Aceite:</strong>  Navegação visual agradável e intuitiva.</li>
+</ul>
+<h5 id="poc-3-2-hud-e-feedback">🔵 POC 3.2: HUD e Feedback</h5>
+<ul>
+<li><strong>Tarefa 3.2.A:</strong>  Implementar barras de Vida/Mana animadas.</li>
+<li><strong>Tarefa 3.2.B:</strong>  Adicionar feedback visual de &#34;Tick passando&#34; (ex: relógio girando ou sol/lua mudando).</li>
+<li><strong>Critério de Aceite:</strong>  O jogo parece um &#34;jogo&#34;, não uma planilha de Excel.</li>
+</ul>
+<hr>
+<h4 id="fase-4-co-op-visual-sincronia-visual">♟️ FASE 4: Co-op Visual (Sincronia Visual)</h4>
+<p><strong>Objetivo:</strong>  Ver o amigo no mundo.</p>
+<h5 id="poc-4-1-avatares-sincronizados">🟡 POC 4.1: Avatares Sincronizados</h5>
+<ul>
+<li><strong>Tarefa 4.1.A:</strong>  Instanciar um Prefab de Player para cada conexão.</li>
+<li><strong>Tarefa 4.1.B:</strong>  Quando Player A viaja para &#34;Floresta&#34;, o avatar dele deve aparecer na tela de &#34;Floresta&#34; do Player B (se ele também estiver lá).</li>
+<li><strong>Critério de Aceite:</strong>  Jogadores se veem nos hubs e locais de exploração.</li>
+</ul>
+<hr>
+<h4 id="fase-5-n-cleo-t-tico-grid-system-offline">⚔️ FASE 5: Núcleo Tático (Grid System - Offline)</h4>
+<p><strong>Objetivo:</strong>  Substituir o combate de texto (Fase 1.5) por um tabuleiro tático.</p>
+<h5 id="poc-5-1-o-grid">🟡 POC 5.1: O Grid</h5>
+<ul>
+<li><strong>Tarefa 5.1.A:</strong>  Implementar Tilemap Isométrico/Hexagonal.</li>
+<li><strong>Tarefa 5.1.B:</strong>  Lógica de Pathfinding (A*) para clique-e-anda no grid.</li>
+<li><strong>Critério de Aceite:</strong>  Personagem anda no grid respeitando obstáculos.</li>
+</ul>
+<h5 id="poc-5-2-combate-espacial">🟡 POC 5.2: Combate Espacial</h5>
+<ul>
+<li><strong>Tarefa 5.2.A:</strong>  Adaptar o SistemaDeCombate (Fase 1) para checar Alcance (Range) no Grid.</li>
+<li><strong>Tarefa 5.2.B:</strong>  Implementar Área de Efeito (AoE) visual.</li>
+<li><strong>Critério de Aceite:</strong>  Arqueiro só consegue atirar se tiver linha de visão no grid.</li>
+</ul>
+<hr>
+<h4 id="fase-6-t-tica-compartilhada-co-op-final">⚔️ FASE 6: Tática Compartilhada (Co-op Final)</h4>
+<p><strong>Objetivo:</strong>  O combate tático sincronizado.</p>
+<h5 id="poc-6-1-turnos-em-rede">🟡 POC 6.1: Turnos em Rede</h5>
+<ul>
+<li><strong>Tarefa 6.1.A:</strong>  Sincronizar o estado do Grid via Netcode.</li>
+<li><strong>Tarefa 6.1.B:</strong>  Gerenciador de Turnos Multiplayer (Player A -&gt; Player B -&gt; Inimigos IA).</li>
+<li><strong>Critério de Aceite:</strong>  Batalha completa tática com dois jogadores contra monstros.</li>
+</ul>
