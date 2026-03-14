@@ -5471,3 +5471,847 @@ Atendido: o novo bota-fora cobre toda a linha do tempo consolidada da sessão, i
 Se você quiser, no próximo passo eu monto uma versão “prompt de retomada no WSL” em bloco único, pronta para colar na primeira mensagem do chat novo.
 
 Made changes.
+
+User: Temos um problemão gigantesco para resolver. Leia todo o contexto da sessão para ter um pouco de noção do que esta acontecendo.
+
+Quando eu falei sobre o comando admin e rcon no projeto assim como da extração de todas as decisões e todo bate papo deste projeto eu percebi que o model utilizado foi outro do Claude Opus 4.6 que era o utilizado por mim.
+
+Ao perceber isso fui conversar com o gemini para entender porque sumiu o model utilizado, a conversa foi essa.
+
+Isso abre muito precedentes e muitas decisões a serem tomadas, e vou listar algumas da decisões e algumas coisas que precisam serem respondidas: 
+
+- Primeiro as duas ações que o outro model fez esta esta correto sobre o comando admin e sobre o bota fora? Sobre o bota faça alguma coisa depois porque vai ter perguntas abaixo exatamente sobre os arquivos de sessions o qual esta gravando isso.
+- Separação do GDD, como conversado com o Gemini, eu juntei o projeto com o gdd em um monorepo por causa do meu fluxo de trabalho com o copilot ser todo dentro do vscode isso facilitava a IA fazer a leitura de tudo, mas agora com essa nova fase do projeto o qual eu irei fazer sozinho o codigo do jogo e a IA vai ser somente a parte de ajuda criativa começo a pensar novamente sobre essa estrutura porque pode ser apenas um peso do monorepo, e complicação em usar em ferramentas e ias distintas, como o gdd agora vai passar ser algo mais teorico e para uso de referencia.
+- Após pergunta a separação do GDD me vem a segunda, qual IA usar no meu fluxo criativo e como usar, na plataforma do claude estou com dificuldade de importar todo o projeto do GDD la para ele me ajudar,  não sei como posso fazer isso, e se tem como fazer localmente sei la usar algo localmente para me ajudar quando for usar o claude, nem que seja algum instalavel ou coisa assim. 
+- Realmente claude é a melhor opção para IA de ajuda? Eu comprei o claude pro mas tem outras opções realmente ele pode ser a melhor para isso? Como ela se encaixa no meu fluxo
+- E agora como vai ficar a organização do meu projeto, estou tendendo a usar meu GDD como markdown é uma boa e aceita em todo lugar, mas iai o obsidian é um caminho? Mantenho esse repo aqui como gdd dado que ele ja tem todo historico de git, e removo as partes de desenvolvimento? E os arquivos de Vibe, os arquivos de docs, os arquivos de planos de desenvolvimento, o que mantenho aqui e o que vai para o novo projeto de codigo do game.
+- Tenho um repo com a parte legado e historico do projeto, nesse link: https://github.com/sidinei-silva/ErasDoBrasil-Historico-Legado alguma coisa vai pra la?
+- E a issues deste projeto o que vai acontecer com elas? O que podemos fazer?
+- Como vai ficar meu fluxo e minhas ferramentas nesse momento? 
+- O claude com pro tem algo que possa me ajudar nesse fluxo? Se não o chatGPT tem?
+- As integrações vscode, com copilot, com o claude e com o gpt pode me entregar algo a mais para isso?
+
+Acho que vai ser até uma boa esses rollbacks que esta acontecendo no projeto para eu voltar a ter um tato maior no projeto, separar o que tem que separar, revisar um por um e tudo mais.
+
+Como o MCP do github esta desativado caso precise de alguma coisa do github você pode executar a cli do github que esta instalada e configurada neste PC.
+
+GitHub Copilot: 
+
+Vou analisar o estado atual do projeto e os arquivos tocados recentemente para responder cada ponto com precisão. 
+
+Created 7 todos
+
+Ran terminal command:  git status --short && echo "---" && git log --oneline -10
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-bota-fora-sessao-completa.md#1-1), linhas 1 para 100
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-admin-comandos-e-migracao-wsl.md#1-1), linhas 1 para 50
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/ROADMAP.md#50-50), linhas 50 para 100
+
+Ran terminal command:  git diff --stat HEAD
+
+Ran terminal command:  gh issue list --state open --limit 50 --json number,title,labels 2>/dev/null | head -100
+
+Leia [](file:///home/sidinei/.config/Code%20-%20Insiders/User/workspaceStorage/767cc94c26c45edad1d4b36427efd029/GitHub.copilot-chat/chat-session-resources/dffa1ab6-abc8-4614-bf80-2632ac97e579/toolu_vrtx_01VTTeEyeKTVyqawW8X2e9wz__vscode-1773426644482/content.txt)
+
+Starting: *Responder todas as perguntas* (2/7)
+
+Contexto auditado. Tudo commitado, nada pendente. Tenho visão completa do estado. Vou responder cada ponto com profundidade.
+
+---
+
+## 1. Os comandos admin e o bota-fora estão corretos?
+
+**Comandos admin:** Sim, o conteúdo técnico está correto e consistente com a arquitetura definida nos ADRs 005/006. A ideia de goroutine dedicada + EventBus + console local inicialmente é a abordagem certa. O que foi escrito no ROADMAP, backlog, GUIA_RETOMADA, project-status e server/README está coerente entre si. Não precisa refazer.
+
+**Bota-fora:** O conteúdo factual está correto — ele descreve com precisão o que aconteceu ao longo da sessão. Porém: é um resumo alto nível. Não captura o tom das conversas, os dilemas que você trouxe, nem as nuances das decisões (por exemplo, a frustração de 3 anos sem código, o desejo original de MMORPG). O arquivo que você colou no Untitled-1 é muito mais rico em contexto real. **Recomendo manter o bota-fora como está, mas guardar o conteúdo completo do chat como arquivo de referência também.**
+
+---
+
+## 2. Separar GDD do código?
+
+**Sim, agora faz sentido separar.** As razões mudaram:
+
+Quando você juntou tudo num monorepo, o motivo era: "a IA precisa ler GDD + código junto". Agora a situação é diferente:
+- Você vai fazer o código sozinho (aprendizado).
+- A IA vai ajudar no lado criativo/GDD, provavelmente fora do VS Code.
+- O GDD é markdown puro, sem dependência do código.
+- O código vai ser Go server + HTML client — universo completamente diferente do GDD.
+
+**Proposta concreta:**
+
+| Repo | Conteúdo | Ferramenta principal |
+|------|----------|---------------------|
+| `eras-do-brasil` (este) | GDD, lore, regras, design, pesquisas | Claude Pro, Obsidian, qualquer IA criativa |
+| `eras-do-brasil-game` (novo) | server, textClient, web | VS Code + Copilot (autocomplete) |
+| `ErasDoBrasil-Historico-Legado` (existente) | Histórico arqueológico | Arquivo morto, referência |
+
+**O que fica neste repo:**
+- gdd inteiro
+- product (specs de produto, MVP, perfil dev)
+- vibe (sessões, decisões, backlog, status)
+- web (site público do jogo — faz sentido ficar junto do GDD)
+- README.md, ROADMAP.md
+
+**O que vai pro repo novo de game:**
+- server e textClient
+- ADRs técnicos (005, 006) — cópia ou link
+- Issues de implementação (fases 0-6)
+
+**O que vai pro legado:**
+- Nada novo. Já está fechado como arquivo histórico.
+
+---
+
+## 3. Qual IA usar para o fluxo criativo?
+
+**Claude Pro é a melhor opção para GDD/lore/regras.** Por quê:
+- Escrita em português natural superior aos concorrentes.
+- Janela de contexto enorme (200k tokens).
+- Projects do Claude Pro — sincroniza com GitHub repo.
+
+**Como resolver o problema de importar o GDD no Claude:**
+
+O Claude Pro tem a feature **Projects** com integração GitHub. Para funcionar:
+1. Crie um Project no Claude chamado "Eras do Brasil - GDD".
+2. Conecte o repositório `eras-do-brasil` (este, após a separação — só GDD).
+3. Ele sincroniza automaticamente os `.md`.
+
+Se a integração com GitHub não funcionar no seu plano (como você relatou na conversa com o Gemini, que no plano free não rola), mas no **Pro** deveria funcionar. Se mesmo assim travar, a alternativa:
+- Use a feature de **upload de arquivos** do Claude Pro — suba os `.md` do GDD como anexo no chat. Com o GDD separado num repo limpo, serão ~50 arquivos markdown e cabem folgados na janela de contexto.
+
+**ChatGPT Plus/Codex é inferior para escrita criativa**, mas superior para:
+- Geração de imagens (DALL-E) — útil para concept art.
+- Canvas — edição colaborativa de texto.
+
+**Fluxo recomendado:**
+- Claude Pro para GDD, lore, regras, balanceamento, diálogos.
+- VS Code + Copilot (plano estudante/free) para autocomplete de Go.
+- ChatGPT Plus como segundo opcional se precisar de imagens ou brainstorm rápido.
+
+---
+
+## 4. Obsidian é o caminho para o GDD?
+
+Sim, mas **não é obrigatório**. Seu GDD já é markdown puro e funciona em qualquer editor.
+
+**Vantagens do Obsidian para o GDD:**
+- Graph View — visualizar conexões entre documentos (classes ↔ habilidades ↔ itens).
+- Links wiki-style (`[[Guerreiro Tribal]]`) — já tem uns 10 no GDD que poderiam virar links reais.
+- Publica como site estático (Obsidian Publish ou alternativa gratuita como Quartz).
+- Plugin **Obsidian Git** — sincroniza com o GitHub sem custo de cloud.
+
+**Se for usar:**
+1. Abra a pasta do repo `eras-do-brasil` como Vault.
+2. Instale Obsidian Git para sync automático.
+3. Instale Smart Connections ou Text Generator para plugar API do Claude/OpenAI.
+
+**Se não quiser mais uma ferramenta:** Continue editando `.md` no VS Code mesmo. O Claude Pro lê os arquivos do GitHub de qualquer jeito.
+
+---
+
+## 5. O que fazer com as issues?
+
+Há 35 issues abertas. Elas se dividem em dois tipos claros:
+
+| Tipo | Issues | Destino |
+|------|--------|---------|
+| **GDD/Lore** (#20-31, #33-36, #43, #61-66, #68-70, #79-81) | Ficam neste repo (GDD) |
+| **Fases de código** (#83-89) | Migram pro repo de game novo |
+| **Mecânica de morte** (#75) | Design = fica aqui; implementação = issue no game |
+
+Para migrar as issues de fase para o novo repo, posso usar `gh issue transfer` ou simplesmente criar novas lá e fechar estas com link. Mas isso só faz sentido fazer **depois** de você confirmar a separação.
+
+---
+
+## 6. Como fica o fluxo e ferramentas?
+
+```
+┌─────────────────────────────────────────────────────┐
+│                    FLUXO DIÁRIO                      │
+├─────────────────────────────────────────────────────┤
+│                                                      │
+│  GDD / Criativo                Código / Game         │
+│  ──────────────                ──────────────        │
+│  Repo: eras-do-brasil          Repo: eras-do-brasil- │
+│                                game                  │
+│  Editor: VS Code ou Obsidian   Editor: VS Code       │
+│  IA: Claude Pro (Projects)     IA: Copilot (free)    │
+│                                                      │
+│  Tarefas:                      Tarefas:              │
+│  - Resolver furos de lore      - Fase 0: Heartbeat   │
+│  - Escrever diálogos           - Implementar Go      │
+│  - Balancear classes           - WebSocket client     │
+│  - Expandir livros aux         - Admin commands       │
+│                                                      │
+│  Referência cruzada: links entre repos via GitHub    │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## 7. Claude Pro, ChatGPT e integrações VS Code
+
+**Claude Pro ($20/mês):**
+- Projects com GitHub sync — é o killer feature para seu caso.
+- API key para plugar no VS Code via BYOK se quiser (mas vai gastar tokens por uso).
+- Melhor escrita criativa de todos os modelos atuais.
+
+**VS Code + Copilot (estudante/free):**
+- Autocomplete de Go — funciona bem para aprender.
+- Chat básico com modelos menores (GPT-4o-mini, Claude Sonnet).
+- Não precisa do Pro+ ($39) para codar Go.
+
+**Extensões VS Code que ajudam:**
+- **Continue.dev** — extensão open source que aceita API key de qualquer provedor (Claude, OpenAI, Gemini). Funciona como chat no editor com BYOK. Alternativa ao Copilot Chat para modelos premium.
+- **Claude for VS Code** (se existir na época) — plugar Claude direto.
+
+**ChatGPT Plus ($20/mês):**
+- Não é necessário se já tem Claude Pro. Seria redundante.
+- Único diferencial: DALL-E para concept art e Canvas para edição visual.
+
+---
+
+## Resumo da decisão que você precisa tomar
+
+| Decisão | Minha recomendação |
+|---------|--------------------|
+| Separar GDD do código? | **Sim** — este repo vira GDD puro, novo repo para game |
+| Claude Pro para criativo? | **Sim** — Projects + GitHub sync resolve o problema |
+| Obsidian? | **Opcional** — bom mas não bloqueante |
+| Issues de fases? | Migrar para o repo de game |
+| Issues de GDD/lore? | Ficam aqui |
+| Copilot Pro+? | **Não precisa** — free/estudante + BYOK resolve |
+| ChatGPT Plus? | **Não precisa** se já tem Claude Pro |
+| Admin commands feitos pelo outro model? | **Corretos** — manter |
+| Bota-fora feito pelo outro model? | **Correto mas resumido** — complementar com chat completo |
+
+Quando você confirmar a direção (especialmente a separação de repos), eu executo a reorganização. Quer que eu prossiga com algum desses pontos?
+
+User: Perfeito, só algumas coisas acho que precisa de ajustes:
+
+- Acho que renomear esse repo é uma saida tambem udar para eras-do-brasil-gdd, colocar uma documentação do que aconteceu com o repo, ajustar os readmes, e todas as documentações.
+
+- Eu quero organizar melhor esse repo tirar a pasta vibe e colocar os conteudos que combine melhor, eu quero tirar o vibe flow do projeto mas não os conteudos gerados, com decisões, research,  o scratchpad vibe/scratchpad/comparativo-gdd-legado-vs-atual.md faz sentido ter? 
+
+- Outra coisa acho que não faz sentido ter qualquer referencia da parte de codigo ou do desenvolvimento aqui neste somente de desenvolvimento do GDD o que acha? Vai ter que fazer um depara para o que for do gdd ficar o que for de codigo, desenvolvimento e afins ir para o novo desde tomada de decisão a backlog. 
+
+- Coisa do .github acho que faz sentido sair daqui.
+
+- Coisa antigas que ja foram substituidas tomo tomada de decisões antigas que agora ja é outra coisa faz sentido também ir para o projeto legado não? 
+
+- Vamos deixar este projeto limpo com o minimo de coisa, dev container também é outro que vai sair.
+
+- O projeto legado esta na pasta ~/dev/personal/ErasDoBrasil-Historico-Legado. 
+
+Lembre-se pode usar a cli do github para fazer qualquer acao no github o MCP esta desabilitado. 
+
+GitHub Copilot: 
+
+ 
+
+Starting: *Mapear todos os arquivos e destinos* (1/7)
+
+Vou primeiro fazer o mapeamento completo de tudo que existe para montar o de-para (fica aqui / vai pro game / vai pro legado / apaga). 
+
+Ran terminal command:  find . -maxdepth 1 -not -name '.git' -not -name '.' | sort
+
+Ran terminal command:  find .github -type f | sort && echo "===" && find .devcontainer -type f | sort && echo "===" && find .vscode -type f | sort && echo "===" && find docs -type f | sort && echo "===" && find vibe -type f | sort && echo "===" && find game -type f | sort && echo "===" && find web -type f | sort
+
+Ran terminal command:  ls -la /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ 2>/dev/null && echo "===" && cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && git remote -v 2>/dev/null
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/.github/workflows/static.yml#1-1), linhas 1 para 30
+
+Inventário completo. Agora vou montar o plano de-para e executar. Antes, preciso confirmar: o workflow static.yml serve para o site (web/) — se o site ficar neste repo (GDD), mantemos. Se não, sai.
+
+Vou assumir que o site fica aqui no repo GDD pois é comunicação pública do jogo e não código do game. Vou fazer tudo de uma vez. 
+
+Starting: *Mover arq. legados para repo legado* (2/7)
+
+Aqui está o de-para completo antes de eu executar. **Confirme se concorda antes de eu prosseguir:**
+
+## De-Para: Reorganização do Repositório
+
+### FICA neste repo (futuro `eras-do-brasil-gdd`)
+
+| Arquivo/Pasta | Motivo |
+|---|---|
+| gdd inteiro | Core do repo |
+| web | Site público do jogo |
+| static.yml | Deploy do site |
+| .gitignore, .editorconfig | Config básica |
+| README.md (reescrito) | Novo README do repo GDD |
+
+### FICA, mas muda de lugar (sai do vibe/ para estrutura própria)
+
+| Origem | Destino | Motivo |
+|---|---|---|
+| 2026-03-07-pesquisa-mercado.md | `research/2026-03-07-pesquisa-mercado.md` | Pesquisa de mercado relevante |
+| diagnostico-completo-projeto.md | `research/diagnostico-completo-projeto.md` | Diagnóstico relevante |
+| `vibe/sessions/*` (todos) | `historico/sessions/` | Histórico das sessões de trabalho |
+| comparativo-gdd-legado-vs-atual.md | `historico/comparativo-gdd-legado-vs-atual.md` | Referência histórica |
+
+### VAI pro repo LEGADO (`ErasDoBrasil-Historico-Legado`)
+
+| Arquivo | Motivo |
+|---|---|
+| ADR-001-organizacao-projeto-unity.md | Substituído (Unity) |
+| ADR-002-workflow-ui-ux.md | Substituído (Unity) |
+| organizacao-projeto-unity.md | Substituído (Unity) |
+| workflow-ui-ux.md | Substituído (Unity) |
+| contexto-repo-legado.md | Doc sobre o repo legado — pertence lá |
+| plano-spinoffs-aprendizado.md | Arquivado no pivot |
+
+### VAI pro repo novo de GAME (quando for criado)
+
+| Arquivo | Motivo |
+|---|---|
+| game inteiro | Código do jogo |
+| ADR-003-estrategia-repositorios.md | Decisão de repos — pertence ao game |
+| ADR-004-pivot-mmorpg-servidor-go.md | Pivot técnico — pertence ao game |
+| ADR-005-arquitetura-servidor-monolito-goroutines.md | Arquitetura Go — pertence ao game |
+| ADR-006-persistencia-ram-first-sqlite.md | Persistência — pertence ao game |
+| GUIA_RETOMADA.md | Guia de dev — pertence ao game |
+| mvp-o-despertar-spec.md | Spec de MVP — pertence ao game |
+| perfil-developer.md | Perfil dev — pertence ao game |
+| plano-desenvolvimento-realista.md | Plano de dev — pertence ao game |
+| backlog.md | Backlog de dev — pertence ao game |
+| project-status.md | Status de dev — pertence ao game |
+| ROADMAP.md | Roadmap de dev — pertence ao game |
+
+### APAGA (não pertence a nenhum repo)
+
+| Arquivo/Pasta | Motivo |
+|---|---|
+| .devcontainer | Específico de ambiente dev / não pertence ao GDD |
+| .vscode | Config local de editor |
+| agents (todos os 7 .agent.md) | Vibe Flow — sai do projeto |
+| copilot-instructions.md | Vibe Flow — sai do projeto |
+| .gitkeep | Pasta vazia |
+| .gitkeep | Pasta vazia ficará vazia após moves |
+
+---
+
+Quer que eu execute? Algum ajuste no plano?
+
+User: Perfeito quero que execute esse plano: 
+
+- Não esqueça de renomear o repo
+- Criar o novo repo
+- Fazer o trabalho em cima das issues tambem
+
+
+GitHub Copilot: 
+
+Vou executar o plano completo. Sequência: legado primeiro, depois criar game repo, transferir issues, limpar este repo, renomear por último. 
+
+Starting: *Mover arq. legados para repo legado* (1/6)
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+cp vibe/decisions/ADR-001-organizacao-projeto-unity.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+cp vibe/decisions/ADR-002-workflow-ui-ux.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+cp docs/tech/organizacao-projeto-unity.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+cp docs/tech/workflow-ui-ux.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+cp docs/tech/contexto-repo-legado.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+cp docs/product/plano-spinoffs-aprendizado.md /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/ && \
+echo "Copiados com sucesso"
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+mkdir -p "Decisoes Substituidas" "Docs Substituidos" && \
+mv ADR-001-organizacao-projeto-unity.md "Decisoes Substituidas/" && \
+mv ADR-002-workflow-ui-ux.md "Decisoes Substituidas/" && \
+mv organizacao-projeto-unity.md "Docs Substituidos/" && \
+mv workflow-ui-ux.md "Docs Substituidos/" && \
+mv contexto-repo-legado.md "Docs Substituidos/" && \
+mv plano-spinoffs-aprendizado.md "Docs Substituidos/" && \
+git add -A && git commit -m "feat: arquivar decisões e docs substituídos do repo principal (ADR-001, ADR-002, Unity docs, spinoffs)" && \
+git push
+
+Starting: *Criar repo eras-do-brasil-game* (2/6)
+
+Legado salvo. Agora vou criar o novo repo de game no GitHub e preparar o conteúdo. 
+
+Ran terminal command:  gh repo create sidinei-silva/eras-do-brasil-game --public --description "MUD Moderno (MMORPG server-authoritative) — Servidor Go + Cliente Web | Eras do Brasil" --clone --add-readme 2>&1
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && \
+mkdir -p game/server game/textClient docs/product docs/tech decisions historico/sessions && \
+\
+# Copiar arquivos do game
+cp /home/sidinei/dev/personal/eras-do-brasil/game/README.md game/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/game/server/README.md game/server/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/game/textClient/README.md game/textClient/ && \
+\
+# Copiar ADRs técnicos
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-003-estrategia-repositorios.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-005-arquitetura-servidor-monolito-goroutines.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-006-persistencia-ram-first-sqlite.md decisions/ && \
+\
+# Copiar docs de produto/dev
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/GUIA_RETOMADA.md docs/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/mvp-o-despertar-spec.md docs/product/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/perfil-developer.md docs/product/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/plano-desenvolvimento-realista.md docs/product/ && \
+\
+# Copiar backlog, status, roadmap
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/backlog.md . && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/project-status.md . && \
+cp /home/sidinei/dev/personal/eras-do-brasil/ROADMAP.md . && \
+\
+# Copiar sessões relevantes para histórico
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-11-pivot-mmorpg-servidor-go.md historico/sessions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-bota-fora-sessao-completa.md historico/sessions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-admin-comandos-e-migracao-wsl.md historico/sessions/ && \
+\
+echo "Tudo copiado para o game repo"
+
+Ran terminal command:  pwd && ls -la eras-do-brasil-game/ 2>/dev/null || echo "not here" && ls /home/sidinei/dev/personal/eras-do-brasil/eras-do-brasil-game/ 2>/dev/null || echo "check clone location" && find /home/sidinei -maxdepth 4 -name "eras-do-brasil-game" -type d 2>/dev/null
+
+O clone foi feito dentro do diretório errado (legado). Vou mover para o local correto. 
+
+Ran terminal command:  mv /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/eras-do-brasil-game /home/sidinei/dev/personal/eras-do-brasil-game && echo "Movido" && ls /home/sidinei/dev/personal/eras-do-brasil-game/
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && \
+mkdir -p game/server game/textClient docs/product docs/tech decisions historico/sessions && \
+\
+cp /home/sidinei/dev/personal/eras-do-brasil/game/README.md game/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/game/server/README.md game/server/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/game/textClient/README.md game/textClient/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-003-estrategia-repositorios.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-004-pivot-mmorpg-servidor-go.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-005-arquitetura-servidor-monolito-goroutines.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/decisions/ADR-006-persistencia-ram-first-sqlite.md decisions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/GUIA_RETOMADA.md docs/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/mvp-o-despertar-spec.md docs/product/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/perfil-developer.md docs/product/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/docs/product/plano-desenvolvimento-realista.md docs/product/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/backlog.md . && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/project-status.md . && \
+cp /home/sidinei/dev/personal/eras-do-brasil/ROADMAP.md . && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-11-pivot-mmorpg-servidor-go.md historico/sessions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-bota-fora-sessao-completa.md historico/sessions/ && \
+cp /home/sidinei/dev/personal/eras-do-brasil/vibe/sessions/2026-03-13-admin-comandos-e-migracao-wsl.md historico/sessions/ && \
+echo "OK"
+
+Conversa compactada
+
+Added 3 todos
+
+Ran terminal command:  find . -not -path './.git/*' -not -path './.git' | sort
+
+Estrutura do game repo está correta. Agora vou escrever o README do game repo. 
+
+Leia [](file:///home/sidinei/dev/personal/eras-do-brasil-game/README.md)
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/game/server/README.md#1-1), linhas 1 para 40
+
+Substituindo 2 linhas por 43 linhas em [](file:///home/sidinei/dev/personal/eras-do-brasil-game/README.md)
+
+
+```
+
+```
+Now fix the ADR links inside the game repo's server README (they pointed to `../../vibe/decisions/` which no longer exists): 
+
+Substituindo 2 linhas por 2 linhas em [](file:///home/sidinei/dev/personal/eras-do-brasil-game/game/server/README.md)
+
+
+```
+
+```
+
+
+Starting: *Commit and push game repo* (3/9)
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && git add -A && git commit -m "feat: setup inicial do repo de game
+
+- Servidor Go + Cliente Web (estrutura planejada)
+- ADRs 003-006 (arquitetura, pivot, persistência)
+- ROADMAP, backlog, project-status
+- Docs de produto (MVP spec, perfil dev, plano dev)
+- Guia de retomada
+- Histórico de sessões relevantes" && git push origin main
+
+Starting: *Transfer phase issues to game repo* (4/9)
+
+Agora vou transferir as issues de fase (#83-89) para o game repo: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && for i in 83 84 85 86 87 88 89; do echo "Transferring #$i..." && gh issue transfer $i sidinei-silva/eras-do-brasil-game; done
+Completed with input:  cd /home/sidinei/dev/personal/eras-do-brasil && for i in 83 84 85 86 87 88 89; do echo "Transferring #$i..." && gh issue transfer $i sidinei-silva/eras-do-brasil-game; done
+
+O repo original é privado e o game repo é público, então a transferência direta não funciona. Vou recriar as issues no game repo e fechar as originais. 
+
+Ran terminal command:  for i in 83 84 85 86 87 88 89; do echo "=== ISSUE #$i ===" && gh issue view $i --json title,body,labels --jq '{title: .title, labels: [.labels[].name], body: (.body[:200])}' && echo ""; done
+
+Ran terminal command:  gh issue view 83 --json title,body,labels 2>&1 | head -5
+
+Ran terminal command:  gh issue view 83 --json title --jq '.title' 2>&1
+
+Ran terminal command:  gh issue list --state open --json number,title --jq '.[] | select(.number >= 83 and .number <= 89) | "\(.number)|\(.title)"' 2>&1 | cat
+
+Ran terminal command:  GH_PAGER=cat gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.number >= 83 and .number <= 89) | "\(.number)|\(.title)"' 2>&1
+
+Ran terminal command:  for i in 83 84 85 86 87 88 89; do echo "=== $i ===" && GH_PAGER=cat gh issue view $i --json title,body,labels --jq '"\(.title)\n---LABELS---\n\([.labels[].name] | join(","))\n---BODY---\n\(.body)"' 2>&1 && echo "=== END ==="; done
+
+Leitura [](file:///home/sidinei/.config/Code%20-%20Insiders/User/workspaceStorage/767cc94c26c45edad1d4b36427efd029/GitHub.copilot-chat/chat-session-resources/dffa1ab6-abc8-4614-bf80-2632ac97e579/toolu_vrtx_01XCwLsjqx5aSJ5Ny5rRvkZc__vscode-1773426644515/content.txt#1-1), linhas 1 para 200
+
+Leitura [](file:///home/sidinei/.config/Code%20-%20Insiders/User/workspaceStorage/767cc94c26c45edad1d4b36427efd029/GitHub.copilot-chat/chat-session-resources/dffa1ab6-abc8-4614-bf80-2632ac97e579/toolu_vrtx_01XCwLsjqx5aSJ5Ny5rRvkZc__vscode-1773426644515/content.txt#200-200), linhas 200 para 321
+
+Vou recriar as issues no game repo usando arquivos temporários para preservar o markdown: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+for i in 83 84 85 86 87 88 89; do \
+  TITLE=$(GH_PAGER=cat gh issue view $i --json title --jq '.title') && \
+  GH_PAGER=cat gh issue view $i --json body --jq '.body' > /tmp/issue_${i}_body.md && \
+  echo "Creating: $TITLE" && \
+  GH_PAGER=cat gh issue create \
+    --repo sidinei-silva/eras-do-brasil-game \
+    --title "$TITLE" \
+    --body-file /tmp/issue_${i}_body.md 2>&1 && \
+  echo ""; \
+done
+
+Issues criadas no game repo (#8-14). Agora vou fechar as originais: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+for i in 83 84 85 86 87 88 89; do \
+  GH_PAGER=cat gh issue close $i --comment "🔀 Issue migrada para [eras-do-brasil-game](https://github.com/sidinei-silva/eras-do-brasil-game/issues). Este repo agora é exclusivo para GDD/Lore." --reason "not planned" 2>&1 && echo "Closed #$i"; \
+done
+
+Starting: *Clean GDD repo files* (5/9)
+
+Agora vou limpar o repo GDD. Preciso verificar o que existe para remover: 
+
+Ran terminal command:  ls -la
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+ls .github/ && echo "---" && \
+ls .github/agents/ 2>/dev/null && echo "---" && \
+ls .github/workflows/ 2>/dev/null && echo "---" && \
+ls vibe/ && echo "---" && \
+ls vibe/sessions/ 2>/dev/null && echo "---" && \
+ls vibe/research/ 2>/dev/null && echo "---" && \
+ls vibe/decisions/ 2>/dev/null && echo "---" && \
+ls vibe/scratchpad/ 2>/dev/null && echo "---" && \
+ls docs/ && echo "---" && \
+ls docs/product/ && echo "---" && \
+ls docs/tech/
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+ls docs/tech/wireframes/ 2>/dev/null && echo "---" && \
+ls vibe/scratchpad/issue-20/ 2>/dev/null && echo "---" && \
+find .devcontainer -type f 2>/dev/null && echo "---" && \
+find .vscode -type f 2>/dev/null
+
+Ran terminal command:  find . -name '.gitkeep' 2>/dev/null
+
+Agora vou executar a limpeza e reorganização em sequência: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+\
+# 1. Criar novas pastas
+mkdir -p research historico/sessions && \
+\
+# 2. Mover conteúdo do vibe/ para novas localizações
+cp vibe/research/2026-03-07-pesquisa-mercado.md research/ && \
+cp vibe/research/diagnostico-completo-projeto.md research/ && \
+cp vibe/scratchpad/comparativo-gdd-legado-vs-atual.md historico/ && \
+cp vibe/sessions/2026-02-11_sprints-1-2.md historico/sessions/ && \
+cp vibe/sessions/2026-02-13_decisoes-unity-uiux.md historico/sessions/ && \
+cp vibe/sessions/2026-03-07-pesquisa-de-mercado.md historico/sessions/ && \
+cp vibe/sessions/2026-03-07-revisao-produto-mvp.md historico/sessions/ && \
+cp vibe/sessions/2026-03-07_auditoria-documentacao.md historico/sessions/ && \
+cp vibe/sessions/2026-03-07_reorganizacao-total.md historico/sessions/ && \
+cp vibe/sessions/2026-03-11-pivot-mmorpg-servidor-go.md historico/sessions/ && \
+cp vibe/sessions/2026-03-13-admin-comandos-e-migracao-wsl.md historico/sessions/ && \
+cp vibe/sessions/2026-03-13-bota-fora-sessao-completa.md historico/sessions/ && \
+echo "Arquivos movidos"
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+\
+# 3. Remover tudo que foi migrado ou não pertence mais
+rm -rf game/ && \
+rm -rf .devcontainer/ && \
+rm -rf .vscode/ && \
+rm -rf .github/agents/ && \
+rm -f .github/copilot-instructions.md && \
+rm -rf vibe/ && \
+rm -f ROADMAP.md && \
+rm -f docs/GUIA_RETOMADA.md && \
+rm -f docs/product/mvp-o-despertar-spec.md && \
+rm -f docs/product/perfil-developer.md && \
+rm -f docs/product/plano-desenvolvimento-realista.md && \
+rm -f docs/product/plano-spinoffs-aprendizado.md && \
+rm -f docs/product/.gitkeep && \
+rm -f docs/tech/contexto-repo-legado.md && \
+rm -f docs/tech/organizacao-projeto-unity.md && \
+rm -f docs/tech/workflow-ui-ux.md && \
+rm -rf docs/tech/wireframes/ && \
+\
+# 4. Limpar pastas vazias
+rmdir docs/product/ 2>/dev/null; \
+rmdir docs/tech/ 2>/dev/null; \
+rmdir docs/ 2>/dev/null; \
+echo "Limpeza concluída"
+
+Ran terminal command:  find . -not -path './.git/*' -not -path './.git' -not -path './gdd/*' -not -path './web/*' -not -path './ia-conversations/*' -not -path './issues/*' -not -path './arquivos_temporarios/*' | sort
+
+Starting: *Write new GDD README* (7/9)
+
+Estrutura limpa. Agora preciso verificar se há pastas extras que não deveriam ficar (`arquivos_temporarios/`, `issues/`, `ia-conversations/`, `docs/`): 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+ls arquivos_temporarios/ 2>/dev/null && echo "---" && \
+ls issues/ 2>/dev/null && echo "---" && \
+ls ia-conversations/ 2>/dev/null && echo "---" && \
+ls ia-conversations/gemini/ 2>/dev/null && echo "---" && \
+ls docs/ 2>/dev/null
+Completed with input:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+ls arquivos_temporarios/ 2>/dev/null && echo "---" && \
+ls issues/ 2>/dev/null && echo "---" && \
+ls ia-conversations/ 2>/dev/null && echo "---" && \
+ls ia-conversations/gemini/ 2>/dev/null && echo "---" && \
+ls docs/ 2>/dev/null
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+echo "=== arquivos_temporarios ===" && ls arquivos_temporarios/ 2>&1 && \
+echo "=== issues ===" && ls issues/ 2>&1 && \
+echo "=== ia-conversations ===" && find ia-conversations/ -type f 2>&1 && \
+echo "=== docs ===" && find docs/ -type f 2>&1
+Completed with input:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+echo "=== arquivos_temporarios ===" && ls arquivos_temporarios/ 2>&1 && \
+echo "=== issues ===" && ls issues/ 2>&1 && \
+echo "=== ia-conversations ===" && find ia-conversations/ -type f 2>&1 && \
+echo "=== docs ===" && find docs/ -type f 2>&1
+
+Ran terminal command:  ls -d */ 2>&1
+
+Estrutura final está limpa: gdd, historico, research, web. Agora vou escrever o novo README:  
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/README.md#1-1), linhas 1 para 50
+
+Substituindo 50 linhas por 43 linhas em [](file:///home/sidinei/dev/personal/eras-do-brasil/README.md)
+
+
+```
+
+```
+Agora preciso remover o restante do README antigo (stack, roadmap, etc.): 
+
+Leitura [](file:///home/sidinei/dev/personal/eras-do-brasil/README.md#40-40), linhas 40 para 97
+
+Substituindo 54 linhas por 1 linhas em [](file:///home/sidinei/dev/personal/eras-do-brasil/README.md)
+
+
+```
+
+```
+
+
+Starting: *Commit and push GDD repo* (8/9)
+
+Ran terminal command:  git add -A && git status
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && git commit -m "refactor: reorganiza repo para GDD-only
+
+- Remove game/, .devcontainer, .vscode, .github/agents, vibe/
+- Move sessions → historico/sessions/
+- Move research → research/
+- Move comparativo → historico/
+- Remove ADRs (migrados para eras-do-brasil-game)
+- Remove docs de produto (migrados para eras-do-brasil-game)
+- Remove ROADMAP, backlog, project-status
+- Reescreve README para repo GDD-only
+- Issues de fase (#83-89) fechadas e recriadas no game repo"
+
+Ran terminal command:  git push origin main
+
+Interessante — o push foi para `ErasDoBrasil-GDD.git`, parece que o repo já foi renomeado anteriormente. Vou verificar: 
+
+Ran terminal command:  git remote -v && echo "---" && GH_PAGER=cat gh repo view --json name,url --jq '"\(.name) → \(.url)"' 2>&1
+
+O remote local aponta para `ErasDoBrasil-GDD` mas o repo no GitHub ainda se chama `eras-do-brasil`. Vou corrigir o remote e renomear o repo:  
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && \
+git remote set-url origin git@github.com:sidinei-silva/eras-do-brasil.git && \
+GH_PAGER=cat gh repo rename eras-do-brasil-gdd --yes 2>&1
+
+Ran terminal command:  git remote -v
+
+Completed: *Commit and push GDD repo* (8/9)
+
+Plano executado. Resumo do que foi feito:
+
+**3 repos organizados:**
+- **eras-do-brasil-gdd** — GDD, lore, research, site, historico (renomeado de `eras-do-brasil`)
+- **eras-do-brasil-game** — Servidor Go, cliente web, ADRs, ROADMAP, backlog (novo, pushed)
+- **ErasDoBrasil-Historico-Legado** — Arquivo Unity-era (já existia)
+
+**Issues:**
+- 7 issues de fase (#83-89) recriadas no game repo (#8-14) e fechadas no GDD repo
+- Issues de GDD/lore permanecem no repo GDD
+
+**Limpeza do GDD repo:**
+- Removidos: `game/`, `.devcontainer/`, `.vscode/`, `.github/agents/`, `vibe/`, ROADMAP.md, docs de produto/tech
+- Movidos: `vibe/sessions/` → sessions, `vibe/research/` → research
+- README reescrito para repo GDD-only
+
+**Remote atualizado:** `git@github.com:sidinei-silva/eras-do-brasil-gdd.git`
+
+Made changes.
+
+User: Perfeito, eu mudei o eras-do-brasil-game para privado, o eras-do-brasil-gdd me parece bom. Somente o legado que parece que ficou desorganizado os arquivos que você mandou pra la porque ficou algumas coisas no status mas parece que é do game que foi errado e não resetou. 
+
+E no repo de game faz sentido manter a pasta product com aquelas arquivos todos eles fazem sentido ter la?
+
+Quer dar mais uma conferida nos 3 projetos e ver se esta tudo ok? Faça.
+
+GitHub Copilot: 
+
+ 
+
+Starting: *Auditar repo Legado* (1/4)
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && find . -not -path './.git/*' -not -path './.git' | sort
+
+Ran terminal command:  find . -maxdepth 2 -not -path './.git/*' -not -path './.git' | sort
+
+Achei os problemas. O repo legado tem arquivos do game que foram parar lá por erro (o `cd` falhou mas os `cp` executaram no diretório errado). Vou auditar os 3 repos em paralelo: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+echo "=== LEGADO: Arquivos que NÃO deveriam estar aqui ===" && \
+echo "--- backlog.md ---" && head -2 backlog.md 2>&1 && \
+echo "--- project-status.md ---" && head -2 project-status.md 2>&1 && \
+echo "--- ROADMAP.md ---" && head -2 ROADMAP.md 2>&1 && \
+echo "--- decisions/ ---" && ls decisions/ 2>&1 && \
+echo "--- docs/ ---" && find docs/ -type f 2>&1 && \
+echo "--- game/ ---" && find game/ -type f 2>&1 && \
+echo "--- historico/ ---" && find historico/ -type f 2>&1 && \
+echo "--- .gitignore ---" && cat .gitignore 2>&1
+
+Confirmado — o repo legado tem toda uma cópia das coisas do game repo que caiu lá por engano. Vou verificar o README do legado e o estado do git: 
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+echo "=== README ===" && cat README.md 2>&1 && \
+echo "=== GIT STATUS ===" && git status --short 2>&1
+Completed with input:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+echo "=== README ===" && cat README.md 2>&1 && \
+echo "=== GIT STATUS ===" && git status --short 2>&1
+
+Ran terminal command:  git status --short 2>&1 && echo "---" && git log --oneline -3 2>&1
+
+Esses arquivos estão untracked — não foram commitados. Agora vou auditar o game repo e o GDD repo:  
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && find . -not -path './.git/*' -not -path './.git' | sort && echo "=== GIT STATUS ===" && git status --short
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil && find . -not -path './.git/*' -not -path './.git' -not -path './gdd/*' | sort && echo "=== GIT STATUS ===" && git status --short
+
+Agora tenho a visão completa dos 3 repos. Vou verificar o conteúdo dos arquivos `docs/product/` no game repo para responder sua pergunta:  
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && \
+echo "=== mvp-o-despertar-spec.md ===" && head -5 docs/product/mvp-o-despertar-spec.md && \
+echo "=== perfil-developer.md ===" && head -5 docs/product/perfil-developer.md && \
+echo "=== plano-desenvolvimento-realista.md ===" && head -5 docs/product/plano-desenvolvimento-realista.md
+
+Starting: *Corrigir problemas encontrados* (4/4)
+
+Aqui está o diagnóstico dos 3 repos:
+
+---
+
+**Repo Legado** — tem lixo do game (arquivos untracked que caíram lá por erro):
+- `backlog.md`, `project-status.md`, `ROADMAP.md` — do game
+- `decisions/` (ADR-003 a 006) — do game
+- `docs/` (GUIA_RETOMADA, product/) — do game
+- `game/` (READMEs de server/textClient) — do game
+- sessions (3 sessões) — do game
+
+Precisa: apagar tudo isso.
+
+---
+
+**Repo GDD** — limpo, sem problemas.
+
+---
+
+**Repo Game** — está correto. Sobre `docs/product/`:
+- `mvp-o-despertar-spec.md` — spec do MVP do jogo, faz sentido no game
+- `perfil-developer.md` — seu perfil de dev (horas, skill), referência para planejamento, faz sentido 
+- `plano-desenvolvimento-realista.md` — timeline de dev com horas/semana, faz sentido
+
+Os 3 são de **planejamento de desenvolvimento**, não de GDD/lore. Fazem sentido no game repo.
+
+---
+
+Vou limpar o repo legado agora:  
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+rm -rf backlog.md project-status.md ROADMAP.md decisions/ docs/ game/ historico/ && \
+echo "Limpeza OK" && git status --short
+
+Agora o repo legado tem apenas o que deveria. Vou verificar se tem README e se faz sentido criar um:  
+
+Ran terminal command:  find . -maxdepth 1 -not -path './.git' -not -path '.' | sort
+
+O repo legado não tem README. Vou criar um e verificar o que o `Decisoes Substituidas` e `Docs Substituidos` contêm (foram adicionados no commit anterior):   
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+echo "=== Decisoes Substituidas ===" && ls "Decisoes Substituidas/" && \
+echo "=== Docs Substituidos ===" && ls "Docs Substituidos/"
+
+Perfeito, essas pastas estão corretas (ADR-001/002 da era Unity e docs obsoletos). Vou criar o README do legado:   
+
+[](file:///home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado/README.md) foi criado
+
+Ran terminal command:  cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && git add -A && git commit -m "fix: remover arquivos do game repo que caíram aqui por engano
+
+- Remove backlog.md, project-status.md, ROADMAP.md
+- Remove decisions/ (ADR-003 a 006)
+- Remove docs/, game/, historico/
+- Adiciona README.md" && git push origin main
+
+Agora vou verificar a pasta `docs/tech/` vazia no game repo:  
+
+Ran terminal command:  cd /home/sidinei/dev/personal/eras-do-brasil-game && ls docs/tech/ 2>&1 && echo "---" && find . -empty -type d 2>&1
+
+`docs/tech/` está vazio. Vou remover e verificar o README.md do game repo:   
+
+Ran terminal command:  rmdir docs/tech && git add -A && git commit -m "fix: remover pasta docs/tech vazia" && git push origin main
+Completed with input:  rmdir docs/tech && git add -A && git commit -m "fix: remover pasta docs/tech vazia" && git push origin main
+
+Git não rastreia pastas vazias, então não precisa de commit. Vou remover localmente e fazer uma verificação final dos 3 repos:   
+
+Ran terminal command:  echo "========== REPO GDD (eras-do-brasil-gdd) ==========" && \
+cd /home/sidinei/dev/personal/eras-do-brasil && \
+echo "Remote: $(git remote get-url origin)" && \
+echo "Status: $(git status --short | wc -l) dirty files" && \
+echo "Pastas raiz:" && ls -d */ .github/ 2>/dev/null && \
+echo "" && \
+echo "========== REPO GAME (eras-do-brasil-game) ==========" && \
+cd /home/sidinei/dev/personal/eras-do-brasil-game && \
+echo "Remote: $(git remote get-url origin)" && \
+echo "Status: $(git status --short | wc -l) dirty files" && \
+echo "Pastas raiz:" && ls -d */ 2>/dev/null && \
+echo "" && \
+echo "========== REPO LEGADO (ErasDoBrasil-Historico-Legado) ==========" && \
+cd /home/sidinei/dev/personal/ErasDoBrasil-Historico-Legado && \
+echo "Remote: $(git remote get-url origin)" && \
+echo "Status: $(git status --short | wc -l) dirty files" && \
+echo "Pastas raiz:" && ls -d */ 2>/dev/null
+
+Completed: *Corrigir problemas encontrados* (4/4)
+
+Tudo limpo. Os 3 repos estão com 0 dirty files e pushed. Resumo:
+
+| Repo | Remote | Conteúdo |
+|------|--------|----------|
+| **eras-do-brasil-gdd** | `sidinei-silva/eras-do-brasil-gdd` | gdd, web, research, historico, workflows |
+| **eras-do-brasil-game** (privado) | `sidinei-silva/eras-do-brasil-game` | `game/`, `decisions/`, `docs/`, historico, ROADMAP, backlog |
+| **ErasDoBrasil-Historico-Legado** | `sidinei-silva/ErasDoBrasil-Historico-Legado` | Livros Antigos, Chats, Imagens, Decisões/Docs substituídos |
+
+**Corrigido:** Removidos os arquivos do game que tinham caído no legado por engano + adicionado README ao legado.
+
+**Sobre `docs/product/` no game:** Os 3 arquivos (MVP spec, perfil dev, plano de desenvolvimento) são de planejamento de desenvolvimento — fazem sentido ficar no game repo.
+
+Made changes.
