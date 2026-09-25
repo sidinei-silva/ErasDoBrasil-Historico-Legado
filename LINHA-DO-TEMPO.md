@@ -5,9 +5,10 @@
 > de mapa para não se perder na história do desenvolvimento e como índice de
 > navegação para os documentos-fonte.
 >
-> **Status:** cobre as conversas do ChatGPT convertidas em [`Conversas GPT/`](Conversas%20GPT/)
-> e a conversa de WhatsApp transcrita em [`Conversas WhatsApp/`](Conversas%20WhatsApp/).
-> Ainda faltam organizar `Chats Gemini/` e `NotebookLM/` (ver [Pendências](#pendências) no fim).
+> **Status:** cobre as conversas do ChatGPT em [`Conversas GPT/`](Conversas%20GPT/), a
+> conversa de WhatsApp em [`Conversas WhatsApp/`](Conversas%20WhatsApp/) e as conversas
+> do Gemini em [`Chats Gemini/`](Chats%20Gemini/). Ainda falta organizar `NotebookLM/`
+> (ver [Pendências](#pendências) no fim).
 
 ## Origem: três fases, separadas por hiatos
 
@@ -34,7 +35,13 @@ RPG de mesa de mundo persistente.
 | 10 | 2025-04-17 | Setor Missões e Eventos (ChatGPT) | Abertura do setor de missões e eventos. | [2025-04-17_Setor Missões e Eventos_convertido.md](Conversas%20GPT/2025-04-17_Setor%20Missões%20e%20Eventos_convertido.md) |
 | 11 | 2025-07-13 | Documentação Eras do Brasil (ChatGPT) | Pedido de um template de documentação/linha do tempo das decisões do projeto, para depois poder limpar a memória do ChatGPT. **Este documento é a continuação direta dessa ideia.** | [2025-07-13_Documentacao Eras do Brasil_convertido.md](Conversas%20GPT/2025-07-13_Documentacao%20Eras%20do%20Brasil_convertido.md) |
 | 12 | 2025-08-08 | Plano de Execução Detalhado (ChatGPT) | Pedido de um plano de execução em várias etapas para uma tarefa grande (a preparar/detalhar). | [2025-08-08_Plano de Execucao Detalhado_convertido.md](Conversas%20GPT/2025-08-08_Plano%20de%20Execucao%20Detalhado_convertido.md) |
-| 13 | 2026-03-07 | Sessão Copilot — organização e desenvolvimento | Já fora do ChatGPT: sessão de organização/desenvolvimento com o Copilot, fase mais recente registrada neste repositório. | [Sessões copilot/2026-03-07_sessão_copilot_organização_e_desenvolvimento.md](Sessões%20copilot/2026-03-07_sess%C3%A3o_copilot_organiza%C3%A7%C3%A3o_e_desenvolvimento.md) |
+| — | *(hiato de ~3 meses; migração de setores do ChatGPT para o Gemini)* | | | |
+| 13 | 2025-11-07 | Eras do Brasil, desenvolvimento do game (Gemini) | Retomada no **Gemini**: recapitulação completa do sistema (Origens, Classes por Tier, atributos, Ticks, facções, as 3 fases digital+mesa) e definição de ferramental — discussão de editores (Notion→Obsidian→alternativa com nuvem) e da stack técnica (pub/sub de eventos por tick para NPCs vivos). | [2025-11-07_Eras do Brasil, desenvolvimento do game.md](Chats%20Gemini/2025-11-07_Eras%20do%20Brasil%2C%20desenvolvimento%20do%20game.md) |
+| 14 | 2026-01-30 | Música para RPG de Fantasia Brasileira (Gemini) | Direção musical do jogo: trilha inspirada em Celtic/Nordic/Skyrim adaptada à fantasia brasileira, com sugestões de ferramentas de geração (Suno/Udio) e estrutura de letra ligada às 12 classes e ao "Relógio da Ruptura". | [2026-01-30_Música para RPG de Fantasia Brasileira.md](Chats%20Gemini/2026-01-30_M%C3%BAsica%20para%20RPG%20de%20Fantasia%20Brasileira.md) |
+| 15 | 2026-02-06 | Stack e Arquitetura para Jogo Web RPG (Gemini) | Decisão de stack técnica para a versão web (Node.js vs Flutter/Dart), arquitetura pensada para co-op e "Shared Core", no estilo Tibia/Ragnarok com layout de janelas ao redor do cenário central. | [2026-02-06_Stack e Arquitetura para Jogo Web RPG.md](Chats%20Gemini/2026-02-06_Stack%20e%20Arquitetura%20para%20Jogo%20Web%20RPG.md) |
+| 16 | 2026-02-14 | Ficou muito bom isso. (Gemini) | Validação de UI: comparação de duas opções de interface (baseadas nos docs `05_UI_Fase_1_Exploracao_e_Combate.md` e `02_UI_HUD_e_Tipografia.md`), definição do layout "sanduíche" para os modos de Exploração e Combate. | [2026-02-14_Ficou muito bom isso..md](Chats%20Gemini/2026-02-14_Ficou%20muito%20bom%20isso..md) |
+| 17 | 2026-02-18 | Justificando o Conflito no Jogo (Gemini) | Resolução de um buraco narrativo: por que os inimigos atacam o herói. Define a motivação central — "lutamos pela Sincronia" — ligando o conflito ao Game Pitch, aos Conceitos Centrais e ao Ato 1. | [2026-02-18_Justificando o Conflito no Jogo.md](Chats%20Gemini/2026-02-18_Justificando%20o%20Conflito%20no%20Jogo.md) |
+| 18 | 2026-03-07 | Sessão Copilot — organização e desenvolvimento | Já fora do ChatGPT/Gemini: sessão de organização/desenvolvimento com o Copilot, fase mais recente registrada neste repositório. | [Sessões copilot/2026-03-07_sessão_copilot_organização_e_desenvolvimento.md](Sessões%20copilot/2026-03-07_sess%C3%A3o_copilot_organiza%C3%A7%C3%A3o_e_desenvolvimento.md) |
 
 ## Achado: o nome original era "1500 Caminhos do Brasil"
 
@@ -57,14 +64,33 @@ originais. Nenhum diálogo real está faltando — o HTML antigo até capturava 
 **Setor Livro de Regras e Sistema**, o conteúdo bruto de documentos de canvas), mas nada
 foi perdido. Não foram reconvertidos para não introduzir mudanças desnecessárias.
 
+## Reorganização de `Chats Gemini/`
+
+Os exports antigos `gemini-conversation (N).md` vinham de um plugin de navegador com um
+bug que escondia parte do conteúdo (um deles chegou a exportar só a letra "c" no lugar
+da data). O Sidinei refez manualmente os 6 exports relevantes — achou a conversa
+correspondente no Gemini, exportou para o Google Docs e de lá para Markdown — e esses
+são os que entraram na cronologia acima. Os 6 arquivos antigos (`(7)`, `(8)`, `(9)`,
+`(12)`, `(13)`, `(15)`) foram removidos por estarem totalmente substituídos pelos novos;
+os arquivos `(5)`, `(10)`, `(11)`, `(14)`, `(16)` já haviam sido removidos pelo Sidinei
+antes desta reorganização.
+
+Um detalhe: existiam dois exports idênticos de "Eras do Brasil, desenvolvimento do game"
+(mesma data, mesma URL, mesmo conteúdo — só a formatação Markdown do Google Docs mudava
+levemente escapes em blocos de código). Mantive só um.
+
+O arquivo `eras-do-brasil-atividades.html` (um histórico de atividades do Gemini,
+formato bem diferente das conversas individuais) não foi mexido — fica como pendência
+abaixo.
+
 ## Pendências
 
 Coisas encontradas durante a organização desta linha do tempo que ainda **não**
 foram convertidas/incorporadas — ficam registradas aqui para não se perder de
 novo:
 
-- **`Chats Gemini/`** — 11 arquivos `gemini-conversation (N).md` sem data no
-  nome. Precisam ser identificados/datados antes de entrar nesta cronologia.
+- **`Chats Gemini/eras-do-brasil-atividades.html`** — histórico de atividades do Gemini
+  (não é uma conversa individual). Ainda não mapeado nesta linha do tempo.
 - **`NotebookLM/`** — ainda não mapeado nesta linha do tempo.
 - **Chat "Marketing Era do Brasil"** (2025-05-01), encontrado no export antigo
   do ChatGPT (`2025-05-01_marketing-era-do-brasil_6814006c.json`) mas nunca
