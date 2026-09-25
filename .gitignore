@@ -12,3 +12,7 @@ Desktop.ini
 
 # Ignorar arquivos do Obsidian
 .obsidian/
+
+# Ignorar cache de scripts Python (converter_json.py, converter_claude.py etc.)
+__pycache__/
+*.pyc

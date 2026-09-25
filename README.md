@@ -17,6 +17,7 @@ veja [`LINHA-DO-TEMPO.md`](LINHA-DO-TEMPO.md).
 | `Chats Gemini/` | Conversas com Gemini sobre o projeto |
 | `Conversas GPT/` | Conversas com GPT sobre o projeto |
 | `Conversas WhatsApp/` | Prints e transcrição da conversa que deu origem à ideia do jogo (jul/2023) |
+| `Conversas Claude/` | Sessões técnicas com Claude (mar–set/2026): arquitetura, GDD e a fusão com o projeto Escória/Outlander |
 | `NotebookLM/` | Análises feitas no NotebookLM |
 | `Sessões copilot/` | Logs de sessões com Copilot |
 | `Imagens/` | Imagens conceituais e referências visuais |
