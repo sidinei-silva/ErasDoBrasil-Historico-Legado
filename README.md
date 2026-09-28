@@ -14,7 +14,7 @@ projeto — cada era já foi substituída pela seguinte, então "era anterior" =
 
 | Pasta | Descrição |
 |-------|-----------|
-| `Conversas/GPT/` | Conversas com ChatGPT sobre o projeto |
+| `Conversas/GPT/` | Conversas com ChatGPT: a origem e a fase de RPG de mesa (2023–2025) e o trilho paralelo ao Claude em ago–set/2026 (servidor da Escória, arte do MVP, a fusão) |
 | `Conversas/Gemini/` | Conversas com Gemini sobre o projeto |
 | `Conversas/Claude/` | Sessões técnicas com Claude (mar–set/2026): arquitetura, GDD e a fusão com o projeto Escória/Outlander |
 | `Conversas/WhatsApp/` | Prints e transcrição da conversa que deu origem à ideia do jogo (jul/2023) |

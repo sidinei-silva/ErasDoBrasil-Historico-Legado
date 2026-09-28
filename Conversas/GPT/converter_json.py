@@ -26,6 +26,24 @@ def extract_canvas_doc(content):
     return None
 
 
+def extract_multimodal(content):
+    """Mensagem com imagem anexada: mantém o texto e marca as imagens
+    (o export JSON só traz ponteiros, não os arquivos)."""
+    texts, images = [], 0
+    for p in content.get("parts", []):
+        if isinstance(p, str):
+            if p.strip():
+                texts.append(p.strip())
+        elif isinstance(p, dict) and p.get("content_type") == "image_asset_pointer":
+            images += 1
+    parts = []
+    if images:
+        parts.append(f"[{images} imagem(ns) anexada(s)]")
+    if texts:
+        parts.append(html.unescape("\n".join(texts)))
+    return "\n\n".join(parts) or None
+
+
 def load_linear_messages(path):
     """Segue o mapping do export do ChatGPT (JSON) do current_node até a raiz,
     reconstruindo a conversa linear visível (ignora ramos alternativos/editados)."""
@@ -54,6 +72,11 @@ def load_linear_messages(path):
         if role not in ("user", "assistant"):
             continue
         content = msg.get("content", {})
+        if content.get("content_type") == "multimodal_text":
+            text = extract_multimodal(content)
+            if text and msg.get("recipient") in ("all", None):
+                messages.append((role, text))
+            continue
         if content.get("content_type") != "text":
             continue
         recipient = msg.get("recipient")

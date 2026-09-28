@@ -11,9 +11,10 @@
 > [`Conversas/Claude/`](Conversas/Claude/), os logs de sessão do Copilot arquivados em
 > [`Artefatos/03-mud-moderno-pre-fusao/gdd-batalha-turno/historico/`](Artefatos/03-mud-moderno-pre-fusao/gdd-batalha-turno/historico/) e uma checagem direta
 > dos repositórios de código ativos (`eras-do-brasil-gdd`, `eras-do-brasil`, fora deste
-> repositório). Ainda falta mapear `Artefatos/01-rpg-de-mesa-e-narrativa/NotebookLM/`
-> na cronologia e organizar o **Project do ChatGPT** usado no
-> dia a dia do projeto (ver [Pendências](#pendências) no fim).
+> repositório). As conversas do ChatGPT cobrem até 24/09/2026 (dois exports: o antigo,
+> até 2025, e um de 26/08 a 25/09/2026). Ainda falta mapear
+> `Artefatos/01-rpg-de-mesa-e-narrativa/NotebookLM/` na cronologia (ver
+> [Pendências](#pendências) no fim).
 
 ## Origem: cinco fases, separadas por hiatos
 
@@ -70,11 +71,21 @@ o Eras do Brasil: a arquitetura do spin-off e o mundo/lore do Eras se fundem em 
 | 32 | 2026-05-31 | Adaptação idle MMORPG do Albion Online (Claude) | Nasce **"Albion Idle"**, um spin-off separado do Eras do Brasil, e nasce a fantasia alternativa **"Deuses-Armas"** para vesti-lo — Sidinei evita usar a lore do Eras num spin-off menor, com medo de "esfriar" o projeto principal. Ver [evolução do nome](#evolução-do-nome-do-jogo-idle-albion-idle--deuses-armas--a-escória--outlander) abaixo. | [2026-05-31_Adaptação idle MMORPG do Albion Online.md](Conversas/Claude/2026-05-31_Adapta%C3%A7%C3%A3o%20idle%20MMORPG%20do%20Albion%20Online.md) |
 | — | *(hiato de ~3 semanas — sessão "Chat 0 — Calibração" de 2026-06-19, onde "Deuses-Armas" virou "A Escória"/"Outlander", não foi capturada no export do Claude — ver [Pendências](#pendências))* | | | |
 | 33 | 2026-06-23 | Próximo passo desenvolvimento do jogo Outlander (Claude) | **A decisão "qual projeto continuar".** O spin-off já se chama **A Escória** (codinome de repositório "Outlander"). Claude recomenda Outlander sobre Eras do Brasil — não por ser melhor IP, mas por ser viável solo (Eras exigiria "sistemas de estúdio de 30 pessoas": NPCs com fofoca/rotina/necessidades). **Eras do Brasil é congelado, não abandonado** — guarda-se a tese "o mundo não espera por herói" para reaproveitar depois. | [2026-06-23_Próximo passo desenvolvimento do jogo Outlander.md](Conversas/Claude/2026-06-23_Pr%C3%B3ximo%20passo%20desenvolvimento%20do%20jogo%20Outlander.md) |
-| — | *(dois meses de desenvolvimento técnico só do Escória/Outlander — ver [índice completo](#índice-completo-das-sessões-técnicas-conversas-claude) abaixo)* | | | |
-| 34 | 2026-08-31 | Organização de projetos pessoais e uso de IA (Claude) | Decisão reafirmada pela 2ª vez: **"Escória primeiro, Eras congelado — não mescle: a soma é um jogo maior que os dois, e mata os dois."** | [2026-08-31_Organização de projetos pessoais e uso de IA.md](Conversas/Claude/2026-08-31_Organiza%C3%A7%C3%A3o%20de%20projetos%20pessoais%20e%20uso%20de%20IA.md) |
-| 35 | 2026-09-06 | Revisão da lore e motivações do jogo (Claude) | **A fusão.** Sete dias depois de reafirmar "não mesclar", Claude reverte o próprio veredito: *"o esqueleto da Escória, o mundo do Eras"* — A Escória nunca teve mundo próprio, e importar o do Eras custa quase zero em código. *"A Escória é o Eras com o número de série lixado."* | [2026-09-06_Revisão da lore e motivações do jogo.md](Conversas/Claude/2026-09-06_Revis%C3%A3o%20da%20lore%20e%20motiva%C3%A7%C3%B5es%20do%20jogo.md) |
-| 36 | 2026-09-21 | World bootstrap implementation for Escoria (Claude) | Fusão confirmada no código: *"eras do brasil será exatamente igual ao escoria."* Documento oficial do projeto unificado lista o que deixou de existir (Lastro, deuses-em-armas, combate D20, zonas antigas, classes-como-classes). | [2026-09-21_World bootstrap implementation for Escoria.md](Conversas/Claude/2026-09-21_World%20bootstrap%20implementation%20for%20Escoria.md) |
-| 37 | 2026-09-24 | Avaliação de projeto e próximos passos (Claude) | Documentação normativa reorganizada. Ver [estado real confirmado no repositório ativo](#estado-real-do-projeto-confirmado-no-repositório-ativo) abaixo — inclui dados que o chat sozinho não mostra (backlog de fatias, último commit). | [2026-09-24_Avaliação de projeto e próximos passos.md](Conversas/Claude/2026-09-24_Avalia%C3%A7%C3%A3o%20de%20projeto%20e%20pr%C3%B3ximos%20passos.md) |
+| — | *(julho: poucos registros; em agosto o desenvolvimento corre em **dois trilhos paralelos** — ChatGPT e Claude — ver [O lado ChatGPT](#o-lado-chatgpt-26082409) abaixo)* | | | |
+| 34 | 2026-08-26 | Atual - Arquitetura Go do servidor (ChatGPT) | Abre o **chat-tronco técnico da Escória**, que fica aberto até 24/09 (113 trocas, ramificado 2 vezes). A arquitetura que vira oficial — `Network → Command → Game Loop (dono único do estado) → GameState → Events → HTTP/WS/Postgres` — **já nasce na primeira resposta**. Todo o código de conta, login, personagem e entrada no mundo é implementado nele. | [2026-08-26_Atual - Arquitetura Go do servidor_convertido.md](Conversas/GPT/2026-08-26_Atual%20-%20Arquitetura%20Go%20do%20servidor_convertido.md) |
+| 35 | 2026-08-27 | Iniciar Arena Server (ChatGPT) | Experimento descartável do "Game Dev Lab" (repo próprio) para aprender game server em Go. Parou no domínio em memória, sem chegar ao game loop — o Claude o cortou em 29/08. | [2026-08-27_Iniciar Arena Server_convertido.md](Conversas/GPT/2026-08-27_Iniciar%20Arena%20Server_convertido.md) |
+| 36 | 2026-08-28 | Com eras e escoria · Projeto RPG Solo com LLM (ChatGPT) | **O ChatGPT compara três projetos** (A Escória, Eras do Brasil e um terceiro, RPG solo com LLM). Melhor jogo: Escória; universo mais diferenciado: Eras; e *"se o objetivo for fazer UM jogo e realmente terminá-lo → A Escória… Eras do Brasil eu deixaria como projeto de longo prazo"*. Veredito: *"Não mesclar os jogos em um só. Sim, mesclar conceitos."* — um dia antes do Claude chegar à mesma conclusão. | [2026-08-28_Com eras e escoria· Projeto RPG Solo com LLM_convertido.md](Conversas/GPT/2026-08-28_Com%20eras%20e%20escoria%C2%B7%20Projeto%20RPG%20Solo%20com%20LLM_convertido.md) · [branch](Conversas/GPT/2026-08-28_Branch%20%C2%B7%20Com%20eras%20e%20escoria%C2%B7%20Projeto%20RPG%20Solo%20com%20LLM_convertido.md) |
+| 37 | 2026-08-31 | Organização de projetos pessoais e uso de IA (Claude) | Decisão reafirmada pela 2ª vez: **"Escória primeiro, Eras congelado — não mescle: a soma é um jogo maior que os dois, e mata os dois."** | [2026-08-31_Organização de projetos pessoais e uso de IA.md](Conversas/Claude/2026-08-31_Organiza%C3%A7%C3%A3o%20de%20projetos%20pessoais%20e%20uso%20de%20IA.md) |
+| 38 | 2026-09-03 | Mockup de interface (ChatGPT) | Primeira direção de arte da Escória: **2D cartum chibi vetorial** (não pixel art), fechado em 05/09 como **isométrico 3/4 estilizado**. Nasce a cena de chegada do tutorial: *"Mais um. Anda. A maré não traz quem ela não pode usar."* | [2026-09-03_Mockup de interface_convertido.md](Conversas/GPT/2026-09-03_Mockup%20de%20interface_convertido.md) |
+| 39 | 2026-09-06 | Revisão da lore e motivações do jogo (Claude) | **A fusão.** Sete dias depois de reafirmar "não mesclar", Claude reverte o próprio veredito: *"o esqueleto da Escória, o mundo do Eras"* — A Escória nunca teve mundo próprio, e importar o do Eras custa quase zero em código. *"A Escória é o Eras com o número de série lixado."* No mesmo dia, o ChatGPT também conclui que WebSocket não é necessário na PoC idle. | [2026-09-06_Revisão da lore e motivações do jogo.md](Conversas/Claude/2026-09-06_Revis%C3%A3o%20da%20lore%20e%20motiva%C3%A7%C3%B5es%20do%20jogo.md) · [ChatGPT: HTTP/WS](Conversas/GPT/2026-09-06_Arquitetura%20HTTP%20WebSocket%20Idle_convertido.md) |
+| 40 | 2026-09-09 | Comparar Eras dos GDD (ChatGPT) | Primeira tentativa de definir as "Eras" do jogo fundido, reaproveitando os atos de 2023: **Era I Descoberta e Colonização, II Ciclo do Ouro, III Família Real/Independência, IV Abolição/República**, cada uma com T1–T8. Modelo intermediário — em 24/09 já não vale mais ("a mistura de eras é a fantasia central"). | [2026-09-09_Comparar Eras Dos GDD_convertido.md](Conversas/GPT/2026-09-09_Comparar%20Eras%20Dos%20GDD_convertido.md) |
+| 41 | 2026-09-11 | Revisar decisão de arte (ChatGPT) | **Virada para 3D low poly** (11/09, 22h21): *"Houve uma mudança e o jogo agora vai ser 3d low poly"* — no mesmo chat onde, dias antes, o ChatGPT tinha recomendado *não* migrar para 3D ainda. Sidinei pede visual "mais rústico" e mantém a logo antiga. | [2026-09-05_Revisar decisão de arte_convertido.md](Conversas/GPT/2026-09-05_Revisar%20decis%C3%A3o%20de%20arte_convertido.md) |
+| 42 | 2026-09-14 | Nome para Tempera (ChatGPT) | "Têmpera" (bônus por uso contínuo da mesma arma) pede nome menos poético; ChatGPT sugere "Familiaridade". O nome que ficou no projeto é **Afinidade**. No mesmo dia o repo já aparece como `eras-do-brasil` no chat técnico. | [2026-09-14_Nome para Tempera_convertido.md](Conversas/GPT/2026-09-14_Nome%20para%20Tempera_convertido.md) |
+| 43 | 2026-09-15 | Fusão assumida no código + pipeline de arte 3D (ChatGPT) | No chat técnico: *"escoria já não existe mais mas vou reaproveitar o estudo de arquitetura porque o jogo é o mesmo estilo e categoria só muda lore e mundo"* e, 40 minutos depois, **a primeira vez** que aparece *"eras do brasil será exatamente igual ao escoria"*. Em paralelo, o Project de arte do MVP produz o pipeline 3D (Blender → Godot, esqueleto com 6 sockets, 3.000 tris, as 4 zonas de A Travessia). | [chat técnico](Conversas/GPT/2026-08-26_Atual%20-%20Arquitetura%20Go%20do%20servidor_convertido.md) · [pipeline de arte](Conversas/GPT/2026-09-15_2%20-%20CHAT%201%20%E2%80%94%20Personagem%2C%20Esqueleto%20e%20Equipamento_convertido.md) |
+| 44 | 2026-09-19 | Branch · Recomendação de jogo idle (ChatGPT) | No meio de uma busca por um idle para jogar, a frase: *"o game a escoria morreu ele virou eras do brasil que era outro que eu estava desenvolvendo e mesclei os 2"*. Rende a proposta (não implementada) de exploração automática por "ordens de comportamento", inspirada no jogo Wanderer. | [2026-09-19_Branch · Recomendação de jogo idle_convertido.md](Conversas/GPT/2026-09-19_Branch%20%C2%B7%20Recomenda%C3%A7%C3%A3o%20de%20jogo%20idle_convertido.md) |
+| 45 | 2026-09-21 | World bootstrap implementation for Escoria (Claude) | Sidinei repete no Claude a frase dita no ChatGPT em 15/09 (*"eras do brasil será exatamente igual ao escoria"*) para construir o bootstrap do mundo a partir do repo arquivado da Escória. Documento oficial do projeto unificado lista o que deixou de existir (Lastro, deuses-em-armas, combate D20, zonas antigas, classes-como-classes). | [2026-09-21_World bootstrap implementation for Escoria.md](Conversas/Claude/2026-09-21_World%20bootstrap%20implementation%20for%20Escoria.md) |
+| 46 | 2026-09-22 | Atual - Arquitetura Go do servidor (ChatGPT) | Sidinei explica os dois trilhos: *"antes quando o projeto era a escoria, eu estava usando o chatGPT… depois que mudou para o eras do brasil passei a usar o claude mas sinceramente não estou gostando muito do estilo de resposta dele"*, e diz que começou "o novo projeto do eras" no Claude em 1º/09. Decide criar um Project novo do Eras no ChatGPT. | [2026-08-26_Atual - Arquitetura Go do servidor_convertido.md](Conversas/GPT/2026-08-26_Atual%20-%20Arquitetura%20Go%20do%20servidor_convertido.md) |
+| 47 | 2026-09-24 | Avaliação de projeto (Claude) + Reconstrução do projeto (ChatGPT) | Documentação normativa reorganizada no Claude; no mesmo dia, o **Project novo do ChatGPT passa num teste de contexto**, reconstruindo corretamente o estado do jogo e tratando "conceitos de A Escória" como histórico. Ver [estado real confirmado no repositório ativo](#estado-real-do-projeto-confirmado-no-repositório-ativo). | [2026-09-24_Avaliação de projeto e próximos passos.md](Conversas/Claude/2026-09-24_Avalia%C3%A7%C3%A3o%20de%20projeto%20e%20pr%C3%B3ximos%20passos.md) · [ChatGPT](Conversas/GPT/2026-09-24_Reconstru%C3%A7%C3%A3o%20do%20projeto_convertido.md) |
 
 ## Achado: o nome original era "1500 Caminhos do Brasil"
 
@@ -182,9 +193,46 @@ reconstruído a partir de 47 conversas técnicas (ver [`Conversas/Claude/`](Conv
    zero em código. *"A Escória é o Eras com o número de série lixado."*
 7. **11–24 de setembro de 2026 — consolidação.** A fusão vira fato de trabalho:
    backlog reestruturado, arquitetura de servidor sem coordenadas (só "zona"/"nó"),
-   redesenho do tutorial (A Travessia, Feitoria da Cruz), confirmação no código em
-   21/09 (*"eras do brasil será exatamente igual ao escoria"*) e reorganização final
-   da documentação em 24/09 — ponto onde este histórico para hoje.
+   redesenho do tutorial (A Travessia, Feitoria da Cruz), bootstrap do mundo em
+   21/09 (repetindo a frase dita no ChatGPT em 15/09: *"eras do brasil será
+   exatamente igual ao escoria"*) e reorganização final da documentação em 24/09 —
+   ponto onde este histórico para hoje.
+
+## O lado ChatGPT (26/08–24/09)
+
+O Claude não foi o único trilho desse período. Reconstruído a partir de 27 conversas
+do ChatGPT (ver [`Conversas/GPT/`](Conversas/GPT/), arquivos de 2026-08 e 2026-09):
+
+- **Por que dois trilhos.** Nas palavras do próprio Sidinei, em 22/09: *"antes quando o
+  projeto era a escoria, eu estava usando o chatGPT… depois que mudou para o eras do
+  brasil passei a usar o claude"*. Na prática os dois correram juntos: o **ChatGPT
+  concentrou a implementação do servidor e a arte**; o **Claude, o design, a lore e as
+  decisões de rumo**. Em 22/09 Sidinei decide voltar a ter um Project do Eras no
+  ChatGPT, por não estar gostando do estilo de resposta do Claude; em 24/09 esse
+  Project novo passa num teste de contexto.
+- **Arquitetura.** O chat técnico "Atual - Arquitetura Go do servidor" ficou aberto de
+  26/08 a 24/09 e foi ramificado duas vezes. A arquitetura oficial (comando → game loop
+  com dono único do estado → eventos) já aparece na primeira resposta, em 26/08. Os
+  ramos de 07/09 e 21/09 mostram o código regredindo para `PlayerManager + mutex`
+  durante a implementação e sendo realinhado ao desenho original — não foi uma mudança
+  de arquitetura em setembro. Postgres nunca foi questionado nesse trilho.
+- **A decisão "qual projeto" vista pelo ChatGPT (28/08).** Um dia antes do Claude, o
+  ChatGPT comparou Escória, Eras do Brasil e um terceiro projeto (RPG solo com LLM) e
+  chegou ao mesmo lugar: *"Não mesclar os jogos em um só. Sim, mesclar conceitos."*
+  Nenhum dos dois cogitava a fusão antes de 06/09.
+- **A fusão vista pelo ChatGPT.** Não há um momento de decisão explícito desse lado — a
+  fusão aparece já consumada: o repo vira `eras-do-brasil` sem anúncio (visto a partir
+  de 14/09), e em 15/09 vem *"escoria já não existe mais"* e, pela primeira vez,
+  *"eras do brasil será exatamente igual ao escoria"*. Em 19/09: *"o game a escoria
+  morreu ele virou eras do brasil"*.
+- **Direção de arte, em três passos.** 03–05/09: 2D cartum chibi vetorial, isométrico
+  3/4 (Sidinei chega a pedir material de desenho para desenhar ele mesmo). 11/09: virada
+  para **3D low poly**, contrariando a recomendação anterior do próprio ChatGPT de não
+  migrar ainda. 15/09: pipeline de produção 3D montado (Blender → Godot, 6 sockets de
+  equipamento, 3.000 tris, zonas de A Travessia).
+- **Conceitos que passaram por aqui e mudaram depois.** As "Eras" I–IV com T1–T8 cada
+  (09/09) foram abandonadas em favor de eras misturadas; "Têmpera" virou "Afinidade"
+  (a sugestão do ChatGPT, "Familiaridade", não ficou).
 
 ### Estado real do projeto (confirmado no repositório ativo)
 
@@ -213,10 +261,10 @@ código para não ficar só na versão que o chat conta de si mesmo:
   ainda em aberto (regras de PvP herdadas da página de PvP da Escória — fila de
   prioridade por consentimento, offline intocável, full loot só na fase 2; e uma
   dúvida não resolvida sobre se vale a pena o repo ainda citar "A Escória" pelo nome,
-  agora que o Eras do Brasil é tratado como jogo "novo"). Isso indica que parte do
-  design mais recente está acontecendo em conversas com o **ChatGPT** (via o Project
-  configurado por `contexto-do-projeto.md`), não só no Claude — outra fonte que ainda
-  não foi trazida para este histórico.
+  agora que o Eras do Brasil é tratado como jogo "novo"). Parte disso vem das
+  conversas do **ChatGPT** — as de 26/08 a 24/09 já estão em [O lado
+  ChatGPT](#o-lado-chatgpt-26082409); o que veio depois de 24/09 ainda não foi
+  exportado.
 
 ### Evolução do nome do jogo idle: Albion Idle → Deuses-Armas → A Escória → Outlander
 
@@ -226,7 +274,7 @@ código para não ficar só na versão que o chat conta de si mesmo:
 | **Albion Idle** | 31/05/2026 | Nome de trabalho da PoC baseada nos dados públicos do Albion (`ao-data/ao-bin-dumps`). |
 | **Deuses-Armas** | 31/05/2026 (mesma sessão) | Fantasia alternativa cogitada para não usar a lore do Eras do Brasil no spin-off. |
 | **A Escória** / codinome **Outlander** | já consolidado em 23/06/2026 (transição não documentada — ver Pendências) | "Outlander" é o nome do repositório/código (`go mod init escoria`); "A Escória" é o nome do jogo/lore. |
-| **Eras do Brasil** (repo `eras-do-brasil`) | a partir de 06/09/2026 | Nome público prevalece após a fusão — mas tecnicamente é a arquitetura de A Escória por baixo. |
+| **Eras do Brasil** (repo `eras-do-brasil`) | decidido em 06/09/2026; repo renomeado de `escoria` para `eras-do-brasil` sem anúncio (visto a partir de 14/09) | Nome público prevalece após a fusão — mas tecnicamente é a arquitetura de A Escória por baixo. O repo antigo virou `escoria-arquivado`. Em 19/09: *"o game a escoria morreu ele virou eras do brasil"*. |
 
 ### Índice completo das sessões técnicas (`Conversas/Claude/`)
 
@@ -272,6 +320,31 @@ desenvolvimento técnico de detalhe, sem virar ponto de virada — mas estão to
 - `2026-09-16_Estrutura da pasta data.md` — `data/` na raiz do monorepo, um JSON por conceito.
 - `2026-09-19_Tutorial como travessia e limbo do mundo.md` — tutorial redesenhado como "A Travessia"; destino final Feitoria da Cruz/Costa do Pau-Brasil.
 - `2026-09-20_Validação de valores do campo Risk.md` — validação de enum em Go.
+
+### Índice das conversas ChatGPT de ago–set/2026 (`Conversas/GPT/`)
+
+Das 27 conversas desse período, 12 estão na tabela principal. As outras 15:
+
+**Servidor (implementação):**
+- `2026-09-02_Branch · Servidor MMORPG em Go_convertido.md` — adota o modelo "dono único + canal de comandos" trazido por Sidinei; *"O banco não deveria ser o relógio do jogo."*
+- `2026-09-04_Adaptar handler no http.go_convertido.md` — organização `server.go` / `network/http` / `network/ws`.
+- `2026-09-05_Configurar PostgreSQL em Go_convertido.md` — `pgx`, migrations, Docker Compose; Postgres desde o início, sem ORM.
+- `2026-09-07_Branch · Atual - Arquitetura Go do servidor_convertido.md` — ramo do chat técnico: login/JWT, middleware de autenticação, criação de personagem.
+- `2026-09-15_Validar BodyType Go_convertido.md` — `BodyType` como tipo de domínio na criação de personagem.
+- `2026-09-21_Branch · Branch · Atual - Arquitetura Go do servidor_convertido.md` — realinha o código ao desenho "dono único + canal" e confronta com o `arquitetura-consolidada.md` do repo: *"não é uma divergência arquitetural"*.
+
+**Arte do MVP (Project de arte, 15/09):**
+- `2026-09-15_1 - Atlas de paleta Ambiente_convertido.md` — paletas, kits das 4 zonas, mobs, ícones de recurso.
+- `2026-09-15_1 - Gerar personagem base_convertido.md` — personagem base, esqueleto com 6 sockets, armas/armaduras T1–T2, NPCs.
+- `2026-09-15_1 - Guia de UI Gamer_convertido.md` — prancha de UI com 8 blocos de HUD.
+- `2026-09-15_Branch · 2 - CHAT 1 — Personagem, Esqueleto e Equipamento_convertido.md` — ramo do chat de personagem.
+- `2026-09-15_Gerar personagem base_convertido.md` — teste de estilo do personagem "descartável".
+- `2026-09-05_Recomendar materiais de desenho_convertido.md` — plano para Sidinei aprender a desenhar a arte em chibi (antes da virada para 3D).
+
+**Referência e pesquisa:**
+- `2026-09-07_Motivações Para O PvP_convertido.md` — motivações de PvP no Albion aplicadas à Escória: não uma justificativa única, mas várias.
+- `2026-09-18_Escala de dano Albion_convertido.md` — Item Power do Albion; separar Tier de Poder de Item.
+- `2026-09-22_Transformar prints em JSON_convertido.md` — prints de itens de referência convertidos em modelo de dados.
 
 ## Reorganização estrutural do repositório
 
@@ -328,11 +401,23 @@ novo:
   Sidinei, como o próprio padrão de "limpar Projects antigos" descrito em setembro).
   Se aparecer em outro backup, é a peça que falta entre os itens #32 e #33 da
   cronologia.
-- **Project do ChatGPT** (configurado por `docs/contexto-do-projeto.md` no repo
-  `eras-do-brasil`) — é usado no dia a dia para discutir arquitetura e design (o
-  `WORK_NOTES.md` do repo tem trechos de respostas do Claude *dentro* de anotações que
-  vieram de conversas no ChatGPT). Essas conversas não foram localizadas/exportadas
-  ainda — provável fonte de decisões recentes que não aparecem em `Conversas/Claude/`.
+- **Conversas do ChatGPT depois de 24/09/2026** — o export de 2026 vai até 25/09; o
+  Project novo do Eras criado em 22–24/09 só tem o teste de contexto registrado. O que
+  vier depois precisa de um novo export.
+- **Export do ChatGPT de 2026 (50 chats)** — 27 entraram em `Conversas/GPT/`. Ficaram
+  de fora 23: dúvidas genéricas de Go sem ligação com o projeto (fundamentos, `go get`,
+  UUID, getters/setters, padrões de pasta, interface vs struct, listar rotas, `no rows`,
+  autenticação genérica, middleware, hot reload, attach do VS Code), dois chats de
+  estudo numerados ("1 - Fundamentos de Go", "2 - Arquitetura de Game Server", que se
+  declaram independentes da Escória), a versão original do "Projeto RPG Solo com LLM"
+  (só o terceiro projeto, sem comparar com os jogos), a "Recomendação de jogo idle"
+  original (busca pessoal; o ramo de 19/09 entrou), "Engenharia reversa Unity"
+  (Lootborne, sem ligação explícita), assuntos pessoais e dois chats vazios ("Gerar kit
+  de cenário", "Versão dark do wallpaper"). O export completo continua em
+  `/home/sidinei/Documentos/repartir gpt 2/chats/`, fora deste repositório.
+- **Imagens geradas/anexadas nos chats do ChatGPT** — o export JSON só traz ponteiros,
+  não os arquivos. Os mockups, pranchas e personagens gerados em set/2026 não estão
+  neste repositório; nos `.md` aparecem como `[N imagem(ns) anexada(s)]`.
 - **`Artefatos/03-mud-moderno-pre-fusao/gdd-batalha-turno/research/`** (`2026-03-07-pesquisa-mercado.md`,
   `diagnostico-completo-projeto.md`) e **`Artefatos/03-mud-moderno-pre-fusao/gdd-batalha-turno/historico/`**
   (`comparativo-gdd-legado-vs-atual.md`, `mapeamento-identificadores-codigo-markdown.md`)
@@ -357,8 +442,10 @@ Os `.json` do export do ChatGPT (formato `mapping` com árvore de mensagens)
 foram convertidos com [`Conversas/GPT/converter_json.py`](Conversas/GPT/converter_json.py),
 que segue a conversa a partir do `current_node` até a raiz (ramo principal,
 ignorando edições/branches alternativos) e mantém só mensagens de texto de
-`user`/`assistant` visíveis (descarta chamadas de ferramenta, *system prompts*
-e placeholders vazios). Uso:
+`user`/`assistant` visíveis (descarta chamadas de ferramenta, raciocínio interno,
+*system prompts* e placeholders vazios). Documentos de canvas entram inteiros;
+mensagens com imagem mantêm o texto e marcam as imagens como
+`[N imagem(ns) anexada(s)]`. Uso:
 
 ```bash
 python3 converter_json.py <arquivo.json> <YYYY-MM-DD_Titulo_convertido.md>
