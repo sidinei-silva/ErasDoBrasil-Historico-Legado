@@ -348,3 +348,310 @@ O `AGENTS.md` termina no meio de uma frase ("…o corpo lista as peças:"). Pare
 [Arquivo anexado: mudancas.diff]
 
 ---
+
+## Sidinei:
+
+Já fiz o commit e push, tem mais alguma coisa quando você falar ok eu crio o novo projeto.
+Só uma coisa antes eu não quero abrir esse ponto, mas estava pensando sobre a escolha do Go se foi um otimização prematura ou eu poderia fazer tudo em javascript mesmo ou se valia a pena usar o projeto para aprender go, seja bem sincero e não fala só para me agradar,
+
+---
+
+## Claude:
+
+Antes de criar o Project, falta só uma coisa: **limpar a memória de conta.** Os arquivos `areas/eras-do-brasil.md` e `areas/a-escoria.md`, ainda com classes, D20, Lastro e Litania, continuam lá e vão aparecer no Project novo. Abra uma conversa normal, fora de qualquer Project, e peça para esquecer esses dois (e o `reorganizacao-ia-projetos.md`, se ele não tiver mais utilidade). O `AGENTS.md` cortado pode esperar. Feito isso, pode criar.
+
+## Sobre o Go
+
+**Como escolha técnica, Go foi otimização prematura.** Um MMORPG idle com poucos jogadores roda tranquilo em Node. Nada no escopo atual exige o que o Go tem de melhor: goroutines, latência de GC previsível, CPU para muita gente simultânea.
+
+E tem um ponto que pesa contra o Go e ninguém levantou: **a decisão central da sua arquitetura, o single-owner, o Node te dá de graça.**
+
+```text
+Go:   goroutine dona do estado ← commands chan ← rede
+      (você constrói a fila e a posse)
+
+Node: event loop já é um dono só
+      (não existe duas coisas mexendo no estado ao mesmo tempo)
+```
+
+Parte do que você estudou sobre channel, posse do estado e "quem segura o lock" é complexidade que o Go cria e o Node não tem. O argumento clássico a favor do Node, dividir código com o cliente, não se aplica aqui, porque o cliente é Godot. Mas o do parágrafo acima se aplica.
+
+**Mesmo assim, eu não trocaria.** O motivo não é técnico:
+
+- **O Go serve à sua carreira agora.** Os projetos novos da Gamersclub são em Go e você se considera iniciante. Aprender Go num projeto que você quer fazer é o melhor jeito de aprender. Em Node você não aprenderia nada de novo na linguagem.
+- **As fatias já existem em Go.** Trocar agora custa semanas, e é exatamente o padrão que você mesmo registrou: revisitar a mesma questão. Pela sua regra ("decisão registrada é decisão"), o que mudou desde a escolha? Nada. Você só percebeu um custo que já existia.
+- **O que você aprendeu não se perde.** Ownership, Command → State → Event, ticker, persistência fora do caminho crítico: tudo isso vale em qualquer linguagem.
+
+O custo real é este, e é bom ter claro: **você está aprendendo duas coisas ao mesmo tempo, servidor de jogo e uma linguagem nova, com três horas por noite.** O jogo vai andar mais devagar do que andaria em Node.
+
+A troca só faria sentido se o seu objetivo mudasse para "lançar o jogo o mais rápido possível", e deixasse de ser "fazer o jogo e aprender no caminho". Se um dia mudar, aí sim vale reabrir. Hoje, siga com Go.
+
+---
+
+## Sidinei:
+
+Crie o prompt para eu mandar no chat fora do projeto para fazer a exclusão das memórias, por favor.
+
+---
+
+## Claude:
+
+Copie e mande numa conversa nova, fora de qualquer Project:
+
+```text
+Quero limpar memórias desatualizadas do Eras do Brasil. O repositório
+(github.com/sidinei-silva/eras-do-brasil) virou a fonte única de verdade do
+projeto, e esses arquivos descrevem versões antigas que não existem mais.
+
+1. Apague por completo estes dois arquivos de memória:
+   - /areas/eras-do-brasil.md
+   - /areas/a-escoria.md
+
+2. Leia /areas/reorganizacao-ia-projetos.md e me mostre em poucas linhas
+   o que ele contém. Não apague ainda; eu decido depois de ver.
+
+3. Não crie arquivo novo sobre o Eras do Brasil nem sobre A Escória para
+   substituir os apagados. Decisões do jogo ficam no repositório, não na
+   memória.
+
+Confirme o que foi apagado.
+```
+
+O passo 2 está assim porque não li esse arquivo: é melhor você ver o conteúdo antes de decidir. O passo 3 existe porque, sem ele, a memória pode voltar a guardar o projeto a partir dessa própria conversa.
+
+---
+
+## Sidinei:
+
+A resposta foi essa:
+
+<resposta>
+Apaguei por completo os dois arquivos: **/areas/eras-do-brasil.md** e **/areas/a-escoria.md**. Não criei nada novo para substituí-los.
+
+O **/areas/reorganizacao-ia-projetos.md** tem o seguinte:
+
+- **Contexto:** o uso intenso de IA na Siprocal e a vontade de voltar a escrever código à mão, com plan + código próprio no trabalho, apesar da pressão por agentes na Gamersclub.
+- **Vereditos de 31/08:** A Escória primeiro, sem fundir com o Eras; Eras congelado; server em Go com cliente simples por fatia; AGENTS.md como regra de IA; decisão sobre assinaturas adiada.
+- **As 7 pautas:** regra de uso de IA, assinaturas (Claude Pro, ChatGPT Go, Gemini, Copilot etc.), ordem dos projetos, reset, método, meta-trabalho como procrastinação e devlog no Dev .init.
+- **Fontes:** os exports de chats que você anexou e links por pauta, incluindo o Medium.
+- **Regra de 08/09:** material criativo de IA serve só como mockup ou brainstorm e é reescrito à mão.
+
+Duas coisas para pesar na sua decisão. Os vereditos de 31/08 sobre Escória e Eras já foram superados pela fusão que você decidiu em 08/09. E o arquivo ainda aponta para os dois arquivos que acabamos de apagar, então esses links ficaram mortos. A parte sobre IA, assinaturas e método continua independente do jogo.
+</resposta>
+
+---
+
+## Claude:
+
+Deu tudo certo. Com o arquivo de reorganização, eu não apagaria inteiro: **faça uma limpeza parcial.**
+
+A parte sobre IA, assinaturas e método não tem nada a ver com o jogo e continua valendo. Isso inclui a pauta de "meta-trabalho como procrastinação", que conversa diretamente com os três dias de reorganização desta semana. O que precisa sair são os vereditos sobre os projetos, que a fusão já superou, e os links para os arquivos apagados.
+
+Mande na mesma conversa:
+
+```text
+No /areas/reorganizacao-ia-projetos.md:
+
+1. Remova os vereditos de 31/08 sobre os projetos: "A Escória primeiro,
+   sem fundir com o Eras" e "Eras congelado". Foram superados pela fusão
+   de 08/09.
+2. Remova as referências aos dois arquivos apagados.
+3. Mantenha todo o resto: contexto, AGENTS.md como regra de IA, server em
+   Go com cliente simples por fatia, as pautas sobre assinaturas, método,
+   meta-trabalho e devlog, as fontes, e a regra de 08/09 sobre material
+   de IA.
+
+Não acrescente nada sobre o estado atual do Eras do Brasil. Isso fica
+no repositório.
+```
+
+Depois disso, **ok: pode criar o Project novo.** Checklist rápido para a criação:
+
+1. Nome: "Eras do Brasil".
+2. Colar a instrução.
+3. Conectar o GitHub na `main` e sincronizar depois do seu push.
+4. Não subir nenhum arquivo solto.
+
+A primeira conversa lá pode ser direto a fatia 4.
+
+---
+
+## Sidinei:
+
+A resposta do prompt:
+
+Pronto. No arquivo, saíram os vereditos "A Escória primeiro, sem mesclar com o Eras" e "Eras congelado e arquivado".
+Também tirei as referências à Escória e ao Eras na pauta 3, que ficou só com "RPG Solo arquivado como estudo, Arena Server cortado", e na linha de links permanentes, que agora aponta só para o RPG Solo e para o Medium do devlog.
+Todo o resto ficou igual: o contexto, os vereditos restantes de 31/08 (server em Go com cliente simples por fatia, AGENTS.md, assinaturas adiadas), as sete pautas, as fontes e a regra de 08/09 sobre material de IA. Não acrescentei nada sobre o estado atual do Eras.
+
+---
+
+## Claude:
+
+Tudo limpo. Pode criar o Project novo.
+
+A limpeza da memória de conta ficou certa: tirou os vereditos que a fusão superou e manteve o que continua valendo, que é o método, o AGENTS.md, o Go e as assinaturas. Nenhum arquivo de conta descreve mais uma versão antiga do jogo.
+
+Este Project fica como arquivo. Não precisa mexer em mais nada aqui.
+
+Na primeira conversa do Project novo, vale um teste rápido antes da fatia 4: pergunte algo que obrigue a IA a ler o repo, por exemplo "onde está registrada a decisão da Raiz no skybox?". Se ela achar a resposta no `decisoes-de-design.md` sem você mandar link, o sync e a instrução estão funcionando.
+
+---
+
+## Sidinei:
+
+A fatia 4 esta sendo feita em outra branch mas vou syncar a main então vou mandar o link do repo pra ele apontando para a branch da fatia 4 correto?
+
+---
+
+## Claude:
+
+Correto. É exatamente o fluxo que a instrução prevê: a `main` sincronizada fica como base, e a branch da fatia 4 vai por link.
+
+Três cuidados para funcionar bem:
+
+- **Mande o link do arquivo, não só o da branch.** A IA abre bem uma página específica do GitHub, mas não navega bem por uma árvore de pastas. Links diretos para os arquivos que você mexeu (`.../blob/fatia-4/backend/...`) funcionam melhor. Se tiver um PR aberto, o link do diff (`.../pull/N/files`) ou do compare (`.../compare/main...fatia-4`) é ainda melhor, porque mostra só o que mudou.
+- **Avise que a branch prevalece.** O conhecimento do Project vai ter a versão da `main` dos mesmos arquivos, e a IA pode misturar as duas. Uma frase resolve: "para a fatia 4, vale a branch; a `main` está atrás".
+- **Arquivo novo só existe na branch.** O `gamedata`, por exemplo, não vai aparecer na busca do conhecimento. Se a pergunta depender dele, mande o link.
+
+Depois do merge, sincronize a `main` de novo e os links deixam de ser necessários.
+
+---
+
+## Sidinei:
+
+Crie o prompt para eu mandar pra ele.
+
+---
+
+## Claude:
+
+Substitua o que está entre `<>` e mande como primeira mensagem do Project novo:
+
+```text
+Primeira conversa neste Project. Antes de trabalhar, dois testes rápidos
+para eu saber se o repositório está sendo lido:
+
+1. Onde está registrada a decisão da Raiz no skybox durante A Travessia,
+   e o que ela diz? Responda a partir do conhecimento do Project, sem eu
+   mandar link.
+2. Qual é o ponto de entrada do projeto e para que ele serve?
+
+Depois, contexto para o trabalho:
+
+Estou fazendo a fatia 4 (entrar no mundo) numa branch que ainda não teve
+merge. O conhecimento do Project está sincronizado com a main, que está
+atrás. Para tudo que for da fatia 4, vale a branch; se a main e a branch
+divergirem, a branch prevalece.
+
+- Backlog da fatia: docs/backlog/00-mvp/04-entrar-no-mundo.md
+- Diff da branch: <link do compare ou do PR, ex.:
+  https://github.com/sidinei-silva/eras-do-brasil/compare/main...<branch>>
+- Arquivos principais que já mexi: <links diretos .../blob/<branch>/...>
+
+Não comece a análise ainda. Responda os dois testes, confirme que conseguiu
+abrir o diff e me diga em poucas linhas o que entendeu que a fatia 4 entrega.
+Aí eu digo por onde seguir.
+```
+
+O final ("não comece a análise ainda") está ali de propósito. Assim você confere se ele leu direito antes de ele sair respondendo em cima de uma leitura errada.
+
+---
+
+## Sidinei:
+
+Teste 1. Está em `docs/decisoes-de-design.md`, seção "Tutorial — A Travessia", subseção "A Raiz visível durante a Travessia". A decisão é esta: durante toda A Travessia, a Raiz do Mundo aparece no skybox como uma silhueta colossal. Ela fica sempre visível e não tem geometria navegável. Some quando o jogador é expulso para o mundo, na Feitoria da Cruz (Costa do Pau-Brasil), e reaparece lá como o Coração da Raiz. A causa da Ruptura fica em aberto de propósito. O `historico-e-estudos.md` registra que a ideia começou como exploração e virou decisão em 20/09/2026.
+Teste 2. O ponto de entrada é `docs/contexto-do-projeto.md`. Ele serve para qualquer pessoa ou IA que comece no projeto entender o que é o jogo e o escopo atual, e principalmente saber onde cada assunto vive (a tabela da seção 4), sem duplicar regras. Também traz a hierarquia de fontes: código, depois doc normativo, depois dados, depois histórico. Regras de IA e de commit ficam no `AGENTS.md`.
+Diff. O GitHub bloqueia a leitura pela web, então clonei o repositório e comparei `main...04-entrar-no-mundo`. São 4 commits e 17 arquivos:
+
+* Código novo: `gamedata/` (loader e zonas), `game/` (Game, State, World, Zone, Player, Command, Event) e `bootstrap/` (application e world).
+* Dados: em `data/mvp/zones.json` saiu o campo `services` e `bossId`/`mobFactionId` mudaram de lugar. Em `npcs.json` saiu `stationsWithoutDialogue`.
+* Docs: o commit "remove documento" apagou `docs/backlog/00-poc/04-entrar-no-mundo.md`, uma cópia antiga em `00-poc`. O arquivo da fatia em `00-mvp` continua lá, igual ao da main.
+
+Você não colou os links dos arquivos (ficou o placeholder `<links diretos ...>`), então usei o diff inteiro como referência.
+Três coisas que notei e que não vou analisar agora:
+
+* O arquivo da fatia marca `World` e `Game` como feitos, mas o `BACKLOG.md` ainda diz "não iniciada".
+* Entrou um `docs/instuctions.md` (com erro de digitação no nome) que parece ser uma versão das instruções deste Project dentro do repo.
+* Os campos removidos dos JSONs podem ou não ser intencionais.
+
+O que a fatia 4 entrega. Um jogador autenticado, com personagem já criado, entra no mundo.
+
+* HTTP: autentica, escolhe o personagem e chama `EnterWorld`.
+* Servidor: valida o `CharacterID` e se o personagem pertence à conta, cria o estado runtime do personagem e o registra no `GameState`. Isso depende de `GameData` carregado, `World` montado e `Game` com loop/tick.
+* Retorno: devolve o estado inicial e a partir daí a comunicação passa para o WebSocket, seguindo a Decisão 6 da arquitetura (HTTP até entrar no mundo, WebSocket depois).
+
+Pelo backlog, falta `GameState`, tick, a entrada em si, as validações, o registro e o WebSocket.
+Por onde quer seguir?
+
+---
+
+## Claude:
+
+O setup está funcionando. Os dois testes passaram, e passaram lendo o conhecimento do Project, sem link. Ele também fez o que a instrução pede: apontou os conflitos em vez de escolher em silêncio, e não inventou motivo para os campos removidos. Pode confiar nesse Project.
+
+Conferi a branch para te adiantar as respostas de dois dos três pontos que ele levantou:
+
+**O `docs/instuctions.md` é a instrução antiga do Claude**, a que aponta para o `como-promover-dado.md` e traz a lista "O que morreu". Apague esse arquivo. A instrução vive no Project; uma cópia no repo, ainda mais desatualizada, vira mais uma fonte para divergir.
+
+**A remoção dos campos não foi exigência do código.** O loader usa `json.Unmarshal` puro, que ignora campos que a struct não tem.
+
+```text
+zones.json (dado completo)  →  json.Unmarshal  →  struct Go (só o que usa)
+       services, bossId…         ignora o resto       ID, Tier, Spawn…
+```
+
+Então tirar `services` e `stationsWithoutDialogue` apagou conteúdo de design, como a lista de serviços do Porto de Passagem, sem necessidade técnica. Se você tirou porque achou que o JSON precisava espelhar a struct, é o contrário: a struct lê o subconjunto que precisa, e o dado continua completo. O caminho é devolver os campos. A troca de posição de `bossId` e `mobFactionId` não altera nada.
+
+**Sobre o `BACKLOG.md`,** a resposta é só sua: marcar a fatia 4 como "em andamento".
+
+Resposta sugerida para mandar lá:
+
+```text
+Os três pontos:
+1. BACKLOG.md: vou marcar a fatia 4 como em andamento.
+2. docs/instuctions.md: é a instrução antiga, vou apagar.
+3. Os campos removidos não foram intencionais. Vou restaurar services e
+   stationsWithoutDialogue, porque o loader ignora campo desconhecido.
+
+Vamos seguir pelo GameState e pelo tick, que é o que falta antes da
+entrada em si. Começa me explicando o que o GameState precisa conter
+para a fatia 4, e só isso, sem o resto da fatia.
+```
+
+---
+
+## Sidinei:
+
+Eu mesmo resolvi, o backlog atualizei, o instruction eu vou deixar e atualizar ele, os campos removidos foram intencionais https://github.com/sidinei-silva/eras-do-brasil/tree/04-entrar-no-mundo
+
+---
+
+## Claude:
+
+Conferi a branch, e você está certo nos dois pontos.
+
+**Campos.** Eu me precipitei ao sugerir restaurar. Nenhum doc cita `services` nem `stationsWithoutDialogue`, e os serviços já ficam em cada NPC. Tirar a lista da zona elimina uma duplicação; não perde conteúdo. A remoção é coerente.
+
+**Instrução no repo.** O `docs/instuctions.md` agora é idêntico à instrução nova. Manter uma cópia versionada é uma boa escolha, porque é o que permite levar a instrução para qualquer IA. Só duas observações pequenas:
+
+- o nome tem um erro de digitação (`instuctions`);
+- vale combinar qual das duas é a original. Sugiro o arquivo do repo, e o Project recebe cópia dele sempre que você alterar. Senão as duas vão divergir, como aconteceu com o `como-promover-dado`.
+
+Fora isso, está tudo em ordem. Pode seguir com a fatia 4 no Project novo.
+
+---
+
+## Sidinei:
+
+Vai ser só uma copia guardada e rastredada do que foi atualizado mas ela não sera mencionada para ser lida
+
+---
+
+## Claude:
+
+Faz sentido. Guardar o arquivo só como histórico versionado da instrução resolve o rastreio sem criar outra fonte.
+
+Só um efeito colateral: como `docs/` é sincronizado, o arquivo entra no conhecimento do Project e pode aparecer numa busca, mesmo sem ser citado. Enquanto for idêntico à instrução ativa, isso não causa problema. Se um dia você mudar a instrução no Project e esquecer de atualizar o arquivo, a IA pode achar a versão velha. Basta manter o hábito de atualizar os dois juntos.
+
+---

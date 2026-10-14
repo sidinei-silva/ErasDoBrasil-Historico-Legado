@@ -16,12 +16,13 @@ projeto — cada era já foi substituída pela seguinte, então "era anterior" =
 |-------|-----------|
 | `Conversas/GPT/` | Conversas com ChatGPT: a origem e a fase de RPG de mesa (2023–2025) e o trilho paralelo ao Claude em ago–set/2026 (servidor da Escória, arte do MVP, a fusão) |
 | `Conversas/Gemini/` | Conversas com Gemini sobre o projeto |
-| `Conversas/Claude/` | Sessões técnicas com Claude (mar–set/2026): arquitetura, GDD e a fusão com o projeto Escória/Outlander |
+| `Conversas/Claude/` | Conversas com o Claude (mar–out/2026): arquitetura, GDD, a fusão com a Escória e o recomeço de outubro; em `memorias/`, a memória da conta sobre o jogo |
 | `Conversas/WhatsApp/` | Prints e transcrição da conversa que deu origem à ideia do jogo (jul/2023) |
 | `Conversas/Copilot/` | Logs de sessões com Copilot (fev–mar/2026): última fase de documentação e o pivô para MUD Moderno |
 | `Artefatos/01-rpg-de-mesa-e-narrativa/` | GDD inicial (`Livros Antigos/`) e as análises do NotebookLM (2023–jan/2026), quando o jogo ainda era um RPG de mesa/D20 sem código |
 | `Artefatos/02-unity-tatico/` | ADRs e docs técnicos da era em que o jogo era um RPG tático em Unity (`Decisoes Substituidas/`, `Docs Substituidos/`) |
-| `Artefatos/03-mud-moderno-pre-fusao/` | Cópia congelada (`gdd-batalha-turno/`) do repo de GDD como estava antes da fusão com a Escória — servidor Go, D20, ainda sem o idle |
+| `Artefatos/03-mud-moderno-pre-fusao/` | Cópia congelada (`gdd-batalha-turno/`) do repo de GDD do MUD Moderno (servidor Go, D20), o log do reset de 03/04/2026 e o Project do Claude dessa fase |
+| `Artefatos/04-idle-escoria-e-fusao/` | Instruções, documentos e memórias dos Projects do Claude da fase idle: Albion Idle/Outland, A Escória e o Eras fundido (mai–set/2026) |
 | `Imagens/` | Imagens conceituais e referências visuais (sem data confiável por arquivo para atribuir a uma era) |
 
 ## Repos Ativos
